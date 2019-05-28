@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="XPOC"
+  DTS:DTSID="{6F16156A-255B-4876-8549-DE4C768CC15E}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::XPOC_Integrations_DataBaseName]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::XPOC_Integrations_ServerName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=CKCWSQLB;User ID=IntegrationServices;Initial Catalog=XSPOC_Integration;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAACAAAAAAADZgAAwAAAABAAAABcvL2PR5XTUW0PLGcl5EJuAAAAAASAAACgAAAAEAAAAK0FLwi9Lqvlsv9CLPYMHVyAAAAAf9wOAO7YoC2Ndnf6LerVa1597FEdQ9msTYdQaBvU3A9Td37122+5kEgIlJ3Wq1eV7Cj7jhQkeL7luKvx1/j4RVIOKqhK04q+UU/b6XrXQ/xiYtuicjcQ16CGWmJtyVNT+UWDzjOrVMbpNtLjVUGGLAoZjG++9P8R7LAu+o1TE8sUAAAAwpPxHj+GW+5X23EhnE6/0mOeIWA=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

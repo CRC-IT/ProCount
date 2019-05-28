@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CKCWSQL1A.CRC_ProCount"
+  DTS:DTSID="{EBA005CE-7304-4CB3-BFAA-D3260AD1F7C0}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=CKCWSQL1A;User ID=dw_user;Initial Catalog=CRC_ProCount;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAByh8vMd9tEqsFALeRjhU4wAAAAACAAAAAAADZgAAwAAAABAAAAA34kVKXJXnXqjovKztOHY3AAAAAASAAACgAAAAEAAAAFW6swqyAyLx1FeEJm7NpOt4AAAAB/lgwx7mBiv+O7APMNPzN4PvBfYWFaseJQryxrcqoW0kno238wvU8FQcA++NBUrifW9n+8cuL/xjX18ljcfdQMKelo0OKY5CfcN09Fo1oYBUJg13W4l0QfLpp0Lrq0mjEkPAIuEy/wPJG1APa/ftjy8Xu1U9Z0AYFAAAAC22fNPneVRkH2wJLXyxjuNgG9rZ</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

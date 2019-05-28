@@ -1,0 +1,2517 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/14/2017 4:20:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DLG55XPW52"
+  DTS:CreatorName="CALNET\pydimarb"
+  DTS:DTSID="{1A875825-5517-4DF5-B6A4-32EC5FD22B64}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="WSC_XSPOC_To_IFace"
+  DTS:PackageType="5"
+  DTS:VersionBuild="330"
+  DTS:VersionGUID="{D13A995F-F0F4-4F4F-8D6C-889AB29CC586}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{BD9A7260-13C9-465E-97AA-C0395D6BB4E2}"
+      DTS:ObjectName="ADO_NET_CIDS_DatabaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CIDS</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{82473AA3-CA76-4F4E-AD51-605861DE9F92}"
+      DTS:ObjectName="ADO_NET_CIDS_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCWSQL7-S</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{A18B6B17-C20F-4F88-A2EB-1176B50D33FC}"
+      DTS:ObjectName="ADO_NET_XSPOC_DatabaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">XSPOC_Integration</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{CBDFC67B-89DA-4CDF-B230-A9D4070BE16D}"
+      DTS:ObjectName="ADO_NET_XSPOC_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCwSQLB</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{93F2CC76-3C88-43A7-BA9B-BDF92F226974}"
+      DTS:ObjectName="CIDS_DataseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CIDS</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{89BCCAE9-05A6-457F-9B64-C2C6C9CB7A93}"
+      DTS:ObjectName="CIDS_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCWSQL7-S</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{E0B5C68C-3CAD-4A0A-B2A3-933BFEA3A50A}"
+      DTS:ObjectName="ProCount_DatabaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CRC_ProCount</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{E7975B9A-5AEF-47C0-B8B2-7D8FB96794EC}"
+      DTS:ObjectName="ProCount_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCWSQL7-S</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{BB72E366-F66B-4A40-A536-6664CD5EBDAB}"
+      DTS:ObjectName="XPOC_Integrations_DataBaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">XSPOC_Integration</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{808775AF-A29F-4AF5-820A-8238E9E37613}"
+      DTS:ObjectName="XPOC_Integrations_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCwSQLB</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CE976604-8A6B-4B2F-8C77-AC911E424924}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ArchiveXMLPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Integration\Archive\PreProcess</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{080B2117-931E-4FD2-9ABE-472C43BC1CB4}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; &quot; + @[User::XSPOCInputSQLQuery]  +  &quot; &#xA; FOR XML PATH ('&quot;+ @[User::MsgType]  +&quot;_Record'), ROOT('&quot;+ @[User::MsgType]  +&quot;_From_&quot; + @[User::PublisherName]  +&quot;')&#xA;&#xA;)) InputMsg&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ArchiveXMLSQLQuery">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT convert(nvarchar(MAX),
+(
+  
+ SELECT  * FROM [tbl_Integration_WellStatusChanges] where RecordDate &gt; '2019-03-31' 
+ FOR XML PATH ('WellStatusChanges_Record'), ROOT('WellStatusChanges_From_XSPOC')
+
+)) InputMsg</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9D750B7E-717C-4610-8003-688E57BD22DD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ArchMsgLength">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AC372639-E000-4F3E-8899-43AA7F20AF5E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConnType">
+      <DTS:VariableValue
+        DTS:DataType="8">Database</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3B5DA1E6-A13C-46BF-9FA0-DF65FE0F71F2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorLogMsg">
+      <DTS:VariableValue
+        DTS:DataType="8">Error while sending data from XSPOC to IFace table</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{039E7D54-2F24-4873-8273-C6D7ADBFCF55}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FormattedMsg">
+      <DTS:VariableValue
+        DTS:DataType="8">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C66A179E-0DAA-445F-A1D8-D006CC9E0DA4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="IFaceBatchID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{36D0F052-8699-4907-87AC-5DC1E24B2F9F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsArchive">
+      <DTS:VariableValue
+        DTS:DataType="8">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7AD9771B-D44B-4564-A736-7E124F672173}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsDelSrcRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{05B0006D-9CDB-4A17-8915-7A3FED20AC95}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MsgType">
+      <DTS:VariableValue
+        DTS:DataType="8">WellStatusChanges</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C8064DF0-5C77-4279-921B-BD99E049AC5C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PkgName">
+      <DTS:VariableValue
+        DTS:DataType="8">WSC_XSPOC_To_IFace.dtsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D352A293-1ACA-4BED-92A6-B1163D49C9A7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ProcessType">
+      <DTS:VariableValue
+        DTS:DataType="8">SSISPackage</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E91C1E43-2AB9-42A1-B546-16AF6BFD843B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubConnID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EC909EA7-1108-415A-AACC-A9ED5A9835D3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubEndMsg">
+      <DTS:VariableValue
+        DTS:DataType="8">Publishing WellStatusChanges data from XSPOC completed</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{637E7405-D1A3-4B76-8CFE-E9BAFA33B2EA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8C19FCAA-94C4-40D9-B706-C6CD1F6EAB0A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PublisherName">
+      <DTS:VariableValue
+        DTS:DataType="8">XSPOC</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{80680BE7-1BB5-4C18-AEE0-6CD4490F14EC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubStartMsg">
+      <DTS:VariableValue
+        DTS:DataType="8">Publishing WellStatusChanges data from XSPOC started</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E8EBA5CA-516C-4FDD-B8B7-526C4E7AEE79}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubStatus">
+      <DTS:VariableValue
+        DTS:DataType="8">XSPOC published the WellStatusChanges data successfully</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{25568A18-0D0D-4952-AF24-E305F191176C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RecCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C95F475A-2E77-4A46-A50C-17CB467C8CE2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TrackID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{24A55D56-BE6E-4F36-A839-20AD2210737E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="XSPOCInputSQLQuery">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT  * FROM [tbl_Integration_WellStatusChanges] where RecordDate &gt; '2019-03-31'</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ArchiveTransformedXML"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{CF873FE9-736F-48E6-A09A-027938B9E540}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ArchiveTransformedXML"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_6c94b9c3d2664462880695af389b0ad7"
+          VSTAMajorVersion="14"
+          VSTAMinorVersion="0"
+          Language="CSharp"
+          ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
+          ReadWriteVariables="User::ArchiveXMLPath">
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_e170d566053f49adad87ad10db091500.Properties.Settings.get_Default():ST_e170d566053f49adad87ad10db091500.Properties.Sett" +
+    "ings")]
+
+namespace ST_e170d566053f49adad87ad10db091500.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
+#endregion
+
+namespace ST_e170d566053f49adad87ad10db091500
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+		/// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+		public void Main()
+		{
+
+            try
+            {
+                if (Dts.Variables["User::IsArchive"].Value.ToString() == "1") // && (Int32)Dts.Variables["User::ArchMsgLength"].Value > 2000000)
+                {
+                    string _outputFolder = Dts.Variables["User::ArchiveXMLPath"].Value.ToString();
+                    string _fileName = "WSC_" + Dts.Variables["User::TrackID"].Value.ToString();
+                    string _outFilePath = System.IO.Path.Combine(_outputFolder, string.Format("{0}.{1}.xml", _fileName, DateTime.Now.ToString("yyyyMMddHHmmss")));
+                    Dts.Variables["User::ArchiveXMLPath"].Value = _outFilePath;
+                    System.Text.Encoding e = System.Text.Encoding.Default;
+                    if(Directory.Exists(_outputFolder))
+                    {
+                        using (System.IO.StreamWriter file = new System.IO.StreamWriter(System.IO.File.Open(_outFilePath, System.IO.FileMode.Create), e))
+                        {
+                            file.Write(Dts.Variables["User::FormattedMsg"].Value.ToString());
+                        }
+                    }
+                    else
+                    {
+                        //System.Diagnostics.EventLog.WriteEntry(Dts.Variables["User::PkgName"].Value.ToString(),  "Folder Path does not exists: " + Dts.Variables["User::ArchiveXMLPath"].Value.ToString(), System.Diagnostics.EventLogEntryType.Error, 100);
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //string source = "SSISPkgErrors";
+                //EventLog systemEventLog = new EventLog("System");
+                //if (!EventLog.SourceExists(source))
+                //{
+                //    EventLog.CreateEventSource(source, "System");
+                //}
+
+                //EventLog.WriteEntry(source, Dts.Variables["User::PkgName"].Value.ToString() + " : Error Message:: "+ ex.Message.ToString(), System.Diagnostics.EventLogEntryType.Error, 100);
+            }
+
+
+
+            Dts.TaskResult = (int)ScriptResults.Success;
+		}
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+          <ProjectItem
+            Name="ST_6c94b9c3d2664462880695af389b0ad7.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{1ACDB916-1AD9-4E1D-970D-4BEF2BBBAAE9}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>ST_e170d566053f49adad87ad10db091500</RootNamespace><AssemblyName>ST_6c94b9c3d2664462880695af389b0ad7</AssemblyName><TargetFrameworkVersion>v4.5</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile><Compile Include="ScriptMain.cs"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" /><Host Name="ScriptTask" /><ProjectClient><HostIdentifier>SSIS_ST130</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_e170d566053f49adad87ad10db091500</msb:CodeName>
+		<msb:DisplayName>ST_e170d566053f49adad87ad10db091500</msb:DisplayName>
+		<msb:ProjectId>{01112439-9088-4384-8819-4B1015B022B8}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_6c94b9c3d2664462880695af389b0ad7.csproj"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_e170d566053f49adad87ad10db091500.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_e170d566053f49adad87ad10db091500.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_e170d566053f49adad87ad10db091500.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_e170d566053f49adad87ad10db091500.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_e170d566053f49adad87ad10db091500.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <BinaryItem
+            Name="ST_6c94b9c3d2664462880695af389b0ad7.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHMyEFwAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAANjEA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAOQwAABPAAAAAEAAAIQEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAPBEAAAAgAAAAEgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAIQEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAY
+MQAAAAAAAEgAAAACAAUAECIAABwOAAABAAAAAAAAACwwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBgAYAQAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKbxQAAApyIQAAcCgVAAAKOdgAAAACKBAAAApvEQAACnIlAABwbxIAAApvEwAACm8UAAAKck8A
+AHACKBAAAApvEQAACnJZAABwbxIAAApvEwAACm8UAAAKKBYAAAoKJXJ1AABwBigXAAAKDRIDco0A
+AHAoGAAACigZAAAKKBoAAAoLAigQAAAKbxEAAApyJQAAcG8SAAAKB28bAAAKKBwAAAoMKB0AAAos
+QwcYKB4AAAoIcx8AAAoTBBEEAigQAAAKbxEAAApyqwAAcG8SAAAKbxMAAApvFAAACm8gAAAK3gwR
+BCwHEQRvIQAACtzeAybeAAIoEAAAChZvIgAACipBNAAAAgAAANIAAAAoAAAA+gAAAAwAAAAAAAAA
+AAAAAAAAAAAIAQAACAEAAAMAAAASAAABHgIoIwAACioeAigkAAAKKq5+AQAABC0ectEAAHDQAwAA
+AiglAAAKbyYAAApzJwAACoABAAAEfgEAAAQqGn4CAAAEKh4CgAIAAAQqGn4DAAAEKh4CKCgAAAoq
+LnMIAAAGgAMAAAQqAABCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAABYBAAAI34A
+AMQEAABMBgAAI1N0cmluZ3MAAAAAEAsAAEQBAAAjVVMAVAwAABAAAAAjR1VJRAAAAGQMAAC4AQAA
+I0Jsb2IAAAAAAAAAAgAAAVcdogEJAwAAAPoBMwAWAAABAAAAKgAAAAUAAAAGAAAACQAAAAEAAAAo
+AAAAAgAAABAAAAABAAAAAgAAAAMAAAAEAAAAAQAAAAQAAAABAAAAAQAAAAAA9AMBAAAAAAAGAIwC
+9gQGABsD9gQGANgB4wQPAGoFAAAGAAUCggQGAG8CggQGAFACggQGAAIDggQGAKwCggQGAMUCggQG
+ABwCggQGADcCXAMKAOACowMKAEkBowMGAFMDFAYGAOMAMAQGAL4EUgAGAJQEMAQGADcEMAQGALsB
+4wQGAPIFMAQGAK4EFgUGAJ4EbQQOAIUB3gMOAOwB3gMOAGUBWAQGAKAB9gQKAMwDowMSAKwF7AAS
+AKUA7AAGAHgDMAQGAH8DUgAGADUGUgAGAN4AUgAGABwEUgAGAJwAUgAGACAEUgAGAMsEUgAGAK4A
+MAQGABQBMAQGALoAMAQGACwGggQAAAAASQAAAAAAAQABAAEAEABNBAEAOQABAAEAAAAQAB0FeQVV
+AAEAAwAAARAAtgV5BWkAAwAHAAMBAADPBQAATQAEAAoAEQA8BLAAEQA5AbQAEQCMALgABgZ7ALwA
+VoC/Bb8AVoAZAb8AUCAAAAAAhgBTBAYAAQCoIQAAAACGGNYEBgABALAhAAAAAIMY1gQGAAEAuCEA
+AAAAkwiqBMMAAQDkIQAAAACTCCEByAABAOshAAAAAJMILQHNAAEA8yEAAAAAlgj5BdMAAgD6IQAA
+AACGGNYEBgACAAIiAAAAAJEY3ATYAAIAAAABAE0DCQDWBAEAEQDWBAYAGQDWBAoAKQDWBBAAMQDW
+BBAAOQDWBBAAQQDWBBAASQDWBBAAUQDWBBAAWQDWBBAAYQDWBBAAaQDWBAYAoQDWBAYAyQDWBBUA
+2QDWBAYAcQDHBSYA4QCoBSsA6QAnBDAA8QA5AzYAqQB2AzoA+QA/Bj4A+QDkBUQAgQAgBkoAgQB2
+A08A+QDrBVQAAQEMAUQA8QBDA1sAeQD5BWAACQHdBWUAEQFIBGoAiQDWBHQAMQGaARAAOQF9AQYA
+4QAFBgEAcQDWBAYAqQDWBAYAQQHMAH0AQQEoBoYAsQDWBIwA0QDWBAYACAAUAKYACAAYAKsAKQBz
+ABMBLgALAOsALgATAPQALgAbABMBLgAjABwBLgArAEUBLgAzAEUBLgA7AEsBLgBDABwBLgBLAFQB
+LgBTAEUBLgBbAG4BQwBjAKsASQBzABMBYQB7AKsAYwBrAKsAGwADAAEABAADAAAArgTcAAAAQQHh
+AAAA/QXmAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAABAAAABxv5YQAAAAAAACUAAAAEAAAA
+AAAAAAAAAACUAIMAAAAAAA0AAAAAAAAAAAAAAJ0AhAMAAAAABAAAAAAAAAAAAAAAlAAwBAAAAAAN
+AAAAAAAAAAAAAACdAFwAAAAAAAAAAAABAAAAJwUAAAUAAgAAAABTVF9lMTcwZDU2NjA1M2Y0OWFk
+YWQ4N2FkMTBkYjA5MTUwMABTVF82Yzk0YjljM2QyNjY0NDYyODgwNjk1YWYzODliMGFkNwA8TW9k
+dWxlPgBTeXN0ZW0uSU8ATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AbXNj
+b3JsaWIAZGVmYXVsdEluc3RhbmNlAEZpbGVNb2RlAFZhcmlhYmxlAElEaXNwb3NhYmxlAFJ1bnRp
+bWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAEZpbGUARGF0ZVRpbWUATWljcm9zb2Z0LlNx
+bFNlcnZlci5EdHMuUnVudGltZQBDb21iaW5lAFR5cGUARmFpbHVyZQBnZXRfQ3VsdHVyZQBzZXRf
+Q3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAVlNUQVJUU2NyaXB0T2JqZWN0TW9kZWxCYXNlAEFwcGxp
+Y2F0aW9uU2V0dGluZ3NCYXNlAERpc3Bvc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAV3JpdGUAQ29t
+cGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1
+Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0
+cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0
+ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJp
+YnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJp
+YnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9pbnRB
+dHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0
+cmlidXRlAGdldF9WYWx1ZQBzZXRfVmFsdWUAdmFsdWUARW5jb2RpbmcAU3lzdGVtLlJ1bnRpbWUu
+VmVyc2lvbmluZwBUb1N0cmluZwBQYXRoAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBN
+aWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5TY3JpcHRUYXNrAFNjcmlwdE9iamVjdE1vZGVs
+AFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF82Yzk0YjljM2QyNjY0NDYyODgwNjk1YWYzODliMGFk
+Ny5kbGwARmlsZVN0cmVhbQBnZXRfSXRlbQBTeXN0ZW0ARW51bQByZXNvdXJjZU1hbgBPcGVuAFNj
+cmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24AU3lzdGVt
+LlJlZmxlY3Rpb24ARXhjZXB0aW9uAEN1bHR1cmVJbmZvAGdldF9SZXNvdXJjZU1hbmFnZXIAU3Ry
+ZWFtV3JpdGVyAFRleHRXcml0ZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0
+ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfZTE3MGQ1NjYw
+NTNmNDlhZGFkODdhZDEwZGIwOTE1MDAuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERl
+YnVnZ2luZ01vZGVzAFNUX2UxNzBkNTY2MDUzZjQ5YWRhZDg3YWQxMGRiMDkxNTAwLlByb3BlcnRp
+ZXMAZ2V0X1ZhcmlhYmxlcwBTZXR0aW5ncwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBF
+eGlzdHMAQ29uY2F0AEZvcm1hdABPYmplY3QAZ2V0X0RlZmF1bHQAc2V0X1Rhc2tSZXN1bHQAU3lz
+dGVtLlRleHQAZ2V0X05vdwBnZXRfQXNzZW1ibHkARGlyZWN0b3J5AG9wX0VxdWFsaXR5AAAAH1UA
+cwBlAHIAOgA6AEkAcwBBAHIAYwBoAGkAdgBlAAADMQAAKVUAcwBlAHIAOgA6AEEAcgBjAGgAaQB2
+AGUAWABNAEwAUABhAHQAaAAACVcAUwBDAF8AABtVAHMAZQByADoAOgBUAHIAYQBjAGsASQBEAAAX
+ewAwAH0ALgB7ADEAfQAuAHgAbQBsAAAdeQB5AHkAeQBNAE0AZABkAEgASABtAG0AcwBzAAAlVQBz
+AGUAcgA6ADoARgBvAHIAbQBhAHQAdABlAGQATQBzAGcAAHFTAFQAXwBlADEANwAwAGQANQA2ADYA
+MAA1ADMAZgA0ADkAYQBkAGEAZAA4ADcAYQBkADEAMABkAGIAMAA5ADEANQAwADAALgBQAHIAbwBw
+AGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAABRi49Gj0omSIth8RaR/sNdAAQgAQEI
+AyAAAQUgAQEREQQgAQEOBSABARFhCgcFDg4SPRFBEkUEIAAScQQgABJ1BSABEnkcAyAAHAMgAA4F
+AAICDg4FAAIODg4EAAARQQQgAQ4OBgADDg4cHAQgAQEcBAAAEj0EAAECDgkAAhKAjQ4RgJEIIAIB
+EoCVEj0IAAESgKERgKUFIAASgKkHIAIBDhKAqQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAAD
+BhJZAwYSXQMGEhACBggDBhEUBAAAElkEAAASXQUAAQESXQQAABIQAwAAAQQIABJZBAgAEl0ECAAS
+EAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1Rf
+ZTE3MGQ1NjYwNTNmNDlhZGFkODdhZDEwZGIwOTE1MDAAAAUBAAAAAAgBAANDUkMAABkBABRDb3B5
+cmlnaHQgQCBDUkMgMjAxOAAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC41AQBUDhRGcmFt
+ZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjW0AAAAzsrvvgEAAACRAAAAbFN5c3Rl
+bS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1
+bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVz
+b3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAADDEAAAAAAAAA
+AAAAJjEAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgxAAAAAAAAAAAAAAAAX0NvckRsbE1haW4A
+bXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
+AEgAAABYQAAAJgQAAAAAAAAAAAAAJgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
+AAAAAL0E7/4AAAEAAAABAPlhBxsAAAEA+WEHGz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
+bgAAAAAAAACwBIYDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAGIDAAABADAAMAAw
+ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAoAAQAAQBDAG8AbQBwAGEA
+bgB5AE4AYQBtAGUAAAAAAEMAUgBDAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBv
+AG4AAAAAAFMAVABfAGUAMQA3ADAAZAA1ADYANgAwADUAMwBmADQAOQBhAGQAYQBkADgANwBhAGQA
+MQAwAGQAYgAwADkAMQA1ADAAMAAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAu
+ADAALgA2ADkAMQA5AC4AMgA1ADAAOAAxAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0A
+ZQAAAFMAVABfADYAYwA5ADQAYgA5AGMAMwBkADIANgA2ADQANAA2ADIAOAA4ADAANgA5ADUAYQBm
+ADMAOAA5AGIAMABhAGQANwAuAGQAbABsAAAATgAVAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcA
+aAB0AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAQwBSAEMAIAAyADAAMQA4AAAAAAAqAAEAAQBM
+AGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsAcwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEA
+bABGAGkAbABlAG4AYQBtAGUAAABTAFQAXwA2AGMAOQA0AGIAOQBjADMAZAAyADYANgA0ADQANgAy
+ADgAOAAwADYAOQA1AGEAZgAzADgAOQBiADAAYQBkADcALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQA
+dQBjAHQATgBhAG0AZQAAAAAAUwBUAF8AZQAxADcAMABkADUANgA2ADAANQAzAGYANAA5AGEAZABh
+AGQAOAA3AGEAZAAxADAAZABiADAAOQAxADUAMAAwAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUA
+cgBzAGkAbwBuAAAAMQAuADAALgA2ADkAMQA5AC4AMgA1ADAAOAAxAAAAAABGAA8AAQBBAHMAcwBl
+AG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA2ADkAMQA5AC4AMgA1ADAAOAAxAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAADgxAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete XSPOC Data"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{C1A210A7-70CC-4B40-BEBA-7145E4115770}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete XSPOC Data"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="DELETE FROM [tbl_Integration_WellStatusChanges]"
+          SQLTask:TypeConversionMode="None" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Generate GUID's"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{93EB17AD-4107-4A2E-BAB2-84EF5E869D4B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generate GUID's"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:SqlStatementSource="select convert(nvarchar(100), newid() ) IFaceBatchUID, convert(nvarchar(100), newid() ) TrackID"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="IFaceBatchUID"
+            SQLTask:DtsVariableName="User::IFaceBatchID" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="TrackID"
+            SQLTask:DtsVariableName="User::TrackID" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Getting XSPOC xml"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EB20B9DE-25AE-4C89-B53B-80D998087C3A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Getting XSPOC xml"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"DECLARE @IsArchive  VARCHAR(1)
+SET @IsArchive  ='"+ @[User::IsArchive] +"'
+
+If @IsArchive  = '1'
+BEGIN
+
+"+ @[User::ArchiveXMLSQLQuery]  +"
+
+END
+ELSE
+BEGIN
+
+SELECT 'NoData' InputMsg
+
+END
+ "</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT  * FROM [tbl_Integration_WellStatusChanges] where RecordDate &gt; '2019-03-31' &#xA; FOR XML PATH ('WellStatusChanges_Record'), ROOT('WellStatusChanges_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::FormattedMsg" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::IsArchive"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert into tbl_PublisherLog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0D34CAE6-9881-46F3-AAA0-C13D43CC3F57}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert into tbl_PublisherLog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="EXEC [dbo].[USP_UpsertPublisherLog] &#xA;   @Action = 1&#xA;  ,@TrackID = ?&#xA;  ,@PublisherName = ?&#xA;  ,@ProcessName = ?&#xA;  ,@MsgType = ?&#xA;  ,@ConnType = ?&#xA;  ,@PubStatus = NULL&#xA;  ,@StartMsg = ?&#xA;  ,@EndMsg = NULL&#xA;  ,@FormattedMessage = NULL&#xA;  ,@RecordCount = NULL&#xA;  ,@Description = NULL&#xA;  ,@IFaceBatchUID = NULL&#xA;  ,@PubID =? OUTPUT&#xA;  ,@PubConnID =? OUTPUT&#xA;  ,@IsArchive  = NULL&#xA;  ,@ArchMsgLength = NULL&#xA;  ,@ArchXMLPath = NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TrackID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::PkgName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PublisherName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::MsgType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::ConnType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::PubStartMsg"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::PubID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="7"
+            SQLTask:DtsVariableName="User::PubConnID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert tbl_Errorlog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E1A217AD-B29E-4BC8-B7D4-3E40E416C9CB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert tbl_Errorlog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="&#xA;EXEC [dbo].[USP_UpsertErrorLog]&#xA;@Action = 1 &#xA;@IFaceBatchUID = ?,&#xA;@PubID = ?,&#xA;@SubID = NULL,&#xA;@ProcessName = ?,&#xA;@ComponentName = NULL,&#xA;@ProcessType = ?,&#xA;@MsgType = ?,&#xA;@Title = 'Error in the DataFlow task',&#xA;@ErrorRecCount = NULL,&#xA;@ErrorType = NULL,&#xA;@ErrorNumber = NULL,&#xA;@ErrorSeverity = NULL,&#xA;@ErrorMsg = ?,&#xA;@IsReprocess = NULL,&#xA;@ErrorStatus = NULL,&#xA;@MachineName = HOST_NAME(),&#xA;@FormattedMsg = NULL,&#xA;@ErrorTime = GETDATE(),&#xA;@CreatedBy = CURRENT_USER,&#xA;@Description = NULL,&#xA;@SubConnID = NULL,&#xA;@PubConnID = ?,&#xA;@ConnType = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::PkgName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::ProcessType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::MsgType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::IFaceBatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PubID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::PubConnID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="7"
+            SQLTask:DtsVariableName="User::ConnType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::ErrorLogMsg"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update tbl_PublisherLog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{382F2FA1-DF35-455F-93AF-889328F83E9D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update tbl_PublisherLog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="&#xA;EXEC [dbo].[USP_UpsertPublisherLog] &#xA;   @Action = 2&#xA;  ,@TrackID = ?&#xA;  ,@PublisherName = NULL&#xA;  ,@ProcessName = NULL&#xA;  ,@MsgType = NULL&#xA;  ,@ConnType = NULL&#xA;  ,@PubStatus = ?&#xA;  ,@StartMsg = NULL&#xA;  ,@EndMsg =  ?&#xA;  ,@FormattedMessage = NULL&#xA;  ,@RecordCount = ?&#xA;  ,@Description = NULL&#xA;  ,@IFaceBatchUID = ?&#xA;  ,@PubID = NULL&#xA;  ,@PubConnID = NULL&#xA;  ,@IsArchive  = NULL&#xA;  ,@ArchMsgLength = NULL&#xA;  ,@ArchXMLPath = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TrackID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::RecCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::IFaceBatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::PubEndMsg"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PubStatus"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::ArchiveXMLPath"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update XSPOC XML tbl_PublisherLog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4D17E57A-B2C7-4709-A206-47DDA6D9230D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update XSPOC XML tbl_PublisherLog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="&#xA;EXEC [dbo].[USP_UpsertPublisherLog] &#xA;   @Action = 2&#xA;  ,@TrackID = ?&#xA;  ,@PublisherName = NULL&#xA;  ,@ProcessName = NULL&#xA;  ,@MsgType = NULL&#xA;  ,@ConnType = NULL&#xA;  ,@PubStatus = NULL&#xA;  ,@StartMsg = NULL&#xA;  ,@EndMsg =  NULL&#xA;  ,@FormattedMessage = ?&#xA;  ,@RecordCount = NULL&#xA;  ,@Description = NULL&#xA;  ,@IFaceBatchUID = NULL&#xA;  ,@PubID = NULL&#xA;  ,@PubConnID = NULL&#xA;  ,@IsArchive  = ?&#xA;  ,@ArchMsgLength = ? OUTPUT&#xA;  ,@ArchXMLPath = NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TrackID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::FormattedMsg"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::IsArchive"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::ArchMsgLength"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\XSPOC DB to IFaceTable"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{140A1F3F-7549-427A-ADF0-B0D3F26B9CDE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="XSPOC DB to IFaceTable"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\XSPOC DB to IFaceTable\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\XSPOC DB to IFaceTable\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Data Conversion.Inputs[Data Conversion Input].Columns[API14]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="API14"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[API14]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\XSPOC DB to IFaceTable\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\XSPOC DB to IFaceTable\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of API14]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="14"
+                      lineageId="Package\XSPOC DB to IFaceTable\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of API14]"
+                      name="Copy of API14"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[API14]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\XSPOC DB to IFaceTable\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\XSPOC DB to IFaceTable\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\XSPOC DB to IFaceTable\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\XSPOC DB to IFaceTable\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\XSPOC DB to IFaceTable\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\XSPOC DB to IFaceTable\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\XSPOC DB to IFaceTable\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CrearedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CrearedDate]"
+                      name="CrearedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransDate]"
+                      name="TransDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubID]"
+                      name="PubID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::PubID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::PubID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransSeq]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransSeq]"
+                      name="TransSeq"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[BatchUID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[BatchUID]"
+                      name="BatchUID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_GUID)("{" + @[User::IFaceBatchID] + "}")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_GUID)("{" + @[User::IFaceBatchID] + "}")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TranStatus]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TranStatus]"
+                      name="TranStatus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubConnID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubConnID]"
+                      name="PubConnID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::PubConnID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::PubConnID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\XSPOC DB to IFaceTable\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\XSPOC DB to IFaceTable\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tbl_IFace_WellStatusChanges]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CIDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NodeID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="NodeID"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NodeID]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[NodeID]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RecordDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RecordDate"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecordDate]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[RecordDate]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ModifiedDate"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ChangeSetField]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ChangeSetField"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ChangeSetField]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[ChangeSetField]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ChangeSetValue]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ChangeSetValue"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ChangeSetValue]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[ChangeSetValue]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Note]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Note"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Note]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[Note]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PubID]"
+                      cachedDataType="i4"
+                      cachedName="PubID"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubID]"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubID]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TransSeq]"
+                      cachedDataType="i4"
+                      cachedName="TransSeq"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransSeq]"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransSeq]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TranStatus]"
+                      cachedDataType="i4"
+                      cachedName="TranStatus"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranStatus]"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TranStatus]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PubConnID]"
+                      cachedDataType="i4"
+                      cachedName="PubConnID"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubConnID]"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubConnID]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BatchUID]"
+                      cachedDataType="guid"
+                      cachedName="BatchUID"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IFaceBatchUID]"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[BatchUID]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TransDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TransDate"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranDate]"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransDate]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CrearedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CrearedDate"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedTime]"
+                      lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CrearedDate]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of API14]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="Copy of API14"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[API14]"
+                      lineageId="Package\XSPOC DB to IFaceTable\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of API14]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransID]"
+                      dataType="i4"
+                      name="TransID" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransSeq]"
+                      dataType="i4"
+                      name="TransSeq" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IFaceBatchUID]"
+                      dataType="guid"
+                      name="IFaceBatchUID" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranStatus]"
+                      dataType="i4"
+                      name="TranStatus" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranDate]"
+                      dataType="dbTimeStamp"
+                      name="TranDate" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranMsg]"
+                      dataType="nText"
+                      name="TranMsg" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubID]"
+                      dataType="i4"
+                      name="PubID" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[API14]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="API14" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NodeID]"
+                      dataType="wstr"
+                      length="50"
+                      name="NodeID" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecordDate]"
+                      dataType="dbTimeStamp"
+                      name="RecordDate" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ChangeSetField]"
+                      dataType="wstr"
+                      length="50"
+                      name="ChangeSetField" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ChangeSetValue]"
+                      dataType="wstr"
+                      length="50"
+                      name="ChangeSetValue" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Note]"
+                      dataType="wstr"
+                      length="255"
+                      name="Note" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedTime]"
+                      dataType="dbTimeStamp"
+                      name="CreatedTime" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
+                      dataType="wstr"
+                      length="100"
+                      name="CreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubConnID]"
+                      dataType="i4"
+                      name="PubConnID" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedTime]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedTime" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedBy]"
+                      dataType="wstr"
+                      length="200"
+                      name="LastModifiedBy" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\XSPOC DB to IFaceTable\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tbl_Integration_WellTests]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  *
+FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::XSPOCInputSQLQuery</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{6F16156A-255B-4876-8549-DE4C768CC15E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[XPOC]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[API14]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[API14]"
+                      length="14"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[API14]"
+                      name="API14"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[NodeID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NodeID]"
+                      length="50"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[NodeID]"
+                      name="NodeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[RecordDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RecordDate]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[RecordDate]"
+                      name="RecordDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[ChangeSetField]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ChangeSetField]"
+                      length="50"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[ChangeSetField]"
+                      name="ChangeSetField"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[ChangeSetValue]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ChangeSetValue]"
+                      length="50"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[ChangeSetValue]"
+                      name="ChangeSetValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[Note]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Note]"
+                      length="255"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[Note]"
+                      name="Note"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[RowEffectiveDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RowEffectiveDate]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[RowEffectiveDate]"
+                      name="RowEffectiveDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[API14]"
+                      dataType="wstr"
+                      length="14"
+                      name="API14" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NodeID]"
+                      dataType="wstr"
+                      length="50"
+                      name="NodeID" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RecordDate]"
+                      dataType="dbTimeStamp"
+                      name="RecordDate" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ChangeSetField]"
+                      dataType="wstr"
+                      length="50"
+                      name="ChangeSetField" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ChangeSetValue]"
+                      dataType="wstr"
+                      length="50"
+                      name="ChangeSetValue" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Note]"
+                      dataType="wstr"
+                      length="255"
+                      name="Note" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RowEffectiveDate]"
+                      dataType="dbTimeStamp"
+                      name="RowEffectiveDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[API14]"
+                      dataType="wstr"
+                      length="14"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[API14]"
+                      name="API14" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NodeID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NodeID]"
+                      name="NodeID" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RecordDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RecordDate]"
+                      name="RecordDate" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ChangeSetField]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ChangeSetField]"
+                      name="ChangeSetField" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ChangeSetValue]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ChangeSetValue]"
+                      name="ChangeSetValue" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Note]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Note]"
+                      name="Note" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RowEffectiveDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RowEffectiveDate]"
+                      name="RowEffectiveDate" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\XSPOC DB to IFaceTable\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RecCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\XSPOC DB to IFaceTable\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\XSPOC DB to IFaceTable\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\XSPOC DB to IFaceTable\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\XSPOC DB to IFaceTable.Paths[Data Conversion Output]"
+              endId="Package\XSPOC DB to IFaceTable\Row Count.Inputs[Row Count Input 1]"
+              name="Data Conversion Output"
+              startId="Package\XSPOC DB to IFaceTable\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\XSPOC DB to IFaceTable.Paths[Derived Column Output]"
+              endId="Package\XSPOC DB to IFaceTable\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\XSPOC DB to IFaceTable.Paths[OLE DB Source Output]"
+              endId="Package\XSPOC DB to IFaceTable\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\XSPOC DB to IFaceTable.Paths[Row Count Output 1]"
+              endId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\XSPOC DB to IFaceTable\Row Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6D55FA3D-09D9-4494-8D65-0B140B669067}"
+      DTS:From="Package\Update tbl_PublisherLog"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Delete XSPOC Data" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{66357EA3-F030-4D2D-99BC-2AEFEA297E0C}"
+      DTS:From="Package\Generate GUID's"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Insert into tbl_PublisherLog" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{EDA53285-3130-48AD-8512-FCE4A81F211A}"
+      DTS:Expression="@[User::ArchMsgLength] &gt; 2000000"
+      DTS:From="Package\Update XSPOC XML tbl_PublisherLog"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\ArchiveTransformedXML"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{A3692969-43D8-47CD-80F9-3E9321D4730E}"
+      DTS:From="Package\Insert into tbl_PublisherLog"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Getting XSPOC xml" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{08EDF851-CA43-4762-8CC1-5BEB0CD7C8B2}"
+      DTS:From="Package\XSPOC DB to IFaceTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Update tbl_PublisherLog" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{719DC776-2A7C-488F-AC8A-5AC11502E6E9}"
+      DTS:From="Package\ArchiveTransformedXML"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\XSPOC DB to IFaceTable"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{D614FB12-D38B-43FD-855B-F4D4FDE72E55}"
+      DTS:From="Package\XSPOC DB to IFaceTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Insert tbl_Errorlog"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{131875AB-CC26-4771-9E66-7C9EB78216ED}"
+      DTS:From="Package\Getting XSPOC xml"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Update XSPOC XML tbl_PublisherLog" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="194.666666666667,41.3333333333334"
+          Id="Package\ArchiveTransformedXML"
+          TopLeft="242.285718411816,403.764711545" />
+        <NodeLayout
+          Size="170.666666666667,41.3333333333334"
+          Id="Package\Delete XSPOC Data"
+          TopLeft="253.714290035014,610.711492092964" />
+        <NodeLayout
+          Size="158.666666666667,41.3333333333334"
+          Id="Package\Generate GUID's"
+          TopLeft="248.272113071586,116.924744870452" />
+        <NodeLayout
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Getting XSPOC xml"
+          TopLeft="567.058956195462,250.446967996627" />
+        <NodeLayout
+          Size="209.333333333334,41.3333333333334"
+          Id="Package\Insert into tbl_PublisherLog"
+          TopLeft="221.986398338229,187.549582462245" />
+        <NodeLayout
+          Size="166.666666666667,41.3333333333334"
+          Id="Package\Insert tbl_Errorlog"
+          TopLeft="534.285723384546,464.176477098135" />
+        <NodeLayout
+          Size="194.666666666667,41.3333333333334"
+          Id="Package\Update tbl_PublisherLog"
+          TopLeft="248.970525781893,541.450613627934" />
+        <NodeLayout
+          Size="253.333333333334,41.3333333333334"
+          Id="Package\Update XSPOC XML tbl_PublisherLog"
+          TopLeft="205.659867447945,331.050610127389" />
+        <NodeLayout
+          Size="196,41.3333333333334"
+          Id="Package\XSPOC DB to IFaceTable"
+          TopLeft="240.589573258215,470.689828321816" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="342.542407908454,583.050613627934">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.6608784650294"
+              Start="0,0"
+              End="0,20.1608784650294">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1608784650294" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="327.129255704907,158.524744870452">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.024837591793"
+              Start="0,0"
+              End="0,21.524837591793">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.524837591793" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="335.77279292988,372.650610127389">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.1141014176115"
+              Start="0,0"
+              End="0,23.6141014176115">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6141014176115" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,6.00236320880575,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="431.319731671562,208.216249128912">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135.7392245239,63.5640522010486"
+              Start="0,0"
+              End="128.2392245239,63.5640522010486">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.8696122619498,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.8696122619498,0"
+                    Point2="67.8696122619498,0"
+                    Point3="67.8696122619498,4" />
+                  <mssgle:LineSegment
+                    End="67.8696122619498,59.5640522010486" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.8696122619498,59.5640522010486"
+                    Point2="67.8696122619498,63.5640522010486"
+                    Point3="71.8696122619498,63.5640522010486" />
+                  <mssgle:LineSegment
+                    End="128.2392245239,63.5640522010486" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="342.380049520054,512.289828321816">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.160785306119"
+              Start="0,0"
+              End="0,21.660785306119">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.660785306119" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="339.037645835015,445.364711545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.3251167768153"
+              Start="0,0"
+              End="0,17.8251167768153">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.8251167768153" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,3.10787088840765,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="436.589573258215,488.233152709976">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="97.6961501263308,0"
+              Start="0,0"
+              End="90.1961501263308,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="90.1961501263308,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="29.8567274069154,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="651.725622862129,293.113634663294">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-319.399088747517,37.9369754640954"
+              Start="0,0"
+              End="-319.399088747517,30.4369754640954">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9684877320477" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9684877320477"
+                    Point2="0,18.9684877320477"
+                    Point3="-4,18.9684877320477" />
+                  <mssgle:LineSegment
+                    End="-315.399088747517,18.9684877320477" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-315.399088747517,18.9684877320477"
+                    Point2="-319.399088747517,18.9684877320477"
+                    Point3="-319.399088747517,22.9684877320477" />
+                  <mssgle:LineSegment
+                    End="-319.399088747517,30.4369754640954" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Database to IFaceTable "
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="156,40"
+          Id="06455250-aa65-4993-8bf9-12d8c43de8c3"
+          TopLeft="249.872112730988,70.0907572855175" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\XSPOC DB to IFaceTable">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,41.3333333333334"
+          Id="Package\XSPOC DB to IFaceTable\Derived Column"
+          TopLeft="499.612706696257,185.939216193312" />
+        <NodeLayout
+          Size="130.666666666667,41.3333333333334"
+          Id="Package\XSPOC DB to IFaceTable\Row Count"
+          TopLeft="512.412715074968,256.894122091379" />
+        <NodeLayout
+          Size="172,41.3333333333334"
+          Id="Package\XSPOC DB to IFaceTable\OLE DB Destination"
+          TopLeft="494.28572270335,341.976475384326" />
+        <NodeLayout
+          Size="150.666666666667,41.3333333333334"
+          Id="Package\XSPOC DB to IFaceTable\OLE DB Source"
+          TopLeft="500.412706696257,96.7058828677273" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\XSPOC DB to IFaceTable\Data Conversion"
+          TopLeft="708.749989438802,181.999996745586" />
+        <EdgeLayout
+          Id="Package\XSPOC DB to IFaceTable.Paths[Data Conversion Output]"
+          TopLeft="787.416656105469,224.666663412253">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-209.337274363834,32.2274586791259"
+              Start="0,0"
+              End="-209.337274363834,24.7274586791259">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.113729339563" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.113729339563"
+                    Point2="0,16.113729339563"
+                    Point3="-4,16.113729339563" />
+                  <mssgle:LineSegment
+                    End="-205.337274363834,16.113729339563" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-205.337274363834,16.113729339563"
+                    Point2="-209.337274363834,16.113729339563"
+                    Point3="-209.337274363834,20.113729339563" />
+                  <mssgle:LineSegment
+                    End="-209.337274363834,24.7274586791259" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\XSPOC DB to IFaceTable.Paths[Row Count Output 1]"
+          TopLeft="579.149218889159,298.494122091379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.4823532929471"
+              Start="0,0"
+              End="0,35.9823532929471">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.9823532929471" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\XSPOC DB to IFaceTable.Paths[OLE DB Source Output]"
+          TopLeft="576.34604002959,138.039216201061">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.8999999922514"
+              Start="0,0"
+              End="0,40.3999999922514">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3999999922514" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\XSPOC DB to IFaceTable.Paths[Derived Column Output]"
+          TopLeft="654.279373362924,204.969606469449">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.4706160758783,0"
+              Start="0,0"
+              End="46.9706160758783,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.9706160758783,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\XSPOC DB to IFaceTable\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\XSPOC DB to IFaceTable\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
