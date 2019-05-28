@@ -1,0 +1,84 @@
+5/21/2019 4:09:30 PM	This log contains information about the import schema operation into project 'CIDS' on computer 'LLG5J25JR2' by user 'vudemr'.
+5/21/2019 4:09:30 PM	Import of database schema has started.
+5/21/2019 4:09:38 PM	Gathering database credentials
+5/21/2019 4:09:38 PM	Gathering database options
+5/21/2019 4:09:38 PM	Gathering users
+5/21/2019 4:09:38 PM	Gathering roles
+5/21/2019 4:09:38 PM	Gathering application roles
+5/21/2019 4:09:38 PM	Gathering role memberships
+5/21/2019 4:09:38 PM	Gathering filegroups
+5/21/2019 4:09:38 PM	Gathering full-text catalogs
+5/21/2019 4:09:38 PM	Gathering assemblies
+5/21/2019 4:09:38 PM	Gathering certificates
+5/21/2019 4:09:38 PM	Gathering asymmetric keys
+5/21/2019 4:09:38 PM	Gathering symmetric keys
+5/21/2019 4:09:38 PM	Gathering encrypted symmetric keys
+5/21/2019 4:09:38 PM	Gathering schemas
+5/21/2019 4:09:38 PM	Gathering XML schema collections
+5/21/2019 4:09:38 PM	Gathering user-defined data types
+5/21/2019 4:09:38 PM	Gathering user-defined types
+5/21/2019 4:09:38 PM	Gathering table types
+5/21/2019 4:09:38 PM	Gathering unique keys for table types
+5/21/2019 4:09:38 PM	Gathering primary keys for table types
+5/21/2019 4:09:38 PM	Gathering indexes for table types
+5/21/2019 4:09:38 PM	Gathering check constraints for table types
+5/21/2019 4:09:38 PM	Gathering default constraints for table types
+5/21/2019 4:09:38 PM	Gathering partition functions
+5/21/2019 4:09:38 PM	Gathering partition schemes
+5/21/2019 4:09:38 PM	Gathering functions
+5/21/2019 4:09:38 PM	Gathering encrypted functions
+5/21/2019 4:09:38 PM	Gathering aggregates
+5/21/2019 4:09:38 PM	Gathering procedures
+5/21/2019 4:09:38 PM	Gathering encrypted procedures
+5/21/2019 4:09:38 PM	Gathering tables
+5/21/2019 4:09:38 PM	Gathering primary keys
+5/21/2019 4:09:38 PM	Gathering unique constraints
+5/21/2019 4:09:38 PM	Gathering foreign keys
+5/21/2019 4:09:38 PM	Gathering default constraints
+5/21/2019 4:09:38 PM	Gathering check constraints
+5/21/2019 4:09:38 PM	Gathering views
+5/21/2019 4:09:38 PM	Gathering encrypted views
+5/21/2019 4:09:38 PM	Gathering indexes
+5/21/2019 4:09:38 PM	Gathering statistics
+5/21/2019 4:09:38 PM	Gathering full-text index stoplists
+5/21/2019 4:09:38 PM	Gathering search property lists
+5/21/2019 4:09:38 PM	Gathering search properties
+5/21/2019 4:09:38 PM	Gathering full-text indexes
+5/21/2019 4:09:38 PM	Gathering column store indexes
+5/21/2019 4:09:38 PM	Gathering spatial indexes
+5/21/2019 4:09:38 PM	Gathering XML indexes
+5/21/2019 4:09:38 PM	Gathering Selective XML indexes
+5/21/2019 4:09:38 PM	Gathering encrypted triggers
+5/21/2019 4:09:38 PM	Gathering triggers
+5/21/2019 4:09:38 PM	Gathering encrypted and clr ddl triggers
+5/21/2019 4:09:38 PM	Gathering ddl triggers
+5/21/2019 4:09:38 PM	Gathering synonyms
+5/21/2019 4:09:38 PM	Gathering defaults
+5/21/2019 4:09:38 PM	Gathering data constraint uddt bindings
+5/21/2019 4:09:38 PM	Gathering rules
+5/21/2019 4:09:38 PM	Gathering data constraint uddt bindings
+5/21/2019 4:09:38 PM	Gathering message types
+5/21/2019 4:09:38 PM	Gathering queues
+5/21/2019 4:09:38 PM	Gathering contracts
+5/21/2019 4:09:38 PM	Gathering services
+5/21/2019 4:09:38 PM	Gathering event notifications
+5/21/2019 4:09:38 PM	Gathering remote service bindings
+5/21/2019 4:09:38 PM	Gathering broker priorities
+5/21/2019 4:09:38 PM	Gathering signatures
+5/21/2019 4:09:38 PM	Gathering data compression options
+5/21/2019 4:09:38 PM	Gathering sequence types
+5/21/2019 4:09:38 PM	Gathering security policies
+5/21/2019 4:09:38 PM	Gather column encryption keys
+5/21/2019 4:09:38 PM	Gathering column master keys
+5/21/2019 4:09:38 PM	Gathering external data sources
+5/21/2019 4:09:38 PM	Gathering external file formats
+5/21/2019 4:09:38 PM	Gathering external tables
+5/21/2019 4:09:38 PM	Gathering extended properties
+5/21/2019 4:09:39 PM	Gathering credentials
+5/21/2019 4:09:39 PM	Gathering logins
+5/21/2019 4:09:39 PM	Gathering server audits
+5/21/2019 4:09:39 PM	Scanning project for duplicate elements
+5/21/2019 4:09:39 PM	Finished duplicate element processing
+5/21/2019 4:09:40 PM	Finished importing database.
+5/21/2019 4:09:40 PM	A summary of the import was saved to the following location: c:\users\vudemr\documents\visual studio 2015\Projects\CIDS\CIDS\Import Schema Logs\CIDS_20190521110930.log
+5/21/2019 4:09:40 PM	Click Finish to continue...

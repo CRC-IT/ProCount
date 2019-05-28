@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[tbl_TransactionLog] (
+    [TranLogID]          INT              IDENTITY (1, 1) NOT NULL,
+    [TrackID]            UNIQUEIDENTIFIER NULL,
+    [MsgType]            NVARCHAR (50)    NULL,
+    [PubID]              INT              NULL,
+    [SubID]              INT              NULL,
+    [LogStatus]          NVARCHAR (MAX)   NULL,
+    [StartMsg]           NVARCHAR (MAX)   NULL,
+    [EndMsg]             NVARCHAR (MAX)   NULL,
+    [RecordCount]        INT              NULL,
+    [StageName]          NVARCHAR (500)   NULL,
+    [ProcessName]        NVARCHAR (500)   NULL,
+    [ProcessType]        NVARCHAR (500)   NULL,
+    [ErrorLogID]         INT              NULL,
+    [EndTime]            DATETIME         NULL,
+    [CreatedBy]          NVARCHAR (100)   NULL,
+    [IsResubmitted]      BIT              NULL,
+    [Description]        NVARCHAR (MAX)   NULL,
+    [SubConnID]          INT              NULL,
+    [PubConnID]          INT              NULL,
+    [StartTime]          DATETIME         NULL,
+    [IFaceBatchUIDXml]   XML              NULL,
+    [ArchiveXMLPath]     NVARCHAR (MAX)   NULL,
+    [TransformedMessage] XML              NULL,
+    CONSTRAINT [PK_tbl_TransactionLog] PRIMARY KEY CLUSTERED ([TranLogID] ASC)
+);
+

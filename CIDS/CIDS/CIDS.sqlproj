@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>CIDS</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{f5d8b299-52fa-4848-a39d-8e6070e030b5}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>CIDS</RootNamespace>
+    <AssemblyName>CIDS</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="CALNET_edwardsm\" />
+    <Folder Include="CALNET_edwardsm\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\tbl_IFace_GasAnalysisData.sql" />
+    <Build Include="dbo\Tables\tbl_Ref_Components.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_CompletionDaily.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_WellTest.sql" />
+    <Build Include="dbo\Tables\tbl_PubErrorQueue.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_DownTime.sql" />
+    <Build Include="dbo\Tables\tbl_XSPOC_WellTest.sql" />
+    <Build Include="CALNET_edwardsm\Tables\Load Iface Runtime ticket.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_GasLoaderTrans_tmp.sql" />
+    <Build Include="dbo\Tables\tbl_Publishers.sql" />
+    <Build Include="dbo\Tables\tbl_PublisherController.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_WellStatusChanges.sql" />
+    <Build Include="dbo\Tables\tbl_PublisherLog.sql" />
+    <Build Include="dbo\Tables\tbl_SubscriberController.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_FluidShots.sql" />
+    <Build Include="dbo\Tables\tbl_SubscriberLog.sql" />
+    <Build Include="dbo\Tables\tbl_Subscribers.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_InjectionData.sql" />
+    <Build Include="dbo\Tables\tbl_MsgQueue.sql" />
+    <Build Include="dbo\Tables\tbl_TransactionLog.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_MeterData.sql" />
+    <Build Include="dbo\Tables\tbl_XSPOC_FluidLevel.sql" />
+    <Build Include="dbo\Tables\tbl_ErrorLog.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_GasLoaderTrans_bk.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_WellData.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_FluidLevel.sql" />
+    <Build Include="dbo\Tables\tbl_ErrorQueue.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_GasLoaderTrans.sql" />
+    <Build Include="dbo\Tables\tbl_MsgQueue_stg.sql" />
+    <Build Include="dbo\Tables\CompletionWellTestTb.sql" />
+    <Build Include="dbo\Tables\tbl_XSPOC_Operators.sql" />
+    <Build Include="dbo\Tables\tbl_Temp_Downtimecodes_Final.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_Operators.sql" />
+    <Build Include="dbo\Tables\tbl_Temp_Downtimecodes_ProCount.sql" />
+    <Build Include="dbo\Tables\tbl_TranStatusDetails.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_ODS_LOAD_DOWNTIME_DETAILS_P.sql" />
+    <Build Include="dbo\Tables\tbl_IFace_TankRunTicket.sql" />
+    <Build Include="Security\cids_user.sql" />
+    <Build Include="Security\CALNET_ASup-ProCountUsers.sql" />
+    <Build Include="Security\CALNET_ASup-ProCountUsers_1.sql" />
+    <Build Include="Security\CALNET_battulas.sql" />
+    <Build Include="Security\CALNET_ASup-ProCountAdmin.sql" />
+    <Build Include="Security\CALNET_ASup-ProCountAdmin_1.sql" />
+    <Build Include="Security\CALNET_edwardsm.sql" />
+    <Build Include="Security\dpa_user.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\USP_DT_MapIFaceDataToProCount.sql" />
+    <Build Include="dbo\Stored Procedures\USP_CD_MapIFaceDataToProCount.sql" />
+    <Build Include="dbo\Stored Procedures\USP_CD_BusinessRules.sql" />
+    <Build Include="dbo\Stored Procedures\USP_MoveIFaceDataToMsgQ.sql" />
+    <Build Include="dbo\Stored Procedures\USP_WT_MapIFaceDataToProCount.sql" />
+    <Build Include="dbo\Stored Procedures\USP_MapIFaceDataToProCount_BatachIDs.sql" />
+    <Build Include="dbo\Stored Procedures\USP_DT_BusinessRules.sql" />
+    <Build Include="dbo\Stored Procedures\USP_WT_BusinessRules.sql" />
+    <Build Include="dbo\Stored Procedures\USP_UpsertPublisherLog.sql" />
+    <Build Include="dbo\Stored Procedures\USP_UpsertSubscriberLog.sql" />
+    <Build Include="dbo\Stored Procedures\USP_GLT_MapIFaceDataToOneCaps_GasLoader.sql" />
+    <Build Include="dbo\Stored Procedures\USP_UpsertTransactionLog.sql" />
+    <Build Include="dbo\Stored Procedures\USP_MD_MapIFaceToProCount.sql" />
+    <Build Include="dbo\Stored Procedures\USP_MD_BusinessRules.sql" />
+    <Build Include="dbo\Stored Procedures\USP_FS_MapIFaceDataToProCount.sql" />
+    <Build Include="dbo\Stored Procedures\USP_FS_BusinessRules.sql" />
+    <Build Include="dbo\Stored Procedures\USP_WSC_MapIFaceDataToProCount.sql" />
+    <Build Include="dbo\Stored Procedures\USP_ID_BusinessRules.sql" />
+    <Build Include="dbo\Stored Procedures\USP_ID_MapIFaceDataToProCount.sql" />
+    <Build Include="dbo\Stored Procedures\USP_UpsertErrorQueue.sql" />
+    <Build Include="dbo\Stored Procedures\USP_DT_MapIFaceDataTo_ODSLOAD.sql" />
+    <Build Include="dbo\Stored Procedures\USP_UpsertErrorLog.sql" />
+    <Build Include="dbo\Stored Procedures\USP_RT_MapIFaceDataToOneCaps_RunTickets.sql" />
+    <Build Include="dbo\Stored Procedures\USP_GAD_MapIFaceDataToProCount.sql" />
+    <Build Include="Security\CALNET_edwardsm_1.sql" />
+  </ItemGroup>
+</Project>
