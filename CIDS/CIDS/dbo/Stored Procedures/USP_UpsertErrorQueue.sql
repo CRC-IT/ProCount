@@ -87,7 +87,7 @@ BEGIN TRY
 END TRY  
 BEGIN CATCH 
 
-	INSERT INTO [dbo].[tbl_ErrorLog] (PubID, SubID, PubConnID, SubConnID, IFaceBatchUID , ProcessName, ProcessType, MsgType, Title, ErrorMsg, ErrorNumber, ErrorSeverity, ErrorTime, MachineName, CreatedBy) 
+	INSERT INTO [CIDS].[dbo].[tbl_ErrorLog] (PubID, SubID, PubConnID, SubConnID, IFaceBatchUID , ProcessName, ProcessType, MsgType, Title, ErrorMsg, ErrorNumber, ErrorSeverity, ErrorTime, MachineName, CreatedBy) 
 	VALUES ( @PubID, @SubID, @PubConnID, @SubConnID, @IFaceBatchUID , 'USP_UpsertErrorQueue','StoredProcedure',@SubIFace,'Error while insert / updateing records into tbl_ErrorQueue table',ERROR_MESSAGE(), ERROR_NUMBER(),ERROR_SEVERITY(), GETDATE(),HOST_NAME(), CURRENT_USER)
 
 END CATCH

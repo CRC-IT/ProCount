@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[USP_ID_BusinessRules] 
+﻿
+CREATE PROCEDURE [dbo].[USP_ID_BusinessRules] 
 	@Destination nvarchar(500),
 	@ErrorLogId INT OUTPUT
 AS
@@ -15,12 +16,12 @@ BEGIN TRY
 	BEGIN
 
 		-- START - BUSINESS RULE 2 - Comments must not be longer than 20 characters
-
+		
 			SELECT @COUNT = COUNT(*)
 			FROM [dbo].[tbl_MsgQueue] TMQ	
 			INNER JOIN [dbo].[tbl_IFace_InjectionData] TIWT	ON TMQ.TransID = TIWT.TransID AND TMQ.TransSeq = TIWT.TransSeq AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
 			LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID AND TMQ.SubConnID = TSC.SubConnID
-			WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  > 50000
+			WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND ((convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  > 50000 OR convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  < 0) OR	(TIWT.InjectionPressure >= 4000 OR TIWT.InjectionPressure < 0))
 
 
 			IF @COUNT > 1
@@ -32,11 +33,10 @@ BEGIN TRY
 				'Casing pressure must not be greater than 50000' AS [ErrorMsg], 0 AS [IsResubmit], 1 AS [IsBussRuleFail], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
 				FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_InjectionData] TIWT	ON TMQ.TransID = TIWT.TransID AND TMQ.TransSeq = TIWT.TransSeq AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
 				LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID AND TMQ.SubConnID = TSC.SubConnID
-				WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  > 50000
+				WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND ((convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  > 50000 OR convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  < 0) OR	(TIWT.InjectionPressure >= 4000 OR TIWT.InjectionPressure < 0))
 
 				INSERT INTO @TBL_ERRORS
-				SELECT 'Casing pressure must not be greater than 50000','Casing pressure is greater than 50000',@COUNT
-
+				SELECT 'Casing pressure must not be greater than 50000 or less than 0. Injection pressure must not be greater than 4000 or less than 0','Casing pressure is greater than 50000 or less than 0. Injection pressure is greater than 4000 or less than 0',@COUNT
 
 
 
@@ -90,7 +90,7 @@ BEGIN TRY
 			FOR XML PATH ('ErrorMessage'), ROOT('BR_ID_ERRORS')
 		)
 
-		INSERT INTO [CIDS].[dbo].[tbl_ErrorLog] (ProcessName, ProcessType, MsgType, Title, ErrorMsg ,FormattedMsg, ErrorTime, [MachineName], CreatedBy) 
+		INSERT INTO [CIDS].[dbo].[tbl_ErrorLog] (ProcessName, ProcessType, MsgType, Title, ErrorMsg ,FormattedMsg, ErrorTime, MachineName, CreatedBy) 
 		VALUES ( 'USP_ID_BusinessRules','StoredProcedure','InjectionData', @Destination + ' BusinessRule Validations','Error while executing the BusinessRules on InjectionData Data', @XmlData, GETDATE(),HOST_NAME(), CURRENT_USER)
 
 		SELECT @ErrorLogId = SCOPE_IDENTITY()

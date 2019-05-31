@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[USP_GLT_MapIFaceDataToOneCaps_GasLoader]
+﻿
+CREATE PROCEDURE [dbo].[USP_GLT_MapIFaceDataToOneCaps_GasLoader]
 @IFaceBatchUIDXml nvarchar(MAX) OUTPUT, @FormattedMsg nvarchar(MAX) OUTPUT, @PubID int OUTPUT, @SubID int OUTPUT, @ArchformattedMsg int = 0, @TotalRecCount int OUTPUT
 WITH EXEC AS CALLER
 AS
@@ -48,7 +49,7 @@ BEGIN TRY
                   TICD.WellPlusCompletionName,
                   TICD.processing_party,
                   TICD.rc_user_key,
-                  TICD.Arg_Det_Sequence,
+                  TICD.Agr_Det_Sequence,
                   TICD.Agreement_ID,
                   TICD.decktype,
                   TICD.AllocationDateStamp,
@@ -147,7 +148,7 @@ BEGIN TRY
                     TICD.WellPlusCompletionName,
                     TICD.processing_party,
                     TICD.rc_user_key,
-                    TICD.Arg_Det_Sequence,
+                    TICD.Agr_Det_Sequence,
                     TICD.Agreement_ID,
                     TICD.decktype,
                     TICD.AllocationDateStamp,

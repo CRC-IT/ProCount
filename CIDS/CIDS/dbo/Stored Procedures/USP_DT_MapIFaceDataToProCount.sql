@@ -77,7 +77,7 @@ BEGIN TRY
 	ON TMQ.TransID = TIWT.TransID 
 	AND TMQ.TransSeq = TIWT.TransSeq	
 	AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
-	WHERE TIWT.IFaceBatchUID = @IFaceBatchID AND TIWT.DowntimeDate >= '5/1/2019'
+	WHERE TIWT.IFaceBatchUID = @IFaceBatchID AND TIWT.DowntimeDate >getdate()-3
 
 
 	SET @TotalRecCount  = @@ROWCOUNT

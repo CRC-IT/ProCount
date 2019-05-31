@@ -86,7 +86,7 @@ BEGIN TRY
 	ON TMQ.TransID = TIWT.TransID 
 	AND TMQ.TransSeq = TIWT.TransSeq	
 	AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
-	WHERE TIWT.IFaceBatchUID = @IFaceBatchID and TIWT.RecordDate > getdate()-3  and (TIWT.MeterFlowHours) <=24 
+	WHERE TIWT.IFaceBatchUID = @IFaceBatchID and TIWT.RecordDate >getdate()-3  and (TIWT.MeterFlowHours) <=24 
 	
 
 

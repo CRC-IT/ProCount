@@ -1,7 +1,0 @@
-c:\users\vudemr\documents\visual studio 2015\Projects\CIDS\CIDS\bin\Debug\CIDS.dacpac
-c:\users\vudemr\documents\visual studio 2015\Projects\CIDS\CIDS\obj\Debug\Model.xml
-c:\users\vudemr\documents\visual studio 2015\Projects\CIDS\CIDS\obj\Debug\refactor.xml
-c:\users\vudemr\documents\visual studio 2015\Projects\CIDS\CIDS\obj\Debug\postdeploy.sql
-c:\users\vudemr\documents\visual studio 2015\Projects\CIDS\CIDS\obj\Debug\predeploy.sql
-c:\users\vudemr\documents\visual studio 2015\Projects\CIDS\CIDS\obj\Debug\CIDS.dll
-c:\users\vudemr\documents\visual studio 2015\Projects\CIDS\CIDS\obj\Debug\CIDS.pdb
