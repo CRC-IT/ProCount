@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="XPOC"
   DTS:DTSID="{6F16156A-255B-4876-8549-DE4C768CC15E}"
@@ -12,7 +12,7 @@
       DTS:ConnectionString="Data Source=CKCWSQLB;User ID=IntegrationServices;Initial Catalog=XSPOC_Integration;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAACAAAAAAADZgAAwAAAABAAAABcvL2PR5XTUW0PLGcl5EJuAAAAAASAAACgAAAAEAAAAK0FLwi9Lqvlsv9CLPYMHVyAAAAAf9wOAO7YoC2Ndnf6LerVa1597FEdQ9msTYdQaBvU3A9Td37122+5kEgIlJ3Wq1eV7Cj7jhQkeL7luKvx1/j4RVIOKqhK04q+UU/b6XrXQ/xiYtuicjcQ16CGWmJtyVNT+UWDzjOrVMbpNtLjVUGGLAoZjG++9P8R7LAu+o1TE8sUAAAAwpPxHj+GW+5X23EhnE6/0mOeIWA=</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAACAAAAAAADZgAAwAAAABAAAABE7cJtitANl07mZT32ZUs1AAAAAASAAACgAAAAEAAAANQKTK51SIqggzBGPZHHMyiAAAAArp97GkJ2IcJtZOVf48OBK559j3x+C3Xey8BGBLyEjiEyr+lnR1pKkfx50m3of+aAkEVA0BimlF1GAJrRlcPxX2qA7CNC2bhe0yQwlEd5G5j6YZZ5Xh7O14sEWn3dVep82ZV8Rd88Fg0qUgw6cSnnU5+mr8JV6mY3Ck/1fNwXRtgUAAAAdVEnZuJx4LqczbtBOCafhQ5d6J4=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
