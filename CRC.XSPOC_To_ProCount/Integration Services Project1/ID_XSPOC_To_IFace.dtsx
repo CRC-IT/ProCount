@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ID_XSPOC_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="301"
-  DTS:VersionGUID="{5A554F32-32C6-4247-86F6-DBC3A1D4AFF1}">
+  DTS:VersionBuild="302"
+  DTS:VersionGUID="{F33E4765-26DB-4803-90DC-A95AFA63D596}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -129,7 +129,7 @@
         DTS:DataType="8">SELECT convert(nvarchar(MAX),
 (
   
- SELECT  * FROM [tbl_Integration_InjectionData] where RecordDate &gt; '2019-02-28 00:00:00.000' 
+ SELECT  * FROM [tbl_Integration_InjectionData] where RecordDate &gt; '2019-05-01 00:00:00.000' 
  FOR XML PATH ('InjectionData_Record'), ROOT('InjectionData_From_XSPOC')
 
 )) InputMsg</DTS:VariableValue>
@@ -305,7 +305,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQuery">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT  * FROM [tbl_Integration_InjectionData] where RecordDate &gt; '2019-02-28 00:00:00.000'</DTS:VariableValue>
+        DTS:DataType="8">SELECT  * FROM [tbl_Integration_InjectionData] where RecordDate &gt; '2019-05-01 00:00:00.000'</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -328,14 +328,35 @@
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -602,35 +623,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -839,7 +839,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete XSPOC Data"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -906,7 +906,7 @@ END
         <SQLTask:SqlTaskData
           SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT  * FROM [tbl_Integration_InjectionData] where RecordDate &gt; '2019-02-28 00:00:00.000' &#xA; FOR XML PATH ('InjectionData_Record'), ROOT('InjectionData_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
+          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT  * FROM [tbl_Integration_InjectionData] where RecordDate &gt; '2019-05-01 00:00:00.000' &#xA; FOR XML PATH ('InjectionData_Record'), ROOT('InjectionData_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -996,7 +996,7 @@ END
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1063,7 +1063,7 @@ END
       DTS:LocaleID="-1"
       DTS:ObjectName="Update tbl_PublisherLog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2242,39 +2242,39 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="194.666666666667,41.3333333333334"
+          Size="195,41"
           Id="Package\ArchiveTransformedXML"
           TopLeft="242.285718411816,403.764711545" />
         <NodeLayout
-          Size="170.666666666667,41.3333333333334"
+          Size="171,41"
           Id="Package\Delete XSPOC Data"
           TopLeft="253.714290035014,610.711492092964" />
         <NodeLayout
-          Size="158.666666666667,41.3333333333334"
+          Size="159,41"
           Id="Package\Generate GUID's"
           TopLeft="248.272113071586,116.924744870452" />
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="169,41"
           Id="Package\Getting XSPOC xml"
           TopLeft="242.058961038339,264.746967740923" />
         <NodeLayout
-          Size="209.333333333334,41.3333333333334"
+          Size="209,41"
           Id="Package\Insert into tbl_PublisherLog"
           TopLeft="221.986398338229,187.549582462245" />
         <NodeLayout
-          Size="166.666666666667,41.3333333333334"
+          Size="167,41"
           Id="Package\Insert tbl_Errorlog"
           TopLeft="534.285723384546,464.176477098135" />
         <NodeLayout
-          Size="194.666666666667,41.3333333333334"
+          Size="195,41"
           Id="Package\Update tbl_PublisherLog"
           TopLeft="248.970525781893,541.450613627934" />
         <NodeLayout
-          Size="253.333333333334,41.3333333333334"
+          Size="253,41"
           Id="Package\Update XSPOC XML tbl_PublisherLog"
           TopLeft="205.659867447945,331.050610127389" />
         <NodeLayout
-          Size="196,41.3333333333334"
+          Size="196,41"
           Id="Package\XSPOC DB to IFaceTable"
           TopLeft="240.589573258215,470.689828321816" />
         <EdgeLayout
@@ -2473,21 +2473,21 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
     design-time-name="Package\XSPOC DB to IFaceTable">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.666666666667,41.3333333333334"
+          Size="151,41"
           Id="Package\XSPOC DB to IFaceTable\OLE DB Source"
           TopLeft="500.412706696257,96.7058828677273" />
         <NodeLayout
-          Size="154.666666666667,41.3333333333334"
+          Size="155,41"
           Id="Package\XSPOC DB to IFaceTable\Derived Column"
           TopLeft="499.612706696257,185.505882867727" />
         <NodeLayout
-          Size="172,41.3333333333334"
+          Size="172,41"
           Id="Package\XSPOC DB to IFaceTable\OLE DB Destination"
           TopLeft="485.869055906653,339.529416526478" />
         <NodeLayout
-          Size="130.666666666667,41.3333333333334"
+          Size="131,41"
           Id="Package\XSPOC DB to IFaceTable\Row Count"
           TopLeft="512.412715074968,256.894122091379" />
         <EdgeLayout
@@ -2509,9 +2509,7 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2533,9 +2531,7 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2557,9 +2553,7 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
