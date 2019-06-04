@@ -1,4 +1,5 @@
 ﻿
+
 CREATE PROCEDURE [dbo].[USP_ID_BusinessRules] 
 	@Destination nvarchar(500),
 	@ErrorLogId INT OUTPUT
@@ -15,14 +16,14 @@ BEGIN TRY
 	IF ( UPPER(@Destination) = 'PROCOUNT' )
 	BEGIN
 
-		-- START - BUSINESS RULE 2 - Comments must not be longer than 20 characters
+		-- START - BUSINESS RULE 1 - Casing pressure must not be greater than 5000 or less than -10
 		
 			SELECT @COUNT = COUNT(*)
 			FROM [dbo].[tbl_MsgQueue] TMQ	
 			INNER JOIN [dbo].[tbl_IFace_InjectionData] TIWT	ON TMQ.TransID = TIWT.TransID AND TMQ.TransSeq = TIWT.TransSeq AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
 			LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID AND TMQ.SubConnID = TSC.SubConnID
-			WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND ((convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  > 50000 OR convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  < 0) OR	(TIWT.InjectionPressure >= 4000 OR TIWT.InjectionPressure < 0))
-
+			WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND ((CONVERT(NUMERIC(38,0),cast(TIWT.CasingPressure AS FLOAT))  > 5000 OR CONVERT(NUMERIC(38,0),cast(TIWT.CasingPressure AS FLOAT))  < -10) OR	(TIWT.InjectionPressure >= 10000 OR TIWT.InjectionPressure < -10))
+			
 
 			IF @COUNT > 1
 			BEGIN
@@ -30,14 +31,22 @@ BEGIN TRY
 
 				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[PubConnID], [SubConnID], [TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit] ,[IsBussRuleFail], [CreatedTime] ,[CreatedBy])
 				SELECT 	TMQ.IFaceBatchUID AS IFaceBatchUID, TMQ.PubID, TMQ.SubID,tmq.PubConnID, TMQ.SubConnID, TMQ.TransID, TMQ.TransSeq, TMQ.SubIFace, GETDATE() AS [ErrorTime],
-				'Casing pressure must not be greater than 50000' AS [ErrorMsg], 0 AS [IsResubmit], 1 AS [IsBussRuleFail], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
+				'Casing pressure must not be greater than 5000 or less than -10' AS [ErrorMsg], 0 AS [IsResubmit], 1 AS [IsBussRuleFail], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
 				FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_InjectionData] TIWT	ON TMQ.TransID = TIWT.TransID AND TMQ.TransSeq = TIWT.TransSeq AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
 				LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID AND TMQ.SubConnID = TSC.SubConnID
-				WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND ((convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  > 50000 OR convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  < 0) OR	(TIWT.InjectionPressure >= 4000 OR TIWT.InjectionPressure < 0))
+				WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND ((CONVERT(NUMERIC(38,0),cast(TIWT.CasingPressure AS FLOAT))  > 5000 OR CONVERT(NUMERIC(38,0),cast(TIWT.CasingPressure AS FLOAT))  < -10))
+
+
+				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[PubConnID], [SubConnID], [TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit] ,[IsBussRuleFail], [CreatedTime] ,[CreatedBy])
+				SELECT 	TMQ.IFaceBatchUID AS IFaceBatchUID, TMQ.PubID, TMQ.SubID,tmq.PubConnID, TMQ.SubConnID, TMQ.TransID, TMQ.TransSeq, TMQ.SubIFace, GETDATE() AS [ErrorTime],
+				'Injection pressure must not be greater than 10000 or less than -10.' AS [ErrorMsg], 0 AS [IsResubmit], 1 AS [IsBussRuleFail], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
+				FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_InjectionData] TIWT	ON TMQ.TransID = TIWT.TransID AND TMQ.TransSeq = TIWT.TransSeq AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
+				LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID AND TMQ.SubConnID = TSC.SubConnID
+				WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND (TIWT.InjectionPressure >= 10000 OR TIWT.InjectionPressure < -10)
 
 				INSERT INTO @TBL_ERRORS
-				SELECT 'Casing pressure must not be greater than 50000 or less than 0. Injection pressure must not be greater than 4000 or less than 0','Casing pressure is greater than 50000 or less than 0. Injection pressure is greater than 4000 or less than 0',@COUNT
-
+				SELECT 'Casing pressure must not be greater than 5000 or less than -10. Injection pressure must not be greater than 10000 or less than -10.' ,'Casing pressure must not be greater than 5000 or less than -10. Injection pressure is greater than 10000 or less than -10.',@COUNT
+				
 
 
 			END
@@ -59,16 +68,16 @@ BEGIN TRY
 
 			END
 
-		-- END - BUSINESS RULE 2 - Comments must not be longer than 20 characters
+		-- END - BUSINESS RULE 1 - Casing pressure must not be greater than 5000 or less than -10
+
 
 	
 
 
-		-- START - BUSINESS RULE 3 - Producing Status Check
+		-- START - BUSINESS RULE 2 - Producing Status Check
 
 
-
-		-- END - BUSINESS RULE 3 - Producing Status Check
+		-- END - BUSINESS RULE 2 - Producing Status Check
 
 
 

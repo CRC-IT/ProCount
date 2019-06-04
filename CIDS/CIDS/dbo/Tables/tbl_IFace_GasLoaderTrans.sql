@@ -41,6 +41,7 @@
     [BBL]                           FLOAT (53)       NULL,
     [GAL]                           FLOAT (53)       NULL,
     [MCF]                           FLOAT (53)       NULL,
+    [MMBTU]                         FLOAT (53)       NULL,
     [BTU_content]                   FLOAT (53)       NULL,
     [BTU_pressure_base]             FLOAT (53)       NULL,
     [BTU_wet_dry_ind]               INT              NULL,

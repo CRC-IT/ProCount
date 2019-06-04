@@ -140,7 +140,7 @@ BEGIN TRY
 	ON TMQ.TransID = TIWT.TransID 
 	AND TMQ.TransSeq = TIWT.TransSeq	
 	AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
-	WHERE TIWT.IFaceBatchUID = @IFaceBatchID AND convert(numeric(38,0),cast(TIWT.CASING_PRESS AS float)) <=  50000 AND TIWT.WELL_TEST_DATE > getdate()-3
+	WHERE TIWT.IFaceBatchUID = @IFaceBatchID AND convert(numeric(38,0),cast(TIWT.CASING_PRESS AS float)) <=  50000 AND TIWT.WELL_TEST_DATE >getdate()-3
 	--WHERE TIWT.WELL_TEST_DATE >= '2018-07-07' --and TMQ.IFaceBatchUID ='800c5d75-23d3-4a37-bfbd-6124f007956d'
 	--order by TIWT.WELL_TEST_DATE 
 
