@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ID_MsgQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="315"
-  DTS:VersionGUID="{A1427FAB-EAC9-4EA3-9067-6ED7674F41A0}">
+  DTS:VersionBuild="313"
+  DTS:VersionGUID="{3362B269-BACA-4538-A18B-BCF4AEC766D7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -7445,7 +7445,7 @@ where [refTable].[API_14] = ?</property>
         <NodeLayout
           Size="196,43"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily"
-          TopLeft="453.415358519997,509.147281021498" />
+          TopLeft="456.415358519997,504.147281021498" />
         <NodeLayout
           Size="156,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion"
@@ -7658,25 +7658,25 @@ where [refTable].[API_14] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output1]"
-          TopLeft="551.475542799039,415.750985447544">
+          TopLeft="552.975542799039,415.750985447544">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,93.396295573954"
+              EndConnector="0,88.396295573954"
               Start="0,0"
-              End="0,85.896295573954">
+              End="0,80.896295573954">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,85.896295573954" />
+                    End="0,80.896295573954" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,37.143460286977,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,34.643460286977,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
