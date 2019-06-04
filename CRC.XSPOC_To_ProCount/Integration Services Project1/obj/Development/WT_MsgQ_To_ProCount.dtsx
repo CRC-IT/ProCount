@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="WT_MsgQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="300"
-  DTS:VersionGUID="{611306D7-6035-4252-8294-5D62D5345105}">
+  DTS:VersionBuild="305"
+  DTS:VersionGUID="{5DA5C8CA-538D-49B5-B06F-1D0F02B8CA0A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -561,7 +561,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog for BR failures"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -646,14 +646,35 @@
               ReadOnlyVariables="User::ArchMsgLength,User::FailRecCount,User::FormattedMsg,User::IsArchiveMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1004,35 +1025,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1249,7 +1249,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert tbl_Errorlog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4459,44 +4459,6 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast"
-                  componentClassID="Microsoft.Multicast"
-                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
-                  name="Multicast">
-                  <inputs>
-                    <input
-                      refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast.Inputs[Multicast Input 1]"
-                      name="Multicast Input 1">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast.Outputs[Multicast Output 1]"
-                      deleteOutputOnPathDetached="true"
-                      name="Multicast Output 1"
-                      synchronousInputId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast.Inputs[Multicast Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast.Outputs[Multicast Output 2]"
-                      deleteOutputOnPathDetached="true"
-                      name="Multicast Output 2"
-                      synchronousInputId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast.Inputs[Multicast Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast.Outputs[Multicast Output 3]"
-                      dangling="true"
-                      deleteOutputOnPathDetached="true"
-                      name="Multicast Output 3"
-                      synchronousInputId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast.Inputs[Multicast Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -4590,8 +4552,9 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
       ,[StrokesPerMinute] = ?
       ,[FluidLevel] = ?
       ,[TubingPressure] = ?
+      ,[UserID] = ?
  WHERE [MerrickID] = ?
-      AND [RecordDate] = ? AND [UserID] = ?</property>
+      AND [RecordDate] = ? AND DataSourceCode not in (2,22,29,33,39,40,42)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5102,26 +5065,6 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                           externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_65]"
                           lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UserTimeStamp]" />
                         <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].Columns[UserID]"
-                          cachedDataType="i4"
-                          cachedName="UserID"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_76]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[UserID]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of RecordDate]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Copy of RecordDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_75]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].Columns[MerrickId]"
-                          cachedDataType="i4"
-                          cachedName="MerrickId"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_74]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Lookup.Outputs[Lookup Match Output].Columns[MerrickId]" />
-                        <inputColumn
                           refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].Columns[TubingPressure]"
                           cachedDataType="numeric"
                           cachedName="TubingPressure"
@@ -5185,6 +5128,26 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                           cachedScale="2"
                           externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_66]"
                           lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[BottomHolePressure]" />
+                        <inputColumn
+                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].Columns[UserID]"
+                          cachedDataType="i4"
+                          cachedName="UserID"
+                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_74]"
+                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[UserID]" />
+                        <inputColumn
+                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].Columns[MerrickId]"
+                          cachedDataType="i4"
+                          cachedName="MerrickId"
+                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_75]"
+                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Lookup.Outputs[Lookup Match Output].Columns[MerrickId]" />
+                        <inputColumn
+                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of RecordDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Copy of RecordDate"
+                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_76]"
+                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -6031,7 +5994,7 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_75]"
-                          dataType="dbTimeStamp"
+                          dataType="i4"
                           name="Param_75">
                           <properties>
                             <property
@@ -6042,7 +6005,7 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_76]"
-                          dataType="i4"
+                          dataType="dbTimeStamp"
                           name="Param_76">
                           <properties>
                             <property
@@ -6079,1581 +6042,6 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                           refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1"
-                  componentClassID="Microsoft.OLEDBCommand"
-                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                  name="OLE DB Command 1"
-                  usesDispositions="true"
-                  version="2">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[CompletionWellTestTb]
-   SET 
-       [RecordTime] = ?
-      ,[DetailCalcFlag] = ?
-      ,[TestTypeID] = ?
-      ,[TestAllocationFlag] = ?
-      ,[UsedinAllocationFlag] = ?
-      ,[ValidTestFlag] = ?
-      ,[MeasuredTestFlag] = ?
-      ,[RegulatoryTestFlag] = ?
-      ,[RunEfficencyCalcFlag] = ?
-      ,[TestComment] = ?
-      ,[GasRate24HourFlag] = ?
-      ,[DataSourceCode] =?
-      ,[RegulatoryEffectiveDate] = ?
-      ,[AllocationEffectiveDate] = ?
-      ,[DueDate] = ?
-      ,[PotentialTestDate] = ?
-      ,[CompletedDate] = ?
-      ,[CompletedTime] = ?
-      ,[StartFlowDate] = ?
-      ,[StartFlowTime] = ?
-      ,[EndFlowDate] = ?
-      ,[EndFlowTime] = ?
-      ,[StartTestDate] = ?
-      ,[StartTestTime] =?
-      ,[EndTestDate] = ?
-      ,[EndTestTime] = ?
-      ,[TestHours] = ?
-      ,[PreTestHours] = ?
-      ,[OilProduction] = ?
-      ,[OilProductionNet] = ?
-      ,[WaterProduction] = ?
-      ,[GasProduction] = ?
-      ,[GasProductionNet] = ?
-      ,[GasInjection] = ?
-      ,[DailyProductionRateGas] = ?
-      ,[DailyProductionRateOil] = ?
-      ,[DailyProductionRateWater] = ?
-      ,[GravityOil] = ?
-      ,[APIGravity] = ?
-      ,[GravityWater] = ?
-      ,[BSWPercent] = ?
-      ,[GasOilRatio] = ?
-      ,[GasGravity] = ?
-      ,[FlowingCasingPressure] = ?
-      ,[FlowingTemperature] = ?
-      ,[SurfaceTemperature] = ?
-      ,[AmbientAirTemperature] = ?
-      ,[SeparatorPressure] = ?
-      ,[ObservedTemperature] = ?
-      ,[StaticPressure] = ?
-      ,[ChokeSize] = ?
-      ,[SeparatorPresure] = ?
-      ,[WaterCut] = ?
-      ,[GasFluidRatio] = ?
-      ,[DailyInterpolationRateGas] = ?
-      ,[DailyInterpolationRateOil] = ?
-      ,[DailyInterpolationRateWater] = ?
-      ,[LinePressure] = ?
-      ,[TestDurationHours] = ?
-      ,[TestGasVolume] = ?
-      ,[TestOilVolume] = ?
-      ,[TestWaterVolume] = ?
-      ,[DeleteFlag] = ?
-      ,[BackgroundTaskFlag] = ?
-      ,[UserDateStamp] = ?
-      ,[UserTimeStamp] = ?
-      ,[BottomHolePressure] = ? 
-      ,[FlowingTubingPressure]=?
-      ,[PumpSize] = ?
-      ,[StrokeLine] = ?
-      ,[Efficiency] = ?
-      ,[StrokesPerMinute] = ?
-      ,[FluidLevel] = ?
-      ,[TubingPressure] = ?
-      ,[UserID] = 33
- WHERE [MerrickID] = ?
-      AND [RecordDate] = ?
-      AND [UserID] = 0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Connections[OleDbConnection]"
-                      connectionManagerID="{EBA005CE-7304-4CB3-BFAA-D3260AD1F7C0}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[CKCWSQL1A.CRC_ProCount]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input]"
-                      errorOrTruncationOperation="Command Execution"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Command Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[RecordTime]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="8"
-                          cachedName="RecordTime"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[RecordTime]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DetailCalcFlag]"
-                          cachedDataType="i4"
-                          cachedName="DetailCalcFlag"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[DetailCalcFlag]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TestTypeID]"
-                          cachedDataType="i4"
-                          cachedName="TestTypeID"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[TestTypeID]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TestAllocationFlag]"
-                          cachedDataType="i4"
-                          cachedName="TestAllocationFlag"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[TestAllocationFlag]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UsedinAllocationFlag]"
-                          cachedDataType="i4"
-                          cachedName="UsedinAllocationFlag"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[UsedinAllocationFlag]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ValidTestFlag]"
-                          cachedDataType="i4"
-                          cachedName="ValidTestFlag"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[ValidTestFlag]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[MeasuredTestFlag]"
-                          cachedDataType="i4"
-                          cachedName="MeasuredTestFlag"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[MeasuredTestFlag]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[RegulatoryTestFlag]"
-                          cachedDataType="i4"
-                          cachedName="RegulatoryTestFlag"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[RegulatoryTestFlag]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[RunEfficencyCalcFlag]"
-                          cachedDataType="i4"
-                          cachedName="RunEfficencyCalcFlag"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[RunEfficencyCalcFlag]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TestComment]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="200"
-                          cachedName="TestComment"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[TestComment]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GasRate24HourFlag]"
-                          cachedDataType="i4"
-                          cachedName="GasRate24HourFlag"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[GasRate24HourFlag]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DataSourceCode]"
-                          cachedDataType="i4"
-                          cachedName="DataSourceCode"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[DataSourceCode]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[RegulatoryEffectiveDate]"
-                          cachedDataType="wstr"
-                          cachedLength="23"
-                          cachedName="RegulatoryEffectiveDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[RegulatoryEffectiveDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AllocationEffectiveDate]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="AllocationEffectiveDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[AllocationEffectiveDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DueDate]"
-                          cachedDataType="wstr"
-                          cachedLength="23"
-                          cachedName="DueDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[DueDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PotentialTestDate]"
-                          cachedDataType="wstr"
-                          cachedLength="23"
-                          cachedName="PotentialTestDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[PotentialTestDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CompletedDate]"
-                          cachedDataType="wstr"
-                          cachedLength="23"
-                          cachedName="CompletedDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[CompletedDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CompletedTime]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="8"
-                          cachedName="CompletedTime"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[CompletedTime]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[StartFlowDate]"
-                          cachedDataType="wstr"
-                          cachedLength="23"
-                          cachedName="StartFlowDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[StartFlowDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[StartFlowTime]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="8"
-                          cachedName="StartFlowTime"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[StartFlowTime]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[EndFlowDate]"
-                          cachedDataType="wstr"
-                          cachedLength="23"
-                          cachedName="EndFlowDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[EndFlowDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[EndFlowTime]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="8"
-                          cachedName="EndFlowTime"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[EndFlowTime]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[StartTestDate]"
-                          cachedDataType="wstr"
-                          cachedLength="23"
-                          cachedName="StartTestDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[StartTestDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[StartTestTime]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="8"
-                          cachedName="StartTestTime"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[StartTestTime]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[EndTestDate]"
-                          cachedDataType="wstr"
-                          cachedLength="23"
-                          cachedName="EndTestDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[EndTestDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[EndTestTime]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="8"
-                          cachedName="EndTestTime"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[EndTestTime]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TestHours]"
-                          cachedDataType="numeric"
-                          cachedName="TestHours"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_26]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[TestHours]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PreTestHours]"
-                          cachedDataType="i4"
-                          cachedName="PreTestHours"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[PreTestHours]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[OilProduction]"
-                          cachedDataType="numeric"
-                          cachedName="OilProduction"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[OilProduction]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[OilProductionNet]"
-                          cachedDataType="numeric"
-                          cachedName="OilProductionNet"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[OilProductionNet]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[WaterProduction]"
-                          cachedDataType="numeric"
-                          cachedName="WaterProduction"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[WaterProduction]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GasProduction]"
-                          cachedDataType="numeric"
-                          cachedName="GasProduction"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_31]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[GasProduction]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GasProductionNet]"
-                          cachedDataType="numeric"
-                          cachedName="GasProductionNet"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_32]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[GasProductionNet]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GasInjection]"
-                          cachedDataType="numeric"
-                          cachedName="GasInjection"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_33]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[GasInjection]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DailyProductionRateGas]"
-                          cachedDataType="numeric"
-                          cachedName="DailyProductionRateGas"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_34]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[DailyProductionRateGas]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DailyProductionRateOil]"
-                          cachedDataType="numeric"
-                          cachedName="DailyProductionRateOil"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_35]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[DailyProductionRateOil]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DailyProductionRateWater]"
-                          cachedDataType="numeric"
-                          cachedName="DailyProductionRateWater"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_36]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[DailyProductionRateWater]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GravityOil]"
-                          cachedDataType="numeric"
-                          cachedName="GravityOil"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_37]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[GravityOil]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[APIGravity]"
-                          cachedDataType="numeric"
-                          cachedName="APIGravity"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_38]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[APIGravity]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GravityWater]"
-                          cachedDataType="i4"
-                          cachedName="GravityWater"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_39]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[GravityWater]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[BSWPercent]"
-                          cachedDataType="numeric"
-                          cachedName="BSWPercent"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_40]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[BSWPercent]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GasOilRatio]"
-                          cachedDataType="numeric"
-                          cachedName="GasOilRatio"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_41]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[GasOilRatio]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GasGravity]"
-                          cachedDataType="numeric"
-                          cachedName="GasGravity"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_42]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[GasGravity]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FlowingCasingPressure]"
-                          cachedDataType="numeric"
-                          cachedName="FlowingCasingPressure"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_43]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[FlowingCasingPressure]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FlowingTemperature]"
-                          cachedDataType="numeric"
-                          cachedName="FlowingTemperature"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_44]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[FlowingTemperature]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SurfaceTemperature]"
-                          cachedDataType="numeric"
-                          cachedName="SurfaceTemperature"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_45]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[SurfaceTemperature]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AmbientAirTemperature]"
-                          cachedDataType="numeric"
-                          cachedName="AmbientAirTemperature"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_46]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[AmbientAirTemperature]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SeparatorPresure]"
-                          cachedDataType="numeric"
-                          cachedName="SeparatorPresure"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_47]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[SeparatorPresure]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ObservedTemperature]"
-                          cachedDataType="numeric"
-                          cachedName="ObservedTemperature"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_48]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[ObservedTemperature]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[StaticPressure]"
-                          cachedDataType="numeric"
-                          cachedName="StaticPressure"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_49]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[StaticPressure]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ChokeSize]"
-                          cachedDataType="numeric"
-                          cachedName="ChokeSize"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_50]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[ChokeSize]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SeparatorPressure]"
-                          cachedDataType="numeric"
-                          cachedName="SeparatorPressure"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_51]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[SeparatorPressure]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[WaterCut]"
-                          cachedDataType="numeric"
-                          cachedName="WaterCut"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_52]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[WaterCut]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GasFluidRatio]"
-                          cachedDataType="numeric"
-                          cachedName="GasFluidRatio"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_53]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[GasFluidRatio]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DailyInterpolationRateGas]"
-                          cachedDataType="numeric"
-                          cachedName="DailyInterpolationRateGas"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_54]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[DailyInterpolationRateGas]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DailyInterpolationRateOil]"
-                          cachedDataType="numeric"
-                          cachedName="DailyInterpolationRateOil"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_55]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[DailyInterpolationRateOil]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DailyInterpolationRateWater]"
-                          cachedDataType="numeric"
-                          cachedName="DailyInterpolationRateWater"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_56]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[DailyInterpolationRateWater]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LinePressure]"
-                          cachedDataType="numeric"
-                          cachedName="LinePressure"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_57]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[LinePressure]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TestDurationHours]"
-                          cachedDataType="i4"
-                          cachedName="TestDurationHours"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_58]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[TestDurationHours]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TestGasVolume]"
-                          cachedDataType="numeric"
-                          cachedName="TestGasVolume"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_59]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[TestGasVolume]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TestOilVolume]"
-                          cachedDataType="numeric"
-                          cachedName="TestOilVolume"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_60]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[TestOilVolume]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TestWaterVolume]"
-                          cachedDataType="numeric"
-                          cachedName="TestWaterVolume"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_61]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[TestWaterVolume]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DeleteFlag]"
-                          cachedDataType="i4"
-                          cachedName="DeleteFlag"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_62]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[DeleteFlag]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[BackgroundTaskFlag]"
-                          cachedDataType="i4"
-                          cachedName="BackgroundTaskFlag"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_63]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[BackgroundTaskFlag]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of UserDateStamp]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="Copy of UserDateStamp"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_64]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UserDateStamp]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of UserTimeStamp]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="8"
-                          cachedName="Copy of UserTimeStamp"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_65]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UserTimeStamp]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[RecordDate]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="30"
-                          cachedName="RecordDate"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_75]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[RecordDate]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[MerrickId]"
-                          cachedDataType="i4"
-                          cachedName="MerrickId"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_74]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Lookup.Outputs[Lookup Match Output].Columns[MerrickId]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TubingPressure]"
-                          cachedDataType="numeric"
-                          cachedName="TubingPressure"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_73]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[TubingPressure]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FluidLevel]"
-                          cachedDataType="numeric"
-                          cachedName="FluidLevel"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_72]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[FluidLevel]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[StrokesPerMinute]"
-                          cachedDataType="numeric"
-                          cachedName="StrokesPerMinute"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_71]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[StrokesPerMinute]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Efficiency]"
-                          cachedDataType="numeric"
-                          cachedName="Efficiency"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_70]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[Efficiency]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[StrokeLine]"
-                          cachedDataType="numeric"
-                          cachedName="StrokeLine"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_69]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[StrokeLine]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PumpSize]"
-                          cachedDataType="numeric"
-                          cachedName="PumpSize"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_68]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[PumpSize]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FlowingTubingPressure]"
-                          cachedDataType="numeric"
-                          cachedName="FlowingTubingPressure"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_67]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[FlowingTubingPressure]" />
-                        <inputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[BottomHolePressure]"
-                          cachedDataType="numeric"
-                          cachedName="BottomHolePressure"
-                          cachedPrecision="12"
-                          cachedScale="2"
-                          externalMetadataColumnId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_66]"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output].Columns[BottomHolePressure]" />
-                      </inputColumns>
-                      <externalMetadataColumns
-                        isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          codePage="1252"
-                          dataType="str"
-                          length="8"
-                          name="Param_0">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          dataType="i4"
-                          name="Param_1">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="i4"
-                          name="Param_2">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          dataType="i4"
-                          name="Param_3">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          dataType="i4"
-                          name="Param_4">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          dataType="i4"
-                          name="Param_5">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                          dataType="i4"
-                          name="Param_6">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                          dataType="i4"
-                          name="Param_7">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                          dataType="i4"
-                          name="Param_8">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                          codePage="1252"
-                          dataType="str"
-                          length="200"
-                          name="Param_9">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          dataType="i4"
-                          name="Param_10">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                          dataType="i4"
-                          name="Param_11">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                          dataType="dbTimeStamp"
-                          name="Param_12">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                          dataType="dbTimeStamp"
-                          name="Param_13">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
-                          dataType="dbTimeStamp"
-                          name="Param_14">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
-                          dataType="dbTimeStamp"
-                          name="Param_15">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
-                          dataType="dbTimeStamp"
-                          name="Param_16">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
-                          codePage="1252"
-                          dataType="str"
-                          length="8"
-                          name="Param_17">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
-                          dataType="dbTimeStamp"
-                          name="Param_18">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
-                          codePage="1252"
-                          dataType="str"
-                          length="8"
-                          name="Param_19">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
-                          dataType="dbTimeStamp"
-                          name="Param_20">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
-                          codePage="1252"
-                          dataType="str"
-                          length="8"
-                          name="Param_21">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
-                          dataType="dbTimeStamp"
-                          name="Param_22">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
-                          codePage="1252"
-                          dataType="str"
-                          length="8"
-                          name="Param_23">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
-                          dataType="dbTimeStamp"
-                          name="Param_24">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
-                          codePage="1252"
-                          dataType="str"
-                          length="8"
-                          name="Param_25">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_26]"
-                          dataType="r8"
-                          name="Param_26">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
-                          dataType="r8"
-                          name="Param_27">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
-                          dataType="r8"
-                          name="Param_28">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
-                          dataType="r8"
-                          name="Param_29">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
-                          dataType="r8"
-                          name="Param_30">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_31]"
-                          dataType="r8"
-                          name="Param_31">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_32]"
-                          dataType="r8"
-                          name="Param_32">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_33]"
-                          dataType="r8"
-                          name="Param_33">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_34]"
-                          dataType="r8"
-                          name="Param_34">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_35]"
-                          dataType="r8"
-                          name="Param_35">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_36]"
-                          dataType="r8"
-                          name="Param_36">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_37]"
-                          dataType="r8"
-                          name="Param_37">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_38]"
-                          dataType="r8"
-                          name="Param_38">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_39]"
-                          dataType="r8"
-                          name="Param_39">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_40]"
-                          dataType="r8"
-                          name="Param_40">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_41]"
-                          dataType="r8"
-                          name="Param_41">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_42]"
-                          dataType="r8"
-                          name="Param_42">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_43]"
-                          dataType="r8"
-                          name="Param_43">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_44]"
-                          dataType="r8"
-                          name="Param_44">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_45]"
-                          dataType="r8"
-                          name="Param_45">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_46]"
-                          dataType="r8"
-                          name="Param_46">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_47]"
-                          dataType="r8"
-                          name="Param_47">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_48]"
-                          dataType="r8"
-                          name="Param_48">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_49]"
-                          dataType="r8"
-                          name="Param_49">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_50]"
-                          dataType="r8"
-                          name="Param_50">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_51]"
-                          dataType="r8"
-                          name="Param_51">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_52]"
-                          dataType="r8"
-                          name="Param_52">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_53]"
-                          dataType="r8"
-                          name="Param_53">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_54]"
-                          dataType="r8"
-                          name="Param_54">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_55]"
-                          dataType="r8"
-                          name="Param_55">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_56]"
-                          dataType="r8"
-                          name="Param_56">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_57]"
-                          dataType="r8"
-                          name="Param_57">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_58]"
-                          dataType="r8"
-                          name="Param_58">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_59]"
-                          dataType="r8"
-                          name="Param_59">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_60]"
-                          dataType="r8"
-                          name="Param_60">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_61]"
-                          dataType="r8"
-                          name="Param_61">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_62]"
-                          dataType="i4"
-                          name="Param_62">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_63]"
-                          dataType="i4"
-                          name="Param_63">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_64]"
-                          dataType="dbTimeStamp"
-                          name="Param_64">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_65]"
-                          codePage="1252"
-                          dataType="str"
-                          length="8"
-                          name="Param_65">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_66]"
-                          dataType="r8"
-                          name="Param_66">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_67]"
-                          dataType="r8"
-                          name="Param_67">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_68]"
-                          dataType="r8"
-                          name="Param_68">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_69]"
-                          dataType="r8"
-                          name="Param_69">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_70]"
-                          dataType="r8"
-                          name="Param_70">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_71]"
-                          dataType="r8"
-                          name="Param_71">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_72]"
-                          dataType="r8"
-                          name="Param_72">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_73]"
-                          dataType="r8"
-                          name="Param_73">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_74]"
-                          dataType="i4"
-                          name="Param_74">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_75]"
-                          dataType="dbTimeStamp"
-                          name="Param_75">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
-                          </properties>
-                        </externalMetadataColumn>
-                      </externalMetadataColumns>
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Output]"
-                      exclusionGroup="1"
-                      name="OLE DB Command Output"
-                      synchronousInputId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Command Error Output"
-                      synchronousInputId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -13110,29 +11498,19 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                   startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Lookup.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Lookup Match Output1]"
-                  endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast.Inputs[Multicast Input 1]"
+                  endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Lookup Match Output"
                   startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Lookup 2.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Lookup No Match Output1]"
-                  endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Derived Error Columns.Inputs[Derived Column Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Lookup.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
                   endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Sort.Inputs[Sort Input]"
                   name="Lookup No Match Output"
                   startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Lookup 2.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Multicast Output 1]"
-                  endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input]"
-                  name="Multicast Output 1"
-                  startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast.Outputs[Multicast Output 1]" />
-                <path
-                  refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Multicast Output 2]"
-                  endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input]"
-                  name="Multicast Output 2"
-                  startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast.Outputs[Multicast Output 2]" />
+                  refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Lookup No Match Output1]"
+                  endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Derived Error Columns.Inputs[Derived Column Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Lookup.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[OLE DB Command Error Output]"
                   endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input]"
@@ -13149,11 +11527,6 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                   name="OLE DB Source Output"
                   startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Row Count Output 12]"
-                  endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Upsert tbl_ErrorQ.Inputs[OLE DB Command Input]"
-                  name="Row Count Output 1"
-                  startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\LookupRecCount.Outputs[Row Count Output 1]" />
-                <path
                   refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Row Count Output 1]"
                   endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
@@ -13163,6 +11536,11 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                   endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
                   startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Fail Rec Count 1.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Row Count Output 12]"
+                  endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Upsert tbl_ErrorQ.Inputs[OLE DB Command Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\LookupRecCount.Outputs[Row Count Output 1]" />
                 <path
                   refId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Sort Output]"
                   endId="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Destination.Inputs[OLE DB Destination Input]"
@@ -13819,7 +12197,7 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
         <NodeLayout
           Size="166,42"
           Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command"
-          TopLeft="859.708987411761,387.370894052165" />
+          TopLeft="856.708987411761,287.370894052165" />
         <NodeLayout
           Size="187,41"
           Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Derived Error Columns"
@@ -13836,10 +12214,6 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
           Size="163,41"
           Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Upsert tbl_ErrorQ"
           TopLeft="902.047629034337,92.3764745383609" />
-        <NodeLayout
-          Size="121,43"
-          Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Multicast"
-          TopLeft="1032.33332297151,295.185182636756" />
         <NodeLayout
           Size="147,41"
           Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Fail Rec Count 1"
@@ -13860,10 +12234,6 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
           Size="155,41"
           Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Derived Column"
           TopLeft="68.904777374803,406.747062031586" />
-        <NodeLayout
-          Size="176,43"
-          Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\OLE DB Command 1"
-          TopLeft="1176.29628691408,377.582006756906" />
         <NodeLayout
           Size="98,42"
           Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount\Sort"
@@ -13919,30 +12289,6 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-170.392854783734,-36.3688288043297,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Row Count Output 1]"
-          TopLeft="148.5476382837,519.454906012473">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57.762743870139"
-              Start="0,0"
-              End="0,50.262743870139">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.262743870139" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -13982,6 +12328,28 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,32.257519666361" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Row Count Output 1]"
+          TopLeft="148.5476382837,519.454906012473">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.762743870139"
+              Start="0,0"
+              End="0,50.262743870139">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.262743870139" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14038,117 +12406,25 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[OLE DB Command Error Output]"
-          TopLeft="938.887573658702,429.370894052165">
+          TopLeft="937.387573658702,329.370894052165">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.552626837343"
+              EndConnector="0,151.552626837343"
               Start="0,0"
-              End="0,44.052626837343">
+              End="0,144.052626837343">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.052626837343" />
+                    End="0,144.052626837343" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-70.70890625,16.2216259186715,141.4178125,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Multicast Output 2]"
-          TopLeft="1111.66665630484,338.185182636756">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="152.629630609243,39.39682412015"
-              Start="0,0"
-              End="152.629630609243,31.89682412015">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.0672202773858" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.0672202773858"
-                    Point2="0,16.0672202773858"
-                    Point3="4,16.0672202773858" />
-                  <mssgle:LineSegment
-                    End="148.629630609243,16.0672202773858" />
-                  <mssgle:CubicBezierSegment
-                    Point1="148.629630609243,16.0672202773858"
-                    Point2="152.629630609243,16.0672202773858"
-                    Point3="152.629630609243,20.0672202773858" />
-                  <mssgle:LineSegment
-                    End="152.629630609243,31.89682412015" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Multicast Output 1]"
-          TopLeft="1073.99998963817,338.185182636756">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-131.291002226414,49.185711415409"
-              Start="0,0"
-              End="-131.291002226414,41.685711415409">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.0594255364637" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.0594255364637"
-                    Point2="0,20.0594255364637"
-                    Point3="-4,20.0594255364637" />
-                  <mssgle:LineSegment
-                    End="-127.291002226414,20.0594255364637" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-127.291002226414,20.0594255364637"
-                    Point2="-131.291002226414,20.0594255364637"
-                    Point3="-131.291002226414,24.0594255364637" />
-                  <mssgle:LineSegment
-                    End="-131.291002226414,41.685711415409" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
-          TopLeft="562.916664965451,337.666662327448">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70.466670788924"
-              Start="0,0"
-              End="0,62.966670788924">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.966670788924" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,25.678647894462,111.6127734375,11.609375"
+              BoundingBox="-70.70890625,66.2216259186715,141.4178125,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14177,26 +12453,26 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Lookup Match Output1]"
-          TopLeft="623.999995231628,316.425922482102">
+          Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
+          TopLeft="562.916664965451,337.666662327448">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="408.33332773988,0"
+              EndConnector="0,70.466670788924"
               Start="0,0"
-              End="400.83332773988,0">
+              End="0,62.966670788924">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="400.83332773988,0" />
+                    End="0,62.966670788924" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="152.22527715119,5,96.3827734375,11.609375"
+              BoundingBox="-55.80638671875,25.678647894462,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14332,6 +12608,30 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process all Iface Batch UID's\MsgQ_To_ProCount.Paths[Lookup Match Output1]"
+          TopLeft="623.999995231628,312.268778189807">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="232.708992180133,0"
+              Start="0,0"
+              End="225.208992180133,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="225.208992180133,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="64.4131093713165,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

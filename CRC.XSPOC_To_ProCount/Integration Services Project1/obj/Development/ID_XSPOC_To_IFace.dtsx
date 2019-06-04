@@ -12,7 +12,7 @@
   DTS:ObjectName="ID_XSPOC_To_IFace"
   DTS:PackageType="5"
   DTS:VersionBuild="302"
-  DTS:VersionGUID="{77212BA1-B92E-44F8-9DAD-06FEDBEBBC41}">
+  DTS:VersionGUID="{F33E4765-26DB-4803-90DC-A95AFA63D596}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>

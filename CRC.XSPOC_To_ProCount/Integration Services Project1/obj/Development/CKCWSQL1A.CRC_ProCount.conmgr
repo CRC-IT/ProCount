@@ -5,6 +5,10 @@
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=CKCWSQL1A;User ID=dw_user;Initial Catalog=CRC_ProCount;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=CKCWSQL1A;User ID=dw_user;Initial Catalog=CRC_ProCount;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAACAAAAAAADZgAAwAAAABAAAAAPe92cPVHtBGm1QyBLOI8hAAAAAASAAACgAAAAEAAAAOYSCUPvQD96bS1aYqT93kx4AAAALf+Uy+l8uJYGH0/VBIKaAtRyBXdjYFKISwIDy4W8pH77HmxbWpOpJEwSWYPotJ1cbwhrrFrKuSuZ+JyI5NDUsInZEw8hlllbBFcC3g3Tf4uEAALjTJtB66GJhECGf3Bh79CY3Cs7Omle72Ia3XHGYpneW0fcNROoFAAAAFHewApSpRX4zYtvXEfDV8RAQsV0</DTS:Password>
+    </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

@@ -23,12 +23,7 @@
       DTS:ObjectName="ONECALU.xxcrc_procount">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ONECALU;User ID=xxcrc_procount;Provider=MSDAORA.1;Persist Security Info=True;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAByh8vMd9tEqsFALeRjhU4wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABm4C2bTFyjL9YAUfYnppUJAAAAAASAAACgAAAAEAAAAPhvuYaRD+eDqhM4X2jP1NAgAAAA8MlVhGQDg2Bz+j5X7nhQ1AbHFgZybpcL6AhmBS0zL4sUAAAAEG+2RsPwji6gD5GH7oDfiwAFwwo</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=ONECALU;User ID=xxcrc_procount;Provider=MSDAORA.1;Persist Security Info=True;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>

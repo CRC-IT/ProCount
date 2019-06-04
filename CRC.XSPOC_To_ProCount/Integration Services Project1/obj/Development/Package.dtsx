@@ -1188,7 +1188,7 @@ where [IsResubmit]=0  AND SubIFace='FluidShots'</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="FS Mail notification"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SendMailTask:SendMailTaskData
@@ -1211,7 +1211,7 @@ where [IsResubmit]=0  AND SubIFace='FluidShots'</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="ID Mail notification"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SendMailTask:SendMailTaskData

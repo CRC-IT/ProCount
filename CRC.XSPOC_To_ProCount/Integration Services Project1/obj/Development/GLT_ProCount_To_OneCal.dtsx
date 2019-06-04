@@ -23,12 +23,7 @@
       DTS:ObjectName="ONECALPS.xxcrc_procount">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ONECALU;User ID=xxcrc_procount;Provider=MSDAORA.1;Persist Security Info=True;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAByh8vMd9tEqsFALeRjhU4wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAqcX8kmixJbdyAGoPGgQq4AAAAAASAAACgAAAAEAAAAD8Fye3R16EQesy7XTfi6sYgAAAAOOgJ2jXJkPdflA1w5aLVTZx51nccGWfqO7UBIP9O9MEUAAAAXz3IOtWITQDl1jBKaSAsaT7YPos</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=ONECALU;User ID=xxcrc_procount;Provider=MSDAORA.1;Persist Security Info=True;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -415,7 +410,7 @@
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ArchiveTransformedXML"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <ScriptProject
@@ -5144,7 +5139,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
       DTS:LocaleID="-1"
       DTS:ObjectName="Update tbl_Errorlog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5205,7 +5200,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
       DTS:LocaleID="-1"
       DTS:ObjectName="Update tbl_MsgQ"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5249,7 +5244,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
       DTS:LocaleID="-1"
       DTS:ObjectName="Update tbl_TransactionLog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5310,7 +5305,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
       DTS:LocaleID="-1"
       DTS:ObjectName="Update Transformed Msg in tbl_TransactionLog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
