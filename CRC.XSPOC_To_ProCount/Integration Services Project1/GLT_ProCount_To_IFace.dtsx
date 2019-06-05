@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="GLT_ProCount_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="136"
-  DTS:VersionGUID="{A7E76600-568D-44EC-BB53-B314372B633C}">
+  DTS:VersionBuild="140"
+  DTS:VersionGUID="{80FB8BB7-E61B-4F3A-9FEB-C42BDACE9873}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -260,7 +260,7 @@ SELECT
 	,GatheringSystemLockName
 	,GatheringSystemAccountantName
 FROM CTEDAY
-WHERE Arg_Det_Sequence &lt;&gt; ''
+--WHERE Arg_Det_Sequence &lt;&gt; ''
 GROUP BY 
 	ProductType
 	,DispositionCode
@@ -465,7 +465,7 @@ GROUP BY
       DTS:CreationName=""
       DTS:DTSID="{6F75D7FD-40BA-4BE5-9829-4A67C42C7152}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;WITH CTEDAY (ProductType,&#x9;DispositionCode,&#x9;DispositionCodeDescription,&#x9;sourcetype,&#x9;completionID,&#x9;GatheringSystemID,&#x9;AreaID,&#x9;AreaName,&#x9;GatheringSystemName,&#x9;activity_date,&#x9;gravity,&#x9;BBL,&#x9;GAL,&#x9;MCF,MMBTU,&#x9;BTU_content,&#x9;BTU_pressure_base,&#x9;BTU_wet_dry_ind,&#x9;WellPlusCompletionName,&#x9;processing_party,&#x9;rc_user_key,&#x9;Arg_Det_Sequence,&#x9;Agreement_ID,&#x9;decktype,&#x9;trans_copy,&#x9;AccountantPersonID,&#x9;AllocationDateStamp,&#x9;GatheringSystemLockDate,&#x9;GatheringSystemLockName,&#x9;GatheringSystemAccountantName)&#xA;AS&#xA;(&#xA;SELECT &#xA; (SELECT ProductTypeDescription FROM ProductTypeTb WITH (NOLOCK) WHERE MerrickID = cmd.ProductType) AS ProductType&#xA;, cmd.DispositionCode&#xA;, (SELECT DispositionCodeDescription FROM DispositionCodeTb WITH (NOLOCK) WHERE ProductTypeID = cmd.ProductType AND MerrickID = cmd.DispositionCode) AS DispositionCodeDescription&#xA;, cmd.sourcetype&#xA;, cmd.MerrickID AS completionID&#xA;, cmd.GatheringSystemID&#xA;--, gs.GatheringSystemName&#xA;, a.AreaID&#xA;, a.AreaName&#xA;, (SELECT GatheringSystemName FROM GatheringSystemTb WITH (NOLOCK) WHERE GatheringSystemMerrickID = cmd.GatheringSystemID) AS GatheringSystemName &#xA;, cmd.RecordDate AS activity_date&#xA;, cmd.AllocActGravity AS gravity&#xA;, SUM(cmd.AllocActOilVol) AS BBL&#xA;, SUM(cmd.AllocActNGLVol) AS GAL&#xA;, SUM(cmd.AllocActGasVolMCF) AS MCF&#xA;, SUM(cmd.AllocActGasVolMMBTU) AS MMBTU&#xA;, cmd.AllocActBTUFactor AS BTU_content&#xA;, cmd.AllocActPressureBase AS BTU_pressure_base&#xA;, cmd.AllocActWetDryFlag AS BTU_wet_dry_ind&#xA;, ISNULL(arg.WellPlusCompletionName,(SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE cmd.merrickid = merrickid)) AS WellPlusCompletionName&#xA;, arg.BusinessEnitity AS processing_party&#xA;, LTRIM(RTRIM(arg.locationid)) AS rc_user_key&#xA;, arg.LocAccountNumber1 AS Arg_Det_Sequence&#xA;, arg.LocAccountNumber2 AS Agreement_ID&#xA;, arg.decktype&#xA;, 'O' AS trans_copy&#xA;--, cmd.AllocationDateStamp&#xA;, gs.AccountantPersonID&#xA;, cmd.AllocationDateStamp&#xA;, gsc.UserDateStamp as GatheringSystemLockDate&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gsc.UserID) AS GatheringSystemLockName&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gs.AccountantPersonID) AS GatheringSystemAccountantName&#xA;FROM CompletionMonthlyDispTb cmd WITH (NOLOCK) &#xA;INNER JOIN CompletionMonthlyTb cm WITH (NOLOCK) ON cmd.MerrickID = cm.merrickID AND cmd.RecordDate = cm.RecordDate &#xA;INNER JOIN (SELECT &#xA;&#x9;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;&#x9;, odi.activeflag&#xA;&#x9;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;&#x9;, odi.StartDate&#xA;&#x9;&#x9;&#x9;&#x9;, odi.EndDate&#xA;&#x9;&#x9;&#x9;&#x9;, odi.WellPlusCompletionName&#xA;&#x9;&#x9;&#x9;&#x9;,(SELECT [Description] FROM BusinessEntityTb WITH (NOLOCK) WHERE merrickid = be.MerrickID) BusinessEnitity&#xA;&#x9;&#x9;&#x9;&#x9;, be.locationid&#xA;&#x9;&#x9;&#x9;&#x9;, be.locaccountnumber1&#xA;&#x9;&#x9;&#x9;&#x9;, be.locaccountnumber2&#xA;&#x9;&#x9;&#x9;FROM BusinessEntityLocationTb be WITH (NOLOCK) &#xA;&#x9;&#x9;&#x9;INNER JOIN &#x9;(SELECT &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  odi.decktype&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, od.activeflag&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, MAX(od.StartDate) AS StartDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, MAX(od.EndDate) AS EndDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;,(SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE odi.objectmerrickid = merrickid and odi.decktype = 15) WellPlusCompletionName&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;FROM OwnershipDeckTb od WITH (NOLOCK) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;INNER JOIN OwnershipDeckInterestTb odi WITH (NOLOCK) ON od.objectmerrickid = odi.objectmerrickid AND od.ObjectMerrickType = odi.ObjectMerrickType AND od.decktype = odi.decktype AND od.StartDate = odi.StartDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;WHERE odi.decktype = 15 and od.ActiveFlag = 1 and od.ObjectMerrickType = 1 and GETDATE() between od.StartDate and od.EndDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;GROUP BY odi.decktype, odi.objectmerrickid, odi.ObjectMerrickType, od.activeflag, odi.ownerbeidloc, odi.OwnerBEID) odi ON be.LocationNumber = odi.ownerbeidloc AND be.merrickid = odi.OwnerBEID) arg ON cmd.MerrickID = arg.objectmerrickid&#xA;LEFT OUTER JOIN AreaTb a WITH (NOLOCK) ON cm.AreaID = a.AreaMerrickID and cm.areaid &lt;&gt; 0&#xA;INNER JOIN GatheringSystemTb gs WITH (NOLOCK) ON cmd.GatheringSystemID = gs.GatheringSystemMerrickID&#xA;INNER JOIN GatheringSystemCloseTb gsc WITH (NOLOCK) ON cmd.GatheringSystemID = gsc.GatheringSystemID and cmd.RecordDate = gsc.RecordMonth&#xA;WHERE cmd.ProductType = 1 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID &gt; 0 &#xA;AND cmd.DispositionCode IN (SELECT MerrickID FROM DispositionCodeTb WHERE ProductTypeID = 1 AND DispositionGrouping = 1) AND gsc.AllocationLockedFlag = 1&#xA;--AND WellPlusCompletionName = 'CRC 8-1'&#xA;GROUP BY cmd.MerrickID, cmd.AllocationDateStamp, gs.GatheringSystemName, a.areaid, a.areaname, cmd.DispositionCode, cmd.GatheringSystemID, &#xA;cmd.AllocationDateStamp, gs.AccountantPersonID, gsc.UserDateStamp, gsc.UserID, cmd.ProductType, cmd.sourcetype, cmd.RecordDate, cmd.AllocActGravity, &#xA;cmd.AllocActBTUFactor, cmd.AllocActPressureBase, cmd.AllocActWetDryFlag, arg.WellPlusCompletionName, &#xA;arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, arg.decktype&#xA;)&#xA;&#xA;SELECT &#xA;&#x9;ProductType&#xA;&#x9;--,ROW_NUMBER() OVER (ORDER BY WellPlusCompletionName ASC) AS Line_No&#xA;&#x9;,DispositionCode&#xA;&#x9;,DispositionCodeDescription&#xA;&#x9;,sourcetype&#xA;&#x9;,completionID&#xA;&#x9;,GatheringSystemID&#xA;&#x9;,AreaID&#xA;&#x9;,AreaName&#xA;&#x9;,GatheringSystemName&#xA;&#x9;,activity_date&#xA;&#x9;,gravity&#xA;&#x9;,BBL&#xA;&#x9;,GAL&#xA;&#x9;,SUM(MCF) AS MCF&#xA;&#x9;,SUM(MMBTU) AS MMBTU&#xA;&#x9;,SUM(MMBTU)/SUM(MCF) BTU_content&#xA;&#x9;,BTU_pressure_base&#xA;&#x9;,BTU_wet_dry_ind&#xA;&#x9;,WellPlusCompletionName&#xA;&#x9;,processing_party&#xA;&#x9;,rc_user_key&#xA;&#x9;,Arg_Det_Sequence&#xA;&#x9;,Agreement_ID&#xA;&#x9;,decktype&#xA;&#x9;,trans_copy&#xA;&#x9;,'PROCOUNT' AS UserName&#xA;&#x9;,AccountantPersonID&#xA;&#x9;,AllocationDateStamp&#xA;&#x9;,GatheringSystemLockDate&#xA;&#x9;,GatheringSystemLockName&#xA;&#x9;,GatheringSystemAccountantName&#xA;FROM CTEDAY&#xA;WHERE Arg_Det_Sequence &lt;&gt; ''&#xA;GROUP BY &#xA;&#x9;ProductType&#xA;&#x9;,DispositionCode&#xA;&#x9;,DispositionCodeDescription&#xA;&#x9;,sourcetype&#xA;&#x9;,completionID&#xA;&#x9;,GatheringSystemID&#xA;&#x9;,AreaID&#xA;&#x9;,AreaName&#xA;&#x9;,GatheringSystemName&#xA;&#x9;,activity_date&#xA;&#x9;,gravity&#xA;&#x9;,BBL&#xA;&#x9;,GAL&#xA;&#x9;--,BTU_content&#xA;&#x9;,BTU_pressure_base&#xA;&#x9;,BTU_wet_dry_ind&#xA;&#x9;,WellPlusCompletionName&#xA;&#x9;,processing_party&#xA;&#x9;,rc_user_key&#xA;&#x9;,Arg_Det_Sequence&#xA;&#x9;,Agreement_ID&#xA;&#x9;,decktype&#xA;&#x9;,trans_copy&#xA;&#x9;,AccountantPersonID&#xA;&#x9;,AllocationDateStamp&#xA;&#x9;,GatheringSystemLockDate&#xA;&#x9;,GatheringSystemLockName&#xA;&#x9;,GatheringSystemAccountantName&#xA;&#x9;&#xA;&quot;"
+      DTS:Expression="&quot;WITH CTEDAY (ProductType,&#x9;DispositionCode,&#x9;DispositionCodeDescription,&#x9;sourcetype,&#x9;completionID,&#x9;GatheringSystemID,&#x9;AreaID,&#x9;AreaName,&#x9;GatheringSystemName,&#x9;activity_date,&#x9;gravity,&#x9;BBL,&#x9;GAL,&#x9;MCF,MMBTU,&#x9;BTU_content,&#x9;BTU_pressure_base,&#x9;BTU_wet_dry_ind,&#x9;WellPlusCompletionName,&#x9;processing_party,&#x9;rc_user_key,&#x9;Arg_Det_Sequence,&#x9;Agreement_ID,&#x9;decktype,&#x9;trans_copy,&#x9;AccountantPersonID,&#x9;AllocationDateStamp,&#x9;GatheringSystemLockDate,&#x9;GatheringSystemLockName,&#x9;GatheringSystemAccountantName)&#xA;AS&#xA;(&#xA;SELECT &#xA; (SELECT ProductTypeDescription FROM ProductTypeTb WITH (NOLOCK) WHERE MerrickID = cmd.ProductType) AS ProductType&#xA;, cmd.DispositionCode&#xA;, (SELECT DispositionCodeDescription FROM DispositionCodeTb WITH (NOLOCK) WHERE ProductTypeID = cmd.ProductType AND MerrickID = cmd.DispositionCode) AS DispositionCodeDescription&#xA;, cmd.sourcetype&#xA;, cmd.MerrickID AS completionID&#xA;, cmd.GatheringSystemID&#xA;--, gs.GatheringSystemName&#xA;, a.AreaID&#xA;, a.AreaName&#xA;, (SELECT GatheringSystemName FROM GatheringSystemTb WITH (NOLOCK) WHERE GatheringSystemMerrickID = cmd.GatheringSystemID) AS GatheringSystemName &#xA;, cmd.RecordDate AS activity_date&#xA;, cmd.AllocActGravity AS gravity&#xA;, SUM(cmd.AllocActOilVol) AS BBL&#xA;, SUM(cmd.AllocActNGLVol) AS GAL&#xA;, SUM(cmd.AllocActGasVolMCF) AS MCF&#xA;, SUM(cmd.AllocActGasVolMMBTU) AS MMBTU&#xA;, cmd.AllocActBTUFactor AS BTU_content&#xA;, cmd.AllocActPressureBase AS BTU_pressure_base&#xA;, cmd.AllocActWetDryFlag AS BTU_wet_dry_ind&#xA;, ISNULL(arg.WellPlusCompletionName,(SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE cmd.merrickid = merrickid)) AS WellPlusCompletionName&#xA;, arg.BusinessEnitity AS processing_party&#xA;, LTRIM(RTRIM(arg.locationid)) AS rc_user_key&#xA;, arg.LocAccountNumber1 AS Arg_Det_Sequence&#xA;, arg.LocAccountNumber2 AS Agreement_ID&#xA;, arg.decktype&#xA;, 'O' AS trans_copy&#xA;--, cmd.AllocationDateStamp&#xA;, gs.AccountantPersonID&#xA;, cmd.AllocationDateStamp&#xA;, gsc.UserDateStamp as GatheringSystemLockDate&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gsc.UserID) AS GatheringSystemLockName&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gs.AccountantPersonID) AS GatheringSystemAccountantName&#xA;FROM CompletionMonthlyDispTb cmd WITH (NOLOCK) &#xA;INNER JOIN CompletionMonthlyTb cm WITH (NOLOCK) ON cmd.MerrickID = cm.merrickID AND cmd.RecordDate = cm.RecordDate &#xA;INNER JOIN (SELECT &#xA;&#x9;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;&#x9;, odi.activeflag&#xA;&#x9;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;&#x9;, odi.StartDate&#xA;&#x9;&#x9;&#x9;&#x9;, odi.EndDate&#xA;&#x9;&#x9;&#x9;&#x9;, odi.WellPlusCompletionName&#xA;&#x9;&#x9;&#x9;&#x9;,(SELECT [Description] FROM BusinessEntityTb WITH (NOLOCK) WHERE merrickid = be.MerrickID) BusinessEnitity&#xA;&#x9;&#x9;&#x9;&#x9;, be.locationid&#xA;&#x9;&#x9;&#x9;&#x9;, be.locaccountnumber1&#xA;&#x9;&#x9;&#x9;&#x9;, be.locaccountnumber2&#xA;&#x9;&#x9;&#x9;FROM BusinessEntityLocationTb be WITH (NOLOCK) &#xA;&#x9;&#x9;&#x9;INNER JOIN &#x9;(SELECT &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  odi.decktype&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, od.activeflag&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, MAX(od.StartDate) AS StartDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, MAX(od.EndDate) AS EndDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;,(SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE odi.objectmerrickid = merrickid and odi.decktype = 15) WellPlusCompletionName&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;FROM OwnershipDeckTb od WITH (NOLOCK) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;INNER JOIN OwnershipDeckInterestTb odi WITH (NOLOCK) ON od.objectmerrickid = odi.objectmerrickid AND od.ObjectMerrickType = odi.ObjectMerrickType AND od.decktype = odi.decktype AND od.StartDate = odi.StartDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;WHERE odi.decktype = 15 and od.ActiveFlag = 1 and od.ObjectMerrickType = 1 and GETDATE() between od.StartDate and od.EndDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;GROUP BY odi.decktype, odi.objectmerrickid, odi.ObjectMerrickType, od.activeflag, odi.ownerbeidloc, odi.OwnerBEID) odi ON be.LocationNumber = odi.ownerbeidloc AND be.merrickid = odi.OwnerBEID) arg ON cmd.MerrickID = arg.objectmerrickid&#xA;LEFT OUTER JOIN AreaTb a WITH (NOLOCK) ON cm.AreaID = a.AreaMerrickID and cm.areaid &lt;&gt; 0&#xA;INNER JOIN GatheringSystemTb gs WITH (NOLOCK) ON cmd.GatheringSystemID = gs.GatheringSystemMerrickID&#xA;INNER JOIN GatheringSystemCloseTb gsc WITH (NOLOCK) ON cmd.GatheringSystemID = gsc.GatheringSystemID and cmd.RecordDate = gsc.RecordMonth&#xA;WHERE cmd.ProductType = 1 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID &gt; 0 &#xA;AND cmd.DispositionCode IN (SELECT MerrickID FROM DispositionCodeTb WHERE ProductTypeID = 1 AND DispositionGrouping = 1) AND gsc.AllocationLockedFlag = 1&#xA;--AND WellPlusCompletionName = 'CRC 8-1'&#xA;GROUP BY cmd.MerrickID, cmd.AllocationDateStamp, gs.GatheringSystemName, a.areaid, a.areaname, cmd.DispositionCode, cmd.GatheringSystemID, &#xA;cmd.AllocationDateStamp, gs.AccountantPersonID, gsc.UserDateStamp, gsc.UserID, cmd.ProductType, cmd.sourcetype, cmd.RecordDate, cmd.AllocActGravity, &#xA;cmd.AllocActBTUFactor, cmd.AllocActPressureBase, cmd.AllocActWetDryFlag, arg.WellPlusCompletionName, &#xA;arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, arg.decktype&#xA;)&#xA;&#xA;SELECT &#xA;&#x9;ProductType&#xA;&#x9;--,ROW_NUMBER() OVER (ORDER BY WellPlusCompletionName ASC) AS Line_No&#xA;&#x9;,DispositionCode&#xA;&#x9;,DispositionCodeDescription&#xA;&#x9;,sourcetype&#xA;&#x9;,completionID&#xA;&#x9;,GatheringSystemID&#xA;&#x9;,AreaID&#xA;&#x9;,AreaName&#xA;&#x9;,GatheringSystemName&#xA;&#x9;,activity_date&#xA;&#x9;,gravity&#xA;&#x9;,BBL&#xA;&#x9;,GAL&#xA;&#x9;,SUM(MCF) AS MCF&#xA;&#x9;,SUM(MMBTU) AS MMBTU&#xA;&#x9;,SUM(MMBTU)/SUM(MCF) BTU_content&#xA;&#x9;,BTU_pressure_base&#xA;&#x9;,BTU_wet_dry_ind&#xA;&#x9;,WellPlusCompletionName&#xA;&#x9;,processing_party&#xA;&#x9;,rc_user_key&#xA;&#x9;,Arg_Det_Sequence&#xA;&#x9;,Agreement_ID&#xA;&#x9;,decktype&#xA;&#x9;,trans_copy&#xA;&#x9;,'PROCOUNT' AS UserName&#xA;&#x9;,AccountantPersonID&#xA;&#x9;,AllocationDateStamp&#xA;&#x9;,GatheringSystemLockDate&#xA;&#x9;,GatheringSystemLockName&#xA;&#x9;,GatheringSystemAccountantName&#xA;FROM CTEDAY&#xA;--WHERE Arg_Det_Sequence &lt;&gt; ''&#xA;GROUP BY &#xA;&#x9;ProductType&#xA;&#x9;,DispositionCode&#xA;&#x9;,DispositionCodeDescription&#xA;&#x9;,sourcetype&#xA;&#x9;,completionID&#xA;&#x9;,GatheringSystemID&#xA;&#x9;,AreaID&#xA;&#x9;,AreaName&#xA;&#x9;,GatheringSystemName&#xA;&#x9;,activity_date&#xA;&#x9;,gravity&#xA;&#x9;,BBL&#xA;&#x9;,GAL&#xA;&#x9;--,BTU_content&#xA;&#x9;,BTU_pressure_base&#xA;&#x9;,BTU_wet_dry_ind&#xA;&#x9;,WellPlusCompletionName&#xA;&#x9;,processing_party&#xA;&#x9;,rc_user_key&#xA;&#x9;,Arg_Det_Sequence&#xA;&#x9;,Agreement_ID&#xA;&#x9;,decktype&#xA;&#x9;,trans_copy&#xA;&#x9;,AccountantPersonID&#xA;&#x9;,AllocationDateStamp&#xA;&#x9;,GatheringSystemLockDate&#xA;&#x9;,GatheringSystemLockName&#xA;&#x9;,GatheringSystemAccountantName&#xA;&#x9;&#xA;&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQuery">
@@ -583,7 +583,7 @@ SELECT
 	,GatheringSystemLockName
 	,GatheringSystemAccountantName
 FROM CTEDAY
-WHERE Arg_Det_Sequence &lt;&gt; ''
+--WHERE Arg_Det_Sequence &lt;&gt; ''
 GROUP BY 
 	ProductType
 	,DispositionCode
@@ -636,15 +636,6 @@ GROUP BY
           Language="CSharp"
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
-          <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -764,6 +755,35 @@ GROUP BY
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Settings.get_Default():ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Sett" +
+    "ings")]
+
+namespace ST_d5c5a91504b64450a59c853eb2aca8e3.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
           <ProjectItem
             Name="ST_d5c5a91504b64450a59c853eb2aca8e3.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -978,35 +998,6 @@ namespace ST_e170d566053f49adad87ad10db091500
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Settings.get_Default():ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Sett" +
-    "ings")]
-
-namespace ST_d5c5a91504b64450a59c853eb2aca8e3.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
-          <ProjectItem
             Name="Properties\AssemblyInfo.cs"
             Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -1036,6 +1027,15 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1447,6 +1447,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                   refId="Package\ProCount DB to IFaceTable\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Inputs[Derived Column Input].Columns[activity_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="activity_date"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[activity_date]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -1610,6 +1617,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">@[User::PubConnID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[RecordDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[RecordDate]"
+                      name="RecordDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[activity_date]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">activity_date</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2698,6 +2727,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                       cachedName="gravity"
                       externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AllocActGravity]"
                       lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[gravity]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RecordDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RecordDate"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecordDate]"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[RecordDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3436,47 +3471,57 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="131,43"
-          Id="Package\ProCount DB to IFaceTable\Row Count"
-          TopLeft="337.916661631316,233.999995815754" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\ProCount DB to IFaceTable\OLE DB Destination"
-          TopLeft="405,373" />
+          Size="197,43"
+          Id="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data"
+          TopLeft="325.41666181758,53.7333323725064" />
         <NodeLayout
           Size="155,43"
           Id="Package\ProCount DB to IFaceTable\Derived Column"
           TopLeft="327.49999511987,138.666664187114" />
         <NodeLayout
-          Size="197,43"
-          Id="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data"
-          TopLeft="325.41666181758,53.7333323725064" />
+          Size="171,42"
+          Id="Package\ProCount DB to IFaceTable\OLE DB Destination"
+          TopLeft="324,373" />
+        <NodeLayout
+          Size="131,43"
+          Id="Package\ProCount DB to IFaceTable\Row Count"
+          TopLeft="337.916661631316,233.999995815754" />
         <EdgeLayout
-          Id="Package\ProCount DB to IFaceTable.Paths[Row Count Output 1]"
-          TopLeft="403.416661631316,276.999995815754">
+          Id="Package\ProCount DB to IFaceTable.Paths[Derived Column Output]"
+          TopLeft="404.208328375593,181.333330853781">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.083338368684,96.000004184246"
+              EndConnector="0,52.6666649619733"
               Start="0,0"
-              End="87.083338368684,88.500004184246">
+              End="0,45.1666649619733">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.000002092123" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,44.000002092123"
-                    Point2="0,48.000002092123"
-                    Point3="4,48.000002092123" />
+                    End="0,45.1666649619733" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ProCount DB to IFaceTable.Paths[Row Count Output 1]"
+          TopLeft="406.458330815658,276.999995815754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96.000004184246"
+              Start="0,0"
+              End="0,88.500004184246">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="83.083338368684,48.000002092123" />
-                  <mssgle:CubicBezierSegment
-                    Point1="83.083338368684,48.000002092123"
-                    Point2="87.083338368684,48.000002092123"
-                    Point3="87.083338368684,52.000002092123" />
-                  <mssgle:LineSegment
-                    End="87.083338368684,88.500004184246" />
+                    End="0,88.500004184246" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3519,31 +3564,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ProCount DB to IFaceTable.Paths[Derived Column Output]"
-          TopLeft="404.208328375593,181.333330853781">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.6666649619733"
-              Start="0,0"
-              End="0,45.1666649619733">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.1666649619733" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\ProCount DB to IFaceTable\OLE DB Destination">
     <Properties>
@@ -3554,14 +3585,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
