@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="WSC_MsgQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="290"
-  DTS:VersionGUID="{734A4DD2-5B3E-43F4-A1FB-2B7B897118AA}">
+  DTS:VersionBuild="306"
+  DTS:VersionGUID="{FE88F14A-C7E2-44C5-865D-0AFA9ACCF465}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -536,7 +536,7 @@
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ArchiveTransformedXML"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -1150,7 +1150,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert tbl_Errorlog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1859,6 +1859,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           cachedLength="23"
                           cachedName="StartDate"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[StartDate]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Inputs[Data Conversion Input].Columns[UserDateStamp]"
+                          cachedDataType="wstr"
+                          cachedLength="24"
+                          cachedName="UserDateStamp"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[UserDateStamp]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Inputs[Data Conversion Input].Columns[UserTimeStamp]"
+                          cachedDataType="wstr"
+                          cachedLength="8"
+                          cachedName="UserTimeStamp"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[UserTimeStamp]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1876,7 +1888,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          length="23"
+                          length="50"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of StartDate]"
                           name="Copy of StartDate"
                           truncationRowDisposition="FailComponent">
@@ -1886,6 +1898,48 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
                               name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[StartDate]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of UserDateStamp]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of UserDateStamp]"
+                          name="Copy of UserDateStamp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[UserDateStamp]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of UserTimeStamp]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="8"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of UserTimeStamp]"
+                          name="Copy of UserTimeStamp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[UserTimeStamp]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1912,6 +1966,82 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion 2"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Inputs[Data Conversion Input].Columns[StartDateNew]"
+                          cachedDataType="wstr"
+                          cachedLength="23"
+                          cachedName="StartDateNew"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Output].Columns[StartDateNew]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of StartDateNew]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of StartDateNew]"
+                          name="Copy of StartDateNew"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Output].Columns[StartDateNew]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2164,6 +2294,86 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input].Columns[Copy of StartDateNew]"
+                          cachedDataType="date"
+                          cachedName="Copy of StartDateNew"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of StartDateNew]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[EndDateNew]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[EndDateNew]"
+                          name="EndDateNew"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[DATEADD]("day",-1,#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of StartDateNew]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">DATEADD("day",-1,[Copy of StartDateNew])</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -2318,6 +2528,88 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column 3"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Inputs[Derived Column Input].Columns[LastStatusChangedDate]"
+                          cachedDataType="wstr"
+                          cachedLength="23"
+                          cachedName="LastStatusChangedDate"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[LastStatusChangedDate]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Output].Columns[StartDateNew]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="23"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Output].Columns[StartDateNew]"
+                          name="StartDateNew"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[LastStatusChangedDate]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LastStatusChangedDate</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2917,7 +3209,7 @@ where [refTable].[API_14] = ?</property>
       ,[SetupItem]
       ,[Sequence]
       ,convert(varchar,[StartDate],23) StartDate
-FROM [dbo].[SetupValueTb] WITH (NOLOCK)</property>
+FROM [dbo].[SetupValueTb] WITH (NOLOCK) where enddate &gt; getdate()</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
@@ -2928,7 +3220,7 @@ FROM [dbo].[SetupValueTb] WITH (NOLOCK)</property>
       ,[SetupItem]
       ,[Sequence]
       ,convert(varchar,[StartDate],23) StartDate
-FROM [dbo].[SetupValueTb] WITH (NOLOCK)) [refTable]
+FROM [dbo].[SetupValueTb] WITH (NOLOCK) where enddate &gt; getdate()) [refTable]
 where [refTable].[ObjectId] = ? and [refTable].[ObjectType] = ? and [refTable].[SetupItem] = ? and [refTable].[Sequence] = ? and [refTable].[StartDate] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -3056,7 +3348,7 @@ where [refTable].[ObjectId] = ? and [refTable].[ObjectType] = ? and [refTable].[
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup 1.Inputs[Lookup Input].Columns[Copy of StartDate]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="23"
+                          cachedLength="50"
                           cachedName="Copy of StartDate"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of StartDate]">
                           <properties>
@@ -4093,6 +4385,44 @@ where [refTable].[ProductionID] = ?</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast 1">
+                  <inputs>
+                    <input
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1.Outputs[Multicast Output 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1.Outputs[Multicast Output 3]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 3"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1.Outputs[Multicast Output 2]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -4309,6 +4639,190 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command 1"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[SetupValueTb]
+ SET
+ [EndDate] = ?
+WHERE [ObjectId] = ? AND [ObjectType] = ? AND [SetupItem] = ? AND [Sequence] = ? AND [StartDate] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Connections[OleDbConnection]"
+                      connectionManagerID="{A1EEA084-00AD-419A-96DF-926F6E4E7CDB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[ProCount]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[MerrickId]"
+                          cachedDataType="i4"
+                          cachedName="MerrickId"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[MerrickId]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ObjectType]"
+                          cachedDataType="i4"
+                          cachedName="ObjectType"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\DerivedColumns_SetupValueTB.Outputs[Derived Column Output].Columns[ObjectType]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SetupItem]"
+                          cachedDataType="i4"
+                          cachedName="SetupItem"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\DerivedColumns_SetupValueTB.Outputs[Derived Column Output].Columns[SetupItem]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Sequence]"
+                          cachedDataType="i4"
+                          cachedName="Sequence"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\DerivedColumns_SetupValueTB.Outputs[Derived Column Output].Columns[Sequence]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[StartDate]"
+                          cachedDataType="wstr"
+                          cachedLength="23"
+                          cachedName="StartDate"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[StartDate]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[EndDateNew]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="EndDateNew"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[EndDateNew]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="dbTimeStamp"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="i4"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="i4"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="i4"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          dataType="dbTimeStamp"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -4376,7 +4890,7 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
                     <input
                       refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="RedirectRow"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
@@ -4556,6 +5070,255 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 1"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SetupValueTb]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Connections[OleDbConnection]"
+                      connectionManagerID="{A1EEA084-00AD-419A-96DF-926F6E4E7CDB}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[ProCount]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[UserID]"
+                          cachedDataType="i4"
+                          cachedName="UserID"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[UserID]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[ObjectType]"
+                          cachedDataType="i4"
+                          cachedName="ObjectType"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ObjectType]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\DerivedColumns_SetupValueTB.Outputs[Derived Column Output].Columns[ObjectType]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SetupItem]"
+                          cachedDataType="i4"
+                          cachedName="SetupItem"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SetupItem]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\DerivedColumns_SetupValueTB.Outputs[Derived Column Output].Columns[SetupItem]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Sequence]"
+                          cachedDataType="i4"
+                          cachedName="Sequence"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Sequence]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\DerivedColumns_SetupValueTB.Outputs[Derived Column Output].Columns[Sequence]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[EndDate]"
+                          cachedDataType="wstr"
+                          cachedLength="23"
+                          cachedName="EndDate"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\DerivedColumns_SetupValueTB.Outputs[Derived Column Output].Columns[EndDate]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[MerrickId]"
+                          cachedDataType="i4"
+                          cachedName="MerrickId"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ObjectId]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Outputs[Union All Output 1].Columns[MerrickId]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Copy of UserDateStamp]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Copy of UserDateStamp"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UserDateStamp]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of UserDateStamp]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Copy of UserTimeStamp]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="Copy of UserTimeStamp"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UserTimeStamp]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of UserTimeStamp]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[StartDateNew]"
+                          cachedDataType="wstr"
+                          cachedLength="23"
+                          cachedName="StartDateNew"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Output].Columns[StartDateNew]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ObjectId]"
+                          dataType="i4"
+                          name="ObjectId" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ObjectType]"
+                          dataType="i4"
+                          name="ObjectType" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SetupItem]"
+                          dataType="i4"
+                          name="SetupItem" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Sequence]"
+                          dataType="i4"
+                          name="Sequence" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                          dataType="dbTimeStamp"
+                          name="StartDate" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                          dataType="dbTimeStamp"
+                          name="EndDate" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[IntegerValue]"
+                          dataType="i4"
+                          name="IntegerValue" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[NumberValue]"
+                          dataType="r8"
+                          name="NumberValue" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StringValue]"
+                          codePage="1252"
+                          dataType="str"
+                          length="80"
+                          name="StringValue" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[BackgroundTaskFlag]"
+                          dataType="i4"
+                          name="BackgroundTaskFlag" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LastTransmission]"
+                          dataType="i4"
+                          name="LastTransmission" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LastLoadDate]"
+                          dataType="dbTimeStamp"
+                          name="LastLoadDate" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[LastLoadTime]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="LastLoadTime" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[TransmitFlag]"
+                          dataType="i4"
+                          name="TransmitFlag" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[BLogicDateStamp]"
+                          dataType="dbTimeStamp"
+                          name="BLogicDateStamp" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[BLogicTimeStamp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="BLogicTimeStamp" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UserDateStamp]"
+                          dataType="dbTimeStamp"
+                          name="UserDateStamp" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UserTimeStamp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="UserTimeStamp" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
+                          dataType="i4"
+                          name="UserID" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[RowUID]"
+                          dataType="guid"
+                          name="RowUID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -6455,35 +7218,50 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
                   name="Data Conversion Output"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Outputs[Data Conversion Output]" />
                 <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Data Conversion Output2]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Outputs[Data Conversion Output]" />
+                <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count.Inputs[Row Count Input 1]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1.Inputs[Multicast Input 1]"
                   name="Derived Column Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output]" />
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output1]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count 1.Inputs[Row Count Input 1]"
-                  name="Derived Column Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output2]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Derived Column Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derive-UpperChangeSetField.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output3]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount.Inputs[Row Count Input 1]"
-                  name="Derived Column Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Error Columns.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output4]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1.Inputs[Data Conversion Input]"
                   name="Derived Column Output"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\DerivedColumns_SetupValueTB.Outputs[Derived Column Output]" />
                 <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output2]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  name="Derived Column Output"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output3]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derive-UpperChangeSetField.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output4]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count 1.Inputs[Row Count Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output5]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count.Inputs[Row Count Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output6]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount.Inputs[Row Count Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Error Columns.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Inputs[Union All Input 3]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_WellType.Outputs[Lookup Match Output]" />
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_ProducingStatus.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output1]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Inputs[Union All Input 2]"
@@ -6491,19 +7269,24 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_ProducingMethod.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output2]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Inputs[Union All Input 3]"
+                  name="Lookup Match Output"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_WellType.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output3]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derive-UpperChangeSetField.Inputs[Derived Column Input]"
                   name="Lookup Match Output"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output3]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_ProducingStatus.Outputs[Lookup Match Output]" />
-                <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output4]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3.Inputs[Derived Column Input]"
                   name="Lookup Match Output"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup 1.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output1]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup 1.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Error Columns.Inputs[Derived Column Input]"
@@ -6520,10 +7303,20 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
                   name="Multicast Output 1"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast.Outputs[Multicast Output 1]" />
                 <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Multicast Output 11]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  name="Multicast Output 1"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1.Outputs[Multicast Output 1]" />
+                <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Multicast Output 2]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Multicast Output 2"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast.Outputs[Multicast Output 2]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Multicast Output 3]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2.Inputs[Data Conversion Input]"
+                  name="Multicast Output 3"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1.Outputs[Multicast Output 3]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[OLE DB Command Output]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Inputs[Derived Column Input]"
@@ -6541,19 +7334,19 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert tbl_ErrorQ.Inputs[OLE DB Command Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\setupValueTb_Upsert ErrorQ.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count.Outputs[Row Count Output 1]" />
                 <path
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 12]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\CompletionTB_Upsert ErrorQ.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count 1.Outputs[Row Count Output 1]" />
-                <path
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 12]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert tbl_ErrorQ.Inputs[OLE DB Command Input]"
-                  name="Row Count Output 1"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount.Outputs[Row Count Output 1]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Union All Output 1]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast.Inputs[Multicast Input 1]"
@@ -6582,7 +7375,7 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_MsgQ"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6626,7 +7419,7 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6693,7 +7486,7 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Transformed Msg in tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6852,39 +7645,39 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="162.666666666667,41.3333333333334"
+          Size="163,41"
           Id="Package\Generate TrackID"
           TopLeft="364.000006198883,91.7647071693183" />
         <NodeLayout
-          Size="194.666666666667,42"
+          Size="195,42"
           Id="Package\Get BatchID's to Process"
           TopLeft="80.85714801477,236.588241994917" />
         <NodeLayout
-          Size="221.333333333334,41.3333333333334"
+          Size="221,41"
           Id="Package\Insert into tbl_TransactionLog"
           TopLeft="337.714291465526,159.670590474614" />
         <NodeLayout
-          Size="194.666666666667,41.3333333333334"
+          Size="195,41"
           Id="Package\Process All IfactBatchUIDS\ArchiveTransformedXML"
           TopLeft="263.714283874449,175.805887207401" />
         <NodeLayout
-          Size="166.666666666667,41.3333333333334"
+          Size="167,41"
           Id="Package\Process All IfactBatchUIDS\Insert tbl_Errorlog"
           TopLeft="376.825408249486,17.23791178183" />
         <NodeLayout
-          Size="173.333333333334,42.6666666666667"
+          Size="173,43"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount"
           TopLeft="75.142863429322,17.917650353455" />
         <NodeLayout
-          Size="161.333333333334,42.6666666666667"
+          Size="161,43"
           Id="Package\Process All IfactBatchUIDS\Update tbl_MsgQ"
           TopLeft="284.273808020794,318.721574956317" />
         <NodeLayout
-          Size="206.666666666667,41.3333333333334"
+          Size="207,41"
           Id="Package\Process All IfactBatchUIDS\Update tbl_TransactionLog"
           TopLeft="263.380950535439,249.166672549985" />
         <NodeLayout
-          Size="302.666666666667,41.3333333333334"
+          Size="303,41"
           Id="Package\Process All IfactBatchUIDS\Update Transformed Msg in tbl_TransactionLog"
           TopLeft="210.857140117155,105.911768580104" />
         <EdgeLayout
@@ -7018,8 +7811,8 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="740,417.333333333334"
-          Size="740,458.666666666667"
+          PanelSize="740,417"
+          Size="740,459"
           Id="Package\Process All IfactBatchUIDS"
           TopLeft="622,174" />
         <EdgeLayout
@@ -7121,99 +7914,123 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="227,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\DerivedColumns_SetupValueTB"
+          TopLeft="700.244909884283,646.50756891706" />
+        <NodeLayout
+          Size="221,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\setupValueTb_Upsert ErrorQ"
+          TopLeft="672.244909407448,918.131103742658" />
+        <NodeLayout
+          Size="172,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination"
+          TopLeft="697.469399632936,714.467235878676" />
+        <NodeLayout
+          Size="157,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion"
+          TopLeft="505.714294326549,253.270591787318" />
+        <NodeLayout
+          Size="196,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_ProducingStatus"
+          TopLeft="305.714290920569,412.235297060507" />
+        <NodeLayout
+          Size="164,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2"
+          TopLeft="345.163271184217,723.090764614787" />
+        <NodeLayout
+          Size="147,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count 1"
+          TopLeft="348.489801853113,790.51429459067" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1"
+          TopLeft="1286,858" />
+        <NodeLayout
+          Size="147,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count"
+          TopLeft="707.346950821556,847.852111317459" />
+        <NodeLayout
+          Size="156,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Conditional Split"
+          TopLeft="510.36735563028,327.563027975221" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command 1"
+          TopLeft="1282,949" />
+        <NodeLayout
+          Size="216,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_ProducingMethod"
+          TopLeft="521.142866017867,417.129414776205" />
+        <NodeLayout
+          Size="121,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All"
+          TopLeft="549.387764458059,511.368072996173" />
+        <NodeLayout
+          Size="155,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column"
+          TopLeft="710.87756312658,781.302530933664" />
+        <NodeLayout
+          Size="159,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount"
+          TopLeft="773.142870309401,179.388236744098" />
+        <NodeLayout
           Size="162,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert tbl_ErrorQ"
           TopLeft="772.499988488853,249.599995536804" />
         <NodeLayout
-          Size="157.333333333334,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion"
-          TopLeft="505.714294326549,253.270591787318" />
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command"
-          TopLeft="340.408169062423,646.722698145672" />
-        <NodeLayout
-          Size="121.333333333334,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All"
-          TopLeft="549.387764458059,511.368072996173" />
-        <NodeLayout
-          Size="221.333333333334,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derive-UpperChangeSetField"
-          TopLeft="473.460325523299,184.847059587129" />
-        <NodeLayout
-          Size="168,41.3333333333334"
+          Size="168,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_WellType"
           TopLeft="784.000013351439,417.741179490667" />
         <NodeLayout
-          Size="121.333333333334,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast"
-          TopLeft="544.979601117682,579.11933333981" />
+          Size="221,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derive-UpperChangeSetField"
+          TopLeft="473.460325523299,184.847059587129" />
         <NodeLayout
-          Size="114.666666666667,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup"
-          TopLeft="533.142866222225,102.776472029636" />
+          Size="180,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1"
+          TopLeft="1075,910" />
         <NodeLayout
-          Size="164,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2"
-          TopLeft="345.163271184217,723.090764614787" />
-        <NodeLayout
-          Size="146.666666666667,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count 1"
-          TopLeft="348.489801853113,790.51429459067" />
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1"
-          TopLeft="912.499986402691,554.699995374083" />
-        <NodeLayout
-          Size="146.666666666667,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count"
-          TopLeft="707.346950821556,847.852111317459" />
-        <NodeLayout
-          Size="222.666666666667,41.3333333333334"
+          Size="223,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data"
           TopLeft="485.714293985951,18.8117649697102" />
         <NodeLayout
-          Size="156,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Conditional Split"
-          TopLeft="510.36735563028,327.563027975221" />
+          Size="115,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup"
+          TopLeft="533.142866222225,102.776472029636" />
         <NodeLayout
-          Size="221.333333333334,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\setupValueTb_Upsert ErrorQ"
-          TopLeft="672.244909407448,918.131103742658" />
+          Size="165,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 2"
+          TopLeft="1291,781" />
         <NodeLayout
-          Size="122.666666666667,42.6666666666667"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup 1"
-          TopLeft="949.166652522981,643.733326483568" />
+          Size="167,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Command"
+          TopLeft="340.408169062423,646.722698145672" />
         <NodeLayout
-          Size="216,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_ProducingMethod"
-          TopLeft="521.142866017867,417.129414776205" />
-        <NodeLayout
-          Size="158.666666666667,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount"
-          TopLeft="773.142870309401,179.388236744098" />
-        <NodeLayout
-          Size="186.666666666667,41.3333333333334"
+          Size="187,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Error Columns"
           TopLeft="765.142870173163,106.188235358466" />
         <NodeLayout
-          Size="226.666666666667,42.6666666666667"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\DerivedColumns_SetupValueTB"
-          TopLeft="700.244909884283,646.50756891706" />
+          Size="130,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast 1"
+          TopLeft="1102,779" />
         <NodeLayout
-          Size="196,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_ProducingStatus"
-          TopLeft="305.714290920569,412.235297060507" />
+          Size="163,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3"
+          TopLeft="1084,704" />
         <NodeLayout
-          Size="154.666666666667,41.3333333333334"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column"
-          TopLeft="710.87756312658,781.302530933664" />
+          Size="121,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast"
+          TopLeft="544.979601117682,579.11933333981" />
         <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination"
-          TopLeft="697.469399632936,714.467235878676" />
+          Size="122,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup 1"
+          TopLeft="949.166652522981,643.733326483568" />
         <NodeLayout
-          Size="216,42.6666666666667"
+          Size="165,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion 1"
+          TopLeft="912.499986402691,554.699995374083" />
+        <NodeLayout
+          Size="216,43"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\CompletionTB_Upsert ErrorQ"
           TopLeft="314.999995306134,874.866651308934" />
         <EdgeLayout
@@ -7312,28 +8129,6 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 12]"
-          TopLeft="852.988096065794,220.721570077431">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.8784254593729"
-              Start="0,0"
-              End="0,21.3784254593729">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.3784254593729" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
           TopLeft="422.41156524629,831.847627924003">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7355,7 +8150,7 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
           TopLeft="781.995930114502,889.452111317459">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7368,6 +8163,28 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,21.1789924251987" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
+          TopLeft="852.988096065794,220.721570077431">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.8784254593729"
+              Start="0,0"
+              End="0,21.3784254593729">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3784254593729" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7445,6 +8262,28 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Multicast Output 3]"
+          TopLeft="1232,801">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59,0"
+              Start="0,0"
+              End="51.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="51.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Multicast Output 2]"
           TopLeft="586.75737889546,620.452666673143">
           <EdgeLayout.Curve>
@@ -7470,6 +8309,28 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
                     Point3="-163.015876499704,14.7131581710095" />
                   <mssgle:LineSegment
                     End="-163.015876499704,18.7700314725286" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Multicast Output 11]"
+          TopLeft="1166,821">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7549,6 +8410,42 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output1]"
+          TopLeft="1010.16665252298,685.733326483568">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-226.697252890045,28.733909395108"
+              Start="0,0"
+              End="-226.697252890045,21.233909395108">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.366954697554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.366954697554"
+                    Point2="0,14.366954697554"
+                    Point3="-4,14.366954697554" />
+                  <mssgle:LineSegment
+                    End="-222.697252890045,14.366954697554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-222.697252890045,14.366954697554"
+                    Point2="-226.697252890045,14.366954697554"
+                    Point3="-226.697252890045,18.366954697554" />
+                  <mssgle:LineSegment
+                    End="-226.697252890045,21.233909395108" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-169.155013163773,19.366954697554,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
           TopLeft="647.542866222225,125.282353694051">
           <EdgeLayout.Curve>
@@ -7574,78 +8471,36 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output4]"
-          TopLeft="1010.49998585631,686.399993150235">
+          TopLeft="1071.16665252298,664.733326483568">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-227.030586223378,28.0672427284413"
+              EndConnector="94.3333474770188,39.266673516432"
               Start="0,0"
-              End="-227.030586223378,20.5672427284413">
+              End="94.3333474770188,31.766673516432">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.0336213642207" />
+                    End="90.3333474770188,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.0336213642207"
-                    Point2="0,14.0336213642207"
-                    Point3="-4,14.0336213642207" />
+                    Point1="90.3333474770188,0"
+                    Point2="94.3333474770188,0"
+                    Point3="94.3333474770188,4" />
                   <mssgle:LineSegment
-                    End="-223.030586223378,14.0336213642207" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-223.030586223378,14.0336213642207"
-                    Point2="-227.030586223378,14.0336213642207"
-                    Point3="-227.030586223378,18.0336213642207" />
-                  <mssgle:LineSegment
-                    End="-227.030586223378,20.5672427284413" />
+                    End="94.3333474770188,31.766673516432" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-161.706679830439,19.0336213642207,96.3827734375,11.609375"
+              BoundingBox="46.1419607582688,-17.609375,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output3]"
-          TopLeft="403.714290920569,453.835297060508">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="178.07347353749,57.532775935665"
-              Start="0,0"
-              End="178.07347353749,50.032775935665">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5321113400046" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.5321113400046"
-                    Point2="0,37.5321113400046"
-                    Point3="4,37.5321113400046" />
-                  <mssgle:LineSegment
-                    End="174.07347353749,37.5321113400046" />
-                  <mssgle:CubicBezierSegment
-                    Point1="174.07347353749,37.5321113400046"
-                    Point2="178.07347353749,37.5321113400046"
-                    Point3="178.07347353749,41.5321113400046" />
-                  <mssgle:LineSegment
-                    End="178.07347353749,50.032775935665" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="40.845350049995,42.5321113400046,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output2]"
           TopLeft="587.301595872762,144.376472029636">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7665,6 +8520,42 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-48.19138671875,10.6806062787465,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output2]"
+          TopLeft="868.000013351439,459.341179490667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-229.41224889338,52.0268935055056"
+              Start="0,0"
+              End="-229.41224889338,44.5268935055056">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.9402910422182" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.9402910422182"
+                    Point2="0,33.9402910422182"
+                    Point3="-4,33.9402910422182" />
+                  <mssgle:LineSegment
+                    End="-225.41224889338,33.9402910422182" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-225.41224889338,33.9402910422182"
+                    Point2="-229.41224889338,33.9402910422182"
+                    Point3="-229.41224889338,37.9402910422182" />
+                  <mssgle:LineSegment
+                    End="-229.41224889338,44.5268935055056" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-162.89751116544,38.9402910422182,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7706,76 +8597,42 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output]"
-          TopLeft="868.000013351439,459.341179490667">
+          TopLeft="403.714290920569,453.835297060508">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-229.41224889338,52.0268935055056"
+              EndConnector="178.07347353749,57.532775935665"
               Start="0,0"
-              End="-229.41224889338,44.5268935055056">
+              End="178.07347353749,50.032775935665">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.9402910422182" />
+                    End="0,33.5321113400046" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.9402910422182"
-                    Point2="0,33.9402910422182"
-                    Point3="-4,33.9402910422182" />
+                    Point1="0,33.5321113400046"
+                    Point2="0,37.5321113400046"
+                    Point3="4,37.5321113400046" />
                   <mssgle:LineSegment
-                    End="-225.41224889338,33.9402910422182" />
+                    End="174.07347353749,37.5321113400046" />
                   <mssgle:CubicBezierSegment
-                    Point1="-225.41224889338,33.9402910422182"
-                    Point2="-229.41224889338,33.9402910422182"
-                    Point3="-229.41224889338,37.9402910422182" />
+                    Point1="174.07347353749,37.5321113400046"
+                    Point2="178.07347353749,37.5321113400046"
+                    Point3="178.07347353749,41.5321113400046" />
                   <mssgle:LineSegment
-                    End="-229.41224889338,44.5268935055056" />
+                    End="178.07347353749,50.032775935665" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-162.89751116544,38.9402910422182,96.3827734375,11.609375"
+              BoundingBox="40.845350049995,42.5321113400046,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output4]"
-          TopLeft="850.022687662061,646.50756891706">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="119.366187629519,-49.1409068763104"
-              Start="0,0"
-              End="119.366187629519,-41.6409068763104">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-20.493998183709" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-20.493998183709"
-                    Point2="0,-24.493998183709"
-                    Point3="4,-24.493998183709" />
-                  <mssgle:LineSegment
-                    End="115.366187629519,-24.493998183709" />
-                  <mssgle:CubicBezierSegment
-                    Point1="115.366187629519,-24.493998183709"
-                    Point2="119.366187629519,-24.493998183709"
-                    Point3="119.366187629519,-28.493998183709" />
-                  <mssgle:LineSegment
-                    End="119.366187629519,-41.6409068763104" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output3]"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output6]"
           TopLeft="855.542870241282,147.788235358466">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7797,51 +8654,7 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output2]"
-          TopLeft="584.187309924924,226.447059587129">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26.823532200189"
-              Start="0,0"
-              End="0,19.323532200189">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.323532200189" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output1]"
-          TopLeft="424.626536518665,764.690764614787">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,25.8235299758832"
-              Start="0,0"
-              End="0,18.3235299758832">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.3235299758832" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output]"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output5]"
           TopLeft="784.512256974068,822.902530933664">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7863,31 +8676,175 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Data Conversion Output1]"
-          TopLeft="1022.27776418047,597.36666204075">
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output4]"
+          TopLeft="424.626536518665,764.690764614787">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11.7777783241536,46.3666644428176"
+              EndConnector="0,25.8235299758832"
               Start="0,0"
-              End="-11.7777783241536,38.8666644428176">
+              End="0,18.3235299758832">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.8111982525536" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.8111982525536"
-                    Point2="0,18.8111982525536"
-                    Point3="-4,18.8111982525536" />
+                    End="0,18.3235299758832" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output3]"
+          TopLeft="584.187309924924,226.447059587129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.823532200189"
+              Start="0,0"
+              End="0,19.323532200189">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-7.77777832415359,18.8111982525536" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.77777832415359,18.8111982525536"
-                    Point2="-11.7777783241536,18.8111982525536"
-                    Point3="-11.7777783241536,22.8111982525536" />
+                    End="0,19.323532200189" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output2]"
+          TopLeft="1368.5,900">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-11.7777783241536,38.8666644428176" />
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output1]"
+          TopLeft="850.244909884283,646.50756891706">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.588409851741,-49.807573542977"
+              Start="0,0"
+              End="118.588409851741,-42.307573542977">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-20.8230297025363" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-20.8230297025363"
+                    Point2="0,-24.8230297025363"
+                    Point3="4,-24.8230297025363" />
+                  <mssgle:LineSegment
+                    End="114.588409851741,-24.8230297025363" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.588409851741,-24.8230297025363"
+                    Point2="118.588409851741,-24.8230297025363"
+                    Point3="118.588409851741,-28.8230297025363" />
+                  <mssgle:LineSegment
+                    End="118.588409851741,-42.307573542977" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output]"
+          TopLeft="1166.25,746">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Data Conversion Output2]"
+          TopLeft="1370.5,823">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Data Conversion Output1]"
+          TopLeft="1021.16665306936,596.699995374083">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.0000005463766,47.0333311094851"
+              Start="0,0"
+              End="-11.0000005463766,39.5333311094851">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0843528391428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.0843528391428"
+                    Point2="0,19.0843528391428"
+                    Point3="-4,19.0843528391428" />
+                  <mssgle:LineSegment
+                    End="-7.00000054637655,19.0843528391428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.00000054637655,19.0843528391428"
+                    Point2="-11.0000005463766,19.0843528391428"
+                    Point3="-11.0000005463766,23.0843528391428" />
+                  <mssgle:LineSegment
+                    End="-11.0000005463766,39.5333311094851" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7922,61 +8879,20 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_WellType">
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup 1">
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_ProducingStatus">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8022,7 +8938,7 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_ProducingStatus">
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup_WellType">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -8045,7 +8961,7 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination">
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8054,6 +8970,60 @@ EXEC sp_executesql @SQL_Query, N'@MerrickID INT, @CompletionName VARCHAR(60), @L
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceWellTest Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
