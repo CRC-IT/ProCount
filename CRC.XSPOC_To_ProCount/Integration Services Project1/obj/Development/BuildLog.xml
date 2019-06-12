@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CRC.XSPOC_To_ProCount</Name>
-    <LastWriteTime>2019-06-10T22:05:28.3146633Z</LastWriteTime>
+    <LastWriteTime>2019-06-12T16:26:26.6799109Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -93,7 +93,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>RT_ProCount_To_OneCal.dtsx</Name>
-      <LastWriteTime>2019-05-28T15:48:47.8941434Z</LastWriteTime>
+      <LastWriteTime>2019-06-12T16:25:59.8271478Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -108,7 +108,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>GLT_ProCount_To_OneCal.dtsx</Name>
-      <LastWriteTime>2019-05-28T15:48:47.8133593Z</LastWriteTime>
+      <LastWriteTime>2019-06-12T16:26:25.945705Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>

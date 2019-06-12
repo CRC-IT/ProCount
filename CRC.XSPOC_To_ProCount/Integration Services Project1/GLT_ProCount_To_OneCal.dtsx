@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="GLT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="346"
-  DTS:VersionGUID="{E49901F6-CA28-4C71-85D2-1C4D941F9B12}">
+  DTS:VersionBuild="347"
+  DTS:VersionGUID="{CC5AE0B6-A4FC-44E9-8330-59979872E2AC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAByh8vMd9tEqsFALeRjhU4wAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAkUhBX5p7NqUoxDsFCcHn6AAAAAASAAACgAAAAEAAAAKahXdyYN0P5W8ScMLvLBw4gAAAAWdDK8FmEeg7ZB8myZhLMkNvSstsEDShvtBvT1nKTJk4UAAAAY36f3hW5lF5ea6WNFOtzUD0sYO4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABU5oD9m9du+uChsvFnLBB0AAAAAASAAACgAAAAEAAAACjy5kd8UjO0S8nMlVfflY4gAAAANHUnog/4x1wJa1gcrgDYSswRpM1ErTmcuAcDkl5OD/QUAAAAuxisrztEEErWqVpL3MT3ZOh92CI</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -415,7 +415,7 @@
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ArchiveTransformedXML"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ScriptProject
@@ -426,14 +426,35 @@
           ReadOnlyVariables="User::ArchFormattedMsg,User::FailRecCount,User::FormattedMsg,User::LookupRecCount,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -784,35 +805,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1021,7 +1021,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute_CD_BusinessRules"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1128,7 +1128,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog for BR Failure"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5144,7 +5144,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
       DTS:LocaleID="-1"
       DTS:ObjectName="Update tbl_Errorlog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5205,7 +5205,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
       DTS:LocaleID="-1"
       DTS:ObjectName="Update tbl_MsgQ"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5249,7 +5249,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
       DTS:LocaleID="-1"
       DTS:ObjectName="Update tbl_TransactionLog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5310,7 +5310,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
       DTS:LocaleID="-1"
       DTS:ObjectName="Update Transformed Msg in tbl_TransactionLog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5457,23 +5457,23 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="194.666666666667,41.3333333333334"
+          Size="195,41"
           Id="Package\ArchiveTransformedXML"
           TopLeft="342.630958444939,384.494121939141" />
         <NodeLayout
-          Size="206.666666666667,42"
+          Size="207,42"
           Id="Package\Execute_CD_BusinessRules"
           TopLeft="622.161570711646,65.564708410918" />
         <NodeLayout
-          Size="162.666666666667,41.3333333333334"
+          Size="163,41"
           Id="Package\Generate TrackID"
           TopLeft="349.833339792986,9.76666738819847" />
         <NodeLayout
-          Size="221.333333333334,42.6666666666667"
+          Size="221,43"
           Id="Package\Insert into tbl_TransactionLog"
           TopLeft="320.630958386754,84.1392172206859" />
         <NodeLayout
-          Size="233.333333333334,42"
+          Size="233,42"
           Id="Package\Insert tbl_Errorlog for BR Failure"
           TopLeft="646,141.333333333333" />
         <NodeLayout
@@ -5481,19 +5481,19 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
           Id="Package\MsgQ_To_ProCount"
           TopLeft="346.821434953712,222.127454470723" />
         <NodeLayout
-          Size="172,41.3333333333334"
+          Size="172,41"
           Id="Package\Update tbl_Errorlog"
           TopLeft="656.202392110235,222.627454509466" />
         <NodeLayout
-          Size="161.333333333334,41.3333333333334"
+          Size="161,41"
           Id="Package\Update tbl_MsgQ"
           TopLeft="360.19048266579,538.209809471098" />
         <NodeLayout
-          Size="206.666666666667,41.3333333333334"
+          Size="207,41"
           Id="Package\Update tbl_TransactionLog"
           TopLeft="336.54762521148,462.821573847661" />
         <NodeLayout
-          Size="309.333333333334,42"
+          Size="309,42"
           Id="Package\Update Transformed Msg in tbl_TransactionLog"
           TopLeft="285.583333339542,293.166666395465" />
         <EdgeLayout
@@ -6124,6 +6124,19 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\MsgQ_To_ProCount\Load Gas Loader Trans">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\MsgQ_To_ProCount\Lookup">
     <Properties>
       <Property>
@@ -6151,19 +6164,6 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."AGR_DET_SEQUENCE" = ?</prope
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\MsgQ_To_ProCount\Load Gas Loader Trans">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
