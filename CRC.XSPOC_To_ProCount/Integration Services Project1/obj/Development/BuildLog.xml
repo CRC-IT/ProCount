@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CRC.XSPOC_To_ProCount</Name>
-    <LastWriteTime>2019-06-12T16:28:33.8702719Z</LastWriteTime>
+    <LastWriteTime>2019-06-12T16:42:59.914584Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>WT_XSPOC_To_IFace.dtsx</Name>
-      <LastWriteTime>2019-06-05T22:48:13.2815075Z</LastWriteTime>
+      <LastWriteTime>2019-06-12T16:42:13.0134952Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -38,7 +38,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>WD_XSPOC_To_IFace.dtsx</Name>
-      <LastWriteTime>2019-05-28T15:48:47.9210716Z</LastWriteTime>
+      <LastWriteTime>2019-06-12T16:42:24.0264624Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -63,7 +63,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DT_XSPOC_To_IFace.dtsx</Name>
-      <LastWriteTime>2019-05-28T15:48:47.7275902Z</LastWriteTime>
+      <LastWriteTime>2019-06-12T16:36:19.5016501Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -98,7 +98,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>GA_File_To_IFace.dtsx</Name>
-      <LastWriteTime>2019-05-28T15:48:47.7924159Z</LastWriteTime>
+      <LastWriteTime>2019-06-12T16:37:42.6458447Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -118,7 +118,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DT_ODS_DOWNTIME_DETAILS_P_To_IFace.dtsx</Name>
-      <LastWriteTime>2019-05-28T15:48:47.7156207Z</LastWriteTime>
+      <LastWriteTime>2019-06-12T16:35:46.2984563Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -133,7 +133,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>WC_ODS_Procount_To_IFace.dtsx</Name>
-      <LastWriteTime>2019-05-28T15:48:47.911101Z</LastWriteTime>
+      <LastWriteTime>2019-06-12T16:40:38.6231792Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>

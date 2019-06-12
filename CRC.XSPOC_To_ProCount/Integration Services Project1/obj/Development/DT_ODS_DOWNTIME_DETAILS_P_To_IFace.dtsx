@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DT_ODS_DOWNTIME_DETAILS_P_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="102"
-  DTS:VersionGUID="{1B671284-8A76-4BC7-8A79-F9F765280635}">
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{A4051463-1C9A-4E9B-B6B2-77A9895E64A2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -357,14 +357,35 @@ FROM DowntimeReasonTb WITH (NOLOCK)</DTS:VariableValue>
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_d5c5a91504b64450a59c853eb2aca8e3")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_d5c5a91504b64450a59c853eb2aca8e3")]
+[assembly: AssemblyCopyright("Copyright @  2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -727,35 +748,14 @@ namespace ST_d5c5a91504b64450a59c853eb2aca8e3.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_d5c5a91504b64450a59c853eb2aca8e3")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_d5c5a91504b64450a59c853eb2aca8e3")]
-[assembly: AssemblyCopyright("Copyright @  2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -967,7 +967,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D63BB67A-E86F-4B6D-9644-8579ECC00598}"
+          SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="DELETE FROM [dbo].[tbl_Integration_CompletionDaily]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -1010,7 +1010,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{389c5f51-85e9-46cf-a128-6ed1bb3168a8}"
+          SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='1'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;   SELECT TRT.[MerrickID]&#xA;      ,TRT.[RecordDate]&#xA;      ,TRT.[RunTicketNumber]&#xA;      ,TRT.[GrossBarrels]&#xA;      ,CMT.AllocActGravity&#xA;      ,BEL.LocAccountNumber1&#xA;      ,BEL.LocAccountNumber2&#xA;FROM [Crc_ProCount].[dbo].[TankRunTicketTb] TRT WITH (NOLOCK)&#xA;JOIN [Crc_ProCount].[dbo].TankTb TTB WITH (NOLOCK) ON TTB.MerrickID= TRT.MerrickID&#xA;JOIN [Crc_ProCount].[dbo].CompletionMonthlyTb CMT WITH (NOLOCK) ON CMT.MerrickID = TRT.MerrickID AND CMT.RecordDate =  TRT.RecordDate&#xA;LEFT JOIN [Crc_ProCount].[dbo].BusinessEntityLocationTb BEL WITH (NOLOCK) ON BEL.MerrickID = TRT.MerrickID&#xA; FOR XML PATH ('TankRunTicket_Record'), ROOT('TankRunTicket_From_ProCount')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding

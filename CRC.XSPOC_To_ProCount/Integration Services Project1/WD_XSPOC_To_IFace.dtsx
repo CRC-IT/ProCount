@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="WD_XSPOC_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="293"
-  DTS:VersionGUID="{DC16CE71-2105-4299-8A6F-3B1BE99CCC32}">
+  DTS:VersionBuild="294"
+  DTS:VersionGUID="{14E41B57-6AFC-4DEC-8061-2B9514C6FDC4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -328,14 +328,35 @@
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -602,35 +623,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -842,7 +842,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D63BB67A-E86F-4B6D-9644-8579ECC00598}"
+          SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="DELETE FROM  [tbl_Integration_WellData]"
           SQLTask:TypeConversionMode="None" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
@@ -903,7 +903,7 @@ END
  "</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{FB9F0619-5137-4CA1-9347-512F7FD42D93}"
+          SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='1'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT  * FROM [tbl_Integration_WellData] where RowEffectiveDat &gt;= DateAdd(day,-2,getdate()) &#xA; FOR XML PATH ('WellData_Record'), ROOT('WellData_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
@@ -1933,39 +1933,39 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="194.666666666667,41.3333333333334"
+          Size="195,41"
           Id="Package\ArchiveTransformedXML"
           TopLeft="242.285718411816,403.764711545" />
         <NodeLayout
-          Size="170.666666666667,41.3333333333334"
+          Size="171,41"
           Id="Package\Delete XSPOC Data"
           TopLeft="253.714290035014,610.711492092964" />
         <NodeLayout
-          Size="158.666666666667,41.3333333333334"
+          Size="159,41"
           Id="Package\Generate GUID's"
           TopLeft="248.272113071586,116.924744870452" />
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="169,41"
           Id="Package\Getting XSPOC xml"
           TopLeft="242.058961038339,264.746967740923" />
         <NodeLayout
-          Size="209.333333333334,41.3333333333334"
+          Size="209,41"
           Id="Package\Insert into tbl_PublisherLog"
           TopLeft="221.986398338229,187.549582462245" />
         <NodeLayout
-          Size="166.666666666667,41.3333333333334"
+          Size="167,41"
           Id="Package\Insert tbl_Errorlog"
           TopLeft="534.285723384546,464.176477098135" />
         <NodeLayout
-          Size="194.666666666667,41.3333333333334"
+          Size="195,41"
           Id="Package\Update tbl_PublisherLog"
           TopLeft="248.970525781893,541.450613627934" />
         <NodeLayout
-          Size="253.333333333334,41.3333333333334"
+          Size="253,41"
           Id="Package\Update XSPOC XML tbl_PublisherLog"
           TopLeft="205.659867447945,331.050610127389" />
         <NodeLayout
-          Size="196,41.3333333333334"
+          Size="196,41"
           Id="Package\XSPOC DB to IFaceTable"
           TopLeft="240.589573258215,470.689828321816" />
         <EdgeLayout
