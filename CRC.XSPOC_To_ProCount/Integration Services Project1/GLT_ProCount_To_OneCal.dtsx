@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="GLT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="351"
-  DTS:VersionGUID="{C8619CE7-346B-4387-A401-D7238F6198CF}">
+  DTS:VersionBuild="352"
+  DTS:VersionGUID="{5634BFE5-4085-4D13-A70B-E02FDEBB1020}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABgWtjJghkhMoZO8CdSQez8AAAAAASAAACgAAAAEAAAAMY/GowEVi3UYL4YLPtQYasgAAAA1nsKOaC6G/rnFvF3Eh1Q7zh2AEenRSgJ8xoAP69MMisUAAAAiB3OGz9epfNDOHLVlVEEtxrQhgE</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACbclt3MczVdG7zOtB538DZAAAAAASAAACgAAAAEAAAAOHn/dB/arebHD227zGgxvogAAAAarUyRM46COZSdpVJ/7QAoYt/TNvGgX7/BH+fta94Pd8UAAAAO4Ws4DC95QHqpfaoTzWQbCNtR3Y</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2247,14 +2247,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                       externalMetadataColumnId="Package\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[BTU_CONTENT]"
                       lineageId="Package\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[BTU_content]" />
                     <inputColumn
-                      refId="Package\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[BTU_pressure_base]"
-                      cachedDataType="numeric"
-                      cachedName="BTU_pressure_base"
-                      cachedPrecision="4"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[BTU_PRESSURE_BASE]"
-                      lineageId="Package\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[BTU_pressure_base]" />
-                    <inputColumn
                       refId="Package\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[BTU_wet_dry_ind]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -2422,6 +2414,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                       cachedName="AllocationDateStamp"
                       externalMetadataColumnId="Package\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[ALLOCATIONDATESTAMP]"
                       lineageId="Package\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[AllocationDateStamp]" />
+                    <inputColumn
+                      refId="Package\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of BTU_pressure_base]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of BTU_pressure_base"
+                      externalMetadataColumnId="Package\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[BTU_PRESSURE_BASE]"
+                      lineageId="Package\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BTU_pressure_base]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
