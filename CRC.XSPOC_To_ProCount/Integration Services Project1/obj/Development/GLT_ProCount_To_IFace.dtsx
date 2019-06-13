@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="GLT_ProCount_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="140"
-  DTS:VersionGUID="{80FB8BB7-E61B-4F3A-9FEB-C42BDACE9873}">
+  DTS:VersionBuild="141"
+  DTS:VersionGUID="{E2B63556-390C-49A2-A49E-46BE946208E3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -637,14 +637,35 @@ GROUP BY
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_d5c5a91504b64450a59c853eb2aca8e3")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_d5c5a91504b64450a59c853eb2aca8e3")]
+[assembly: AssemblyCopyright("Copyright @  2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1007,35 +1028,14 @@ namespace ST_d5c5a91504b64450a59c853eb2aca8e3.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_d5c5a91504b64450a59c853eb2aca8e3")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_d5c5a91504b64450a59c853eb2aca8e3")]
-[assembly: AssemblyCopyright("Copyright @  2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1639,6 +1639,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">activity_date</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CreatedBy]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="13"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CreatedBy]"
+                      name="CreatedBy"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[System::UserName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[System::UserName]</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2733,6 +2756,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                       cachedName="RecordDate"
                       externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecordDate]"
                       lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[RecordDate]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedBy]"
+                      cachedDataType="wstr"
+                      cachedLength="13"
+                      cachedName="CreatedBy"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CreatedBy]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2769,24 +2799,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                       dataType="i4"
                       name="PubConnID" />
                     <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="LocationID" />
-                    <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocAccountNumber1]"
-                      codePage="1252"
-                      dataType="str"
-                      length="14"
-                      name="LocAccountNumber1" />
-                    <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocAccountNumber2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="14"
-                      name="LocAccountNumber2" />
-                    <externalMetadataColumn
                       refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[trans_copy]"
                       codePage="1252"
                       dataType="str"
@@ -2797,53 +2809,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                       dataType="dbTimeStamp"
                       name="RecordDate" />
                     <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AllocActBTUFactor]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="AllocActBTUFactor" />
-                    <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AllocActPressureBase]"
-                      dataType="r8"
-                      name="AllocActPressureBase" />
-                    <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AllocActWetDryFlag]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="AllocActWetDryFlag" />
-                    <externalMetadataColumn
                       refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AllocActGravity]"
                       dataType="r8"
                       name="AllocActGravity" />
-                    <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AllocActOilVol]"
-                      dataType="r8"
-                      name="AllocActOilVol" />
-                    <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AllocActNGLVol]"
-                      dataType="r8"
-                      name="AllocActNGLVol" />
-                    <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AllocActGasVolMCF]"
-                      dataType="r8"
-                      name="AllocActGasVolMCF" />
-                    <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DDAFieldName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="DDAFieldName" />
-                    <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DDAFieldNumber]"
-                      dataType="i4"
-                      name="DDAFieldNumber" />
-                    <externalMetadataColumn
-                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BusinessEnitity]"
-                      codePage="1252"
-                      dataType="str"
-                      length="60"
-                      name="BusinessEnitity" />
                     <externalMetadataColumn
                       refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedTimeStamp]"
                       dataType="dbTimeStamp"
