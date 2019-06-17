@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LLG60RG0N2"
   DTS:CreatorName="CALNET\valugulk"
-  DTS:DTSID="{95B9FAFF-2B28-4167-810F-93A7BF64A20B}"
+  DTS:DTSID="{FD1FD1A5-73F2-4F68-809B-A14A92E733DE}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:VersionBuild="90"
-  DTS:VersionGUID="{1B3816A7-D2B4-4470-B6C1-B94B6E9FEA25}">
+  DTS:VersionGUID="{F1F44096-A8EB-43DE-81A1-A868EA4262C2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CD Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{CE0CBE0D-700A-4696-A049-3FE4C4102643}"
+      DTS:DTSID="{4381A86E-343F-425E-BDDA-1DE7D9213E41}"
       DTS:ObjectName="CD Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -29,7 +29,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CKCWSQL7-S.CIDS]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{6F31D026-F5CD-49FB-9F4A-F3C9F62D9E33}"
+      DTS:DTSID="{42F2770E-0864-4F6B-8154-AA62549B8A85}"
       DTS:ObjectName="CKCWSQL7-S.CIDS">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -39,7 +39,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DT Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{F1785626-9838-4A67-A4E2-50D91A76A84E}"
+      DTS:DTSID="{9A326629-A5F5-4323-9978-5D9BFF95C322}"
       DTS:ObjectName="DT Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -49,7 +49,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FS Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{2FA09D22-53E0-4F44-AE73-1C163CD83308}"
+      DTS:DTSID="{86B7A997-22A6-43E1-A2F6-662034710A03}"
       DTS:ObjectName="FS Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -59,7 +59,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ID Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{883F06FA-F2A4-44D5-9450-5215B4329725}"
+      DTS:DTSID="{0FF18892-B54C-45F8-85BE-6E8EC41DC73D}"
       DTS:ObjectName="ID Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -69,7 +69,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[MD Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{AAB6E535-443E-4606-B096-29565B4E9B34}"
+      DTS:DTSID="{B7A4E512-431D-40B8-858E-8F369B84EC95}"
       DTS:ObjectName="MD Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -79,7 +79,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
       DTS:CreationName="SMTP"
-      DTS:DTSID="{2655F723-1137-4D5E-BEA5-3C8BEA22594C}"
+      DTS:DTSID="{C82B8F6C-9708-40EB-9BD9-9FC949D32793}"
       DTS:ObjectName="SMTP Connection Manager">
       <DTS:ObjectData>
         <SmtpConnectionManager
@@ -89,7 +89,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[WSC Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{BE7B563A-FF05-4503-B449-247E3169B883}"
+      DTS:DTSID="{9F3011DF-61EF-4510-98D9-F5DD9077B4B6}"
       DTS:ObjectName="WSC Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -99,7 +99,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[WT Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{179DAF94-6CE0-4570-B6EA-551381131142}"
+      DTS:DTSID="{EE4290F8-BEAA-4C51-B78E-7F41D539B88E}"
       DTS:ObjectName="WT Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -110,7 +110,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{97D32E13-97C7-4DE2-BE16-6E31732566FF}"
+      DTS:DTSID="{669884B2-4AF7-4DA7-9D24-51DB3EFE5CB4}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="EmailBody">
@@ -119,7 +119,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{77527883-5E65-459D-8928-6C47FF578C80}"
+      DTS:DTSID="{28BE5F96-E1FD-43FD-B102-B406623EFACE}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="EmailFrom">
@@ -128,7 +128,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8BA429B3-D5EC-4C61-B187-6FCB51522248}"
+      DTS:DTSID="{ECF0F9FA-0598-4696-8DEE-B2AE1497D2B1}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="EmailSubject">
@@ -137,7 +137,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4E541B34-EB03-4BA8-A781-5071E4331A98}"
+      DTS:DTSID="{9553077E-FEC8-44FF-8997-4B90234B5E4B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="EmailTo">
@@ -150,7 +150,7 @@
       DTS:refId="Package\Completion Daily"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{B72424E2-DF87-4F64-9F5E-4294512E3887}"
+      DTS:DTSID="{67B0A80B-1D3C-4D73-B671-0C2200F5A242}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Completion Daily"
@@ -479,16 +479,16 @@ where [IsResubmit]=0  AND SubIFace='CompletionDaily'</property>
       DTS:CreationName="Microsoft.SendMailTask"
       DTS:Description="Completion daily error notification"
       DTS:Disabled="True"
-      DTS:DTSID="{7F0DA69C-A453-447B-A797-165CD57CB409}"
+      DTS:DTSID="{BD4B4C55-C3A0-4D0E-B170-19A2B7AE0C2E}"
       DTS:ExecutableType="Microsoft.SendMailTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Completion Daily notification"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SendMailTask:SendMailTaskData
-          SendMailTask:SMTPServer="{2655F723-1137-4D5E-BEA5-3C8BEA22594C}"
+          SendMailTask:SMTPServer="{C82B8F6C-9708-40EB-9BD9-9FC949D32793}"
           SendMailTask:From="KiranKumar.Valugulu@crc.com"
           SendMailTask:To="Suneel.Battula@crc.com"
           SendMailTask:CC="KiranKumar.Valugulu@crc.com"
@@ -502,7 +502,7 @@ where [IsResubmit]=0  AND SubIFace='CompletionDaily'</property>
       DTS:refId="Package\Downtime"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{87B07578-9E0C-4A25-85E0-7382E7F3AF73}"
+      DTS:DTSID="{2221568A-790B-4810-9D54-E3CA9F1070E9}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Downtime"
@@ -831,16 +831,16 @@ where [IsResubmit]=0  AND SubIFace='Downtime'</property>
       DTS:CreationName="Microsoft.SendMailTask"
       DTS:Description="Send Mail Task"
       DTS:Disabled="True"
-      DTS:DTSID="{45A67221-F7DE-419A-A8C1-2149E555BD60}"
+      DTS:DTSID="{FE1D12B4-0193-4F8C-AF44-76756739C319}"
       DTS:ExecutableType="Microsoft.SendMailTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Downtime notification"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SendMailTask:SendMailTaskData
-          SendMailTask:SMTPServer="{2655F723-1137-4D5E-BEA5-3C8BEA22594C}"
+          SendMailTask:SMTPServer="{C82B8F6C-9708-40EB-9BD9-9FC949D32793}"
           SendMailTask:From="Kirankumar.valugulu@crc.com"
           SendMailTask:To="Suneel.Battula@crc.com"
           SendMailTask:CC="Kirankumar.valugulu@crc.com"
@@ -854,7 +854,7 @@ where [IsResubmit]=0  AND SubIFace='Downtime'</property>
       DTS:refId="Package\FluidShots"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{66B483F0-65EC-403F-8634-60353957EB8A}"
+      DTS:DTSID="{2ABA6CF0-05FE-4B71-A46A-4F886B685312}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="FluidShots"
@@ -1183,16 +1183,16 @@ where [IsResubmit]=0  AND SubIFace='FluidShots'</property>
       DTS:CreationName="Microsoft.SendMailTask"
       DTS:Description="Send Mail Task"
       DTS:Disabled="True"
-      DTS:DTSID="{A4E96516-6541-4099-B4A8-6E115D6257B3}"
+      DTS:DTSID="{0FFDA1D4-ECBF-473E-A618-35EF2AEA3D61}"
       DTS:ExecutableType="Microsoft.SendMailTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="FS Mail notification"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SendMailTask:SendMailTaskData
-          SendMailTask:SMTPServer="{2655F723-1137-4D5E-BEA5-3C8BEA22594C}"
+          SendMailTask:SMTPServer="{C82B8F6C-9708-40EB-9BD9-9FC949D32793}"
           SendMailTask:From="KiranKumar.Valugulu@crc.com"
           SendMailTask:To="Suneel.Battula@crc.com"
           SendMailTask:Subject="FluidShots Mail notification" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask">
@@ -1206,16 +1206,16 @@ where [IsResubmit]=0  AND SubIFace='FluidShots'</property>
       DTS:CreationName="Microsoft.SendMailTask"
       DTS:Description="Send Mail Task"
       DTS:Disabled="True"
-      DTS:DTSID="{D15A72A4-3EAB-4979-9CDB-F9F44E7E390E}"
+      DTS:DTSID="{03911850-93CF-4D33-ADF7-F6A11F21FCAF}"
       DTS:ExecutableType="Microsoft.SendMailTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ID Mail notification"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SendMailTask:SendMailTaskData
-          SendMailTask:SMTPServer="{2655F723-1137-4D5E-BEA5-3C8BEA22594C}"
+          SendMailTask:SMTPServer="{C82B8F6C-9708-40EB-9BD9-9FC949D32793}"
           SendMailTask:From="KiranKumar.valugulu@crc.com"
           SendMailTask:To="Suneel.Battula@crc.com"
           SendMailTask:Subject="GAD notification" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask">
@@ -1228,7 +1228,7 @@ where [IsResubmit]=0  AND SubIFace='FluidShots'</property>
       DTS:refId="Package\Injection Data"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{0C0C4BCB-67B3-4053-BD75-F4954952FDF9}"
+      DTS:DTSID="{AD8BA4FA-4F1D-40E4-B575-80B24E2947B5}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Injection Data"
@@ -1557,7 +1557,7 @@ where [IsResubmit]=0  AND SubIFace='InjectionData'</property>
       DTS:CreationName="Microsoft.SendMailTask"
       DTS:Description="Send Mail Task"
       DTS:Disabled="True"
-      DTS:DTSID="{1694377C-6A79-4DCF-B06A-9A7FE42F46D2}"
+      DTS:DTSID="{A532EB36-0DEC-47E1-B657-4320493071F6}"
       DTS:ExecutableType="Microsoft.SendMailTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="MD Mail notification"
@@ -1566,7 +1566,7 @@ where [IsResubmit]=0  AND SubIFace='InjectionData'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SendMailTask:SendMailTaskData
-          SendMailTask:SMTPServer="{2655F723-1137-4D5E-BEA5-3C8BEA22594C}"
+          SendMailTask:SMTPServer="{C82B8F6C-9708-40EB-9BD9-9FC949D32793}"
           SendMailTask:From="KiranKumar.valugulu@crc.com"
           SendMailTask:To="Suneel.battula@crc.com"
           SendMailTask:Subject="Meter Data notification" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask">
@@ -1579,7 +1579,7 @@ where [IsResubmit]=0  AND SubIFace='InjectionData'</property>
       DTS:refId="Package\Meter Data"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{59FD9600-FCD9-40A8-BE40-34914DBA9584}"
+      DTS:DTSID="{DAB7765C-5616-421F-AA3E-1BD0D04543B8}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Meter Data"
@@ -1821,7 +1821,7 @@ where [IsResubmit]=0  AND SubIFace='MeterData'</property>
       DTS:refId="Package\ProCount Script Task"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Script Task"
-      DTS:DTSID="{10C2F1CA-2EDC-4279-B14C-430CC986F7EA}"
+      DTS:DTSID="{2036ED60-E30C-4F15-B60B-09C948140E51}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="ProCount Script Task"
@@ -1835,14 +1835,35 @@ where [IsResubmit]=0  AND SubIFace='MeterData'</property>
           Language="CSharp"
           ReadOnlyVariables="User::EmailBody,User::EmailFrom,User::EmailSubject,User::EmailTo">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4de7597165044158b68adb178f19407e")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4de7597165044158b68adb178f19407e")]
+[assembly: AssemblyCopyright("Copyright @  2019")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2003,6 +2024,132 @@ catch (Exception ex)
     Microsoft.SqlServer.Dts.TaskResult = (int)ScriptResults.Success;
     }]]></ProjectItem>
           <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4de7597165044158b68adb178f19407e.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4de7597165044158b68adb178f19407e.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4de7597165044158b68adb178f19407e.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_4de7597165044158b68adb178f19407e.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_4de7597165044158b68adb178f19407e.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_4de7597165044158b68adb178f19407e</msb:CodeName>
+		<msb:DisplayName>ST_4de7597165044158b68adb178f19407e</msb:DisplayName>
+		<msb:ProjectId>{CC295B31-2421-400B-9023-A59CEBBC1A2F}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_4de7597165044158b68adb178f19407e.csproj"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4de7597165044158b68adb178f19407e.Properties.Settings.get_Default():ST_4de7597165044158b68adb178f19407e.Properties.Sett" +
+    "ings")]
+
+namespace ST_4de7597165044158b68adb178f19407e.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
             Name="ST_4de7597165044158b68adb178f19407e.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -2101,153 +2248,6 @@ catch (Exception ex)
     </VisualStudio>
   </ProjectExtensions>
 </Project>]]></ProjectItem>
-          <ProjectItem
-            Name="Project"
-            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:Language>msBuild</msb:Language>
-		<msb:CodeName>ST_4de7597165044158b68adb178f19407e</msb:CodeName>
-		<msb:DisplayName>ST_4de7597165044158b68adb178f19407e</msb:DisplayName>
-		<msb:ProjectId>{CC295B31-2421-400B-9023-A59CEBBC1A2F}</msb:ProjectId>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:Project Include="ST_4de7597165044158b68adb178f19407e.csproj"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:File Include="Properties\AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4de7597165044158b68adb178f19407e.Properties.Settings.get_Default():ST_4de7597165044158b68adb178f19407e.Properties.Sett" +
-    "ings")]
-
-namespace ST_4de7597165044158b68adb178f19407e.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4de7597165044158b68adb178f19407e")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4de7597165044158b68adb178f19407e")]
-[assembly: AssemblyCopyright("Copyright @  2019")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Resources.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4de7597165044158b68adb178f19407e.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
-    "rceManager")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4de7597165044158b68adb178f19407e.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
-    "fo")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4de7597165044158b68adb178f19407e.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
-    "):Void")]
-
-namespace ST_4de7597165044158b68adb178f19407e.Properties {
-    
-    
-    /// <summary>
-    ///   A strongly-typed resource class, for looking up localized strings, etc.
-    /// </summary>
-    // This class was auto-generated by the StronglyTypedResourceBuilder
-    // class via a tool like ResGen or Visual Studio.
-    // To add or remove a member, edit your .ResX file then rerun ResGen
-    // with the /str option, or rebuild your VS project.
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class Resources {
-        
-        private static global::System.Resources.ResourceManager resourceMan;
-        
-        private static global::System.Globalization.CultureInfo resourceCulture;
-        
-        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
-        }
-        
-        /// <summary>
-        ///   Returns the cached ResourceManager instance used by this class.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if ((resourceMan == null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_4de7597165044158b68adb178f19407e.Properties.Resources", typeof(Resources).Assembly);
-                    resourceMan = temp;
-                }
-                return resourceMan;
-            }
-        }
-        
-        /// <summary>
-        ///   Overrides the current thread's CurrentUICulture property for all
-        ///   resource lookups using this strongly typed resource class.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
-            get {
-                return resourceCulture;
-            }
-            set {
-                resourceCulture = value;
-            }
-        }
-    }
-}]]></ProjectItem>
         </ScriptProject>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2255,7 +2255,7 @@ namespace ST_4de7597165044158b68adb178f19407e.Properties {
       DTS:refId="Package\Well Status Changes"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{D541D393-5939-4CC0-A1BD-0311A365A660}"
+      DTS:DTSID="{C1EC1E17-AAF5-453F-BD6A-9DBD28C445F5}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Well Status Changes"
@@ -2583,7 +2583,7 @@ where [IsResubmit]=0  AND SubIFace='WellStatusChanges'</property>
       DTS:refId="Package\WellTest"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{82FD19FB-547A-4838-88ED-78FD97A0472C}"
+      DTS:DTSID="{8CEB0AB1-C0C9-4581-9080-00EB660634EB}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="WellTest"
@@ -2912,7 +2912,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
       DTS:CreationName="Microsoft.SendMailTask"
       DTS:Description="Send Mail Task"
       DTS:Disabled="True"
-      DTS:DTSID="{7B1ECACE-3AB5-4487-8EC2-1F86F3B1B17D}"
+      DTS:DTSID="{49C8FF0D-B383-44A8-B87B-82A896E3AB69}"
       DTS:ExecutableType="Microsoft.SendMailTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="WSC mail notification"
@@ -2921,7 +2921,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SendMailTask:SendMailTaskData
-          SendMailTask:SMTPServer="{2655F723-1137-4D5E-BEA5-3C8BEA22594C}"
+          SendMailTask:SMTPServer="{C82B8F6C-9708-40EB-9BD9-9FC949D32793}"
           SendMailTask:From="KiranKumar.valugulu@crc.com"
           SendMailTask:To="suneel.Battula@crc.com"
           SendMailTask:Subject="Well Status Changes notification" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask">
@@ -2935,7 +2935,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
       DTS:CreationName="Microsoft.SendMailTask"
       DTS:Description="Send Mail Task"
       DTS:Disabled="True"
-      DTS:DTSID="{B06E2FF9-6684-4DA3-826A-6F70ADCD3314}"
+      DTS:DTSID="{7E5C7BFE-F600-4AAA-A633-6F33C39DFDD0}"
       DTS:ExecutableType="Microsoft.SendMailTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="WT Mail notification"
@@ -2944,7 +2944,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SendMailTask:SendMailTaskData
-          SendMailTask:SMTPServer="{2655F723-1137-4D5E-BEA5-3C8BEA22594C}"
+          SendMailTask:SMTPServer="{C82B8F6C-9708-40EB-9BD9-9FC949D32793}"
           SendMailTask:From="KiranKumar.valugulu@crc.com"
           SendMailTask:To="suneel.battula@crc.com"
           SendMailTask:Subject="WellTest Notification" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask">
@@ -2958,7 +2958,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{33C2C985-3ED5-48BC-BD55-9A79DBE88E34}"
+      DTS:DTSID="{4AA6E2AE-9BC9-4F1A-9718-5C72B226FF58}"
       DTS:From="Package\Completion Daily"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -2966,7 +2966,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{6B85B331-5D49-4746-BC47-FE01E690279F}"
+      DTS:DTSID="{C35239E6-0B57-4233-BDF0-8D1A61C2C177}"
       DTS:From="Package\Downtime"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -2974,7 +2974,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{33B4C092-E2C0-44D1-9B17-DB4926BA46F5}"
+      DTS:DTSID="{27268986-F670-4572-994B-67CA5AF7CC7A}"
       DTS:From="Package\FluidShots"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -2982,7 +2982,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{16379FCD-E254-4340-BFE1-F1BDD10E1A00}"
+      DTS:DTSID="{C8A141DD-8BDC-49EC-A7C2-4CAE2D88A845}"
       DTS:From="Package\Injection Data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -2990,7 +2990,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{D5508B43-BBF3-4E20-946F-2C8EE39DF702}"
+      DTS:DTSID="{381BECBE-C905-415F-BE97-BEDA62F5CB41}"
       DTS:From="Package\Meter Data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -2998,7 +2998,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{545985F0-2632-4E11-B6BB-2E3A8854AC14}"
+      DTS:DTSID="{856F051D-3F0C-4D8A-A763-3CF5BAD7FE36}"
       DTS:From="Package\WellTest"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -3006,7 +3006,7 @@ where [IsResubmit]=0  AND SubIFace='WellTest'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{08D9C44F-ABED-448A-8F33-231ACDBF0FD6}"
+      DTS:DTSID="{60BBE942-DF42-4379-918E-262EBC7EDFDA}"
       DTS:From="Package\Well Status Changes"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
