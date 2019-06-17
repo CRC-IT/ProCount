@@ -12,23 +12,33 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="RT_ProCount_To_OneCal_ShortCut"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{4B2081CD-B6AA-4B0F-AFF1-8A290E6B917E}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{BB07300B-881A-4238-8477-9760DE8C8349}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:refId="Package.ConnectionManagers[CKCWSQL1A - Prod]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{99F786FE-A9B3-435D-B90E-5387F419617F}"
-      DTS:ObjectName="DestinationConnectionOLEDB">
+      DTS:DTSID="{8FF5C8F4-CB64-49AA-A2D9-A1FC7B9C214C}"
+      DTS:ObjectName="CKCWSQL1A - Prod">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ONECALU;User ID=xxcrc_procount;Provider=MSDAORA.1;Persist Security Info=True;">
+          DTS:ConnectionString="Data Source=CKCWSQL1A;Initial Catalog=CRC_ProCount;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=false;Application Name=SSIS-RT_ProCount_To_OneCal_ShortCut-{8FF5C8F4-CB64-49AA-A2D9-A1FC7B9C214C}SourceConnectionOLEDB;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ONECALPS - Prod]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{99F786FE-A9B3-435D-B90E-5387F419617F}"
+      DTS:ObjectName="ONECALPS - Prod">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ONECALPS;User ID=xxcrc_procount;Provider=MSDAORA.1;Persist Security Info=True;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABKb6Fi/u89E0ja8lYAXGN5AAAAAASAAACgAAAAEAAAAG1KaE5yTQAvt2wRVA64k+kgAAAAqn1OTQoLi/cfjL03+yOLF6e1IPqtygtTSxTw/LQxwSEUAAAAGBfCglHF+mYfT8oS1YlrplbYTak</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB8ZmbmcjUKaYZXNWcyrqjyAAAAAASAAACgAAAAEAAAAA+xE1FQL8Yg3u88sJtHmTwgAAAAj3C/29SCpQJosAPRJEn9Pay9j/Fm6NtC2Qhg4AUsuqgUAAAAs9HeQRTo7nEiT2jbF2eWHQyEnxo</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -43,18 +53,8 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACDwinng/2kuzyiFsiv+eV/AAAAAASAAACgAAAAEAAAAI+aN5cvdVX/6CZUUkrbnRQgAAAAmuz0hOWRw2vdYbvL/9b0QgMsBMO8QRIg86rnZO87VVIUAAAA17ay9cEUzErAv1WMOgrUAa8n2Xg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB6YbYw57ig078ktnnfjerOAAAAAASAAACgAAAAEAAAAMkyBa6u3ZBq9FJf3j9U5VwgAAAABtlayiafkmLtNUH2qg1sdQnBYulR4YcucxCKOTYyED8UAAAAr7S90EZmIImdy3mI9Il0xCj8gdc</DTS:Password>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{8FF5C8F4-CB64-49AA-A2D9-A1FC7B9C214C}"
-      DTS:ObjectName="SourceConnectionOLEDB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=CKCWSQL7-S;Initial Catalog=CRC_ProCount;Provider=SQLOLEDB;Integrated Security=SSPI;Auto Translate=false;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -420,8 +420,8 @@
               <connections>
                 <connection
                   refId="Package\RT_ProCount_To_OneCal_ShortCut\Destination - Import Data.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerID="Package.ConnectionManagers[ONECALPS - Prod]"
+                  connectionManagerRefId="Package.ConnectionManagers[ONECALPS - Prod]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1012,8 +1012,8 @@ ORDER BY WellPlusCompletionName</property>
               <connections>
                 <connection
                   refId="Package\RT_ProCount_To_OneCal_ShortCut\Source - Query.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
-                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerID="Package.ConnectionManagers[CKCWSQL1A - Prod]"
+                  connectionManagerRefId="Package.ConnectionManagers[CKCWSQL1A - Prod]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1619,13 +1619,13 @@ ORDER BY WellPlusCompletionName</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
-          Id="Package\RT_ProCount_To_OneCal_ShortCut\Source - Query"
-          TopLeft="30.5,5.5" />
-        <NodeLayout
           Size="200,42"
           Id="Package\RT_ProCount_To_OneCal_ShortCut\Destination - Import Data"
           TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\RT_ProCount_To_OneCal_ShortCut\Source - Query"
+          TopLeft="30.5,5.5" />
         <NodeLayout
           Size="182,42"
           Id="Package\RT_ProCount_To_OneCal_ShortCut\Data Conversion 0 - 0"
