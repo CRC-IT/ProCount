@@ -6,21 +6,21 @@
   DTS:CreatorComputerName="LLG5J25JR2"
   DTS:CreatorName="CALNET\vudemr"
   DTS:Description="SSIS Package Description"
-  DTS:DTSID="{AAE73429-6184-4055-8A9E-9D3C578D1B6A}"
+  DTS:DTSID="{15701C27-8BC9-4C4C-B139-BA449C39115F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="GLT_ProCount_To_OneCal_ShortCut"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{6F090859-32DE-4DC7-BCF8-A9CF9316DE58}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{F4255B7B-5090-4A28-A8D0-952DC8DA672F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CKCWSQL1A - Prod]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{6695D3E9-D937-44EB-80EC-4A23D8136B91}"
+      DTS:DTSID="{D1D51F90-A982-4968-B60C-C4DB25507EAC}"
       DTS:ObjectName="CKCWSQL1A - Prod">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -30,7 +30,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ONECALPS - XXCRC_Procount]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{A09CAD95-598C-4346-8680-AE4677B134ED}"
+      DTS:DTSID="{CEE2B967-EAA5-4FF1-B918-7E0FA30819DD}"
       DTS:ObjectName="ONECALPS - XXCRC_Procount">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -38,7 +38,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADKgh/w2w9w2dzCOW1klDa6AAAAAASAAACgAAAAEAAAAMIPx64HlDlwfMlICpI/O8wgAAAAJwKcQnWbPHtNL4C+gQw+oJNTOK/3sB7dBc6YDnEtVGwUAAAA17EB27kH3517Wbz4Ha+dxBwCu8I</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADxh2CU1BVVJbMi9xqfoIA3AAAAAASAAACgAAAAEAAAALznc4NBqkCQb+f6cCKQ8oogAAAAFHzoZS86L6Cg8SM1yyIJ3r5bwtYo7uprWv70GJV8fO4UAAAA0Iuak634zdILQ2U7DrGSsUtjfAA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -49,7 +49,7 @@
       DTS:refId="Package\GLT_ProCount_To_OneCal_ShortCut"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:DelayValidation="True"
-      DTS:DTSID="{9D8FF10D-CCE7-400C-83E9-E789B4B1FA91}"
+      DTS:DTSID="{436E882F-2CAF-4F6B-A82A-CFFAA93B3C52}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:FailPackageOnFailure="True"
       DTS:LocaleID="-1"
@@ -1987,11 +1987,33 @@ GROUP BY
         <NodeLayout
           Size="301,42"
           Id="Package\GLT_ProCount_To_OneCal_ShortCut\Destination - CRCREVSHR_SS_LOADER_TRANS"
-          TopLeft="7.50000000000003,206.5" />
+          TopLeft="8.50000000000003,206.5" />
         <NodeLayout
           Size="182,42"
           Id="Package\GLT_ProCount_To_OneCal_ShortCut\Data Conversion 0 - 0"
           TopLeft="65,107.5" />
+        <EdgeLayout
+          Id="Package\GLT_ProCount_To_OneCal_ShortCut.Paths[Data Conversion Output]"
+          TopLeft="157.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\GLT_ProCount_To_OneCal_ShortCut.Paths[OLE DB Source Output]"
           TopLeft="156,47.5">
@@ -2006,28 +2028,6 @@ GROUP BY
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GLT_ProCount_To_OneCal_ShortCut.Paths[Data Conversion Output]"
-          TopLeft="157,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
