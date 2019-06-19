@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="GLT_ProCount_To_OneCal_ShortCut"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{F4255B7B-5090-4A28-A8D0-952DC8DA672F}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{98ECB5AA-C482-452A-9AD1-82736D5FE332}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADxh2CU1BVVJbMi9xqfoIA3AAAAAASAAACgAAAAEAAAALznc4NBqkCQb+f6cCKQ8oogAAAAFHzoZS86L6Cg8SM1yyIJ3r5bwtYo7uprWv70GJV8fO4UAAAA0Iuak634zdILQ2U7DrGSsUtjfAA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAo52ZoTsBS9NiSrKdWzS2+AAAAAASAAACgAAAAEAAAAHhDpxpUBESf1gVBySXuAI8gAAAAs0dlpImd7qkYI14kTYBEMhiARCw20OJuT4sfBhwY7+EUAAAAX45KEV69EUO4/YOupf1EUlmFoL8</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
