@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=CKCWSQL1A;User ID=dw_user;Initial Catalog=CRC_ProCount;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAACAAAAAAADZgAAwAAAABAAAAAik25HxF9mU66ZIZAir6/kAAAAAASAAACgAAAAEAAAAJrTA+CRwHP7A15vVrRzzFp4AAAA7b3lLB10r7N+zPDi1NmaCuk4Ti7Ug6JpfS1wsMEethPyZNmAL22ErMhjDCBAEePuNv0H6hOSj2UFk+uQtnaYHiy+YyilGgROljul8uf9IkptRJYFhcO1bV492G0fAGl5xnH0o1Q1zEw1+KMIK6pDG5IOp8dNvywBFAAAAJ9D/8zBG/L+GcCkvuzBx6JZt0XN</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAACAAAAAAADZgAAwAAAABAAAAC5EG2AnHxjHJBmsD/H+/+QAAAAAASAAACgAAAAEAAAAKH/kgEYb6wOPf47KkH4/lV4AAAAveM3pdGcJFdt3YHc87qN9dJBYo9/w8soa71GZVusp/l5J8/G6snjVzCVyE2hiW8f2xED7ZRWFD2u+lzFvTG/LP0C+qX/MN7PMgwXFF9db9T/b5Clt25r+GiXy2g2YnkSRpR5OTcDY33JIfiYF2idCOUAf6xh9wZWFAAAACqafjE3iDvGUxXI/WdPL8FQtoQg</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
