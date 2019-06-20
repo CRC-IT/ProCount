@@ -4,7 +4,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <ServerName>CKCWSQL1A</ServerName>
+        <ServerName>CLGWSQL7</ServerName>
         <PathOnServer>/SSISDB/ProCount/CRC</PathOnServer>
         <Run64BitRuntime>true</Run64BitRuntime>
         <UserIDs />

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="WSC_XSPOC_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="331"
-  DTS:VersionGUID="{FCBBC3E5-232A-4B23-AA1E-BA3806A92B64}">
+  DTS:VersionBuild="333"
+  DTS:VersionGUID="{79182ED4-F551-44DB-938D-081AC533FFEE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -129,7 +129,7 @@
         DTS:DataType="8">SELECT convert(nvarchar(MAX),
 (
   
- SELECT  * FROM [tbl_Integration_WellStatusChanges] where RecordDate &gt;= '2019-05-01' 
+ SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellStatusChanges] WHERE CONVERT(VARCHAR(6),RecordDate,112) &gt;= CONVERT(VARCHAR(6),DATEADD(DAY,-5,GETDATE()),112) AND RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE()) 
  FOR XML PATH ('WellStatusChanges_Record'), ROOT('WellStatusChanges_From_XSPOC')
 
 )) InputMsg</DTS:VariableValue>
@@ -305,7 +305,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQuery">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT  * FROM [tbl_Integration_WellStatusChanges] where RecordDate &gt;= '2019-05-01'</DTS:VariableValue>
+        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellStatusChanges] WHERE CONVERT(VARCHAR(6),RecordDate,112) &gt;= CONVERT(VARCHAR(6),DATEADD(DAY,-5,GETDATE()),112) AND RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE())</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -328,14 +328,35 @@
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -602,35 +623,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -906,7 +906,7 @@ END
         <SQLTask:SqlTaskData
           SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT  * FROM [tbl_Integration_WellStatusChanges] where RecordDate &gt;= '2019-05-01' &#xA; FOR XML PATH ('WellStatusChanges_Record'), ROOT('WellStatusChanges_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
+          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellStatusChanges] WHERE CONVERT(VARCHAR(6),RecordDate,112) &gt;= CONVERT(VARCHAR(6),DATEADD(DAY,-5,GETDATE()),112) AND RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE()) &#xA; FOR XML PATH ('WellStatusChanges_Record'), ROOT('WellStatusChanges_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -2370,23 +2370,23 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="154.666666666667,41.3333333333334"
+          Size="155,41"
           Id="Package\XSPOC DB to IFaceTable\Derived Column"
           TopLeft="499.612706696257,185.939216193312" />
         <NodeLayout
-          Size="130.666666666667,41.3333333333334"
+          Size="131,41"
           Id="Package\XSPOC DB to IFaceTable\Row Count"
           TopLeft="512.412715074968,256.894122091379" />
         <NodeLayout
-          Size="172,41.3333333333334"
+          Size="172,41"
           Id="Package\XSPOC DB to IFaceTable\OLE DB Destination"
           TopLeft="494.28572270335,341.976475384326" />
         <NodeLayout
-          Size="150.666666666667,41.3333333333334"
+          Size="151,41"
           Id="Package\XSPOC DB to IFaceTable\OLE DB Source"
           TopLeft="500.412706696257,96.7058828677273" />
         <NodeLayout
-          Size="157.333333333334,42.6666666666667"
+          Size="157,43"
           Id="Package\XSPOC DB to IFaceTable\Data Conversion"
           TopLeft="708.749989438802,181.999996745586" />
         <EdgeLayout
