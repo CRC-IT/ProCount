@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="WTA_ExcelSource_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="335"
-  DTS:VersionGUID="{039D6783-32FA-4F2D-9DD2-6D98E1137368}">
+  DTS:VersionBuild="336"
+  DTS:VersionGUID="{C336544F-E8FF-4A03-9FEB-651A9F7CF616}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1427,6 +1427,38 @@
                       cachedName="JOINT_COUNT"
                       externalMetadataColumnId="Package\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[JOINT_COUNT]"
                       lineageId="Package\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[JOINT_COUNT]" />
+                    <inputColumn
+                      refId="Package\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[WELL_NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="WELL_NAME"
+                      externalMetadataColumnId="Package\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WELL_NAME]"
+                      lineageId="Package\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[WELL_NAME]" />
+                    <inputColumn
+                      refId="Package\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LEASE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LEASE"
+                      externalMetadataColumnId="Package\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LEASE]"
+                      lineageId="Package\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[LEASE]" />
+                    <inputColumn
+                      refId="Package\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[COMMENT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COMMENT"
+                      externalMetadataColumnId="Package\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COMMENT]"
+                      lineageId="Package\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[COMMENT]" />
+                    <inputColumn
+                      refId="Package\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SPM_COUNT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SPM_COUNT"
+                      externalMetadataColumnId="Package\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SPM_COUNT]"
+                      lineageId="Package\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[SPM_COUNT]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
