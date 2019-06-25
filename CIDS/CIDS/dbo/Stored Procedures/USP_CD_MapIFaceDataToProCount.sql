@@ -1,5 +1,6 @@
 ﻿
 
+
 CREATE PROCEDURE [dbo].[USP_CD_MapIFaceDataToProCount]
 @IFaceBatchUIDXml nvarchar(max) output,
 @FormattedMsg nvarchar(max) output,
@@ -54,7 +55,7 @@ BEGIN TRY
 	ON TMQ.TransID = TICD.TransID 
 	AND TMQ.TransSeq = TICD.TransSeq	
 	AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
-	WHERE TICD.IFaceBatchUID = @IFaceBatchID AND (TICD.CasingPressure >= 5000 ) AND (TICD.TubingTemperature >= 5000 ) AND (TICD.LastscaneDate > '2019-02-28')
+	WHERE TICD.IFaceBatchUID = @IFaceBatchID --AND (TICD.CasingPressure >= 5000 ) AND (TICD.TubingTemperature >= 5000 ) AND (TICD.LastscaneDate > '2019-02-28')
 
 	SET @TotalRecCount  = @@ROWCOUNT
 

@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[USP_MD_MapIFaceToProCount]
+﻿
+CREATE PROCEDURE [dbo].[USP_MD_MapIFaceToProCount]
 @IFaceBatchUIDXml nvarchar(max) output,
 @FormattedMsg nvarchar(max) output,
 @PubID int output,
@@ -86,7 +87,7 @@ BEGIN TRY
 	ON TMQ.TransID = TIWT.TransID 
 	AND TMQ.TransSeq = TIWT.TransSeq	
 	AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
-	WHERE TIWT.IFaceBatchUID = @IFaceBatchID and TIWT.RecordDate >getdate()-3  and (TIWT.MeterFlowHours) <=24 
+	WHERE TIWT.IFaceBatchUID = @IFaceBatchID   and (TIWT.MeterFlowHours) <=24 --and TIWT.RecordDate >getdate()-3
 	
 
 

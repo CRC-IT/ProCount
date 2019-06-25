@@ -1,5 +1,6 @@
 ﻿
 
+
 CREATE PROCEDURE [dbo].[USP_ID_BusinessRules] 
 	@Destination nvarchar(500),
 	@ErrorLogId INT OUTPUT
@@ -22,8 +23,8 @@ BEGIN TRY
 			FROM [dbo].[tbl_MsgQueue] TMQ	
 			INNER JOIN [dbo].[tbl_IFace_InjectionData] TIWT	ON TMQ.TransID = TIWT.TransID AND TMQ.TransSeq = TIWT.TransSeq AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
 			LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID AND TMQ.SubConnID = TSC.SubConnID
-			WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND ((CONVERT(NUMERIC(38,0),cast(TIWT.CasingPressure AS FLOAT))  > 5000 OR CONVERT(NUMERIC(38,0),cast(TIWT.CasingPressure AS FLOAT))  < -10) OR	(TIWT.InjectionPressure >= 10000 OR TIWT.InjectionPressure < -10))
-			
+			WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND ((CONVERT(NUMERIC(38,0),cast(TIWT.CasingPressure AS FLOAT))  > 5000 OR CONVERT(NUMERIC(38,0),cast(TIWT.CasingPressure AS FLOAT))  < -10) OR (TIWT.InjectionPressure >= 10000 OR TIWT.InjectionPressure < -10) OR (TIWT.[YesterdayInjectionWater] < 0 OR TIWT.[YesterdayInjectionCO2] < 0  OR TIWT.[YesterdayInjectionSteam]< 0 OR TIWT.[YesterdayInjectionGas]< 0))
+	
 
 			IF @COUNT > 1
 			BEGIN
@@ -44,8 +45,15 @@ BEGIN TRY
 				LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID AND TMQ.SubConnID = TSC.SubConnID
 				WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND (TIWT.InjectionPressure >= 10000 OR TIWT.InjectionPressure < -10)
 
+				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[PubConnID], [SubConnID], [TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit] ,[IsBussRuleFail], [CreatedTime] ,[CreatedBy])
+				SELECT 	TMQ.IFaceBatchUID AS IFaceBatchUID, TMQ.PubID, TMQ.SubID,tmq.PubConnID, TMQ.SubConnID, TMQ.TransID, TMQ.TransSeq, TMQ.SubIFace, GETDATE() AS [ErrorTime],
+				'Injection Rates must be greater than or equal to Zero.' AS [ErrorMsg], 0 AS [IsResubmit], 1 AS [IsBussRuleFail], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
+				FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_InjectionData] TIWT	ON TMQ.TransID = TIWT.TransID AND TMQ.TransSeq = TIWT.TransSeq AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
+				LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID AND TMQ.SubConnID = TSC.SubConnID
+				WHERE TMQ.SubIFace = 'InjectionData' AND TSC.SubscriberName = 'ProCount' AND (TIWT.[YesterdayInjectionWater] < 0 OR TIWT.[YesterdayInjectionCO2] < 0  OR TIWT.[YesterdayInjectionSteam]< 0 OR TIWT.[YesterdayInjectionGas]< 0)
+
 				INSERT INTO @TBL_ERRORS
-				SELECT 'Casing pressure must not be greater than 5000 or less than -10. Injection pressure must not be greater than 10000 or less than -10.' ,'Casing pressure must not be greater than 5000 or less than -10. Injection pressure is greater than 10000 or less than -10.',@COUNT
+				SELECT 'Casing pressure must not be greater than 5000 or less than -10. Injection pressure must not be greater than 10000 or less than -10. Injection Rates must be greater than 0' ,'Casing pressure must not be greater than 5000 or less than -10. Injection pressure is greater than 10000 or less than -10. Injection Rates must be greater than 0',@COUNT
 				
 
 

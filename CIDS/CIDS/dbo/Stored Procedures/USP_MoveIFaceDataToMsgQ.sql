@@ -1,5 +1,4 @@
-﻿
-CREATE PROCEDURE [dbo].[USP_MoveIFaceDataToMsgQ] 
+﻿CREATE PROCEDURE [dbo].[USP_MoveIFaceDataToMsgQ] 
 	@IFaceBatchUIDxml  NVARCHAR(MAX) OUTPUT,
 	@SubscriberName NVARCHAR(100),
 	@SubIFace NVARCHAR(100),
@@ -333,5 +332,3 @@ BEGIN CATCH
 	VALUES ( @SubID, @SubConnID, @ConnType, 'USP_MoveIFaceDataToMsgQ','StoredProcedure',@SubIFace,'Error while moving IFace Data to MsgQ',ERROR_MESSAGE(), ERROR_NUMBER(),ERROR_SEVERITY(), GETDATE(),HOST_NAME(), CURRENT_USER)
 
 END CATCH
-
-

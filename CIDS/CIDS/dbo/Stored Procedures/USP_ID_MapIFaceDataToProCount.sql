@@ -1,4 +1,6 @@
 ﻿
+
+
 CREATE PROCEDURE [dbo].[USP_ID_MapIFaceDataToProCount]
 @IFaceBatchUIDXml nvarchar(max) output,
 @FormattedMsg nvarchar(max) output,
@@ -45,6 +47,7 @@ BEGIN TRY
 	TIWT.SupplyPressure,
 	TIWT.InjectionRateSetpoint,
 	TIWT.InjectionPressureSetpoint,
+	TIWT.NodeID,
 	33 as UserID
 	FROM
 	(
@@ -94,7 +97,7 @@ BEGIN TRY
 	ON TMQ.TransID = TIWT.TransID 
 	AND TMQ.TransSeq = TIWT.TransSeq	
 	AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
-	--WHERE TIWT.IFaceBatchUID = @IFaceBatchID AND (convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  >=  5000 OR  convert(numeric(38,0),cast(TIWT.CasingPressure AS float)) <0)  AND (TIWT.InjectionPressure >= 4000) AND RecordDate > '2019-02-28 00:00:00.000'
+	WHERE TIWT.IFaceBatchUID = @IFaceBatchID --AND (convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  >=  5000 OR  convert(numeric(38,0),cast(TIWT.CasingPressure AS float)) <0)  AND (TIWT.InjectionPressure >= 4000) AND RecordDate > '2019-02-28 00:00:00.000'
 	
 
 
@@ -194,6 +197,7 @@ BEGIN TRY
 			TIWT.SupplyPressure,
 			TIWT.InjectionRateSetpoint,
 			TIWT.InjectionPressureSetpoint,
+			TIWT.NodeID,
 			33 as UserID
 			FROM
 			(

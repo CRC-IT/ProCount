@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[USP_WSC_MapIFaceDataToProCount]
+﻿
+CREATE PROCEDURE [dbo].[USP_WSC_MapIFaceDataToProCount]
 @IFaceBatchUIDXml nvarchar(max) output,
 @FormattedMsg nvarchar(max) output,
 @PubID int output,
@@ -69,7 +70,7 @@ BEGIN TRY
 	ON TMQ.TransID = TWSC.TransID 
 	AND TMQ.TransSeq = TWSC.TransSeq	
 	AND TMQ.IFaceBatchUID = TWSC.IFaceBatchUID
-	AND TWSC.IFaceBatchUID=@IFaceBatchID AND TWSC.RecordDate > '2019-03-31'
+	AND TWSC.IFaceBatchUID=@IFaceBatchID --AND TWSC.RecordDate >='2019-05-01'
 
 	SET @TotalRecCount  = @@ROWCOUNT
 
