@@ -12,7 +12,7 @@
       DTS:ConnectionString="Data Source=CKCWSQLB;User ID=IntegrationServices;Initial Catalog=XSPOC_Integration;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAACAAAAAAADZgAAwAAAABAAAAC2pyAVEpCF4pxnAK8OvQPvAAAAAASAAACgAAAAEAAAAHmPRnL0SsILDtgxeJzYA1uAAAAAXUinpRCAFcw2ao+gdxhE22Tq1J4ttTbpBs7VL+oRukmeWD0dNbmWKuwjtAtXlRbnsItpIPmhgOml/oCBzbSZcxWi924fOTTFeQLGmKLsNXQgmszJZl8ZYBcQGerZmAVwUa+qmQbytQ9cGik7hNrs00KFhAYIvsWQbNAMw/ft3RcUAAAAOmRa3ieIG38zVoyrWFUNGMI/160=</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAACAAAAAAADZgAAwAAAABAAAAAw8H7uf7WZEtEbVwJPTU/2AAAAAASAAACgAAAAEAAAAO8Plo8Xj6NrWfWbqEHgMKGAAAAAPmofLpz5M9A4XbgEhGJ55Hv6kAXi5xBmUjH32SWbAUyODGHbhN+tDOJ4mZWPzk/V7pO01b5JK/vwKg+WEwHSbNjRpRcnR+fod+JHRNQ2z5lsJcR3ltyVOwENOW0G6VeqZPPhm5DKiw6rAuEOu9GaTS+OpibF42YsSzc7XRnJYhoUAAAA8O197Wmf4YryTEPp9OSuWzoaoAQ=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
