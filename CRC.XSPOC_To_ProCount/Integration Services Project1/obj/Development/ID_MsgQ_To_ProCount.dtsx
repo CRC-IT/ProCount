@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ID_MsgQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="349"
-  DTS:VersionGUID="{38EE978F-DB71-457C-AEDD-69DD387FE97A}">
+  DTS:VersionBuild="350"
+  DTS:VersionGUID="{7512E7F7-0E18-497E-A288-3489E10CF893}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -474,7 +474,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Get BatchID's to Process"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -552,7 +552,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog for BR failures"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -626,7 +626,7 @@
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ArchiveTransformedXML"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -637,14 +637,35 @@
               ReadOnlyVariables="User::ArchMsgLength,User::FailRecCount,User::FormattedMsg,User::IsArchiveMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -995,35 +1016,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -4114,6 +4114,7 @@ UPDATE [dbo].[MeterDailyTb]
 	  ,[EstGasVolMCF]= @YesterdayInjectionGas
 	  , [BackgroundTaskFlag]= 2
 	  , [UserID] = @UserId 
+	  , [Datasourcecode] = 17
  WHERE [MerrickID] = @MerrickId and [RecordDate] = @RecordDate and [Datasourcecode] not in (2,22,29,33,39,40,42)</property>
                     <property
                       dataType="System.Int32"
@@ -7429,7 +7430,7 @@ where [refTable].[API_14] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_MsgQ"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -7473,7 +7474,7 @@ where [refTable].[API_14] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -7540,7 +7541,7 @@ where [refTable].[API_14] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Transformed Msg in tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8081,10 +8082,6 @@ where [refTable].[API_14] = ?</property>
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Covert RecordDate to Datetime"
           TopLeft="406,87" />
         <NodeLayout
-          Size="169,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily"
-          TopLeft="768,540" />
-        <NodeLayout
           Size="147,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count"
           TopLeft="417.000014880584,746.731369356835" />
@@ -8101,111 +8098,25 @@ where [refTable].[API_14] = ?</property>
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast"
           TopLeft="423.333337629835,335.399998419285" />
         <NodeLayout
+          Size="169,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily"
+          TopLeft="768,540" />
+        <NodeLayout
           Size="243,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Convert RecordDate to Date String"
           TopLeft="405.845239918527,252.811769431994" />
-        <NodeLayout
-          Size="250,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookUp MerrickId for Meter Daily Tb"
-          TopLeft="546.488115035681,444.350986330884" />
         <NodeLayout
           Size="145,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ"
           TopLeft="417.488115035681,842.394114939417" />
         <NodeLayout
+          Size="250,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookUp MerrickId for Meter Daily Tb"
+          TopLeft="546.488115035681,444.350986330884" />
+        <NodeLayout
           Size="199,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Add 1 Day to RecordDate"
           TopLeft="405.5,160.5" />
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Data Conversion Output]"
-          TopLeft="527.345239918527,294.811769431994">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-43.511902288692,40.588228987291"
-              Start="0,0"
-              End="-43.511902288692,33.088228987291">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.2941144936455" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.2941144936455"
-                    Point2="0,20.2941144936455"
-                    Point3="-4,20.2941144936455" />
-                  <mssgle:LineSegment
-                    End="-39.511902288692,20.2941144936455" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39.511902288692,20.2941144936455"
-                    Point2="-43.511902288692,20.2941144936455"
-                    Point3="-43.511902288692,24.2941144936455" />
-                  <mssgle:LineSegment
-                    End="-43.511902288692,33.088228987291" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Union All Output 1]"
-          TopLeft="504.5,636">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-12.8571281447813,31.2901963353418"
-              Start="0,0"
-              End="-12.8571281447813,23.7901963353418">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.6450981676709" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.6450981676709"
-                    Point2="0,15.6450981676709"
-                    Point3="-4,15.6450981676709" />
-                  <mssgle:LineSegment
-                    End="-8.85712814478131,15.6450981676709" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8.85712814478131,15.6450981676709"
-                    Point2="-12.8571281447813,15.6450981676709"
-                    Point3="-12.8571281447813,19.6450981676709" />
-                  <mssgle:LineSegment
-                    End="-12.8571281447813,23.7901963353418" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
-          TopLeft="490.244064958133,787.731369356835">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54.6627455825821"
-              Start="0,0"
-              End="0,47.1627455825821">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.1627455825821" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[OLE DB Source Output]"
           TopLeft="490.416670723862,50.2901963353418">
@@ -8558,6 +8469,96 @@ where [refTable].[API_14] = ?</property>
                     Point3="-14,19.75" />
                   <mssgle:LineSegment
                     End="-14,24" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Data Conversion Output]"
+          TopLeft="527.345239918527,294.811769431994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-43.511902288692,40.588228987291"
+              Start="0,0"
+              End="-43.511902288692,33.088228987291">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.2941144936455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.2941144936455"
+                    Point2="0,20.2941144936455"
+                    Point3="-4,20.2941144936455" />
+                  <mssgle:LineSegment
+                    End="-39.511902288692,20.2941144936455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.511902288692,20.2941144936455"
+                    Point2="-43.511902288692,20.2941144936455"
+                    Point3="-43.511902288692,24.2941144936455" />
+                  <mssgle:LineSegment
+                    End="-43.511902288692,33.088228987291" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Union All Output 1]"
+          TopLeft="504.5,636">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.8571281447813,31.2901963353418"
+              Start="0,0"
+              End="-12.8571281447813,23.7901963353418">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.6450981676709" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.6450981676709"
+                    Point2="0,15.6450981676709"
+                    Point3="-4,15.6450981676709" />
+                  <mssgle:LineSegment
+                    End="-8.85712814478131,15.6450981676709" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.85712814478131,15.6450981676709"
+                    Point2="-12.8571281447813,15.6450981676709"
+                    Point3="-12.8571281447813,19.6450981676709" />
+                  <mssgle:LineSegment
+                    End="-12.8571281447813,23.7901963353418" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
+          TopLeft="490.244064958133,787.731369356835">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.6627455825821"
+              Start="0,0"
+              End="0,47.1627455825821">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.1627455825821" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
