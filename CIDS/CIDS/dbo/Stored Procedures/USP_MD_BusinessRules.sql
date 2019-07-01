@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[USP_MD_BusinessRules] 
+﻿
+CREATE PROCEDURE [dbo].[USP_MD_BusinessRules] 
 	@Destination nvarchar(500),
 	@ErrorLogId INT OUTPUT
 AS
@@ -94,7 +95,7 @@ BEGIN TRY
 		)
 
 		INSERT INTO [CIDS].[dbo].[tbl_ErrorLog] (ProcessName, ProcessType, MsgType, Title, ErrorMsg ,FormattedMsg, ErrorTime, MachineName, CreatedBy) 
-		VALUES ( 'USP_WT_BusinessRules','StoredProcedure','MeterData', @Destination + ' BusinessRule Validations','Error while executing the BusinessRules on MeterData Data', @XmlData, GETDATE(),HOST_NAME(), CURRENT_USER)
+		VALUES ( 'USP_MD_BusinessRules','StoredProcedure','MeterData', @Destination + ' BusinessRule Validations','Error while executing the BusinessRules on MeterData Data', @XmlData, GETDATE(),HOST_NAME(), CURRENT_USER)
 
 		SELECT @ErrorLogId = SCOPE_IDENTITY()
 

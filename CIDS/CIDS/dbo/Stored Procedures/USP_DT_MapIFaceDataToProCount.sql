@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[USP_DT_MapIFaceDataToProCount]
+﻿
+CREATE PROCEDURE [dbo].[USP_DT_MapIFaceDataToProCount]
 @IFaceBatchUIDXml nvarchar(max) output,
 @FormattedMsg nvarchar(max) output,
 @PubID int output,
@@ -77,7 +78,7 @@ BEGIN TRY
 	ON TMQ.TransID = TIWT.TransID 
 	AND TMQ.TransSeq = TIWT.TransSeq	
 	AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
-	WHERE TIWT.IFaceBatchUID = @IFaceBatchID AND TIWT.DowntimeDate >getdate()-3
+	WHERE TIWT.IFaceBatchUID = @IFaceBatchID --AND TIWT.DowntimeDate >getdate()-3
 
 
 	SET @TotalRecCount  = @@ROWCOUNT

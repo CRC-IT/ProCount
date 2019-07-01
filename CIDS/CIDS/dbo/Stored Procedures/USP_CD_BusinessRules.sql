@@ -2,6 +2,7 @@
 
 
 
+
 CREATE PROCEDURE [dbo].[USP_CD_BusinessRules] 
 	@Destination nvarchar(500),
 	@ErrorLogId INT OUTPUT
@@ -30,16 +31,16 @@ BEGIN TRY
 			BEGIN
 
 
-				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit] ,[CreatedTime] ,[CreatedBy])
+				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit],[IsBussRuleFail] ,[CreatedTime] ,[CreatedBy])
 				SELECT 	TMQ.IFaceBatchUID AS IFaceBatchUID, TMQ.PubID, TMQ.SubID, TMQ.TransID, TMQ.TransSeq, TMQ.SubIFace, GETDATE() AS [ErrorTime],
-				'Runhours value is not in between 0 and 24 OR Casing Pressure is less than -10 or greater than 5000' AS [ErrorMsg], 1 AS [IsResubmit], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
+				'Runhours value is not in between 0 and 24 OR Casing Pressure is less than -10 or greater than 5000' AS [ErrorMsg], 0 AS [IsResubmit], 1 AS [IsBussRuleFail], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
 				FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_CompletionDaily] TICD	ON TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
 				LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID 
 				WHERE TMQ.SubIFace = 'CompletionDaily' AND TSC.SubscriberName = 'ProCount'	AND TICD.RunHours NOT between 0 and 24 AND ((CONVERT(NUMERIC(38,0),cast(TICD.CasingPressure AS FLOAT))  > 5000 OR CONVERT(NUMERIC(38,0),cast(TICD.CasingPressure AS FLOAT))  < -10))
 
-				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit] ,[CreatedTime] ,[CreatedBy])
+				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit] ,[IsBussRuleFail],[CreatedTime] ,[CreatedBy])
 				SELECT 	TMQ.IFaceBatchUID AS IFaceBatchUID, TMQ.PubID, TMQ.SubID, TMQ.TransID, TMQ.TransSeq, TMQ.SubIFace, GETDATE() AS [ErrorTime],
-				'Runhours value is not in between 0 and 24 OR Tubing Pressure is less than -10 or greater than 5000' AS [ErrorMsg], 1 AS [IsResubmit], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
+				'Runhours value is not in between 0 and 24 OR Tubing Pressure is less than -10 or greater than 5000' AS [ErrorMsg], 0 AS [IsResubmit], 1 AS [IsBussRuleFail], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
 				FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_CompletionDaily] TICD	ON TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
 				LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID 
 				WHERE TMQ.SubIFace = 'CompletionDaily' AND TSC.SubscriberName = 'ProCount'	AND TICD.RunHours NOT between 0 and 24 AND 	(TICD.TubingPressure >= 5000 OR TICD.TubingPressure < -10)

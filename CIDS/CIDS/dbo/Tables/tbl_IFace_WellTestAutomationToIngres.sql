@@ -32,6 +32,6 @@
     [PubConnID]        INT              NULL,
     [LastModifiedTime] DATETIME         NULL,
     [LastModifiedBy]   NVARCHAR (200)   NULL,
-    CONSTRAINT [PK_tbl_IFace_WellTestAutomation] PRIMARY KEY CLUSTERED ([TransID] ASC, [TransSeq] ASC)
+    CONSTRAINT [PK_tbl_IFace_WellTestAutomationToIngres] PRIMARY KEY CLUSTERED ([TransID] ASC, [TransSeq] ASC)
 );
 
