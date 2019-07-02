@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ID_MsgQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="355"
-  DTS:VersionGUID="{229D0C2A-9A94-4C41-9C7D-CE5139C92F0B}">
+  DTS:VersionBuild="356"
+  DTS:VersionGUID="{F6ECC58E-EEBF-42F5-933F-6228933FBFEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -1562,15 +1562,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column"
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="Derived Column"
+                  name="Error tag for CD tb"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Inputs[Derived Column Input]"
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <externalMetadataColumns />
@@ -1578,18 +1578,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output]"
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorTime]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorTime]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorTime]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorTime]"
                           name="ErrorTime"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1607,12 +1607,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorMsg]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorMsg]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="104"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorMsg]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorMsg]"
                           name="ErrorMsg"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1630,11 +1630,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[IsResubmit]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[IsResubmit]"
                           dataType="i4"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[IsResubmit]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[IsResubmit]"
                           name="IsResubmit"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1652,11 +1652,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[Description]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[Description]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[Description]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[Description]"
                           name="Description"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1674,11 +1674,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorSeverity]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorSeverity]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorSeverity]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorSeverity]"
                           name="ErrorSeverity"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1696,11 +1696,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorCode]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorCode]"
                           dataType="i4"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorCode]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1718,11 +1718,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorColumn]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorColumn]"
                           dataType="i4"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorColumn]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1743,23 +1743,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Error Output]"
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1768,15 +1768,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1"
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-                  name="Derived Column 1"
+                  name="Error tag for MD tb"
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input]"
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <externalMetadataColumns />
@@ -1784,18 +1784,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output]"
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorTime]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorTime]"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorTime]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorTime]"
                           name="ErrorTime"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1813,12 +1813,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorMsg]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorMsg]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="94"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorMsg]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorMsg]"
                           name="ErrorMsg"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1836,11 +1836,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[IsResubmit]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[IsResubmit]"
                           dataType="i4"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[IsResubmit]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[IsResubmit]"
                           name="IsResubmit"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1858,11 +1858,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[Description]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[Description]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[Description]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[Description]"
                           name="Description"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1880,11 +1880,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorSeverity]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorSeverity]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorSeverity]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorSeverity]"
                           name="ErrorSeverity"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1902,11 +1902,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorCode]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorCode]"
                           dataType="i4"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorCode]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1924,11 +1924,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorColumn]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorColumn]"
                           dataType="i4"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorColumn]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1949,23 +1949,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Error Output]"
+                      refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -3587,13 +3587,13 @@ UPDATE [dbo].[MeterDailyTb]
                           cachedDataType="i4"
                           cachedName="ErrorColumn"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].ExternalColumns[@ErrorColumn]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorColumn]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorColumn]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].Columns[ErrorCode]"
                           cachedDataType="i4"
                           cachedName="ErrorCode"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].ExternalColumns[@ErrorCode]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorCode]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorCode]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].Columns[PubConnID]"
                           cachedDataType="i4"
@@ -3611,32 +3611,32 @@ UPDATE [dbo].[MeterDailyTb]
                           cachedDataType="wstr"
                           cachedName="Description"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].ExternalColumns[@Description]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[Description]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[Description]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].Columns[IsResubmit]"
                           cachedDataType="i4"
                           cachedName="IsResubmit"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].ExternalColumns[@IsResubmit]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[IsResubmit]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[IsResubmit]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].Columns[ErrorMsg]"
                           cachedDataType="wstr"
                           cachedLength="104"
                           cachedName="ErrorMsg"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].ExternalColumns[@ErrorMsg]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorMsg]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorMsg]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].Columns[ErrorSeverity]"
                           cachedDataType="wstr"
                           cachedName="ErrorSeverity"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].ExternalColumns[@ErrorSeverity]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorSeverity]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorSeverity]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].Columns[ErrorTime]"
                           cachedDataType="dbTimeStamp"
                           cachedName="ErrorTime"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].ExternalColumns[@ErrorTime]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output].Columns[ErrorTime]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output].Columns[ErrorTime]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ.Inputs[OLE DB Command Input].Columns[SubIFace]"
                           cachedDataType="wstr"
@@ -3940,13 +3940,13 @@ UPDATE [dbo].[MeterDailyTb]
                           cachedDataType="i4"
                           cachedName="ErrorColumn"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].ExternalColumns[@ErrorColumn]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorColumn]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorColumn]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].Columns[ErrorCode]"
                           cachedDataType="i4"
                           cachedName="ErrorCode"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].ExternalColumns[@ErrorCode]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorCode]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorCode]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].Columns[PubConnID]"
                           cachedDataType="i4"
@@ -3964,32 +3964,32 @@ UPDATE [dbo].[MeterDailyTb]
                           cachedDataType="wstr"
                           cachedName="Description"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].ExternalColumns[@Description]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[Description]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[Description]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].Columns[IsResubmit]"
                           cachedDataType="i4"
                           cachedName="IsResubmit"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].ExternalColumns[@IsResubmit]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[IsResubmit]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[IsResubmit]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].Columns[ErrorMsg]"
                           cachedDataType="wstr"
                           cachedLength="94"
                           cachedName="ErrorMsg"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].ExternalColumns[@ErrorMsg]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorMsg]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorMsg]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].Columns[ErrorSeverity]"
                           cachedDataType="wstr"
                           cachedName="ErrorSeverity"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].ExternalColumns[@ErrorSeverity]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorSeverity]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorSeverity]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].Columns[ErrorTime]"
                           cachedDataType="dbTimeStamp"
                           cachedName="ErrorTime"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].ExternalColumns[@ErrorTime]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[ErrorTime]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output].Columns[ErrorTime]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1.Inputs[OLE DB Command Input].Columns[SubIFace]"
                           cachedDataType="wstr"
@@ -4249,7 +4249,7 @@ UPDATE [dbo].[MeterDailyTb]
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count.Inputs[Row Count Input 1]"
                   name="Derived Column Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output]" />
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output1]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Convert RecordDate to Date String.Inputs[Data Conversion Input]"
@@ -4259,7 +4259,7 @@ UPDATE [dbo].[MeterDailyTb]
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output2]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count 1.Inputs[Row Count Input 1]"
                   name="Derived Column Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output]" />
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input]"
@@ -4277,12 +4277,12 @@ UPDATE [dbo].[MeterDailyTb]
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookUp MerrickId for Meter Daily Tb.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Inputs[Derived Column Input]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup CompletionTb MerrickId.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output1]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb.Inputs[Derived Column Input]"
                   name="Lookup No Match Output"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookUp MerrickId for Meter Daily Tb.Outputs[Lookup No Match Output]" />
                 <path
@@ -7651,8 +7651,8 @@ where [refTable].[API_14] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column"
+          Size="167,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb"
           TopLeft="334.642871855219,614.290196335342" />
         <NodeLayout
           Size="227,43"
@@ -7936,18 +7936,30 @@ where [refTable].[API_14] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output]"
-          TopLeft="408.571443367902,656.290196335342">
+          TopLeft="418.142871855219,656.290196335342">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.441173021493"
+              EndConnector="-12.642856974635,33.441173021493"
               Start="0,0"
-              End="0,25.941173021493">
+              End="-12.642856974635,25.941173021493">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.941173021493" />
+                    End="0,12.7205865107465" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.7205865107465"
+                    Point2="0,16.7205865107465"
+                    Point3="-4,16.7205865107465" />
+                  <mssgle:LineSegment
+                    End="-8.64285697463504,16.7205865107465" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.64285697463504,16.7205865107465"
+                    Point2="-12.642856974635,16.7205865107465"
+                    Point3="-12.642856974635,20.7205865107465" />
+                  <mssgle:LineSegment
+                    End="-12.642856974635,25.941173021493" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8052,9 +8064,9 @@ where [refTable].[API_14] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.8928675152548,158.523530993686"
+              EndConnector="72.3928675152548,158.523530993686"
               Start="0,0"
-              End="65.8928675152548,151.023530993686">
+              End="72.3928675152548,151.023530993686">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -8065,26 +8077,26 @@ where [refTable].[API_14] = ?</property>
                     Point2="0,64.0693542437621"
                     Point3="4,64.0693542437621" />
                   <mssgle:LineSegment
-                    End="61.8928675152548,64.0693542437621" />
+                    End="68.3928675152548,64.0693542437621" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.8928675152548,64.0693542437621"
-                    Point2="65.8928675152548,64.0693542437621"
-                    Point3="65.8928675152548,68.0693542437621" />
+                    Point1="68.3928675152548,64.0693542437621"
+                    Point2="72.3928675152548,64.0693542437621"
+                    Point3="72.3928675152548,68.0693542437621" />
                   <mssgle:LineSegment
-                    End="65.8928675152548,151.023530993686" />
+                    End="72.3928675152548,151.023530993686" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-22.8599529611226,69.0693542437621,111.6127734375,11.609375"
+              BoundingBox="-19.6099529611226,69.0693542437621,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="154,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1"
+          Size="169,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for MD tb"
           TopLeft="525.642856974635,613" />
         <NodeLayout
           Size="147,41"
@@ -8100,9 +8112,9 @@ where [refTable].[API_14] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-28.5119247277125,126.649013669116"
+              EndConnector="-21.0119247277125,126.649013669116"
               Start="0,0"
-              End="-28.5119247277125,119.149013669116">
+              End="-21.0119247277125,119.149013669116">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -8113,37 +8125,49 @@ where [refTable].[API_14] = ?</property>
                     Point2="0,51.142844947465"
                     Point3="-4,51.142844947465" />
                   <mssgle:LineSegment
-                    End="-24.5119247277125,51.142844947465" />
+                    End="-17.0119247277125,51.142844947465" />
                   <mssgle:CubicBezierSegment
-                    Point1="-24.5119247277125,51.142844947465"
-                    Point2="-28.5119247277125,51.142844947465"
-                    Point3="-28.5119247277125,55.142844947465" />
+                    Point1="-17.0119247277125,51.142844947465"
+                    Point2="-21.0119247277125,51.142844947465"
+                    Point3="-21.0119247277125,55.142844947465" />
                   <mssgle:LineSegment
-                    End="-28.5119247277125,119.149013669116" />
+                    End="-21.0119247277125,119.149013669116" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-70.0623490826063,56.142844947465,111.6127734375,11.609375"
+              BoundingBox="-66.3123490826063,56.142844947465,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output2]"
-          TopLeft="599.571428487317,655">
+          TopLeft="610.142856974635,655">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.441173021493"
+              EndConnector="-13.642856974635,33.441173021493"
               Start="0,0"
-              End="0,25.941173021493">
+              End="-13.642856974635,25.941173021493">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.941173021493" />
+                    End="0,12.7205865107465" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.7205865107465"
+                    Point2="0,16.7205865107465"
+                    Point3="-4,16.7205865107465" />
+                  <mssgle:LineSegment
+                    End="-9.64285697463504,16.7205865107465" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.64285697463504,16.7205865107465"
+                    Point2="-13.642856974635,16.7205865107465"
+                    Point3="-13.642856974635,20.7205865107465" />
+                  <mssgle:LineSegment
+                    End="-13.642856974635,25.941173021493" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
