@@ -13,12 +13,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CD_MsgQ_To_ProCount.dtsx</Name>
-      <LastWriteTime>2019-06-19T23:59:09.8993056Z</LastWriteTime>
+      <LastWriteTime>2019-07-01T17:04:29.3664875Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CD_XSPOC_To_IFace.dtsx</Name>
-      <LastWriteTime>2019-06-20T00:29:12.3155919Z</LastWriteTime>
+      <LastWriteTime>2019-07-02T15:56:50.6480013Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -53,7 +53,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DT_MsgQ_To_ProCount.dtsx</Name>
-      <LastWriteTime>2019-06-19T20:33:21.2669516Z</LastWriteTime>
+      <LastWriteTime>2019-07-02T15:57:04.9578363Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -103,12 +103,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>GLT_ProCount_To_IFace.dtsx</Name>
-      <LastWriteTime>2019-06-12T16:58:29.0959295Z</LastWriteTime>
+      <LastWriteTime>2019-07-02T19:23:32.6556556Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>GLT_ProCount_To_OneCal.dtsx</Name>
-      <LastWriteTime>2019-06-13T17:40:10.308879Z</LastWriteTime>
+      <LastWriteTime>2019-07-02T19:23:53.8904955Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
