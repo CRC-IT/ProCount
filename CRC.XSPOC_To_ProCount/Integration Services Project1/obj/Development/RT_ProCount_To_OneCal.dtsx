@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="RT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="378"
-  DTS:VersionGUID="{9D6E59E9-0346-414D-953D-EADCADEE70F2}">
+  DTS:VersionBuild="380"
+  DTS:VersionGUID="{E33DF430-AA6C-4C38-9930-D561EA6255F6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD3t1qdD5/WxM3R9ehVQ4wAAAAAAASAAACgAAAAEAAAANJyDNwuJPqd1P9fAyEdBBkgAAAAoyiv44XS6I8zEJsy62ttSQzh21yFIYGCRhVLxYFczRQUAAAADyizWqkUp62V5Fp71rgsLLrSxUc</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAw7v7EBz1OvJ5RboHZwID3AAAAAASAAACgAAAAEAAAAH+jYmBwLTBWn701TnsAgwsgAAAAYD34IFMZ/Pq7Ub/rpLMCloYp3eQBSMEcrry/Q6H4+DkUAAAA6qrOxKyPAFskrdMvo/ZKu42AFzw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1298,13 +1298,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedLength="15"
                           cachedName="org_segno"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[org_segno]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[LocationID]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="20"
-                          cachedName="LocationID"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[LocationID]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1416,27 +1409,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
                               name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[org_segno]}</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LocationID]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LocationID]"
-                          name="Copy of LocationID"
-                          precision="18"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[LocationID]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1729,7 +1701,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                     <input
                       refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
-                      errorRowDisposition="FailComponent"
+                      errorRowDisposition="RedirectRow"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
@@ -1916,12 +1888,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].ExternalColumns[COMPLETIONID]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[completionID]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].Columns[Copy of LocationID]"
-                          cachedDataType="numeric"
-                          cachedName="Copy of LocationID"
-                          cachedPrecision="18"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].Columns[LocationID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="LocationID"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].ExternalColumns[LOCATIONID]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LocationID]" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[LocationID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
