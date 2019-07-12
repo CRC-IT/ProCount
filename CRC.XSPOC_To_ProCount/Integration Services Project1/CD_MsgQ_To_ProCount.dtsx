@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="CD_MsgQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="296"
-  DTS:VersionGUID="{219DD5D9-8DF5-47B7-97A7-037D13EFCA18}">
+  DTS:VersionBuild="299"
+  DTS:VersionGUID="{BF70AFB0-5BC1-4BF6-8850-545A51C9C55D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -647,14 +647,35 @@
               ReadOnlyVariables="User::ArchFormattedMsg,User::FailRecCount,User::FormattedMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1005,35 +1026,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -3745,7 +3745,7 @@ where [refTable].[API_14] = ?</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"@IFaceBatchUIDXml:Output",{9E13B47F-2A70-4BCB-A74D-3166A1CE6B0F};"@FormattedMsg:Input",{91FC5522-83A5-485A-8DED-070CC0D229F6};"@PubID:Input",{C08A3801-1D28-40B7-AB60-4B5199BDA221};"@SubID:Input",{382C3E01-3901-473C-9CE4-619422DEB94C};"@ArchformattedMsg:Input",{0211A952-5A8E-4A48-8194-93EEB9137EEA};"@TotalRecCount:Input",{DB5E90AD-3E58-46FF-BC7C-0D766D628B52};"@IFaceBatchID:Input",{503F6559-AA22-491F-963C-C3DDD37A4390};</property>
+                      name="ParameterMapping">"@IFaceBatchUIDXml:Output",{9E13B47F-2A70-4BCB-A74D-3166A1CE6B0F};"@FormattedMsg:Output",{91FC5522-83A5-485A-8DED-070CC0D229F6};"@PubID:Output",{C08A3801-1D28-40B7-AB60-4B5199BDA221};"@SubID:Output",{382C3E01-3901-473C-9CE4-619422DEB94C};"@ArchformattedMsg:Input",{0211A952-5A8E-4A48-8194-93EEB9137EEA};"@TotalRecCount:Output",{DB5E90AD-3E58-46FF-BC7C-0D766D628B52};"@IFaceBatchID:Input",{503F6559-AA22-491F-963C-C3DDD37A4390};</property>
                   </properties>
                   <connections>
                     <connection
@@ -6961,45 +6961,73 @@ where [refTable].[API_14] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="147,41"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count"
-          TopLeft="229.011917935266,527.054904416259" />
+          Size="163,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3"
+          TopLeft="483.083330396563,477.750983277936" />
         <NodeLayout
-          Size="180,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Inserts"
-          TopLeft="222.166687240558,587.384314960816" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert tbl_ErrorQ"
-          TopLeft="867.047629555877,125.309807282801" />
-        <NodeLayout
-          Size="216,43"
+          Size="216,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data"
           TopLeft="197.083330396563,12.1333331163724" />
         <NodeLayout
-          Size="173,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Error Rec Count"
-          TopLeft="739.083325628191,531.517651021658" />
+          Size="187,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Updates"
+          TopLeft="753.916658949107,602.750983277936" />
         <NodeLayout
-          Size="187,41"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Error Columns"
-          TopLeft="484.50000849047,132.245097362728" />
+          Size="159,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount"
+          TopLeft="687.000006111605,132.747060891173" />
         <NodeLayout
-          Size="140,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get MerricID"
-          TopLeft="238.749996442348,124.366664442817" />
+          Size="216,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get Completion Daily records"
+          TopLeft="676.999993443489,256.133328854641" />
         <NodeLayout
           Size="163,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2"
           TopLeft="451,254" />
         <NodeLayout
-          Size="196,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily"
-          TopLeft="718.833325721324,362.999993646145" />
+          Size="147,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count 1"
+          TopLeft="491.190473192202,549.725493878997" />
+        <NodeLayout
+          Size="180,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Inserts"
+          TopLeft="222.166687240558,587.384314960816" />
+        <NodeLayout
+          Size="140,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get MerricID"
+          TopLeft="238.749996442348,124.366664442817" />
         <NodeLayout
           Size="155,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column"
           TopLeft="220.904775139627,455.080393815198" />
+        <NodeLayout
+          Size="147,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count"
+          TopLeft="229.011917935266,527.054904416259" />
+        <NodeLayout
+          Size="187,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Error Columns"
+          TopLeft="484.50000849047,132.245097362728" />
+        <NodeLayout
+          Size="173,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Error Rec Count"
+          TopLeft="739.083325628191,531.517651021658" />
+        <NodeLayout
+          Size="196,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily"
+          TopLeft="718.833325721324,362.999993646145" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination"
+          TopLeft="480.509316770185,408.043806646525" />
+        <NodeLayout
+          Size="155,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1"
+          TopLeft="739.749992270023,452.366658786337" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert tbl_ErrorQ"
+          TopLeft="867.047629555877,125.309807282801" />
         <NodeLayout
           Size="184,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Completion Daily"
@@ -7009,91 +7037,13 @@ where [refTable].[API_14] = ?</property>
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast"
           TopLeft="534,323" />
         <NodeLayout
-          Size="159,41"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount"
-          TopLeft="687.000006111605,132.747060891173" />
-        <NodeLayout
-          Size="187,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Updates"
-          TopLeft="753.916658949107,602.750983277936" />
-        <NodeLayout
-          Size="155,41"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1"
-          TopLeft="739.749992270023,452.366658786337" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination"
-          TopLeft="480.509316770185,408.043806646525" />
-        <NodeLayout
-          Size="216,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get Completion Daily records"
-          TopLeft="676.999993443489,256.133328854641" />
-        <NodeLayout
           Size="156,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion"
           TopLeft="229.499996609986,258.433329141338" />
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 12]"
-          TopLeft="375.678584601933,547.721571082926">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-63.5118973613746,39.6627438778897"
-              Start="0,0"
-              End="-63.5118973613746,32.1627438778897">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-59.5118973613746,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-59.5118973613746,0"
-                    Point2="-63.5118973613746,0"
-                    Point3="-63.5118973613746,4" />
-                  <mssgle:LineSegment
-                    End="-63.5118973613746,32.1627438778897" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
-          TopLeft="766.500006111605,173.747060891173">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="181.547623444272,-6.437253608372"
-              Start="0,0"
-              End="181.547623444272,1.062746391628">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="177.547623444272,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="177.547623444272,22.5"
-                    Point2="181.547623444272,22.5"
-                    Point3="181.547623444272,18.5" />
-                  <mssgle:LineSegment
-                    End="181.547623444272,1.062746391628" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="180,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Inserts 1"
+          TopLeft="466.345242497494,620.054904423554" />
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
           TopLeft="825.583325628191,574.517651021658">
@@ -7130,24 +7080,50 @@ where [refTable].[API_14] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[OLE DB Source Output]"
-          TopLeft="306.916663419456,54.7999997830391">
+          TopLeft="306.916663419456,54.1333331163724">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69.5666646597779"
+              EndConnector="0,70.2333313264446"
               Start="0,0"
-              End="0,62.0666646597779">
+              End="0,62.7333313264446">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.0666646597779" />
+                    End="0,62.7333313264446" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,23.3666656632223,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[OLE DB Destination Error Output1]"
+          TopLeft="565.296323583374,450.043806646525">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.707176631411"
+              Start="0,0"
+              End="0,20.207176631411">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.207176631411" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,4.38679144070551,146.4178125,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7375,6 +7351,28 @@ where [refTable].[API_14] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output4]"
+          TopLeft="564.636901794383,519.750983277936">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.974510601061"
+              Start="0,0"
+              End="0,22.474510601061">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.474510601061" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output3]"
           TopLeft="614,276.31666442732">
           <EdgeLayout.Curve>
@@ -7508,64 +7506,6 @@ where [refTable].[API_14] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 3"
-          TopLeft="483.083330396563,477.750983277936" />
-        <NodeLayout
-          Size="147,41"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count 1"
-          TopLeft="491.190473192202,549.725493878997" />
-        <NodeLayout
-          Size="180,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Inserts 1"
-          TopLeft="466.345242497494,620.054904423554" />
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[OLE DB Destination Error Output1]"
-          TopLeft="565.296323583374,450.043806646525">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.707176631411"
-              Start="0,0"
-              End="0,20.207176631411">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.207176631411" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,4.38679144070551,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output4]"
-          TopLeft="564.636901794383,519.750983277936">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.974510601061"
-              Start="0,0"
-              End="0,22.474510601061">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.474510601061" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 13]"
           TopLeft="564.690473192202,590.725493878997">
@@ -7600,12 +7540,97 @@ where [refTable].[API_14] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 12]"
+          TopLeft="375.678584601933,547.721571082926">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-63.5118973613746,39.6627438778897"
+              Start="0,0"
+              End="-63.5118973613746,32.1627438778897">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-59.5118973613746,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.5118973613746,0"
+                    Point2="-63.5118973613746,0"
+                    Point3="-63.5118973613746,4" />
+                  <mssgle:LineSegment
+                    End="-63.5118973613746,32.1627438778897" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
+          TopLeft="766.500006111605,173.747060891173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="181.547623444272,-6.437253608372"
+              Start="0,0"
+              End="181.547623444272,1.062746391628">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="177.547623444272,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="177.547623444272,22.5"
+                    Point2="181.547623444272,22.5"
+                    Point3="181.547623444272,18.5" />
+                  <mssgle:LineSegment
+                    End="181.547623444272,1.062746391628" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data">
     <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get Completion Daily records">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -7635,19 +7660,6 @@ where [refTable].[API_14] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Completion Daily">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination">
     <Properties>
       <Property>
@@ -7661,25 +7673,15 @@ where [refTable].[API_14] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get Completion Daily records">
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Completion Daily">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
