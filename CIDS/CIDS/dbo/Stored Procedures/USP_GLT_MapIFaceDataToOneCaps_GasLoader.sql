@@ -5,6 +5,9 @@
 
 
 
+
+
+
 CREATE PROCEDURE [dbo].[USP_GLT_MapIFaceDataToOneCaps_GasLoader]
 @IFaceBatchUIDXml nvarchar(MAX) OUTPUT, @FormattedMsg nvarchar(MAX) OUTPUT, @PubID int OUTPUT, @SubID int OUTPUT, @ArchformattedMsg int = 0, @TotalRecCount int OUTPUT
 WITH EXEC AS CALLER
@@ -51,7 +54,8 @@ BEGIN TRY
                   TICD.AccountantPersonID,
                   TICD.GatheringSystemLockDate,
                   TICD.GatheringSystemLockName,
-                  TICD.GatheringSystemAccountantName
+                  TICD.GatheringSystemAccountantName,
+				  CAST(RTRIM(LTRIM(rc_user_key)) AS VARCHAR(50)) + '-' +CONVERT(VARCHAR,[activity_date],112) + '-'+CAST(UPPER(RTRIM(LTRIM([ProductType]))) AS VARCHAR(50)) +'-'+ CAST(RTRIM(LTRIM([Agreement_ID])) AS VARCHAR(50)) + '-'+CAST(UPPER(RTRIM(LTRIM([GatheringSystemName]))) AS VARCHAR(50))+'-'+ CAST([Agr_Det_Sequence] AS VARCHAR(50)) + '-' + CAST(UPPER([processing_party]) AS VARCHAR(50))+'-'+ CAST(RTRIM(LTRIM([WellPlusCompletionName])) AS VARCHAR(50))+ '-'+ CONVERT(VARCHAR,[GatheringSystemLockDate],112) AS UniqueColumn
                   --ROW_NUMBER() OVER (ORDER BY LocAccountNumber2 ASC) AS Line_No
   FROM   (SELECT TMQ.*
           FROM   [dbo].[tbl_MsgQueue] TMQ
@@ -144,7 +148,7 @@ INNER JOIN [dbo].[tbl_IFace_GasLoaderTrans] TICD
              FROM   (SELECT TMQ.*
                      FROM   [dbo].[tbl_MsgQueue] TMQ
                             LEFT JOIN [dbo].[tbl_SubscriberController] TSC
-                              ON TMQ.SubID = TSC.SubID AND TSC.SubscriberName = 'ProCount'
+                              ON TMQ.SubID = TSC.SubID AND TSC.SubscriberName = 'ONECALPS'
                      WHERE  
                      TMQ.SubIFace = 'GasLoaderTrans' AND 
                      TMQ.SubStatus IS NULL
@@ -156,7 +160,7 @@ INNER JOIN [dbo].[tbl_IFace_GasLoaderTrans] TICD
                                  TERRQ.TransSeq AND TMQ1.SubID = TERRQ.SubID AND TMQ1.PubID = TERRQ.PubID AND TMQ1.PubConnID =
                                  TERRQ.PubConnID AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'GasLoaderTrans'
                             LEFT JOIN [dbo].[tbl_SubscriberController] TSC1
-                              ON TMQ1.SubID = TSC1.SubID AND TSC1.SubscriberName = 'ProCount'
+                              ON TMQ1.SubID = TSC1.SubID AND TSC1.SubscriberName = 'ONECALPS'
                      WHERE  TMQ1.SubStatus = 'Failed' AND TERRQ.IsResubmit = 1) TMQ
                     INNER JOIN [dbo].[tbl_IFace_GasLoaderTrans] TICD
                       ON TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
@@ -169,7 +173,7 @@ INNER JOIN [dbo].[tbl_IFace_GasLoaderTrans] TICD
           FROM   (SELECT TMQ.*
                   FROM   [dbo].[tbl_MsgQueue] TMQ
                          LEFT JOIN [dbo].[tbl_SubscriberController] TSC
-                           ON TMQ.SubID = TSC.SubID AND TSC.SubscriberName = 'ProCount'
+                           ON TMQ.SubID = TSC.SubID AND TSC.SubscriberName = 'ONECALPS'
                   WHERE  TMQ.SubIFace = 'GasLoaderTrans' AND TMQ.SubStatus IS NULL
                   UNION
                   SELECT TMQ1.*

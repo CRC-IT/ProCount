@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[USP_MoveIFaceDataToMsgQ] 
+﻿
+CREATE PROCEDURE [dbo].[USP_MoveIFaceDataToMsgQ] 
 	@IFaceBatchUIDxml  NVARCHAR(MAX) OUTPUT,
 	@SubscriberName NVARCHAR(100),
 	@SubIFace NVARCHAR(100),
@@ -267,7 +268,7 @@ BEGIN TRY
 				(
 					SELECT 
 					distinct IFaceBatchUID 
-					FROM [dbo].[tbl_SubscriberController] TSB, [dbo].[tbl_IFace_TankRunTicket] TIWSC 
+					FROM [dbo].[tbl_SubscriberController] TSB, [dbo].[tbl_IFace_GasLoaderTrans] TIWSC 
 					WHERE TSB.SubIFace = 'GasLoaderTrans' AND TSB.ConnType = 'Database' AND SubscriberName = 'ONECALPS' AND TIWSC.TranStatus = 1
 					--AND TIWT.TranDate >= GETDATE()
 					FOR XML PATH (''), ROOT('IFaceBatchUIDS')

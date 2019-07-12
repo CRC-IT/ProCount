@@ -1,4 +1,7 @@
 ﻿
+
+
+
 CREATE PROCEDURE [dbo].[USP_RT_MapIFaceDataToOneCaps_RunTickets]
 @IFaceBatchUIDXml nvarchar(MAX) OUTPUT, @FormattedMsg nvarchar(MAX) OUTPUT, @PubID int OUTPUT, @SubID int OUTPUT, @ArchformattedMsg int = 0, @TotalRecCount int OUTPUT
 WITH EXEC AS CALLER
@@ -14,6 +17,7 @@ BEGIN TRY
 	TICD.RunTicketNumber as Ticket_No,
 	TICD.GrossBarrels as TotalBBLS,
 	TICD.convertedgravity as Gravity,
+	TICD.LocationID as LocationID,
 	TICD.LocAccountNumber1 as Agr_Det_Sequence,
 	TICD.LocAccountNumber2 as Agreement_ID,
 	TICD.LocationID as Party_Property ,
@@ -45,12 +49,13 @@ BEGIN TRY
 	TICD.AreaName,
 	TICD.COMPMID,
 	SUBSTRING( CONVERT(NVARCHAR(30), GETDATE(),20), 0, 11) + ' 00:00:00.000' AS UserDateStamp,
-	SUBSTRING( CONVERT(NVARCHAR(30), GETDATE(),20), 12, 8) AS UserTimeStamp
+	SUBSTRING( CONVERT(NVARCHAR(30), GETDATE(),20), 12, 8) AS UserTimeStamp,
+	CAST(RTRIM(LTRIM([LocationID])) AS VARCHAR(50)) + '-' +CONVERT(VARCHAR,[RecordDate],112) + '-'+CAST(UPPER([ProductType]) AS VARCHAR) +'-'+ CAST(RTRIM(LTRIM(RunTicketNumber)) AS VARCHAR(50))+ '-'+ CAST(RTRIM(LTRIM([LocAccountNumber2])) AS VARCHAR(50)) + '-'+CAST(UPPER(RTRIM(LTRIM([GatheringSystemName]))) AS VARCHAR(50))+'-'+ CAST(RTRIM(LTRIM(LocAccountNumber1))  AS VARCHAR(50)) + '-' + CAST(UPPER(RTRIM(LTRIM([BusinessEnitity]))) AS VARCHAR(50))+'-'+ CAST(RTRIM(LTRIM([WellPlusCompletionName])) AS VARCHAR(50)) +'-'+ CONVERT(VARCHAR,[GatheringSystemLockDate],112) AS UniqueColumn
 	FROM
 	(
 		SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
 		LEFT JOIN [dbo].[tbl_SubscriberController] TSC
-			ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'TankRunTicket'
+			ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ONECALPS'
 		WHERE TMQ.SubIFace = 'TankRunTicket' AND  TMQ.SubStatus IS NULL
 
 		UNION 
@@ -63,12 +68,12 @@ BEGIN TRY
 			AND TMQ1.PubConnID = TERRQ.PubConnID
 			AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'TankRunTicket'
 		LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
-			ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ProCount'
+			ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ONECALPS'
 		WHERE TMQ1.SubStatus = 'Failed' AND TERRQ.IsResubmit = 1
 
 	)TMQ
 	INNER JOIN [dbo].[tbl_IFace_TankRunTicket] TICD ON TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq	AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
-	WHERE TICD.LocAccountNumber1  <> ' ' AND TICD.LocAccountNumber1 <> 'NULL' --and TICD.AreaID <> ''
+	WHERE (TICD.LocAccountNumber1  <> ' ' OR TICD.LocAccountNumber1 <> 'NULL') --and TICD.AreaID <> ''
 
 	SET @TotalRecCount  = @@ROWCOUNT
 
@@ -80,7 +85,7 @@ BEGIN TRY
 		(
 			SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
 			LEFT JOIN [dbo].[tbl_SubscriberController] TSC
-				ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ProCount'
+				ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ONECALPS'
 			WHERE TMQ.SubIFace = 'TankRunTicket' AND  TMQ.SubStatus IS NULL
 
 			UNION 
@@ -93,7 +98,7 @@ BEGIN TRY
 				AND TMQ1.PubConnID = TERRQ.PubConnID
 				AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'TankRunTicket'
 			LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
-				ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ProCount'
+				ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ONECALPS'
 			WHERE TMQ1.SubStatus = 'Failed' AND TERRQ.IsResubmit = 1
 
 
@@ -126,6 +131,7 @@ BEGIN TRY
 			TICD.RunTicketNumber as Ticket_No,
 			TICD.GrossBarrels as TotalBBLS,
 			TICD.convertedgravity as Gravity,
+			TICD.LocationId as LocationId,
 			TICD.LocAccountNumber1 as Agr_Det_Sequence,
 			TICD.LocAccountNumber2 as Agreement_ID,
 			TICD.LocationID as Party_Property ,
@@ -156,7 +162,7 @@ BEGIN TRY
 			(
 				SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
 				LEFT JOIN [dbo].[tbl_SubscriberController] TSC
-					ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ProCount'
+					ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ONECALPS'
 				WHERE TMQ.SubIFace = 'TankRunTicket' AND  TMQ.SubStatus IS NULL
 
 				UNION 
@@ -169,7 +175,7 @@ BEGIN TRY
 					AND TMQ1.PubConnID = TERRQ.PubConnID
 					AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'TankRunTicket'
 				LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
-					ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ProCount'
+					ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ONECALPS'
 				WHERE TMQ1.SubStatus = 'Failed' AND TERRQ.IsResubmit = 1
 
 
@@ -193,7 +199,7 @@ BEGIN TRY
 		(
 			SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
 			LEFT JOIN [dbo].[tbl_SubscriberController] TSC
-				ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ProCount'
+				ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ONECALPS'
 			WHERE TMQ.SubIFace = 'TankRunTicket' AND  TMQ.SubStatus IS NULL
 
 			UNION 
@@ -206,7 +212,7 @@ BEGIN TRY
 				AND TMQ1.PubConnID = TERRQ.PubConnID
 				AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'TankRunTicket'
 			LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
-				ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ProCount'
+				ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ONECALPS'
 			WHERE TMQ1.SubStatus = 'Failed' AND TERRQ.IsResubmit = 1
 
 

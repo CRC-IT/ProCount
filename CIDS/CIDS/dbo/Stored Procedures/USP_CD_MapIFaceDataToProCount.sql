@@ -1,6 +1,7 @@
 ﻿
 
 
+
 CREATE PROCEDURE [dbo].[USP_CD_MapIFaceDataToProCount]
 @IFaceBatchUIDXml nvarchar(max) output,
 @FormattedMsg nvarchar(max) output,
@@ -33,7 +34,7 @@ BEGIN TRY
 	(
 		SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
 		LEFT JOIN [dbo].[tbl_SubscriberController] TSC
-			ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'CompletionDaily'
+			ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ProCount'
 		WHERE TMQ.SubIFace = 'CompletionDaily' AND  TMQ.SubStatus IS NULL
 
 		UNION 

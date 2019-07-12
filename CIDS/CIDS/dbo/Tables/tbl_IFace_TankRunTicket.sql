@@ -3,6 +3,7 @@
     [TransSeq]                      INT              NOT NULL,
     [IFaceBatchUID]                 UNIQUEIDENTIFIER NULL,
     [TranStatus]                    INT              NULL,
+    [TransDate]                     DATETIME         NULL,
     [PubID]                         INT              NULL,
     [PubConnID]                     INT              NULL,
     [ProductionDate]                DATETIME         NULL,
