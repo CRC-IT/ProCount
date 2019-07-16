@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="CD_MsgQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="301"
-  DTS:VersionGUID="{138C96C0-E43F-46FD-B60E-6BABC2A0C5DC}">
+  DTS:VersionBuild="304"
+  DTS:VersionGUID="{CBC5D376-D79A-4A7E-B30E-227D9B525851}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -484,7 +484,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Get BatchID's to Process"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -562,7 +562,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog for BR Failure"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -636,7 +636,7 @@
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ArchiveTransformedXML"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -1330,7 +1330,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]"
-                          dataType="dbTimeStamp"
+                          dataType="date"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]"
@@ -1717,6 +1717,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="r8"
                           cachedName="HoursFlowed"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[HoursFlowed]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Inputs[Derived Column Input].Columns[Copy of RecordDate]"
+                          cachedDataType="date"
+                          cachedName="Copy of RecordDate"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1793,6 +1798,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
                               name="FriendlyExpression">575</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Output].Columns[Copy of Record Date new]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Output].Columns[Copy of Record Date new]"
+                          name="Copy of Record Date new"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[DATEADD]("DAY",1,#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]})</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">DATEADD("DAY",1,[Copy of RecordDate])</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -2303,7 +2330,7 @@ FROM [dbo].[CompletionDailyTb] WITH (NOLOCK)</property>
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT [MerrickID]
       ,[RecordDate]
 FROM [dbo].[CompletionDailyTb] WITH (NOLOCK)) [refTable]
-where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
+where [refTable].[MerrickID] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -2339,7 +2366,7 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get MerricID.Outputs[Lookup Match Output].Columns[MerrickId]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]};</property>
+                      name="ParameterMap">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get MerricID.Outputs[Lookup Match Output].Columns[MerrickId]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2372,22 +2399,6 @@ where [refTable].[MerrickID] = ? and [refTable].[RecordDate] = ?</property>
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
                               name="JoinToReferenceColumn">MerrickID</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get Completion Daily records.Inputs[Lookup Input].Columns[Copy of RecordDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="Copy of RecordDate"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">RecordDate</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -2674,12 +2685,6 @@ where [refTable].[API_14] = ?</property>
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Completion Daily.Inputs[OLE DB Destination Input].Columns[RecordDate]"
-                          cachedDataType="dbDate"
-                          cachedName="RecordDate"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Completion Daily.Inputs[OLE DB Destination Input].ExternalColumns[RecordDate]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[RecordDate]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Completion Daily.Inputs[OLE DB Destination Input].Columns[HoursFlowed]"
                           cachedDataType="r8"
                           cachedName="HoursFlowed"
@@ -2743,10 +2748,16 @@ where [refTable].[API_14] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[IdleTime]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Completion Daily.Inputs[OLE DB Destination Input].Columns[DailyDowntime]"
-                          cachedDataType="r8"
+                          cachedDataType="r4"
                           cachedName="DailyDowntime"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Completion Daily.Inputs[OLE DB Destination Input].ExternalColumns[DailyDownTime]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Output].Columns[DailyDowntime]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Completion Daily.Inputs[OLE DB Destination Input].Columns[Copy of Record Date new]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Copy of Record Date new"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Completion Daily.Inputs[OLE DB Destination Input].ExternalColumns[RecordDate]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Output].Columns[Copy of Record Date new]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4315,12 +4326,6 @@ where [refTable].[API_14] = ?</property>
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RecordDate]"
-                          cachedDataType="dbDate"
-                          cachedName="RecordDate"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecordDate]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[RecordDate]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MerrickId]"
                           cachedDataType="i4"
                           cachedName="MerrickId"
@@ -4358,6 +4363,12 @@ where [refTable].[API_14] = ?</property>
                           cachedName="UserID"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UserID]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[UserID]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Record Date new]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Copy of Record Date new"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecordDate]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Output].Columns[Copy of Record Date new]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4584,12 +4595,6 @@ where [refTable].[API_14] = ?</property>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceCDTest Data.Outputs[OLE DB Source Output].Columns[UserID]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].Columns[Copy of RecordDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="Copy of RecordDate"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].Columns[MerrickId]"
                           cachedDataType="i4"
                           cachedName="MerrickId"
@@ -4597,10 +4602,16 @@ where [refTable].[API_14] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get MerricID.Outputs[Lookup Match Output].Columns[MerrickId]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].Columns[DailyDowntime]"
-                          cachedDataType="r8"
+                          cachedDataType="r4"
                           cachedName="DailyDowntime"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Output].Columns[DailyDowntime]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].Columns[Copy of Record Date new]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Copy of Record Date new"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2.Outputs[Derived Column Output].Columns[Copy of Record Date new]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -6289,7 +6300,7 @@ where [refTable].[API_14] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_Errorlog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6350,7 +6361,7 @@ where [refTable].[API_14] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_MsgQ"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6394,7 +6405,7 @@ where [refTable].[API_14] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6455,7 +6466,7 @@ where [refTable].[API_14] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Transformed Msg in tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -6977,7 +6988,7 @@ where [refTable].[API_14] = ?</property>
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount"
           TopLeft="687.000006111605,132.747060891173" />
         <NodeLayout
-          Size="216,43"
+          Size="216,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get Completion Daily records"
           TopLeft="676.999993443489,256.133328854641" />
         <NodeLayout
@@ -7120,7 +7131,7 @@ where [refTable].[API_14] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,4.38679144070551,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,4.38679144070548,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7178,26 +7189,26 @@ where [refTable].[API_14] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-27.9906832298153,43.0438066465248"
+              EndConnector="-27.990683229815,43.043806646525"
               Start="0,0"
-              End="-27.9906832298153,35.5438066465248">
+              End="-27.990683229815,35.543806646525">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5219033232624" />
+                    End="0,17.5219033232625" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5219033232624"
-                    Point2="0,21.5219033232624"
-                    Point3="-4,21.5219033232624" />
+                    Point1="0,17.5219033232625"
+                    Point2="0,21.5219033232625"
+                    Point3="-4,21.5219033232625" />
                   <mssgle:LineSegment
-                    End="-23.9906832298153,21.5219033232624" />
+                    End="-23.990683229815,21.5219033232625" />
                   <mssgle:CubicBezierSegment
-                    Point1="-23.9906832298153,21.5219033232624"
-                    Point2="-27.9906832298153,21.5219033232624"
-                    Point3="-27.9906832298153,25.5219033232624" />
+                    Point1="-23.990683229815,21.5219033232625"
+                    Point2="-27.990683229815,21.5219033232625"
+                    Point3="-27.990683229815,25.5219033232625" />
                   <mssgle:LineSegment
-                    End="-27.9906832298153,35.5438066465248" />
+                    End="-27.990683229815,35.543806646525" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7242,61 +7253,61 @@ where [refTable].[API_14] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
-          TopLeft="750.333326776822,299.133328854641">
+          TopLeft="750.333326776822,298.133328854641">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-156.333326776822,23.866671145359"
+              EndConnector="-156.333326776822,24.866671145359"
               Start="0,0"
-              End="-156.333326776822,16.366671145359">
+              End="-156.333326776822,17.366671145359">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,5.65196259554961" />
+                    End="0,6.05637436025549" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,5.65196259554961"
-                    Point2="0,9.65196259554961"
-                    Point3="-4,9.65196259554961" />
+                    Point1="0,6.05637436025549"
+                    Point2="0,10.0563743602555"
+                    Point3="-4,10.0563743602555" />
                   <mssgle:LineSegment
-                    End="-152.333326776822,9.65196259554961" />
+                    End="-152.333326776822,10.0563743602555" />
                   <mssgle:CubicBezierSegment
-                    Point1="-152.333326776822,9.65196259554961"
-                    Point2="-156.333326776822,9.65196259554961"
-                    Point3="-156.333326776822,13.6519625955496" />
+                    Point1="-152.333326776822,10.0563743602555"
+                    Point2="-156.333326776822,10.0563743602555"
+                    Point3="-156.333326776822,14.0563743602555" />
                   <mssgle:LineSegment
-                    End="-156.333326776822,16.366671145359" />
+                    End="-156.333326776822,17.366671145359" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-133.973050107161,14.6519625955496,111.6127734375,11.609375"
+              BoundingBox="-133.973050107161,15.0563743602555,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Match Output1]"
-          TopLeft="818.24999291574,299.133328854641">
+          TopLeft="818.24999291574,298.133328854641">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,63.866664791504"
+              EndConnector="0,64.866664791504"
               Start="0,0"
-              End="0,56.366664791504">
+              End="0,57.366664791504">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.366664791504" />
+                    End="0,57.366664791504" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,22.378644895752,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,22.878644895752,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7372,18 +7383,18 @@ where [refTable].[API_14] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output3]"
-          TopLeft="614,276.31666442732">
+          TopLeft="614,276.06666442732">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="62.9999934434891,0"
+              EndConnector="62.999993443489,0"
               Start="0,0"
-              End="55.4999934434891,0">
+              End="55.499993443489,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="55.4999934434891,0" />
+                    End="55.499993443489,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7617,7 +7628,7 @@ where [refTable].[API_14] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -7627,7 +7638,7 @@ where [refTable].[API_14] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
