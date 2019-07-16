@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FS_MsgQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="332"
-  DTS:VersionGUID="{238748DF-1056-44E3-9B74-16C138A405B5}">
+  DTS:VersionBuild="333"
+  DTS:VersionGUID="{798FC3A4-6C73-4EFA-8B60-B097291F179D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -161,7 +161,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="EndMsg">
       <DTS:VariableValue
-        DTS:DataType="8">Publishing MeterData data from MsgQ to ProCount Completed</DTS:VariableValue>
+        DTS:DataType="8">Publishing FluidShots data from MsgQ to ProCount Completed</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -217,7 +217,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="IFaceTblName">
       <DTS:VariableValue
-        DTS:DataType="8">tbl_IFace_MeterData</DTS:VariableValue>
+        DTS:DataType="8">tbl_IFace_FluidShots</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -271,7 +271,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="PkgName">
       <DTS:VariableValue
-        DTS:DataType="8">WT_MsgQ_MeterData_To_ProCount.dtsx</DTS:VariableValue>
+        DTS:DataType="8">FS_MsgQ_To_ProCount.dtsx</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -298,7 +298,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="StartMsg">
       <DTS:VariableValue
-        DTS:DataType="8">Publishing MeterData data from MsgQ to ProCount Started</DTS:VariableValue>
+        DTS:DataType="8">Publishing FluidShots data from MsgQ to ProCount Started</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -359,7 +359,7 @@
 			  ,LastModifiedTime = GETDATE()
 		      ,LastModifiedBy = CURRENT_USER
 		FROM [dbo].[tbl_MsgQueue] MSGQ
-		INNER JOIN [dbo].[tbl_IFace_MeterData] IFACEWT
+		INNER JOIN [dbo].[tbl_IFace_FluidShots] IFACEWT
 			ON MSGQ.IFaceBatchUID = IFACEWT.IFaceBatchUID
 			AND MSGQ.TransID = IFACEWT.TransID
 			AND MSGQ.TransSeq = IFACEWT.TransSeq
@@ -637,14 +637,35 @@
               ReadOnlyVariables="User::ArchMsgLength,User::FailRecCount,User::FormattedMsg,User::IsArchiveMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -995,35 +1016,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
