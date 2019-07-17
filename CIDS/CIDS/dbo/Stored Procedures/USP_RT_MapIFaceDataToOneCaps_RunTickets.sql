@@ -2,6 +2,8 @@
 
 
 
+
+
 CREATE PROCEDURE [dbo].[USP_RT_MapIFaceDataToOneCaps_RunTickets]
 @IFaceBatchUIDXml nvarchar(MAX) OUTPUT, @FormattedMsg nvarchar(MAX) OUTPUT, @PubID int OUTPUT, @SubID int OUTPUT, @ArchformattedMsg int = 0, @TotalRecCount int OUTPUT
 WITH EXEC AS CALLER
@@ -53,23 +55,35 @@ BEGIN TRY
 	CAST(RTRIM(LTRIM([LocationID])) AS VARCHAR(50)) + '-' +CONVERT(VARCHAR,[RecordDate],112) + '-'+CAST(UPPER([ProductType]) AS VARCHAR) +'-'+ CAST(RTRIM(LTRIM(RunTicketNumber)) AS VARCHAR(50))+ '-'+ CAST(RTRIM(LTRIM([LocAccountNumber2])) AS VARCHAR(50)) + '-'+CAST(UPPER(RTRIM(LTRIM([GatheringSystemName]))) AS VARCHAR(50))+'-'+ CAST(RTRIM(LTRIM(LocAccountNumber1))  AS VARCHAR(50)) + '-' + CAST(UPPER(RTRIM(LTRIM([BusinessEnitity]))) AS VARCHAR(50))+'-'+ CAST(RTRIM(LTRIM([WellPlusCompletionName])) AS VARCHAR(50)) +'-'+ CONVERT(VARCHAR,[GatheringSystemLockDate],112) AS UniqueColumn
 	FROM
 	(
-		SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
-		LEFT JOIN [dbo].[tbl_SubscriberController] TSC
-			ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ONECALPS'
-		WHERE TMQ.SubIFace = 'TankRunTicket' AND  TMQ.SubStatus IS NULL
-
-		UNION 
-
-		SELECT TMQ1.* FROM [dbo].[tbl_MsgQueue] TMQ1
-		INNER JOIN [dbo].[tbl_ErrorQueue] TERRQ
-			ON TMQ1.IFaceBatchUID = TERRQ.IFaceBatchUID 
-			AND TMQ1.TransID = TERRQ.TransID AND TMQ1.TransSeq = TERRQ.TransSeq
-			AND TMQ1.SubID = TERRQ.SubID AND TMQ1.PubID = TERRQ.PubID
-			AND TMQ1.PubConnID = TERRQ.PubConnID
-			AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'TankRunTicket'
-		LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
-			ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ONECALPS'
-		WHERE TMQ1.SubStatus = 'Failed' AND TERRQ.IsResubmit = 1
+		SELECT TMQ.* FROM 
+				(SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
+				LEFT JOIN [dbo].[tbl_SubscriberController] TSC
+					ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ONECALPS'
+				WHERE TMQ.SubIFace = 'TankRunTicket' AND  TMQ.SubStatus IS NULL
+				EXCEPT
+						----BUSINESS RULE FAILURES
+				SELECT TMQ1.* FROM [dbo].[tbl_MsgQueue] TMQ1
+				INNER JOIN [dbo].[tbl_ErrorQueue] TERRQ
+					ON TMQ1.IFaceBatchUID = TERRQ.IFaceBatchUID 
+					AND TMQ1.TransID = TERRQ.TransID AND TMQ1.TransSeq = TERRQ.TransSeq
+					AND TMQ1.SubID = TERRQ.SubID AND TMQ1.PubID = TERRQ.PubID
+					AND TMQ1.PubConnID = TERRQ.PubConnID
+					AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'TankRunTicket'
+				LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
+					ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ONECALPS'
+				WHERE TMQ1.SubStatus IS NULL AND TERRQ.IsBussRuleFail = 1
+				)TMQ
+				UNION 
+				SELECT TMQ1.* FROM [dbo].[tbl_MsgQueue] TMQ1
+				INNER JOIN [dbo].[tbl_ErrorQueue] TERRQ
+					ON TMQ1.IFaceBatchUID = TERRQ.IFaceBatchUID 
+					AND TMQ1.TransID = TERRQ.TransID AND TMQ1.TransSeq = TERRQ.TransSeq
+					AND TMQ1.SubID = TERRQ.SubID AND TMQ1.PubID = TERRQ.PubID
+					AND TMQ1.PubConnID = TERRQ.PubConnID
+					AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'TankRunTicket'
+				LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
+					ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ONECALPS'
+				WHERE TMQ1.SubStatus = 'Failed' AND TERRQ.IsResubmit = 1
 
 	)TMQ
 	INNER JOIN [dbo].[tbl_IFace_TankRunTicket] TICD ON TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq	AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
@@ -160,10 +174,24 @@ BEGIN TRY
 	        SUBSTRING( CONVERT(NVARCHAR(30), GETDATE(),20), 12, 8) AS UserTimeStamp
 			FROM
 			(
-				SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
-				LEFT JOIN [dbo].[tbl_SubscriberController] TSC
-					ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ONECALPS'
-				WHERE TMQ.SubIFace = 'TankRunTicket' AND  TMQ.SubStatus IS NULL
+				SELECT TMQ.* FROM 
+					(SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
+					LEFT JOIN [dbo].[tbl_SubscriberController] TSC
+						ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ONECALPS'
+					WHERE TMQ.SubIFace = 'TankRunTicket' AND  TMQ.SubStatus IS NULL
+					EXCEPT
+							----BUSINESS RULE FAILURES
+					SELECT TMQ1.* FROM [dbo].[tbl_MsgQueue] TMQ1
+					INNER JOIN [dbo].[tbl_ErrorQueue] TERRQ
+						ON TMQ1.IFaceBatchUID = TERRQ.IFaceBatchUID 
+						AND TMQ1.TransID = TERRQ.TransID AND TMQ1.TransSeq = TERRQ.TransSeq
+						AND TMQ1.SubID = TERRQ.SubID AND TMQ1.PubID = TERRQ.PubID
+						AND TMQ1.PubConnID = TERRQ.PubConnID
+						AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'TankRunTicket'
+					LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
+						ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ONECALPS'
+					WHERE TMQ1.SubStatus IS NULL AND TERRQ.IsBussRuleFail = 1
+				)TMQ
 
 				UNION 
 

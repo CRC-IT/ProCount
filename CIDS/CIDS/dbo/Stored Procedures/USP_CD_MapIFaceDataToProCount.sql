@@ -2,6 +2,8 @@
 
 
 
+
+
 CREATE PROCEDURE [dbo].[USP_CD_MapIFaceDataToProCount]
 @IFaceBatchUIDXml nvarchar(max) output,
 @FormattedMsg nvarchar(max) output,
@@ -32,11 +34,28 @@ BEGIN TRY
 	SUBSTRING( CONVERT(NVARCHAR(30), GETDATE(),20), 12, 8) AS UserTimeStamp
 	FROM
 	(
-		SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
+		SELECT TMQ.* FROM 
+		(SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
 		LEFT JOIN [dbo].[tbl_SubscriberController] TSC
 			ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ProCount'
 		WHERE TMQ.SubIFace = 'CompletionDaily' AND  TMQ.SubStatus IS NULL
 
+		EXCEPT
+			----BUSINESS RULE FAILURES
+			SELECT TMQ1.* FROM [dbo].[tbl_MsgQueue] TMQ1
+			INNER JOIN [dbo].[tbl_ErrorQueue] TERRQ
+				ON TMQ1.IFaceBatchUID = TERRQ.IFaceBatchUID 
+				AND TMQ1.TransID = TERRQ.TransID AND TMQ1.TransSeq = TERRQ.TransSeq
+				AND TMQ1.SubID = TERRQ.SubID AND TMQ1.PubID = TERRQ.PubID
+				AND TMQ1.PubConnID = TERRQ.PubConnID
+				AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'CompletionDaily'
+			LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
+				ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ProCount'
+			WHERE TMQ1.SubStatus IS NULL AND TERRQ.IsBussRuleFail = 1
+
+
+		)TMQ
+		
 		UNION 
 
 		SELECT TMQ1.* FROM [dbo].[tbl_MsgQueue] TMQ1
@@ -49,6 +68,7 @@ BEGIN TRY
 		LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
 			ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ProCount'
 		WHERE TMQ1.SubStatus = 'Failed' AND TERRQ.IsResubmit = 1
+
 
 
 	)TMQ
@@ -66,10 +86,27 @@ BEGIN TRY
 		SELECT DISTINCT TMQ.IFaceBatchUID 
 		FROM
 		(
-			SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
-			LEFT JOIN [dbo].[tbl_SubscriberController] TSC
-				ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ProCount'
-			WHERE TMQ.SubIFace = 'CompletionDaily' AND  TMQ.SubStatus IS NULL
+			SELECT TMQ.* FROM 
+				(SELECT TMQ.* FROM [dbo].[tbl_MsgQueue] TMQ
+				LEFT JOIN [dbo].[tbl_SubscriberController] TSC
+					ON TMQ.SubID = TSC.SubID  AND TSC.SubscriberName = 'ProCount'
+				WHERE TMQ.SubIFace = 'CompletionDaily' AND  TMQ.SubStatus IS NULL
+
+				EXCEPT
+					----BUSINESS RULE FAILURES
+					SELECT TMQ1.* FROM [dbo].[tbl_MsgQueue] TMQ1
+					INNER JOIN [dbo].[tbl_ErrorQueue] TERRQ
+						ON TMQ1.IFaceBatchUID = TERRQ.IFaceBatchUID 
+						AND TMQ1.TransID = TERRQ.TransID AND TMQ1.TransSeq = TERRQ.TransSeq
+						AND TMQ1.SubID = TERRQ.SubID AND TMQ1.PubID = TERRQ.PubID
+						AND TMQ1.PubConnID = TERRQ.PubConnID
+						AND TMQ1.SubIFace = TERRQ.SubIFace AND TMQ1.SubIFace = 'CompletionDaily'
+					LEFT JOIN  [dbo].[tbl_SubscriberController] TSC1
+						ON TMQ1.SubID = TSC1.SubID  AND TSC1.SubscriberName = 'ProCount'
+					WHERE TMQ1.SubStatus IS NULL AND TERRQ.IsBussRuleFail = 1
+
+
+			)TMQ
 
 			UNION 
 

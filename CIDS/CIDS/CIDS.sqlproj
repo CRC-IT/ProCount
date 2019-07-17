@@ -7,7 +7,7 @@
     <Name>CIDS</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{f30266c2-ec2b-4a0d-bb2e-4a9f64160555}</ProjectGuid>
+    <ProjectGuid>{c9ebd7d8-cf41-4cdc-86dc-30b860843d74}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>

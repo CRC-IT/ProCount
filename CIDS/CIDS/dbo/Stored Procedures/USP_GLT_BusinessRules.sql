@@ -7,6 +7,8 @@
 
 
 
+
+
 CREATE PROCEDURE [dbo].[USP_GLT_BusinessRules] 
 	@Destination nvarchar(500),
 	@ErrorLogId INT OUTPUT
@@ -29,26 +31,26 @@ BEGIN TRY
 			FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_GasLoaderTrans] TICD  on  TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
 			LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID 
 			WHERE TMQ.SubIFace = 'GasLoaderTrans' AND TSC.SubscriberName = 'ONECALPS'	
-			AND ((TICD.Agr_Det_Sequence = ' ' OR TICD.Agr_Det_Sequence = 'NULL') 
-			OR (TICD.rc_user_key = 'NULL' OR TICD.rc_user_key = ' ') 
-			OR (TICD.processing_party = 'NULL' OR TICD.processing_party = ' ')
-			OR (TICD.Agreement_ID = 'NULL' OR TICD.Agreement_ID = ' '))
+			AND ((TICD.Agr_Det_Sequence = ' ' OR TICD.Agr_Det_Sequence IS NULL) 
+			OR (TICD.rc_user_key IS NULL OR TICD.rc_user_key = ' ') 
+			OR (TICD.processing_party IS NULL OR TICD.processing_party = ' ')
+			OR (TICD.Agreement_ID IS NULL OR TICD.Agreement_ID = ' '))
 
 
 			IF @COUNT > 1
 			BEGIN
 
 
-				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit],[IsBussRuleFail] ,[CreatedTime] ,[CreatedBy])
-				SELECT 	TMQ.IFaceBatchUID AS IFaceBatchUID, TMQ.PubID, TMQ.SubID, TMQ.TransID, TMQ.TransSeq, TMQ.SubIFace, GETDATE() AS [ErrorTime],
+				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[PubConnID], [SubConnID],[TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit],[IsBussRuleFail] ,[CreatedTime] ,[CreatedBy])
+				SELECT 	TMQ.IFaceBatchUID AS IFaceBatchUID, TMQ.PubID, TMQ.SubID,tmq.PubConnID, TMQ.SubConnID, TMQ.TransID, TMQ.TransSeq, TMQ.SubIFace, GETDATE() AS [ErrorTime],
 				'Agr_Det_Sequence OR rc_user_key OR processing_party OR Agreement_ID could be null or empty' AS [ErrorMsg], 0 AS [IsResubmit], 1 AS [IsBussRuleFail], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
 				FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_GasLoaderTrans] TICD	ON TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
 				LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID 
 				WHERE TMQ.SubIFace = 'GasLoaderTrans' AND TSC.SubscriberName = 'ONECALPS'	
-				AND ((TICD.Agr_Det_Sequence = ' ' OR TICD.Agr_Det_Sequence = 'NULL') 
-				OR (TICD.rc_user_key = 'NULL' OR TICD.rc_user_key = ' ') 
-				OR (TICD.processing_party = 'NULL' OR TICD.processing_party = ' ')
-				OR (TICD.Agreement_ID = 'NULL' OR TICD.Agreement_ID = ' '))
+				AND ((TICD.Agr_Det_Sequence = ' ' OR TICD.Agr_Det_Sequence IS NULL) 
+				OR (TICD.rc_user_key IS NULL OR TICD.rc_user_key = ' ') 
+				OR (TICD.processing_party IS NULL OR TICD.processing_party = ' ')
+				OR (TICD.Agreement_ID IS NULL OR TICD.Agreement_ID = ' '))
 
 				
 				INSERT INTO @TBL_ERRORS

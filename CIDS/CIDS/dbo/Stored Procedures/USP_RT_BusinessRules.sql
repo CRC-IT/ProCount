@@ -6,6 +6,8 @@
 
 
 
+
+
 CREATE PROCEDURE [dbo].[USP_RT_BusinessRules] 
 	@Destination nvarchar(500),
 	@ErrorLogId INT OUTPUT
@@ -28,25 +30,30 @@ BEGIN TRY
 			FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_TankRunTicket] TICD  on  TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
 			LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID 
 			WHERE TMQ.SubIFace = 'TankRunTicket' AND TSC.SubscriberName = 'ONECALPS'	--AND TICD.RunHours NOT between 0 and 24 AND ((CONVERT(NUMERIC(38,0),cast(TICD.CasingPressure AS FLOAT))  > 5000 OR CONVERT(NUMERIC(38,0),cast(TICD.CasingPressure AS FLOAT))  < -10) OR	(TICD.TubingPressure >= 5000 OR TICD.TubingPressure < -10))
-			AND ((TICD.LocAccountNumber1 = ' ' OR TICD.LocAccountNumber1 = 'NULL') 
-			OR (TICD.locationid = 'NULL' OR TICD.locationid = ' ') 
-			OR (TICD.BusinessEnitity  = 'NULL' OR TICD.BusinessEnitity  = ' ')
-			OR (TICD.LocAccountNumber2  = 'NULL' OR TICD.LocAccountNumber2  = ' '))
+			AND ((TICD.LocAccountNumber1 = ' ' OR TICD.LocAccountNumber1 IS NULL) 
+			OR (TICD.locationid IS NULL OR TICD.locationid = ' ') 
+			OR (TICD.BusinessEnitity  IS NULL OR TICD.BusinessEnitity  = ' ')
+			OR (TICD.LocAccountNumber2  IS NULL OR TICD.LocAccountNumber2  = ' ')
+			OR (TICD.AreaID  IS NULL OR TICD.AreaID  = ' ')
+			)
 
 			IF @COUNT > 1
 			BEGIN
 
 
-				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit],[IsBussRuleFail] ,[CreatedTime] ,[CreatedBy])
-				SELECT 	TMQ.IFaceBatchUID AS IFaceBatchUID, TMQ.PubID, TMQ.SubID, TMQ.TransID, TMQ.TransSeq, TMQ.SubIFace, GETDATE() AS [ErrorTime],
+				INSERT INTO [dbo].[tbl_ErrorQueue] ([IFaceBatchUID] ,[PubID] ,[SubID] ,[PubConnID], [SubConnID],[TransID] ,[TransSeq] ,[SubIFace], [ErrorTime] , [ErrorMsg] ,[IsResubmit],[IsBussRuleFail] ,[CreatedTime] ,[CreatedBy])
+				SELECT 	TMQ.IFaceBatchUID AS IFaceBatchUID, TMQ.PubID, TMQ.SubID,tmq.PubConnID, TMQ.SubConnID, TMQ.TransID, TMQ.TransSeq, TMQ.SubIFace, GETDATE() AS [ErrorTime],
 				'LocAccountNumber1 OR locationid OR BusinessEnitity OR LocAccountNumber2 could be null or empty' AS [ErrorMsg], 0 AS [IsResubmit], 1 AS [IsBussRuleFail], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
 				FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_TankRunTicket] TICD	ON TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
 				LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID 
 				WHERE TMQ.SubIFace = 'TankRunTicket' AND TSC.SubscriberName = 'ONECALPS'	--AND TICD.RunHours NOT between 0 and 24 AND ((CONVERT(NUMERIC(38,0),cast(TICD.CasingPressure AS FLOAT))  > 5000 OR CONVERT(NUMERIC(38,0),cast(TICD.CasingPressure AS FLOAT))  < -10))
-				AND ((TICD.LocAccountNumber1 = ' ' OR TICD.LocAccountNumber1 = 'NULL') 
-				OR (TICD.locationid = 'NULL' OR TICD.locationid = ' ') 
-				OR (TICD.BusinessEnitity  = 'NULL' OR TICD.BusinessEnitity  = ' ')
-				OR (TICD.LocAccountNumber2  = 'NULL' OR TICD.LocAccountNumber2  = ' '))
+				AND ((TICD.LocAccountNumber1 = ' ' OR TICD.LocAccountNumber1 IS NULL) 
+				OR (TICD.locationid IS NULL OR TICD.locationid = ' ') 
+				OR (TICD.BusinessEnitity  IS NULL OR TICD.BusinessEnitity  = ' ')
+				OR (TICD.LocAccountNumber2  IS NULL OR TICD.LocAccountNumber2  = ' ')
+				OR (TICD.AreaID  IS NULL OR TICD.AreaID  = ' ')
+				)
+
 
 				
 				INSERT INTO @TBL_ERRORS
