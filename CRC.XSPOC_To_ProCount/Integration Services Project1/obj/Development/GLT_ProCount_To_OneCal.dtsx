@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="GLT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="413"
-  DTS:VersionGUID="{06B9F637-6D28-42F2-9D57-7DBA22EA0852}">
+  DTS:VersionBuild="416"
+  DTS:VersionGUID="{92F7427B-49AD-41E2-8649-E989A1036B30}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABHA9ZpBTwVthrsdStddEe2AAAAAASAAACgAAAAEAAAABUd0wf6g5b497e134/ezxEgAAAApqoR5jsvIkxTtolJYAMvjJVCar1zYrUK9ryokLtOCEsUAAAANSS7E6BGCdiObfwaAfXKPYimT0g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABeuZHxbb+m3sxXET9yFQ2nAAAAAASAAACgAAAAEAAAAILw2iz4OdKNzaXUkvlvxwUgAAAAkWjfkKbpKlZIB6/Ml5KQpZnNuy966kSGbXI4lNs4TdUUAAAAE5xYBqcy0fsPUVX8ZHAG7YHhOIk</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -664,14 +664,35 @@
               ReadOnlyVariables="User::ArchFormattedMsg,User::FailRecCount,User::FormattedMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1022,35 +1043,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2324,7 +2324,7 @@ FROM CRCREVSHR_SS_LOADER_TRANS</property>
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT 
 activity_date,processing_party, rc_user_key, agr_det_sequence, gatheringsystemlockdate,agreement_id,wellpluscompletionname,gatheringsystemname,TO_CHAR(RTRIM(LTRIM(rc_user_key))) || '-' ||TO_CHAR(ACTIVITY_DATE, 'YYYYMMDD')||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(producttype))))||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(agreement_id)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(GATHERINGSYSTEMNAME)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(AGR_DET_SEQUENCE)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(PROCESSING_PARTY)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(WELLPLUSCOMPLETIONNAME)))) ||'-' ||TO_CHAR(GATHERINGSYSTEMLOCKDATE, 'YYYYMMDD') AS OneCalUniqueID
 FROM CRCREVSHR_SS_LOADER_TRANS) "refTable"
-where "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMNAME" = ? and "refTable"."WELLPLUSCOMPLETIONNAME" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."ONECALUNIQUEID" = ?</property>
+where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMNAME" = ? and "refTable"."WELLPLUSCOMPLETIONNAME" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."ONECALUNIQUEID" = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -2360,7 +2360,7 @@ where "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[processing_party]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[activity_date]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemName]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemLockDate]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]};</property>
+                      name="ParameterMap">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[Agreement_ID]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[processing_party]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[activity_date]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemName]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemLockDate]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2384,33 +2384,17 @@ where "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[UniqueColumn]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[Agreement_ID]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="418"
-                          cachedName="UniqueColumn"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]">
+                          cachedLength="15"
+                          cachedName="Agreement_ID"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[Agreement_ID]">
                           <properties>
                             <property
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">ONECALUNIQUEID</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[activity_date]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="activity_date"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[activity_date]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">ACTIVITY_DATE</property>
+                              name="JoinToReferenceColumn">AGREEMENT_ID</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -2436,17 +2420,15 @@ where "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[WellPlusCompletionName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="120"
-                          cachedName="WellPlusCompletionName"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]">
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[activity_date]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="activity_date"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[activity_date]">
                           <properties>
                             <property
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">WELLPLUSCOMPLETIONNAME</property>
+                              name="JoinToReferenceColumn">ACTIVITY_DATE</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -2472,6 +2454,24 @@ where "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "
                           </properties>
                         </inputColumn>
                         <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[WellPlusCompletionName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="120"
+                          cachedName="WellPlusCompletionName"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">WELLPLUSCOMPLETIONNAME</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[GatheringSystemLockDate]"
                           cachedDataType="dbTimeStamp"
                           cachedName="GatheringSystemLockDate"
@@ -2481,6 +2481,24 @@ where "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
                               name="JoinToReferenceColumn">GATHERINGSYSTEMLOCKDATE</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[UniqueColumn]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="418"
+                          cachedName="UniqueColumn"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">ONECALUNIQUEID</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -4663,7 +4681,7 @@ where "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,8.623087108599,111.6127734375,11.609375"
+              BoundingBox="-64.6750390625,6.427774608599,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4720,7 +4738,7 @@ where "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4730,7 +4748,7 @@ where "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

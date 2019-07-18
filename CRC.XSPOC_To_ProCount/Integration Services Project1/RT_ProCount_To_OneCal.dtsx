@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="RT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="394"
-  DTS:VersionGUID="{85043231-C074-4D39-8A13-29343C71BB39}">
+  DTS:VersionBuild="396"
+  DTS:VersionGUID="{CADEB994-6439-495D-9F57-AA8A90A43060}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAx9Ee6NEEPEUlpMAeNed0cAAAAAASAAACgAAAAEAAAAAjbEHi2aQ4WoXf9my1gUBMgAAAAj/WFuS0/iOy8FIXsCc36iEysxNO1WL1OyDGw112wpEcUAAAA52dBaAhxl5nu9S/laAMuxZSZYoc</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAq/qc29C70/pAnLZ8hAj5NAAAAAASAAACgAAAAEAAAAG88Le5QU0G5bHZQGqyFDWQgAAAAsLL4eamiUqwx2Xx7wpBYTbrl2tcOVAZgSYJ8mqp4PcQUAAAAD8qfqn4EksMN+kVCMMRsk1BNPJw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2238,7 +2238,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."BUSINESSENITITY" = ? and "re
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="RECORDDATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BUSINESSENITITY" dataType="DT_STR" length="75" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="LOCATIONID" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AGR_DET_SEQUENCE" dataType="DT_NUMERIC" length="0" precision="10" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GATHERINGSYSTEMLOCKDATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AGREEMENT_ID" dataType="DT_STR" length="14" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WELLPLUSCOMPLETIONNAME" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GATHERINGSYSTEMNAME" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ONECALUNIQUEID" dataType="DT_STR" length="566" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="RECORDDATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BUSINESSENITITY" dataType="DT_STR" length="75" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="LOCATIONID" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="AGR_DET_SEQUENCE" dataType="DT_NUMERIC" length="0" precision="10" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GATHERINGSYSTEMLOCKDATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AGREEMENT_ID" dataType="DT_STR" length="14" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WELLPLUSCOMPLETIONNAME" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GATHERINGSYSTEMNAME" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ONECALUNIQUEID" dataType="DT_STR" length="541" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -2266,58 +2266,6 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."BUSINESSENITITY" = ? and "re
                       refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[UniqueColumn]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="449"
-                          cachedName="UniqueColumn"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">ONECALUNIQUEID</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[WellPlusCompletionName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="120"
-                          cachedName="WellPlusCompletionName"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">WELLPLUSCOMPLETIONNAME</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[GatheringSystemLockDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="GatheringSystemLockDate"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[GatheringSystemLockDate]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">GATHERINGSYSTEMLOCKDATE</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[Agreement_ID]"
                           cachedCodepage="1252"
@@ -2348,6 +2296,58 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."BUSINESSENITITY" = ? and "re
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
                               name="JoinToReferenceColumn">BUSINESSENITITY</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[GatheringSystemLockDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="GatheringSystemLockDate"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[GatheringSystemLockDate]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">GATHERINGSYSTEMLOCKDATE</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[WellPlusCompletionName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="120"
+                          cachedName="WellPlusCompletionName"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">WELLPLUSCOMPLETIONNAME</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[UniqueColumn]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="449"
+                          cachedName="UniqueColumn"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">ONECALUNIQUEID</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -4565,7 +4565,20 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."BUSINESSENITITY" = ? and "re
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
