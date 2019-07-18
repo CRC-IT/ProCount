@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="GLT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="416"
-  DTS:VersionGUID="{92F7427B-49AD-41E2-8649-E989A1036B30}">
+  DTS:VersionBuild="421"
+  DTS:VersionGUID="{9DFE0093-284E-4124-94C8-C35A5C050C59}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,11 +23,11 @@
       DTS:ObjectName="ONECALPS.xxcrc_procount">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ONECALPS;User ID=xxcrc_procount;Provider=MSDAORA.1;Persist Security Info=True;">
+          DTS:ConnectionString="Data Source=ONECALPS;User ID=xxcrc_procount;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABeuZHxbb+m3sxXET9yFQ2nAAAAAASAAACgAAAAEAAAAILw2iz4OdKNzaXUkvlvxwUgAAAAkWjfkKbpKlZIB6/Ml5KQpZnNuy966kSGbXI4lNs4TdUUAAAAE5xYBqcy0fsPUVX8ZHAG7YHhOIk</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAk/Q2uxsUKtRwgRhv+qAiZAAAAAASAAACgAAAAEAAAAPxgNu2vBoc8+l8BiDHfykogAAAA8mV7H4OVE40azhu8tj/cxAfw6ASiyI9CKkOH7iA2pykUAAAAl/AUVR475mRHTz2rKumby8TVLHE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -664,35 +664,14 @@
               ReadOnlyVariables="User::ArchFormattedMsg,User::FailRecCount,User::FormattedMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1043,14 +1022,35 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1292,6 +1292,104 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="r8"
                           cachedName="BTU_pressure_base"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[BTU_pressure_base]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[UniqueColumn]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="418"
+                          cachedName="UniqueColumn"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[Agreement_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="Agreement_ID"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[Agreement_ID]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[WellPlusCompletionName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="120"
+                          cachedName="WellPlusCompletionName"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[GatheringSystemName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="GatheringSystemName"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[processing_party]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="60"
+                          cachedName="processing_party"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[processing_party]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[UserName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="UserName"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UserName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[rc_user_key]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="rc_user_key"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[rc_user_key]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[trans_copy]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="trans_copy"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[trans_copy]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[GatheringSystemLockName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="GatheringSystemLockName"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemLockName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[GatheringSystemAccountantName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="GatheringSystemAccountantName"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemAccountantName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[DispositionCodeDescription]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="DispositionCodeDescription"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[DispositionCodeDescription]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[AreaID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="AreaID"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[AreaID]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[AreaName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="AreaName"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[AreaName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[ProductType]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ProductType"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[ProductType]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1347,8 +1445,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                         </outputColumn>
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of BTU_pressure_base]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="50"
@@ -1361,6 +1458,300 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
                               name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[BTU_pressure_base]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UniqueColumn]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="418"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UniqueColumn]"
+                          name="Copy of UniqueColumn"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Agreement_ID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="15"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Agreement_ID]"
+                          name="Copy of Agreement_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[Agreement_ID]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of WellPlusCompletionName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of WellPlusCompletionName]"
+                          name="Copy of WellPlusCompletionName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="40"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemName]"
+                          name="Copy of GatheringSystemName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemName]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of processing_party]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="60"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of processing_party]"
+                          name="Copy of processing_party"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[processing_party]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UserName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="8"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UserName]"
+                          name="Copy of UserName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UserName]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of rc_user_key]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of rc_user_key]"
+                          name="Copy of rc_user_key"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[rc_user_key]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of trans_copy]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of trans_copy]"
+                          name="Copy of trans_copy"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[trans_copy]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemLockName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemLockName]"
+                          name="Copy of GatheringSystemLockName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemLockName]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemAccountantName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemAccountantName]"
+                          name="Copy of GatheringSystemAccountantName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemAccountantName]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DispositionCodeDescription]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DispositionCodeDescription]"
+                          name="Copy of DispositionCodeDescription"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[DispositionCodeDescription]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AreaID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="15"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AreaID]"
+                          name="Copy of AreaID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[AreaID]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AreaName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AreaName]"
+                          name="Copy of AreaName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[AreaName]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductType]"
+                          name="Copy of ProductType"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[ProductType]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1664,22 +2055,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GRAVITY]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[gravity]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Agreement_ID]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="15"
-                          cachedName="Agreement_ID"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AGREEMENT_ID]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[Agreement_ID]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[trans_copy]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="trans_copy"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[TRANS_COPY]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[trans_copy]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[activity_date]"
                           cachedDataType="dbTimeStamp"
                           cachedName="activity_date"
@@ -1716,59 +2091,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[MCF]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[MCF]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[processing_party]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="60"
-                          cachedName="processing_party"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[PROCESSING_PARTY]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[processing_party]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[rc_user_key]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="20"
-                          cachedName="rc_user_key"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[RC_USER_KEY]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[rc_user_key]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[UserName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="8"
-                          cachedName="UserName"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[USERNAME]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UserName]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[MMBTU]"
                           cachedDataType="r8"
                           cachedName="MMBTU"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[ALLOCACTGASVOLMMBTU]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[MMBTU]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[ProductType]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ProductType"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTTYPE]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[ProductType]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[AreaName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="AreaName"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AREANAME]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[AreaName]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[AreaID]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="15"
-                          cachedName="AreaID"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AREAID]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[AreaID]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[completionID]"
                           cachedDataType="i4"
@@ -1781,14 +2108,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedName="sourcetype"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[SOURCETYPE]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[sourcetype]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[DispositionCodeDescription]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="DispositionCodeDescription"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[DISPOSITIONCODEDESCRIPTION]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[DispositionCodeDescription]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[DispositionCode]"
                           cachedDataType="i4"
@@ -1808,43 +2127,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[DECKTYPE]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[decktype]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[WellPlusCompletionName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="120"
-                          cachedName="WellPlusCompletionName"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[WELLPLUSCOMPLETIONNAME]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[GatheringSystemLockDate]"
                           cachedDataType="dbTimeStamp"
                           cachedName="GatheringSystemLockDate"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMLOCKDATE]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemLockDate]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[GatheringSystemName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="40"
-                          cachedName="GatheringSystemName"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMNAME]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemName]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[GatheringSystemLockName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="100"
-                          cachedName="GatheringSystemLockName"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMLOCKNAME]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemLockName]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[GatheringSystemAccountantName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="100"
-                          cachedName="GatheringSystemAccountantName"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMACCOUNTANTNAME]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemAccountantName]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[GatheringSystemID]"
                           cachedDataType="r8"
@@ -1859,8 +2146,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[AllocationDateStamp]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of BTU_pressure_base]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
+                          cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Copy of BTU_pressure_base"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[BTU_PRESSURE_BASE]"
@@ -1873,6 +2159,97 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedName="Agr_Det_Sequence"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AGR_DET_SEQUENCE]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[Agr_Det_Sequence]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of Agreement_ID]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="Copy of Agreement_ID"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AGREEMENT_ID]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Agreement_ID]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of processing_party]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="Copy of processing_party"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[PROCESSING_PARTY]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of processing_party]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of GatheringSystemName]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="Copy of GatheringSystemName"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMNAME]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of WellPlusCompletionName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Copy of WellPlusCompletionName"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[WELLPLUSCOMPLETIONNAME]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of WellPlusCompletionName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of UserName]"
+                          cachedDataType="wstr"
+                          cachedLength="8"
+                          cachedName="Copy of UserName"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[USERNAME]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UserName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of rc_user_key]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Copy of rc_user_key"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[RC_USER_KEY]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of rc_user_key]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of trans_copy]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="Copy of trans_copy"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[TRANS_COPY]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of trans_copy]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of GatheringSystemLockName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Copy of GatheringSystemLockName"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMLOCKNAME]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemLockName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of GatheringSystemAccountantName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Copy of GatheringSystemAccountantName"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMACCOUNTANTNAME]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemAccountantName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of DispositionCodeDescription]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Copy of DispositionCodeDescription"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[DISPOSITIONCODEDESCRIPTION]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DispositionCodeDescription]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of AreaID]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="Copy of AreaID"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AREAID]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AreaID]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of AreaName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Copy of AreaName"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AREANAME]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AreaName]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[Copy of ProductType]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Copy of ProductType"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTTYPE]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductType]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1884,8 +2261,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           scale="2" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AGREEMENT_ID]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="14"
                           name="AGREEMENT_ID" />
                         <externalMetadataColumn
@@ -1895,52 +2271,47 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           precision="7" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[USERNAME]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="25"
                           name="USERNAME" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[FILENAME]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="60"
                           name="FILENAME" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[HOLDER_ID]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="HOLDER_ID" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[LINE_NO]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="LINE_NO" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[PAYOR_DESCRIPTION]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="60"
                           name="PAYOR_DESCRIPTION" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[PROCESSING_PARTY]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="15"
                           name="PROCESSING_PARTY" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[RC_USER_KEY]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="20"
                           name="RC_USER_KEY" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AGR_DET_SRCE_EFF_DATE]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="8"
                           name="AGR_DET_SRCE_EFF_DATE" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[TRANS_COPY]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="1"
                           name="TRANS_COPY" />
                         <externalMetadataColumn
@@ -1961,20 +2332,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           scale="6" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[BTU_PRESSURE_BASE]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="6"
                           name="BTU_PRESSURE_BASE" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[BTU_WET_DRY_IND]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="1"
                           name="BTU_WET_DRY_IND" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_REFERENCE]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="12"
                           name="SOURCE_REFERENCE" />
                         <externalMetadataColumn
@@ -2129,30 +2497,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           scale="2" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[ERROR_STATUS]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="1"
                           name="ERROR_STATUS" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[ERROR_MESSAGES]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="2000"
                           name="ERROR_MESSAGES" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[XFER_REQID]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="XFER_REQID" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[XFER_USERNAME]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="30"
                           name="XFER_USERNAME" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[XFER_FILENAME]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="60"
                           name="XFER_FILENAME" />
                         <externalMetadataColumn
@@ -2161,26 +2526,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           name="XFER_DATE" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMID]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="40"
                           name="GATHERINGSYSTEMID" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMNAME]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="50"
                           name="GATHERINGSYSTEMNAME" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMLOCKNAME]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="50"
                           name="GATHERINGSYSTEMLOCKNAME" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[GATHERINGSYSTEMACCOUNTANTNAME]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="50"
                           name="GATHERINGSYSTEMACCOUNTANTNAME" />
                         <externalMetadataColumn
@@ -2197,16 +2558,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           name="RECORDDATE" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[ALLOCATIONRUNCOUNT]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="ALLOCATIONRUNCOUNT" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[LOCKINGCOUNT]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="LOCKINGCOUNT" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[USERID]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="25"
                           name="USERID" />
                         <externalMetadataColumn
@@ -2219,57 +2581,58 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           name="UPDATED" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[WELLPLUSCOMPLETIONNAME]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="250"
                           name="WELLPLUSCOMPLETIONNAME" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[DECKTYPE]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="DECKTYPE" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNTANTPERSONID]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="ACCOUNTANTPERSONID" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[DISPOSITIONCODEDESCRIPTION]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="50"
                           name="DISPOSITIONCODEDESCRIPTION" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[SOURCETYPE]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="SOURCETYPE" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[COMPLETIONID]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="COMPLETIONID" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AREAID]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="25"
                           name="AREAID" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[AREANAME]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="50"
                           name="AREANAME" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[DISPOSITIONCODE]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="DISPOSITIONCODE" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTTYPE]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="50"
                           name="PRODUCTTYPE" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[ALLOCACTGASVOLMMBTU]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="38"
                           name="ALLOCACTGASVOLMMBTU" />
                       </externalMetadataColumns>
                     </input>
@@ -2324,7 +2687,7 @@ FROM CRCREVSHR_SS_LOADER_TRANS</property>
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT 
 activity_date,processing_party, rc_user_key, agr_det_sequence, gatheringsystemlockdate,agreement_id,wellpluscompletionname,gatheringsystemname,TO_CHAR(RTRIM(LTRIM(rc_user_key))) || '-' ||TO_CHAR(ACTIVITY_DATE, 'YYYYMMDD')||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(producttype))))||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(agreement_id)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(GATHERINGSYSTEMNAME)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(AGR_DET_SEQUENCE)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(PROCESSING_PARTY)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(WELLPLUSCOMPLETIONNAME)))) ||'-' ||TO_CHAR(GATHERINGSYSTEMLOCKDATE, 'YYYYMMDD') AS OneCalUniqueID
 FROM CRCREVSHR_SS_LOADER_TRANS) "refTable"
-where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMNAME" = ? and "refTable"."WELLPLUSCOMPLETIONNAME" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."ONECALUNIQUEID" = ?</property>
+where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."ONECALUNIQUEID" = ? and "refTable"."AGREEMENT_ID" = ? and "refTable"."WELLPLUSCOMPLETIONNAME" = ? and "refTable"."GATHERINGSYSTEMNAME" = ? and "refTable"."PROCESSING_PARTY" = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -2355,12 +2718,12 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "r
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ACTIVITY_DATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PROCESSING_PARTY" dataType="DT_STR" length="15" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RC_USER_KEY" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="AGR_DET_SEQUENCE" dataType="DT_NUMERIC" length="0" precision="7" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GATHERINGSYSTEMLOCKDATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AGREEMENT_ID" dataType="DT_STR" length="14" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WELLPLUSCOMPLETIONNAME" dataType="DT_STR" length="250" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="GATHERINGSYSTEMNAME" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ONECALUNIQUEID" dataType="DT_STR" length="463" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ACTIVITY_DATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PROCESSING_PARTY" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RC_USER_KEY" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AGR_DET_SEQUENCE" dataType="DT_NUMERIC" length="0" precision="7" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GATHERINGSYSTEMLOCKDATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AGREEMENT_ID" dataType="DT_WSTR" length="14" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WELLPLUSCOMPLETIONNAME" dataType="DT_WSTR" length="250" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GATHERINGSYSTEMNAME" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ONECALUNIQUEID" dataType="DT_WSTR" length="463" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[Agreement_ID]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[processing_party]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[activity_date]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemName]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemLockDate]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]};</property>
+                      name="ParameterMap">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[activity_date]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemLockDate]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UniqueColumn]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Agreement_ID]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of WellPlusCompletionName]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemName]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of processing_party]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2384,42 +2747,6 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "r
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[Agreement_ID]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="15"
-                          cachedName="Agreement_ID"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[Agreement_ID]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">AGREEMENT_ID</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[processing_party]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="60"
-                          cachedName="processing_party"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[processing_party]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">PROCESSING_PARTY</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[activity_date]"
                           cachedDataType="dbTimeStamp"
                           cachedName="activity_date"
@@ -2429,42 +2756,6 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "r
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
                               name="JoinToReferenceColumn">ACTIVITY_DATE</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[GatheringSystemName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="40"
-                          cachedName="GatheringSystemName"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[GatheringSystemName]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">GATHERINGSYSTEMNAME</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[WellPlusCompletionName]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="120"
-                          cachedName="WellPlusCompletionName"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[WellPlusCompletionName]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">WELLPLUSCOMPLETIONNAME</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -2488,17 +2779,84 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "r
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[UniqueColumn]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[Copy of UniqueColumn]"
+                          cachedDataType="wstr"
                           cachedLength="418"
-                          cachedName="UniqueColumn"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]">
+                          cachedName="Copy of UniqueColumn"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UniqueColumn]">
                           <properties>
                             <property
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
                               name="JoinToReferenceColumn">ONECALUNIQUEID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[Copy of Agreement_ID]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="Copy of Agreement_ID"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Agreement_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">AGREEMENT_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[Copy of WellPlusCompletionName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Copy of WellPlusCompletionName"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of WellPlusCompletionName]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">WELLPLUSCOMPLETIONNAME</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[Copy of GatheringSystemName]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="Copy of GatheringSystemName"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of GatheringSystemName]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">GATHERINGSYSTEMNAME</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[Copy of processing_party]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="Copy of processing_party"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of processing_party]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PROCESSING_PARTY</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -2519,8 +2877,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "r
                       <outputColumns>
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Outputs[Lookup Match Output].Columns[ONECALUNIQUEID]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           errorOrTruncationOperation="Copy Column"
                           length="463"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Outputs[Lookup Match Output].Columns[ONECALUNIQUEID]"
@@ -4574,13 +4931,17 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "r
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans"
           TopLeft="325.749996839712,261.355549217198" />
         <NodeLayout
+          Size="180,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Inserts"
+          TopLeft="341.166687240558,487.939870516373" />
+        <NodeLayout
           Size="147,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count"
           TopLeft="352.45636237971,416.499348860705" />
         <NodeLayout
-          Size="180,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Inserts"
-          TopLeft="341.166687240558,487.939870516373" />
+          Size="200,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data"
+          TopLeft="321.083330396563,13.1333331163724" />
         <NodeLayout
           Size="155,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column"
@@ -4589,54 +4950,6 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "r
           Size="157,43"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion"
           TopLeft="338.499996609986,94.433329141338" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data"
-          TopLeft="321.083330396563,13.1333331163724" />
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
-          TopLeft="428.561524810134,457.499348860705">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.440521655668"
-              Start="0,0"
-              End="0,22.940521655668">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.940521655668" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[OLE DB Source Output]"
-          TopLeft="419.041663503274,55.1333331163724">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.2999960249656"
-              Start="0,0"
-              End="0,31.7999960249656">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.7999960249656" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[OLE DB Destination Error Output]"
           TopLeft="421.910719323003,303.355549217198">
@@ -4681,7 +4994,7 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "r
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-64.6750390625,6.427774608599,129.350078125,16"
+              BoundingBox="-64.6750390625,6.427774608599,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4729,32 +5042,53 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "r
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
+          TopLeft="428.561524810134,457.499348860705">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.440521655668"
+              Start="0,0"
+              End="0,22.940521655668">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.940521655668" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[OLE DB Source Output]"
+          TopLeft="419.041663503274,55.1333331163724">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.2999960249656"
+              Start="0,0"
+              End="0,31.7999960249656">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7999960249656" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans">
     <Properties>
@@ -4771,6 +5105,29 @@ where "refTable"."AGREEMENT_ID" = ? and "refTable"."PROCESSING_PARTY" = ? and "r
   <PipelineComponentMetadata
     design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data">
     <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DLG55XPW52</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAm8L+Ud8bQE2TXMrgqw3rBgAAAAACAAAAAAADZgAAwAAAABAAAACLmNCnUOlyD5kButpEdQ9fAAAAAASAAACgAAAAEAAAAAQDaNFTaRie4bvcZdGkfmGIAAAATxtUtvHnHoSSqDLCX+kLtLUQJDKVSQDh1jMXT8pb5lCn/GpkAhU8haUUfF2k/vZlN3lfbkWETNEhHw/bf4BJUEXp2Wbt98xKqOzJJCUVu5MpjJTZwZ/wCFVHguxEOUXUrz1NxYnDynx3Ie7G7cFLpTQ3FOwTPOZLhVTZWtp2P2Ad2ZJaS7zSIRQAAAAXU3ac20CWkDvqxE1tO28L/ErOYA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAACAAAAAAADZgAAwAAAABAAAACfxdrdylAQ/RHY70Z9zcv+AAAAAASAAACgAAAAEAAAAFJP+Zu2QU9Di47YnJkFHLGIAAAATd31vVy11M3Cp5FHcHXzOkD0srYxvzNaKY6JeGLqm/MXU8zN6eqammj3Goj9UKUivJfgb+qXd+UdrYaWt3KXxLXhSv1cFJVrLelxU1QFZtEgqtV8sQDRCcX6V5Cja+GBuzsCM/X3fzCJVfLFxzm3hJbPrn6/cAD24nOktC4K2hRgK+CLiUTEdhQAAADudHSk+D3OoYaR4RvVCLNwKCoYpw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -2930,10 +2930,10 @@
                 <SSIS:Property SSIS:Name="Name">RT_ProCount_To_IFace</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">141</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">142</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{EFD96B2F-4520-4565-BD3C-4AE33D0CC0D5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EC6B59F9-5D89-4202-890E-95471B638081}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3060,10 +3060,10 @@
                 <SSIS:Property SSIS:Name="Name">RT_ProCount_To_OneCal</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">380</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">403</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E33DF430-AA6C-4C38-9930-D561EA6255F6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{089D35F2-3D4E-4FD6-82E1-BE8AD7F6022C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3221,7 +3221,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=ONECALPS;User ID=xxcrc_procount;Provider=MSDAORA.1;Persist Security Info=True;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=ONECALPS;User ID=xxcrc_procount;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -3767,10 +3767,10 @@
                 <SSIS:Property SSIS:Name="Name">GLT_ProCount_To_OneCal</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">408</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">421</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{212FEEF6-C08E-4803-8ABC-65E632E68228}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9DFE0093-284E-4124-94C8-C35A5C050C59}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3928,7 +3928,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=ONECALPS;User ID=xxcrc_procount;Provider=MSDAORA.1;Persist Security Info=True;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=ONECALPS;User ID=xxcrc_procount;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
