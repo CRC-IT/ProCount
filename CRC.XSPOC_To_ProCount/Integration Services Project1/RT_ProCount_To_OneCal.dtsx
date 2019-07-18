@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="RT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="398"
-  DTS:VersionGUID="{4FAD0CA4-3291-4D55-8347-82F82B7A3270}">
+  DTS:VersionBuild="399"
+  DTS:VersionGUID="{AB450CED-0439-4A02-B47F-A3F64090A523}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABO/MQuxBeAYzEuC0CyhOrKAAAAAASAAACgAAAAEAAAAMX7By6B75Q+7PhDkK5LjF8gAAAAWxmcZRY98sFdwKRXwMNQu7I5GMDAPdcgTVWMD+k6hQUUAAAAd9aZ/OLY8GeVimiC1SqyQzFByW4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAsyoj8IRrPm0aCDyew5JvTAAAAAASAAACgAAAAEAAAAAbTfKrR4+4gTyx7l19952ogAAAAuZk/HejO/iz35kjsKW/yr/YuLfAvNhd+auuGeVx0X78UAAAAvgT/fh6gJTEC5K1X2gcY+4EUkZk</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -343,7 +343,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Subscriber">
       <DTS:VariableValue
-        DTS:DataType="8">ProCount</DTS:VariableValue>
+        DTS:DataType="8">ONECALPS</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
