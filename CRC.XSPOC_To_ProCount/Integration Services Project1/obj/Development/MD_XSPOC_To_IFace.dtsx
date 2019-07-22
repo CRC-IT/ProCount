@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MD_XSPOC_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="327"
-  DTS:VersionGUID="{D439C003-65CE-47C4-B0DF-AEA63A006271}">
+  DTS:VersionBuild="328"
+  DTS:VersionGUID="{59D87C2F-7A2C-477C-814D-D592EDF86977}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -129,7 +129,7 @@
         DTS:DataType="8">SELECT convert(nvarchar(MAX),
 (
   
- SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE CONVERT(VARCHAR(6),RecordDate,112) &gt;= CONVERT(VARCHAR(6),DATEADD(DAY,-20,GETDATE()),112) --AND RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE()) 
+ SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE CONVERT(VARCHAR(6),RecordDate,112) &gt;= CONVERT(VARCHAR(6),DATEADD(DAY,-20,GETDATE()),112) AND RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE()) 
  FOR XML PATH ('MeterData_Record'), ROOT('MeterData_From_XSPOC')
 
 )) InputMsg</DTS:VariableValue>
@@ -305,7 +305,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQuery">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE CONVERT(VARCHAR(6),RecordDate,112) &gt;= CONVERT(VARCHAR(6),DATEADD(DAY,-20,GETDATE()),112) --AND RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE())</DTS:VariableValue>
+        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE CONVERT(VARCHAR(6),RecordDate,112) &gt;= CONVERT(VARCHAR(6),DATEADD(DAY,-20,GETDATE()),112) AND RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE())</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -906,7 +906,7 @@ END
         <SQLTask:SqlTaskData
           SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE CONVERT(VARCHAR(6),RecordDate,112) &gt;= CONVERT(VARCHAR(6),DATEADD(DAY,-20,GETDATE()),112) --AND RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE()) &#xA; FOR XML PATH ('MeterData_Record'), ROOT('MeterData_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
+          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE CONVERT(VARCHAR(6),RecordDate,112) &gt;= CONVERT(VARCHAR(6),DATEADD(DAY,-20,GETDATE()),112) AND RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE()) &#xA; FOR XML PATH ('MeterData_Record'), ROOT('MeterData_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
