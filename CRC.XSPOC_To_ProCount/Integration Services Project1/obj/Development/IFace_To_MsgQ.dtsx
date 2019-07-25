@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="IFace_To_MsgQ"
   DTS:PackageType="5"
-  DTS:VersionBuild="136"
-  DTS:VersionGUID="{EB8BB023-6D14-455C-8F11-D9FD9EED77B3}">
+  DTS:VersionBuild="137"
+  DTS:VersionGUID="{1A2A18E7-037D-401F-8885-3DC8D5F11EAF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -1313,7 +1313,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
-          SQLTask:SqlStatementSource="SELECT SubID, SubscriberName, SubIFace, ConnType, SubConnID FROM [dbo].[tbl_SubscriberController]&#xA;WHERE  (  &#xA;&#x9;&#x9;&#x9;&#x9;( ( LastRunStatus = 0  OR LastRunStatus IS NULL ) AND LastRunTime IS NULL ) &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;&#x9;( ForceExecute = 1 )  &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;( LastRunStatus = 1 AND LastRunTime IS NOT NULL AND  PickupIntervalInMin &lt; datediff(minute, GETDATE(), LastRunTime) ) &#xA;&#x9;&#x9;)&#xA;AND IsEnabled = 1 AND SubID NOT IN (12) --AND SubID &lt;&gt; 32&#xA;ORDER BY SubscriberName, SubIFace, ConnType&#xA;"
+          SQLTask:SqlStatementSource="SELECT SubID, SubscriberName, SubIFace, ConnType, SubConnID FROM [dbo].[tbl_SubscriberController]&#xA;WHERE  (  &#xA;&#x9;&#x9;&#x9;&#x9;( ( LastRunStatus = 0  OR LastRunStatus IS NULL ) AND LastRunTime IS NULL ) &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;&#x9;( ForceExecute = 1 )  &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;( LastRunStatus = 1 AND LastRunTime IS NOT NULL AND  PickupIntervalInMin &lt; datediff(minute, GETDATE(), LastRunTime) ) &#xA;&#x9;&#x9;)&#xA;AND IsEnabled = 1 AND SubID NOT IN (4) --AND SubID &lt;&gt; 32&#xA;ORDER BY SubscriberName, SubIFace, ConnType&#xA;"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -1349,7 +1349,7 @@
           Id="Package\Foreach Loop Container\DELETE tbl_SubscriberLog"
           TopLeft="342.371445083132,251.345102775963" />
         <NodeLayout
-          Size="162.666666666667,42"
+          Size="163,42"
           Id="Package\Foreach Loop Container\Generate TrackID"
           TopLeft="72.228583339769,27.7176499158865" />
         <NodeLayout
@@ -1361,7 +1361,7 @@
           Id="Package\Foreach Loop Container\Insert tbl_Errorlog"
           TopLeft="363.117477182467,182.596083460547" />
         <NodeLayout
-          Size="209.333333333334,42"
+          Size="209,42"
           Id="Package\Foreach Loop Container\Moving IFace Data to MsgQ"
           TopLeft="48.8635035767851,180.45490695993" />
         <NodeLayout
@@ -1369,7 +1369,7 @@
           Id="Package\Foreach Loop Container\Update tbl_IFace"
           TopLeft="74.3492125880964,327.921575863056" />
         <NodeLayout
-          Size="201.333333333334,42"
+          Size="201,42"
           Id="Package\Foreach Loop Container\Update tbl_SubscriberLog"
           TopLeft="52.4190591928913,254.070594266872" />
         <EdgeLayout
@@ -1511,12 +1511,12 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="582.666666666667,425.333333333334"
-          Size="582.666666666667,468"
+          PanelSize="583,425"
+          Size="583,468"
           Id="Package\Foreach Loop Container"
           TopLeft="292.380957360171,142.949021612649" />
         <NodeLayout
-          Size="165.333333333334,42"
+          Size="165,42"
           Id="Package\GetSubscribersList"
           TopLeft="488.571436891751,61.2274518390841" />
         <EdgeLayout
@@ -1562,11 +1562,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="146.666666666667,42"
+          Size="147,42"
           Id="Package\Foreach Loop Container\Moving IFace Data to MsgQ\tbl_MsgQueue"
           TopLeft="257.142861521974,183.529414338637" />
         <NodeLayout
-          Size="189.333333333334,42.6666666666667"
+          Size="189,43"
           Id="Package\Foreach Loop Container\Moving IFace Data to MsgQ\IFaceSubscriptionsData"
           TopLeft="238.857146924856,91.7647071693183" />
         <EdgeLayout

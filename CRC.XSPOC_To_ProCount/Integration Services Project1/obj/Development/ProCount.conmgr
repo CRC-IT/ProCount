@@ -9,6 +9,6 @@
     DTS:Name="ServerName">@[$Project::ProCount_ServerName]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=CKCWSQL7-S;Initial Catalog=CRC_ProCount;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=CKCWSQL1A;Initial Catalog=CRC_ProCount;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

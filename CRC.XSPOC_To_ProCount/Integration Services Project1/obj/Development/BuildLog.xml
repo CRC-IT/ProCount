@@ -33,7 +33,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>MD_XSPOC_To_IFace.dtsx</Name>
-      <LastWriteTime>2019-07-24T19:09:47.5490321Z</LastWriteTime>
+      <LastWriteTime>2019-07-24T22:08:15.494827Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -48,7 +48,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>IFace_To_MsgQ.dtsx</Name>
-      <LastWriteTime>2019-05-28T15:48:47.8442764Z</LastWriteTime>
+      <LastWriteTime>2019-07-25T17:01:58.802101Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -88,12 +88,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>RT_ProCount_To_IFace.dtsx</Name>
-      <LastWriteTime>2019-07-18T18:45:23.4035085Z</LastWriteTime>
+      <LastWriteTime>2019-07-25T16:28:50.6627451Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>RT_ProCount_To_OneCal.dtsx</Name>
-      <LastWriteTime>2019-07-24T19:11:55.016767Z</LastWriteTime>
+      <LastWriteTime>2019-07-24T19:23:20.9964833Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
