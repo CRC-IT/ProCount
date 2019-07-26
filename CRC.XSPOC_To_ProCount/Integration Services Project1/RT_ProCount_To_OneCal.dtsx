@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="RT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="410"
-  DTS:VersionGUID="{C77072EE-9E7B-4FE2-AB05-1D175CC2A9F8}">
+  DTS:VersionBuild="411"
+  DTS:VersionGUID="{11DCDB4E-8D43-4B92-8E15-ED5A7CEA6459}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACkw9Z2SeNIJ7VF6+uEYe/WAAAAAASAAACgAAAAEAAAAFtMmzKqfaG+ETFwrD4aS8YgAAAALHgkh6i99fXx/XdxlKkwJ6INeKMorPwZQ5ZmiCiEmFoUAAAAu/how29ynWs16eZRkpmnmNawoTI</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACdHyWd2nJyQJ6DFDGuQp+XAAAAAASAAACgAAAAEAAAAMndYpcKZTq4Sm1SrsdZuukgAAAA1eZJkKrtifRvNGc4zg8XhV0Txgoca6L7Is6gh1Hb8HYUAAAAHgFUPtFxkWoSZGfAYy6deHcf58E</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -666,14 +666,35 @@
               ReadOnlyVariables="User::ArchFormattedMsg,User::FailRecCount,User::FormattedMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1024,35 +1045,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2343,6 +2343,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedName="Activity_Date"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].ExternalColumns[ACTIVITY_DATE]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derive Activity Date as Record Date.Outputs[Derived Column Output].Columns[Activity_Date]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].Columns[CreatedTime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="CreatedTime"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].ExternalColumns[CREATE_DATE]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[CreatedTime]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2578,6 +2584,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           dataType="wstr"
                           length="15"
                           name="LOCATIONID" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].ExternalColumns[CREATE_DATE]"
+                          dataType="dbTimeStamp"
+                          name="CREATE_DATE" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3293,6 +3303,15 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[LocationID]"
                           name="LocationID"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedTime]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[CreatedTime]"
+                          name="CreatedTime"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3499,6 +3518,10 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
                           dataType="str"
                           length="20"
                           name="LocationID" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          name="CreatedTime" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3706,6 +3729,11 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
                           dataType="r8"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[vol]"
                           name="vol" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[CreatedTime]"
+                          name="CreatedTime" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[WellPlusCompletionName]"
                           codePage="1252"
