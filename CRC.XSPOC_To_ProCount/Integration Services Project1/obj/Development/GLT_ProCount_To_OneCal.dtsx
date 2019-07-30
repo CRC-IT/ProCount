@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="GLT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="424"
-  DTS:VersionGUID="{8588F2E4-0367-42B9-BA71-A78B15F116C9}">
+  DTS:VersionBuild="425"
+  DTS:VersionGUID="{158B752B-3D96-44F3-AC7E-1755FA641910}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,14 +22,14 @@
       DTS:DTSID="{D983C99A-BA79-4CF6-B9C4-FFFAC7236C8B}"
       DTS:ObjectName="ONECALPS.xxcrc_procount">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Data Source=ONECALPS;User ID=xxcrc_procount;Password=xxcrc_procount;Provider=OraOLEDB.Oracle.1;Persist Security Info=True"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">"Data Source=ONECALPS;User ID=xxcrc_procount_intf;Password=xxcrc_procount_intf;Provider=OraOLEDB.Oracle.1;Persist Security Info=True"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ONECALPS;User ID=xxcrc_procount;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
+          DTS:ConnectionString="Data Source=ONECALPS;User ID=xxcrc_procount_intf;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACqxSEghqFSEZEBnzjouK+bAAAAAASAAACgAAAAEAAAADwreMNM+6V+NGe5tYPLJncgAAAAHXpNvUFa+4ePV3XXDC5YPhudtpYviBuRIkqEGWX6nA8UAAAATN6UEFBkL849wi0fymLBQ+RM+lE</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB422+A6IlA/xhv0mPxNzoRAAAAAASAAACgAAAAEAAAAMt8c5kvcntInuqjoNWFWVkoAAAAqixJwmn3fUVRrV+HLirxJfs9ngOBpgjFeKbvvtBR6XfQzIwda3iwwxQAAAAbHVZM5XndumgpcZvJcljgPDv8rA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2252,12 +2252,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedName="Copy of ProductType"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTTYPE]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductType]" />
-                        <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[CreatedTime]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="CreatedTime"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[CREATE_DATE]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[CreatedTime]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2642,10 +2636,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           dataType="wstr"
                           length="38"
                           name="ALLOCACTGASVOLMMBTU" />
-                        <externalMetadataColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[CREATE_DATE]"
-                          dataType="dbTimeStamp"
-                          name="CREATE_DATE" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2690,7 +2680,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
 activity_date,processing_party, rc_user_key, agr_det_sequence, gatheringsystemlockdate,agreement_id,wellpluscompletionname,gatheringsystemname,TO_CHAR(RTRIM(LTRIM(rc_user_key))) || '-' ||TO_CHAR(ACTIVITY_DATE, 'YYYYMMDD')||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(producttype))))||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(agreement_id)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(GATHERINGSYSTEMNAME)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(AGR_DET_SEQUENCE)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(PROCESSING_PARTY)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(WELLPLUSCOMPLETIONNAME)))) ||'-' ||TO_CHAR(GATHERINGSYSTEMLOCKDATE, 'YYYYMMDD') AS OneCalUniqueID
-FROM CRCREVSHR_SS_LOADER_TRANS</property>
+FROM xxcrc_procount.CRCREVSHR_SS_LOADER_TRANS</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
@@ -2698,7 +2688,7 @@ FROM CRCREVSHR_SS_LOADER_TRANS</property>
                       name="SqlCommandParam"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT 
 activity_date,processing_party, rc_user_key, agr_det_sequence, gatheringsystemlockdate,agreement_id,wellpluscompletionname,gatheringsystemname,TO_CHAR(RTRIM(LTRIM(rc_user_key))) || '-' ||TO_CHAR(ACTIVITY_DATE, 'YYYYMMDD')||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(producttype))))||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(agreement_id)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(GATHERINGSYSTEMNAME)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(AGR_DET_SEQUENCE)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(PROCESSING_PARTY)))) ||'-'||TO_CHAR(UPPER(RTRIM(LTRIM(WELLPLUSCOMPLETIONNAME)))) ||'-' ||TO_CHAR(GATHERINGSYSTEMLOCKDATE, 'YYYYMMDD') AS OneCalUniqueID
-FROM CRCREVSHR_SS_LOADER_TRANS) "refTable"
+FROM xxcrc_procount.CRCREVSHR_SS_LOADER_TRANS) "refTable"
 where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."ONECALUNIQUEID" = ? and "refTable"."AGREEMENT_ID" = ? and "refTable"."WELLPLUSCOMPLETIONNAME" = ? and "refTable"."GATHERINGSYSTEMNAME" = ? and "refTable"."PROCESSING_PARTY" = ?</property>
                     <property
                       dataType="System.Int32"
@@ -3409,15 +3399,6 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]"
                           name="UniqueColumn"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[CreatedTime]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedTime]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[CreatedTime]"
-                          name="CreatedTime"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3622,10 +3603,6 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
                           dataType="str"
                           length="418"
                           name="UniqueColumn" />
-                        <externalMetadataColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedTime]"
-                          dataType="dbTimeStamp"
-                          name="CreatedTime" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3862,11 +3839,6 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
                           length="100"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Error Output].Columns[GatheringSystemLockName]"
                           name="GatheringSystemLockName" />
-                        <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Error Output].Columns[CreatedTime]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Error Output].Columns[CreatedTime]"
-                          name="CreatedTime" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Error Output].Columns[GatheringSystemAccountantName]"
                           codePage="1252"
@@ -5146,7 +5118,7 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5156,7 +5128,7 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
