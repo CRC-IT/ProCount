@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="RT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="416"
-  DTS:VersionGUID="{9EC1957E-EC7E-4D84-A130-1CC737F963D4}">
+  DTS:VersionBuild="418"
+  DTS:VersionGUID="{8B861BFA-7251-4B63-AF35-0D60E0A6BA32}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC+4sEkWxd6JF9+cyrbnNqsAAAAAASAAACgAAAAEAAAAEHOjV5XE+9kytObQke72RogAAAAtS37OnkmF4wUgSRq4S5M/MjRzsNMf8YU3czkY+Pfc6wUAAAAxZ72GDWMeYFPUM74DmU1B5ou8no</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAnTvOp13kZ2tole/JmL6t0AAAAAASAAACgAAAAEAAAAA9MHWnQ9NYkLIxdOkwk2CogAAAABlG8zJUOj2Lc4uQMWgero+LCWmt3+wpv5yFbJdoC9f4UAAAAgw5jIG8jFf6SShIOpwOc3t9BKuU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2343,6 +2343,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedName="Activity_Date"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].ExternalColumns[ACTIVITY_DATE]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derive Activity Date as Record Date.Outputs[Derived Column Output].Columns[Activity_Date]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].Columns[CreatedTime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="CreatedTime"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].ExternalColumns[CREATE_DATE]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[CreatedTime]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3297,6 +3303,15 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[LocationID]"
                           name="LocationID"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedTime]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[CreatedTime]"
+                          name="CreatedTime"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3503,6 +3518,10 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
                           dataType="str"
                           length="20"
                           name="LocationID" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          name="CreatedTime" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3710,6 +3729,11 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
                           dataType="r8"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[vol]"
                           name="vol" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[CreatedTime]"
+                          name="CreatedTime" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[WellPlusCompletionName]"
                           codePage="1252"
@@ -4944,7 +4968,7 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,9.14562585663049,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,9.1456258566305,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

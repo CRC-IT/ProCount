@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="GLT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="428"
-  DTS:VersionGUID="{9DC8CDBB-40D9-4727-BCB1-F0C751D6780B}">
+  DTS:VersionBuild="429"
+  DTS:VersionGUID="{BE447D5A-8CFE-4D60-983B-A53AF19357EB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADAZJttrh+VzS+59mQ3MGTiAAAAAASAAACgAAAAEAAAABJDoqFT+5+ys1drmKBkkz8gAAAA/+DBNDODRIq/a4QjFW5H6rLDUnhX7xDezAWn15joV+4UAAAA0c5p7slRuij1mFygcfjEav01cNM</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADj7FgywLdwdCWz8hWk9TDDAAAAAASAAACgAAAAEAAAAAgdYZRaprFhTpRyrUx3PIogAAAAeJ+ohEL+FYzlDpXUjxrUhtUXVkEirNxnAqbY2FhTWGEUAAAA63QvNpvAReXmpQwj6b/Nx7LKgmc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -503,7 +503,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Get BatchID's to Process"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -581,7 +581,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog for BR Failure"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -655,7 +655,7 @@
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ArchiveTransformedXML"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -666,14 +666,35 @@
               ReadOnlyVariables="User::ArchFormattedMsg,User::FailRecCount,User::FormattedMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1024,35 +1045,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2252,6 +2252,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedName="Copy of ProductType"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCTTYPE]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ProductType]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].Columns[CreatedTime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="CreatedTime"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[CREATE_DATE]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[CreatedTime]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2636,6 +2642,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           dataType="wstr"
                           length="38"
                           name="ALLOCACTGASVOLMMBTU" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Gas Loader Trans.Inputs[OLE DB Destination Input].ExternalColumns[CREATE_DATE]"
+                          dataType="dbTimeStamp"
+                          name="CREATE_DATE" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3399,6 +3409,15 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[UniqueColumn]"
                           name="UniqueColumn"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedTime]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].Columns[CreatedTime]"
+                          name="CreatedTime"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3603,6 +3622,10 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
                           dataType="str"
                           length="418"
                           name="UniqueColumn" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          name="CreatedTime" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3839,6 +3862,11 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
                           length="100"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Error Output].Columns[GatheringSystemLockName]"
                           name="GatheringSystemLockName" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Error Output].Columns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Error Output].Columns[CreatedTime]"
+                          name="CreatedTime" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceGLT Data.Outputs[OLE DB Source Error Output].Columns[GatheringSystemAccountantName]"
                           codePage="1252"
@@ -4329,7 +4357,7 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_MsgQ"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4373,7 +4401,7 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4434,7 +4462,7 @@ where "refTable"."ACTIVITY_DATE" = ? and "refTable"."GATHERINGSYSTEMLOCKDATE" = 
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Transformed Msg in tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData

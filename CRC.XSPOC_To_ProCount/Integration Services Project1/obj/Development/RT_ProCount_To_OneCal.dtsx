@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="RT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="416"
-  DTS:VersionGUID="{9EC1957E-EC7E-4D84-A130-1CC737F963D4}">
+  DTS:VersionBuild="418"
+  DTS:VersionGUID="{8B861BFA-7251-4B63-AF35-0D60E0A6BA32}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADmGLrct85XDUosTFi6r/wAAAAAAASAAACgAAAAEAAAAFB+5XLck3OV3jxbuv8BZPcgAAAAKcT2DXDi0gTIKdF9ICUhv+YGDJZ5hNW8mK56jAvJNkkUAAAAT5//zrJqh0dm/ZrZ1TSRZxyA+V0</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACBCTjrmTp4k+tYAnX+JFZ2AAAAAASAAACgAAAAEAAAAC/02DKExMVMqgT4kj6x0FQgAAAA9WTmpqlB+b8uZLlhXWvMIPbbZOwdSqkcqo4/ZzeUEQsUAAAASHIhUIZ6Cy7BNJUeoNk+tGXYwqU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -581,7 +581,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog for BR Failure"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -655,7 +655,7 @@
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ArchiveTransformedXML"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -2343,6 +2343,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedName="Activity_Date"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].ExternalColumns[ACTIVITY_DATE]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derive Activity Date as Record Date.Outputs[Derived Column Output].Columns[Activity_Date]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].Columns[CreatedTime]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="CreatedTime"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Inputs[OLE DB Destination Input].ExternalColumns[CREATE_DATE]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[CreatedTime]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3297,6 +3303,15 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[LocationID]"
                           name="LocationID"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedTime]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[CreatedTime]"
+                          name="CreatedTime"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3503,6 +3518,10 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
                           dataType="str"
                           length="20"
                           name="LocationID" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].ExternalColumns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          name="CreatedTime" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3710,6 +3729,11 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
                           dataType="r8"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[vol]"
                           name="vol" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[CreatedTime]"
+                          name="CreatedTime" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Error Output].Columns[WellPlusCompletionName]"
                           codePage="1252"
@@ -4175,7 +4199,7 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_Errorlog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4236,7 +4260,7 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_MsgQ"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4280,7 +4304,7 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4341,7 +4365,7 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Transformed Msg in tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -4944,7 +4968,7 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,9.14562585663049,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,9.1456258566305,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
