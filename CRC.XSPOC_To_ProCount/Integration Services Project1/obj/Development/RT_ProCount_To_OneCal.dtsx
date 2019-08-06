@@ -11,25 +11,25 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="RT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="413"
-  DTS:VersionGUID="{D8A5B234-1DD8-419A-8789-1DD303BDF392}">
+  DTS:VersionBuild="416"
+  DTS:VersionGUID="{9EC1957E-EC7E-4D84-A130-1CC737F963D4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[ONECALPS.xxcrc_procount]"
+      DTS:refId="Package.ConnectionManagers[ONECALP.xxcrc_procount_intf]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{07B369AE-514E-492E-AF28-96299D486D79}"
-      DTS:ObjectName="ONECALPS.xxcrc_procount">
+      DTS:ObjectName="ONECALP.xxcrc_procount_intf">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Data Source=ONECALPS;User ID=xxcrc_procount_intf;Password=xxcrc_procount_intf;Provider=OraOLEDB.Oracle.1;Persist Security Info=True"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">"Data Source=ONECALP;User ID=xxcrc_procount_intf;Password=PROCOUNT2019CRC;Provider=OraOLEDB.Oracle.1;Persist Security Info=True"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ONECALPS;User ID=xxcrc_procount_intf;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
+          DTS:ConnectionString="Data Source=ONECALP;User ID=xxcrc_procount_intf;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADs1M7OyDMrHDRrZ+m7lI7aAAAAAASAAACgAAAAEAAAAAWPELnXy+A7cnbYbdND7nQoAAAAi9UobdNb2nO1n+KyqtMpUWq0viQHzWrAaPbi3UcuzbnovSWkFBbs9BQAAAB438OjJAERvWtLe31W3ou0VWQREg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADmGLrct85XDUosTFi6r/wAAAAAAASAAACgAAAAEAAAAFB+5XLck3OV3jxbuv8BZPcgAAAAKcT2DXDi0gTIKdF9ICUhv+YGDJZ5hNW8mK56jAvJNkkUAAAAT5//zrJqh0dm/ZrZ1TSRZxyA+V0</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -666,14 +666,35 @@
               ReadOnlyVariables="User::ArchFormattedMsg,User::FailRecCount,User::FormattedMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1024,35 +1045,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2147,8 +2147,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                   <connections>
                     <connection
                       refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ONECALPS.xxcrc_procount]"
-                      connectionManagerRefId="Package.ConnectionManagers[ONECALPS.xxcrc_procount]"
+                      connectionManagerID="Package.ConnectionManagers[ONECALP.xxcrc_procount_intf]"
+                      connectionManagerRefId="Package.ConnectionManagers[ONECALP.xxcrc_procount_intf]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2684,8 +2684,8 @@ where "refTable"."GATHERINGSYSTEMLOCKDATE" = ? and "refTable"."AGREEMENT_ID" = ?
                   <connections>
                     <connection
                       refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[ONECALPS.xxcrc_procount]"
-                      connectionManagerRefId="Package.ConnectionManagers[ONECALPS.xxcrc_procount]"
+                      connectionManagerID="Package.ConnectionManagers[ONECALP.xxcrc_procount_intf]"
+                      connectionManagerRefId="Package.ConnectionManagers[ONECALP.xxcrc_procount_intf]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
