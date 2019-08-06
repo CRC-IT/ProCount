@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ONECALP.xxcrc_procount_intf"
+  DTS:DTSID="{D983C99A-BA79-4CF6-B9C4-FFFAC7236C8B}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">"Data Source=ONECALP;User ID=xxcrc_procount_intf;Password=PROCOUNT2019CRC;Provider=OraOLEDB.Oracle.1;Persist Security Info=True"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=ONECALP;User ID=xxcrc_procount_intf;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAACAAAAAAADZgAAwAAAABAAAACdZNuWMiBrb8vpLwAHowSyAAAAAASAAACgAAAAEAAAAAY9eaARR8IG3zu3m7tM8HWAAAAAGF0JmsuDkJ3EyB6nhgMNvSTmWRbdsgMMBA3rTmlaiHCCK5cwx+pgLDa3/MKb6V+KbXQFH8fCz84N4uzCwhMsWU4wPkNkXdEQ18CR+iwh0+CnxIF2dEeL5iYrmLxVccA2Xg5/u0e2oz+qoDV+kQy661rzo6a4VbxZVevsAgKPGGYUAAAAE1KxN+1mZ8oxJboBWcQcQ7TZW3o=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
