@@ -21,13 +21,18 @@
 
 
 GO
-CREATE NONCLUSTERED INDEX [IDX_SubIFace_MsgQID]
-    ON [dbo].[tbl_MsgQueue]([SubIFace] ASC)
-    INCLUDE([MsgQID]);
+CREATE NONCLUSTERED INDEX [IDX_SubIFace_SubStatus_IFaceBatchUID]
+    ON [dbo].[tbl_MsgQueue]([SubIFace] ASC, [SubStatus] ASC, [IFaceBatchUID] ASC)
+    INCLUDE([PubID], [SubID], [SubConnID], [PubConnID], [MsgQID], [TransID], [TransSeq]);
 
 
 GO
-CREATE NONCLUSTERED INDEX [IDX_SubIFace_SubStatus_IFaceBatchUID>]
+CREATE NONCLUSTERED INDEX [IDX_SubIFace_SubStatus_IFaceBatchUID)]
     ON [dbo].[tbl_MsgQueue]([SubIFace] ASC, [SubStatus] ASC, [IFaceBatchUID] ASC)
-    INCLUDE([MsgQID], [TransID], [TransSeq], [PubID], [SubID], [SubConnID], [PubConnID]);
+    INCLUDE([SubDate], [SubMsg], [CreatedTime], [CreatedBy], [LastModifiedTime], [LastModifiedBy], [Description], [MsgQID], [TransID], [TransSeq], [SubConnID], [PubConnID], [PubID], [SubID]);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_TransID_TransSeq]
+    ON [dbo].[tbl_MsgQueue]([TransID] ASC, [TransSeq] ASC, [SubIFace] ASC, [SubStatus] ASC, [IFaceBatchUID] ASC);
 

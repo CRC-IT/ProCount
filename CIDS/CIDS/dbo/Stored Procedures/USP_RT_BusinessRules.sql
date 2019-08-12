@@ -126,3 +126,4 @@ BEGIN CATCH
 	VALUES ( 'USP_RT_BusinessRules','StoredProcedure','TankRunTicket','Error while executing the BusinessRules on TankRunTicket Data',ERROR_MESSAGE(), ERROR_NUMBER(),ERROR_SEVERITY(), GETDATE(),HOST_NAME(), CURRENT_USER)
 
 END CATCH
+

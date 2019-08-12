@@ -4,8 +4,14 @@
 
 
 
+
+
+
+
+
+
 CREATE PROCEDURE [dbo].[USP_RT_MapIFaceDataToOneCaps_RunTickets]
-@IFaceBatchUIDXml nvarchar(MAX) OUTPUT, @FormattedMsg nvarchar(MAX) OUTPUT, @PubID int OUTPUT, @SubID int OUTPUT, @ArchformattedMsg int = 0, @TotalRecCount int OUTPUT
+@IFaceBatchUIDXml nvarchar(MAX) OUTPUT, @FormattedMsg nvarchar(MAX) OUTPUT, @PubID int OUTPUT, @SubID int OUTPUT, @ArchformattedMsg int = 0, @TotalRecCount int OUTPUT,@IFaceBatchID uniqueidentifier
 WITH EXEC AS CALLER
 AS
 BEGIN TRY
@@ -16,7 +22,7 @@ BEGIN TRY
 	TICD.RecordDate AS ProductionDate,
 	TICD.[MerrickID] AS Ticket_ID,
 	TICD.[RunTicketDate] as Ticket_Date,
-	TICD.RunTicketNumber as Ticket_No,
+	LTRIM(RTRIM(TICD.RunTicketNumber)) as Ticket_No,
 	TICD.GrossBarrels as TotalBBLS,
 	TICD.convertedgravity as Gravity,
 	TICD.LocationID as LocationID,
@@ -40,6 +46,7 @@ BEGIN TRY
 	TICD.GatheringSystemLockName,
 	TICD.GatheringSystemName,
 	TICD.vol,
+	TICD.CreatedTime,
 	TICD.WellPlusCompletionName,
 	CASE WHEN TICD.AreaID  = ' '  THEN
 	--Replace(LTRIM(RTRIM(TICD.AreaID)),' ','')  
@@ -52,7 +59,7 @@ BEGIN TRY
 	TICD.COMPMID,
 	SUBSTRING( CONVERT(NVARCHAR(30), GETDATE(),20), 0, 11) + ' 00:00:00.000' AS UserDateStamp,
 	SUBSTRING( CONVERT(NVARCHAR(30), GETDATE(),20), 12, 8) AS UserTimeStamp,
-	CAST(RTRIM(LTRIM([LocationID])) AS VARCHAR(50)) + '-' +CONVERT(VARCHAR,[RecordDate],112) + '-'+CAST(UPPER([ProductType]) AS VARCHAR) +'-'+ CAST(RTRIM(LTRIM(RunTicketNumber)) AS VARCHAR(50))+ '-'+ CAST(RTRIM(LTRIM([LocAccountNumber2])) AS VARCHAR(50)) + '-'+CAST(UPPER(RTRIM(LTRIM([GatheringSystemName]))) AS VARCHAR(50))+'-'+ CAST(RTRIM(LTRIM(LocAccountNumber1))  AS VARCHAR(50)) + '-' + CAST(UPPER(RTRIM(LTRIM([BusinessEnitity]))) AS VARCHAR(50))+'-'+ CAST(RTRIM(LTRIM([WellPlusCompletionName])) AS VARCHAR(50)) +'-'+ CONVERT(VARCHAR,[GatheringSystemLockDate],112) AS UniqueColumn
+	CAST(RTRIM(LTRIM([LocationID])) AS VARCHAR(50)) + '-' +CONVERT(VARCHAR,[RecordDate],112) + '-'+CAST(UPPER([ProductType]) AS VARCHAR) +'-'+ CAST(UPPER(RTRIM(LTRIM(RunTicketNumber))) AS VARCHAR(50))+ '-'+ CAST(UPPER(RTRIM(LTRIM([LocAccountNumber2]))) AS VARCHAR(50)) + '-'+CAST(UPPER(RTRIM(LTRIM([GatheringSystemName]))) AS VARCHAR(50))+'-'+ CAST(UPPER(RTRIM(LTRIM(LocAccountNumber1)))  AS VARCHAR(50)) + '-' + CAST(UPPER(RTRIM(LTRIM([BusinessEnitity]))) AS VARCHAR(50))+'-'+ CAST(UPPER(RTRIM(LTRIM([WellPlusCompletionName]))) AS VARCHAR(50)) +'-'+ CONVERT(VARCHAR,[GatheringSystemLockDate],112) AS UniqueColumn
 	FROM
 	(
 		SELECT TMQ.* FROM 
@@ -87,7 +94,7 @@ BEGIN TRY
 
 	)TMQ
 	INNER JOIN [dbo].[tbl_IFace_TankRunTicket] TICD ON TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq	AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
-	WHERE (TICD.LocAccountNumber1  <> ' ' OR TICD.LocAccountNumber1 <> 'NULL') --and TICD.AreaID <> ''
+	WHERE TICD.IFaceBatchUID= @IFaceBatchID
 
 	SET @TotalRecCount  = @@ROWCOUNT
 
@@ -142,7 +149,7 @@ BEGIN TRY
 			TICD.RecordDate AS ProductionDate,
 			TICD.[MerrickID] AS Ticket_ID,
 			TICD.[RunTicketDate] as Ticket_Date,
-			TICD.RunTicketNumber as Ticket_No,
+			LTRIM(RTRIM(TICD.RunTicketNumber)) as Ticket_No,
 			TICD.GrossBarrels as TotalBBLS,
 			TICD.convertedgravity as Gravity,
 			TICD.LocationId as LocationId,
@@ -169,6 +176,7 @@ BEGIN TRY
 			TICD.GatheringSystemLockName,
 			TICD.GatheringSystemName,
 			TICD.vol,
+			TICD.CreatedTime,
 			TICD.WellPlusCompletionName,
 			SUBSTRING( CONVERT(NVARCHAR(30), GETDATE(),20), 0, 11) + ' 00:00:00.000' AS UserDateStamp,
 	        SUBSTRING( CONVERT(NVARCHAR(30), GETDATE(),20), 12, 8) AS UserTimeStamp
@@ -212,6 +220,7 @@ BEGIN TRY
 			ON TMQ.TransID = TICD.TransID 
 			AND TMQ.TransSeq = TICD.TransSeq	
 			AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
+			WHERE TICD.IFaceBatchUID= @IFaceBatchID
 			FOR XML PATH ('TankRunTicket_Record'), ROOT('TankRunTicket_To_ProCount')
 
 		) 

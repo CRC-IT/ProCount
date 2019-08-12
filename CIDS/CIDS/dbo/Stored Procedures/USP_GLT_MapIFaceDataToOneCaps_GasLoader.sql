@@ -3,15 +3,8 @@
 
 
 
-
-
-
-
-
-
-
 CREATE PROCEDURE [dbo].[USP_GLT_MapIFaceDataToOneCaps_GasLoader]
-@IFaceBatchUIDXml nvarchar(MAX) OUTPUT, @FormattedMsg nvarchar(MAX) OUTPUT, @PubID int OUTPUT, @SubID int OUTPUT, @ArchformattedMsg int = 0, @TotalRecCount int OUTPUT
+@IFaceBatchUIDXml nvarchar(MAX) OUTPUT, @FormattedMsg nvarchar(MAX) OUTPUT, @PubID int OUTPUT, @SubID int OUTPUT, @ArchformattedMsg int = 0, @TotalRecCount int OUTPUT,@IFaceBatchID uniqueidentifier
 WITH EXEC AS CALLER
 AS
 BEGIN TRY
@@ -56,8 +49,9 @@ BEGIN TRY
                   TICD.AccountantPersonID,
                   TICD.GatheringSystemLockDate,
                   TICD.GatheringSystemLockName,
+				  TICD.CreatedTime,
                   TICD.GatheringSystemAccountantName,
-				  CAST(RTRIM(LTRIM(rc_user_key)) AS VARCHAR(50)) + '-' +CONVERT(VARCHAR,[activity_date],112) + '-'+CAST(UPPER(RTRIM(LTRIM([ProductType]))) AS VARCHAR(50)) +'-'+ CAST(RTRIM(LTRIM([Agreement_ID])) AS VARCHAR(50)) + '-'+CAST(UPPER(RTRIM(LTRIM([GatheringSystemName]))) AS VARCHAR(50))+'-'+ CAST([Agr_Det_Sequence] AS VARCHAR(50)) + '-' + CAST(UPPER([processing_party]) AS VARCHAR(50))+'-'+ CAST(RTRIM(LTRIM([WellPlusCompletionName])) AS VARCHAR(50))+ '-'+ CONVERT(VARCHAR,[GatheringSystemLockDate],112) AS UniqueColumn
+				  CAST(RTRIM(LTRIM(rc_user_key)) AS VARCHAR(50)) + '-' +CONVERT(VARCHAR,[activity_date],112) + '-'+CAST(UPPER(RTRIM(LTRIM([ProductType]))) AS VARCHAR(50)) +'-'+ CAST(UPPER(RTRIM(LTRIM([Agreement_ID]))) AS VARCHAR(50)) + '-'+CAST(UPPER(RTRIM(LTRIM([GatheringSystemName]))) AS VARCHAR(50))+'-'+ CAST(UPPER([Agr_Det_Sequence]) AS VARCHAR(50)) + '-' + CAST(UPPER([processing_party]) AS VARCHAR(50))+'-'+ CAST(UPPER(RTRIM(LTRIM([WellPlusCompletionName]))) AS VARCHAR(50))+ '-'+ CONVERT(VARCHAR,[GatheringSystemLockDate],112) AS UniqueColumn
                   --ROW_NUMBER() OVER (ORDER BY LocAccountNumber2 ASC) AS Line_No
   FROM   (SELECT TMQ.* FROM   
 					(SELECT TMQ.* FROM  [dbo].[tbl_MsgQueue] TMQ
@@ -88,8 +82,7 @@ BEGIN TRY
 				  WHERE  TMQ1.SubStatus = 'Failed' AND TERRQ.IsResubmit = 1) TMQ
 		INNER JOIN [dbo].[tbl_IFace_GasLoaderTrans] TICD
         ON TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
-  --WHERE  (TICD.Agr_Det_Sequence <> ' ' AND TICD.Agr_Det_Sequence <> 'NULL') and (TICD.rc_user_key <> 'NULL' AND TICD.rc_user_key
-  --       <> ' ') and (TICD.processing_party <> 'NULL' AND TICD.processing_party <> ' ')
+		WHERE TICD.IFaceBatchUID= @IFaceBatchID
 
   SET @TotalRecCount    = @@ROWCOUNT
 
@@ -156,6 +149,7 @@ BEGIN TRY
                     TICD.AccountantPersonID,
                     TICD.GatheringSystemLockDate,
                     TICD.GatheringSystemLockName,
+					TICD.CreatedTime,
                     TICD.GatheringSystemAccountantName,
                     SUBSTRING(CONVERT(NVARCHAR(30), GETDATE(), 20), 0, 11) + ' 00:00:00.000' AS UserDateStamp,
                     SUBSTRING(CONVERT(NVARCHAR(30), GETDATE(), 20), 12, 8) AS UserTimeStamp,
@@ -189,7 +183,7 @@ BEGIN TRY
                      WHERE  TMQ1.SubStatus = 'Failed' AND TERRQ.IsResubmit = 1) TMQ
                     INNER JOIN [dbo].[tbl_IFace_GasLoaderTrans] TICD
                       ON TMQ.TransID = TICD.TransID AND TMQ.TransSeq = TICD.TransSeq AND TMQ.IFaceBatchUID = TICD.IFaceBatchUID
-             --WHERE  (TICD.Agr_Det_Sequence <> ' ' AND TICD.Agr_Det_Sequence <> 'NULL') and (TICD.rc_user_key <> 'NULL' AND TICD.rc_user_key <> ' ')
+             WHERE TICD.IFaceBatchUID= @IFaceBatchID
              FOR XML PATH('GasLoaderTrans_Record'), ROOT ( 'GasLoaderTrans_To_ProCount' ))
     END
 
@@ -221,3 +215,4 @@ BEGIN CATCH
                  ERROR_SEVERITY(), GETDATE(), HOST_NAME(),
                  CURRENT_USER)
 END CATCH
+

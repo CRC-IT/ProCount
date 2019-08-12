@@ -31,3 +31,15 @@
     CONSTRAINT [PK_tbl_IFace_CompletionDaily] PRIMARY KEY CLUSTERED ([TransID] ASC, [TransSeq] ASC)
 );
 
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_IFaceBatchUID]
+    ON [dbo].[tbl_IFace_CompletionDaily]([IFaceBatchUID] ASC)
+    INCLUDE([TransID], [TransSeq], [LastScaneDate], [API14], [RunHours], [IdleTime], [CasingPressure], [TubingPressure], [TubingTemperature], [FlowlineTemperature], [StrokesPerMinute], [PumpDepth]);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_TranStatus]
+    ON [dbo].[tbl_IFace_CompletionDaily]([TranStatus] ASC)
+    INCLUDE([IFaceBatchUID]);
+

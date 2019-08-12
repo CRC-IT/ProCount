@@ -46,3 +46,9 @@
     CONSTRAINT [PK_tbl_IFace_TankRunTicket] PRIMARY KEY CLUSTERED ([TransID] ASC, [TransSeq] ASC) WITH (FILLFACTOR = 100)
 );
 
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_ranStatus]
+    ON [dbo].[tbl_IFace_TankRunTicket]([TranStatus] ASC)
+    INCLUDE([PubID], [PubConnID], [TransID], [TransSeq], [IFaceBatchUID]);
+

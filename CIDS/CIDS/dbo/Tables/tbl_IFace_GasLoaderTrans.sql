@@ -46,3 +46,15 @@
     CONSTRAINT [PK_[tbl_IFace_GasLoaderTrans] PRIMARY KEY CLUSTERED ([TransID] ASC, [TransSeq] ASC) WITH (FILLFACTOR = 100)
 );
 
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_TranStatus]
+    ON [dbo].[tbl_IFace_GasLoaderTrans]([TranStatus] ASC)
+    INCLUDE([TransID], [TransSeq], [IFaceBatchUID], [PubID], [PubConnID]);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_IFaceBatchUID]
+    ON [dbo].[tbl_IFace_GasLoaderTrans]([IFaceBatchUID] ASC)
+    INCLUDE([TransID], [TransSeq], [trans_copy], [AllocActGravity], [CreatedTime], [ProductType], [DispositionCode], [DispositionCodeDescription], [Sourcetype], [CompletionID], [GatheringSystemID], [AreaID], [AreaName], [GatheringSystemName], [activity_date], [BBL], [GAL], [MCF], [MMBTU], [BTU_content], [BTU_pressure_base], [BTU_wet_dry_ind], [WellPlusCompletionName], [processing_party], [rc_user_key], [Agr_Det_Sequence], [Agreement_ID], [decktype], [AllocationDateStamp], [AccountantPersonID], [GatheringSystemLockDate], [GatheringSystemLockName], [GatheringSystemAccountantName]);
+

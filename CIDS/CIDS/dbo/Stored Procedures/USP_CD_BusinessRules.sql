@@ -119,3 +119,4 @@ BEGIN CATCH
 	VALUES ( 'USP_CD_BusinessRules','StoredProcedure','CompletionDaily','Error while executing the BusinessRules on CompletionDaily Data',ERROR_MESSAGE(), ERROR_NUMBER(),ERROR_SEVERITY(), GETDATE(),HOST_NAME(), CURRENT_USER)
 
 END CATCH
+

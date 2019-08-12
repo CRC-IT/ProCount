@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[USP_FS_BusinessRules] 
+﻿
+CREATE PROCEDURE [dbo].[USP_FS_BusinessRules] 
 	@Destination nvarchar(500),
 	@ErrorLogId INT OUTPUT
 AS
@@ -20,7 +21,8 @@ BEGIN TRY
 			FROM [dbo].[tbl_MsgQueue] TMQ	
 			INNER JOIN [dbo].[tbl_IFace_Fluidshots] TIWT	ON TMQ.TransID = TIWT.TransID AND TMQ.TransSeq = TIWT.TransSeq AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
 			LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID AND TMQ.SubConnID = TSC.SubConnID
-			WHERE TMQ.SubIFace = 'Fluidshots' AND TSC.SubscriberName = 'ProCount'	AND convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  > 50000
+			WHERE TMQ.SubIFace = 'Fluidshots' AND TSC.SubscriberName = 'ProCount'	
+			AND ((convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  > 5000 OR convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  <-10) OR (TIWT.TubingPressure <-10) OR (TIWT.FluidAbovePump < 0))
 
 
 			IF @COUNT > 1
@@ -32,10 +34,11 @@ BEGIN TRY
 				'Casing pressure must not be greater than 50000' AS [ErrorMsg], 0 AS [IsResubmit], 1 AS [IsBussRuleFail], GETDATE() AS [CreatedTime], CURRENT_USER AS [CreatedBy]
 				FROM [dbo].[tbl_MsgQueue] TMQ	INNER JOIN [dbo].[tbl_IFace_Fluidshots] TIWT	ON TMQ.TransID = TIWT.TransID AND TMQ.TransSeq = TIWT.TransSeq AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
 				LEFT JOIN [dbo].[tbl_SubscriberController] TSC	ON TMQ.SubID = TSC.SubID AND TMQ.SubConnID = TSC.SubConnID
-				WHERE TMQ.SubIFace = 'Fluidshots' AND TSC.SubscriberName = 'ProCount' AND convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  > 50000
+				WHERE TMQ.SubIFace = 'Fluidshots' AND TSC.SubscriberName = 'ProCount' 
+				AND ((convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  > 5000 OR convert(numeric(38,0),cast(TIWT.CasingPressure AS float))  <-10) OR (TIWT.TubingPressure <-10) OR (TIWT.FluidAbovePump < 0))
 
 				INSERT INTO @TBL_ERRORS
-				SELECT 'Casing pressure must not be greater than 50000','Casing pressure is greater than 50000',@COUNT
+				SELECT 'Casing pressure must not be greater than 5000 or FluidAbovePump less than 0','Casing pressure must not be greater than 5000 or FluidAbovePump less than 0',@COUNT
 
 			END
 
@@ -93,4 +96,5 @@ BEGIN CATCH
 	VALUES ( 'USP_FS_BusinessRules','StoredProcedure','Fluidshots','Error while executing the BusinessRules on Fluidshots Data',ERROR_MESSAGE(), ERROR_NUMBER(),ERROR_SEVERITY(), GETDATE(),HOST_NAME(), CURRENT_USER)
 
 END CATCH
+
 

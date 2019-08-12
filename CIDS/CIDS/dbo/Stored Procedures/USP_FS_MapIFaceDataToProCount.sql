@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[USP_FS_MapIFaceDataToProCount]
+﻿
+CREATE PROCEDURE [dbo].[USP_FS_MapIFaceDataToProCount]
 @IFaceBatchUIDXml nvarchar(max) output,
 @FormattedMsg nvarchar(max) output,
 @PubID int output,
@@ -80,7 +81,7 @@ BEGIN TRY
 	ON TMQ.TransID = TIWT.TransID 
 	AND TMQ.TransSeq = TIWT.TransSeq	
 	AND TMQ.IFaceBatchUID = TIWT.IFaceBatchUID
-	WHERe TIWT.IFaceBatchUID = @IFaceBatchID and convert(numeric(38,0),cast(TIWT.CasingPressure AS float)) <=50000 and TIWT.FluidAbovePump>0 and TIWT.CasingPressure>0 and TIWT.TubingPressure>0 AND TIWT.FluidShotDate > '2019-02-28 16:39:00.000'
+	WHERe TIWT.IFaceBatchUID = @IFaceBatchID --and convert(numeric(38,0),cast(TIWT.CasingPressure AS float)) <=50000 and TIWT.FluidAbovePump>0 and TIWT.CasingPressure>0 and TIWT.TubingPressure>0 AND TIWT.FluidShotDate > '2019-02-28 16:39:00.000'
 	
 
 
@@ -280,4 +281,5 @@ BEGIN CATCH
 	VALUES ( 'USP_FS_MapIFaceDataToProCount','StoredProcedure','FluidShots','Error while fetching the FluidShots subscriptions data from IFace table',ERROR_MESSAGE(), ERROR_NUMBER(),ERROR_SEVERITY(), GETDATE(),HOST_NAME(), CURRENT_USER)
 
 END CATCH
+
 

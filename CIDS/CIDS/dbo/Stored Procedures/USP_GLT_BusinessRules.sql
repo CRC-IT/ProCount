@@ -123,3 +123,4 @@ BEGIN CATCH
 	VALUES ( 'USP_GLT_BusinessRules','StoredProcedure','GasLoaderTrans','Error while executing the BusinessRules on GasLoaderTrans Data',ERROR_MESSAGE(), ERROR_NUMBER(),ERROR_SEVERITY(), GETDATE(),HOST_NAME(), CURRENT_USER)
 
 END CATCH
+

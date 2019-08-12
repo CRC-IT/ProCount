@@ -22,3 +22,15 @@
     CONSTRAINT [PK_tbl_IFace_MeterData] PRIMARY KEY CLUSTERED ([TransID] ASC, [TransSeq] ASC)
 );
 
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_[TranStatus_RecordDate]
+    ON [dbo].[tbl_IFace_MeterData]([TranStatus] ASC, [RecordDate] ASC)
+    INCLUDE([TransID], [TransSeq], [IFaceBatchUID], [PubID], [PubConnID]);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_IFaceBatchUID]
+    ON [dbo].[tbl_IFace_MeterData]([IFaceBatchUID] ASC)
+    INCLUDE([TransID], [TransSeq], [MeterID], [RecordDate], [MeterTemperature], [MeterVolumePreviousDay], [MeterFlowHours], [MeterPressureStatic], [MeterPressureDifferential], [Energy]);
+

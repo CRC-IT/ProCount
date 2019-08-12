@@ -21,3 +21,9 @@
     CONSTRAINT [PK_tbl_IFace_WellStatusChanges] PRIMARY KEY CLUSTERED ([TransID] ASC, [TransSeq] ASC, [IFaceBatchUID] ASC)
 );
 
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_TranStatus]
+    ON [dbo].[tbl_IFace_WellStatusChanges]([TranStatus] ASC)
+    INCLUDE([TransID], [TransSeq], [IFaceBatchUID], [PubID], [PubConnID]);
+

@@ -29,3 +29,15 @@
     CONSTRAINT [PK_tbl_IFace_InjectionData] PRIMARY KEY CLUSTERED ([TransID] ASC, [TransSeq] ASC)
 );
 
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_TranStatus]
+    ON [dbo].[tbl_IFace_InjectionData]([TranStatus] ASC)
+    INCLUDE([PubID], [PubConnID], [TransID], [TransSeq], [IFaceBatchUID]);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_LastModifiedTime]
+    ON [dbo].[tbl_IFace_InjectionData]([LastModifiedTime] ASC)
+    INCLUDE([IFaceBatchUID]);
+

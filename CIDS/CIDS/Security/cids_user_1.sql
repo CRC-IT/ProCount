@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [cids_user]
+    WITH PASSWORD = N'npazstajbm7qdlqaVem{cvknmsFT7_&#$!~<qzr+Vz`Hssuk', SID = 0xDCD82E1DEE92494CAA024CA008FBAF76, DEFAULT_DATABASE = [CIDS], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

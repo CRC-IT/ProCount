@@ -26,3 +26,21 @@
     CONSTRAINT [PK_tbl_IFace_DownTime] PRIMARY KEY CLUSTERED ([TransID] ASC, [TransSeq] ASC)
 );
 
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_IFaceBatchUID]
+    ON [dbo].[tbl_IFace_DownTime]([IFaceBatchUID] ASC)
+    INCLUDE([TransID], [TransSeq], [DowntimeDate], [API14], [DisableCode], [DowntimeHours], [OutOfServiceDate], [InServiceDate], [OutOfServiceTime], [InServiceTime], [Note], [ResponseType], [RigStatus], [RigType]);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_TranStatus]
+    ON [dbo].[tbl_IFace_DownTime]([TranStatus] ASC)
+    INCLUDE([PubID], [PubConnID], [TransID], [TransSeq], [IFaceBatchUID]);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_DowntimeHours]
+    ON [dbo].[tbl_IFace_DownTime]([DowntimeHours] ASC)
+    INCLUDE([TransID], [TransSeq], [IFaceBatchUID]);
+

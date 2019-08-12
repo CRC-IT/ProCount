@@ -23,3 +23,20 @@
     CONSTRAINT [PK_tbl_ErrorQueue] PRIMARY KEY CLUSTERED ([ErrorQID] ASC)
 );
 
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_IFaceBatchUID_PubID_TransID_TransSeq]
+    ON [dbo].[tbl_ErrorQueue]([IFaceBatchUID] ASC, [PubID] ASC, [TransID] ASC, [TransSeq] ASC);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_SubIFace_IsResubmit]
+    ON [dbo].[tbl_ErrorQueue]([SubIFace] ASC, [IsResubmit] ASC)
+    INCLUDE([IFaceBatchUID], [PubID], [SubID], [TransID], [TransSeq], [PubConnID]);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IDX_IFaceBatchUID_SubIFace_IsResubmit]
+    ON [dbo].[tbl_ErrorQueue]([IFaceBatchUID] ASC, [SubIFace] ASC, [IsResubmit] ASC)
+    INCLUDE([PubID], [SubID], [TransID], [TransSeq], [PubConnID]);
+
