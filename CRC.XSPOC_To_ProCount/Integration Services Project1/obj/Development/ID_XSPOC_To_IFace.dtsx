@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ID_XSPOC_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="303"
-  DTS:VersionGUID="{8F4EC17F-7743-4B96-BEBA-9220D9DF7DFC}">
+  DTS:VersionBuild="304"
+  DTS:VersionGUID="{4C061309-04DA-4B36-8C78-AAB512FE845A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -328,14 +328,35 @@
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -602,35 +623,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1578,6 +1578,30 @@ END
                       cachedName="CrearedDate"
                       externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedTime]"
                       lineageId="Package\XSPOC DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CrearedDate]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TubingPressure]"
+                      cachedDataType="r4"
+                      cachedName="TubingPressure"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TubingPressure]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[TubingPressure]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TubingPressureDailyHigh]"
+                      cachedDataType="r4"
+                      cachedName="TubingPressureDailyHigh"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TubingPressureDailyHigh]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[TubingPressureDailyHigh]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TubingPressureDailyLow]"
+                      cachedDataType="r4"
+                      cachedName="TubingPressureDailyLow"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TubingPressureDailyLow]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[TubingPressureDailyLow]" />
+                    <inputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DownstreamPressure]"
+                      cachedDataType="r4"
+                      cachedName="DownstreamPressure"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DownstreamPressure]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[DownstreamPressure]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1694,6 +1718,22 @@ END
                       dataType="wstr"
                       length="200"
                       name="LastModifiedBy" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TubingPressure]"
+                      dataType="r4"
+                      name="TubingPressure" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TubingPressureDailyHigh]"
+                      dataType="r4"
+                      name="TubingPressureDailyHigh" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TubingPressureDailyLow]"
+                      dataType="r4"
+                      name="TubingPressureDailyLow" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DownstreamPressure]"
+                      dataType="r4"
+                      name="DownstreamPressure" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1931,6 +1971,42 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
                       lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[RowEffectiveDate]"
                       name="RowEffectiveDate"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[TubingPressure]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TubingPressure]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[TubingPressure]"
+                      name="TubingPressure"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[TubingPressureDailyHigh]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TubingPressureDailyHigh]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[TubingPressureDailyHigh]"
+                      name="TubingPressureDailyHigh"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[TubingPressureDailyLow]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TubingPressureDailyLow]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[TubingPressureDailyLow]"
+                      name="TubingPressureDailyLow"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[DownstreamPressure]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DownstreamPressure]"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[DownstreamPressure]"
+                      name="DownstreamPressure"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2001,6 +2077,22 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
                       refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RowEffectiveDate]"
                       dataType="dbTimeStamp"
                       name="RowEffectiveDate" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TubingPressure]"
+                      dataType="r4"
+                      name="TubingPressure" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TubingPressureDailyHigh]"
+                      dataType="r4"
+                      name="TubingPressureDailyHigh" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TubingPressureDailyLow]"
+                      dataType="r4"
+                      name="TubingPressureDailyLow" />
+                    <externalMetadataColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DownstreamPressure]"
+                      dataType="r4"
+                      name="DownstreamPressure" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2082,10 +2174,30 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
                       lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CasingPressureDailyLow]"
                       name="CasingPressureDailyLow" />
                     <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TubingPressure]"
+                      dataType="r4"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TubingPressure]"
+                      name="TubingPressure" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TubingPressureDailyHigh]"
+                      dataType="r4"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TubingPressureDailyHigh]"
+                      name="TubingPressureDailyHigh" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TubingPressureDailyLow]"
+                      dataType="r4"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TubingPressureDailyLow]"
+                      name="TubingPressureDailyLow" />
+                    <outputColumn
                       refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SupplyPressure]"
                       dataType="r4"
                       lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SupplyPressure]"
                       name="SupplyPressure" />
+                    <outputColumn
+                      refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DownstreamPressure]"
+                      dataType="r4"
+                      lineageId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DownstreamPressure]"
+                      name="DownstreamPressure" />
                     <outputColumn
                       refId="Package\XSPOC DB to IFaceTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RowEffectiveDate]"
                       dataType="dbTimeStamp"

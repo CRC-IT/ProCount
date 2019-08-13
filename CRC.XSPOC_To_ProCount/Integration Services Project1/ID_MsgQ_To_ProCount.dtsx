@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ID_MsgQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="361"
-  DTS:VersionGUID="{E135AE89-E647-422A-B90B-8DFDFD45D01D}">
+  DTS:VersionBuild="363"
+  DTS:VersionGUID="{56EA1506-0DE3-48BA-AD9A-97DCC12F8AEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -552,7 +552,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog for BR failures"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -637,14 +637,35 @@
               ReadOnlyVariables="User::ArchMsgLength,User::FailRecCount,User::FormattedMsg,User::IsArchiveMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -995,35 +1016,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1240,7 +1240,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert tbl_Errorlog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2909,6 +2909,42 @@ where [refTable].[ScadaID] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[NodeID]"
                           name="NodeID"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[TubingPressure]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].ExternalColumns[TubingPressure]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[TubingPressure]"
+                          name="TubingPressure"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[TubingPressureDailyHigh]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].ExternalColumns[TubingPressureDailyHigh]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[TubingPressureDailyHigh]"
+                          name="TubingPressureDailyHigh"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[TubingPressureDailyLow]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].ExternalColumns[TubingPressureDailyLow]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[TubingPressureDailyLow]"
+                          name="TubingPressureDailyLow"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[DownstreamPressure]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].ExternalColumns[DownstreamPressure]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[DownstreamPressure]"
+                          name="DownstreamPressure"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3027,6 +3063,22 @@ where [refTable].[ScadaID] = ?</property>
                           dataType="wstr"
                           length="50"
                           name="NodeID" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].ExternalColumns[TubingPressure]"
+                          dataType="r4"
+                          name="TubingPressure" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].ExternalColumns[TubingPressureDailyHigh]"
+                          dataType="r4"
+                          name="TubingPressureDailyHigh" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].ExternalColumns[TubingPressureDailyLow]"
+                          dataType="r4"
+                          name="TubingPressureDailyLow" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].ExternalColumns[DownstreamPressure]"
+                          dataType="r4"
+                          name="DownstreamPressure" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3156,6 +3208,26 @@ where [refTable].[ScadaID] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[SupplyPressure]"
                           name="SupplyPressure" />
                         <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[TubingPressure]"
+                          dataType="r4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[TubingPressure]"
+                          name="TubingPressure" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[TubingPressureDailyHigh]"
+                          dataType="r4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[TubingPressureDailyHigh]"
+                          name="TubingPressureDailyHigh" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[TubingPressureDailyLow]"
+                          dataType="r4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[TubingPressureDailyLow]"
+                          name="TubingPressureDailyLow" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[DownstreamPressure]"
+                          dataType="r4"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[DownstreamPressure]"
+                          name="DownstreamPressure" />
+                        <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[InjectionRateSetpoint]"
                           dataType="r4"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Error Output].Columns[InjectionRateSetpoint]"
@@ -3253,6 +3325,7 @@ where [refTable].[ScadaID] = ?</property>
 SET 
        [CasingPressure] = ?
       ,[InjectionPressure] = ?
+      ,[TubingPressure] = ?
       ,[UserID] = 33
 WHERE [MerrickID] = ? and [RecordDate] = ?  AND DataSourceCode not in (2,22,29,33,39,40,42)</property>
                     <property
@@ -3289,10 +3362,16 @@ WHERE [MerrickID] = ? and [RecordDate] = ?  AND DataSourceCode not in (2,22,29,3
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[InjectionPressure]" />
                         <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].Columns[TubingPressure]"
+                          cachedDataType="r4"
+                          cachedName="TubingPressure"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[TubingPressure]" />
+                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].Columns[MerrickId]"
                           cachedDataType="i4"
                           cachedName="MerrickId"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup CompletionTb MerrickId.Outputs[Lookup Match Output].Columns[MerrickId]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].Columns[Copy of Copy of RecordDate]"
@@ -3300,7 +3379,7 @@ WHERE [MerrickID] = ? and [RecordDate] = ?  AND DataSourceCode not in (2,22,29,3
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Copy of Copy of RecordDate"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Convert RecordDate to Date String.Outputs[Data Conversion Output].Columns[Copy of Copy of RecordDate]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -3329,7 +3408,7 @@ WHERE [MerrickID] = ? and [RecordDate] = ?  AND DataSourceCode not in (2,22,29,3
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="i4"
+                          dataType="r8"
                           name="Param_2">
                           <properties>
                             <property
@@ -3340,8 +3419,19 @@ WHERE [MerrickID] = ? and [RecordDate] = ?  AND DataSourceCode not in (2,22,29,3
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          dataType="dbTimeStamp"
+                          dataType="i4"
                           name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="dbTimeStamp"
+                          name="Param_4">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3410,6 +3500,10 @@ DECLARE @YesterdayInjectionWater FLOAT
 DECLARE @YesterdayInjectionGas FLOAT 
 DECLARE @UserId FLOAT
 DECLARE @HoursFlowed INT
+DECLARE @LinePressure FLOAT
+DECLARE @OutputPressurePsig FLOAT
+DECLARE @GasTemperature FLOAT
+
 
 SET @MerrickId = ? 
 SET @RecordDate = ? 
@@ -3419,16 +3513,24 @@ SET @YesterdayInjectionWater = ?
 SET @YesterdayInjectionGas = ?
 SET @UserId = ?
 SET @HoursFlowed = ?
+SET @LinePressure = ?
+SET @OutputPressurePsig = ?
+SET @GasTemperature = ?
 
 UPDATE [dbo].[MeterDailyTb]
    SET 
 	   [EstCO2Vol] = @YesterdayInjectionCO2
 	  ,[EstWaterVol]= @YesterdayInjectionSteam + @YesterdayInjectionWater
 	  ,[EstGasVolMCF]= @YesterdayInjectionGas
-	  , [BackgroundTaskFlag]= 2
-	  , [UserID] = @UserId 
-	  , [HoursFlowed] = @HoursFlowed
-	  , [Datasourcecode] = 17
+	  ,[BackgroundTaskFlag]= 2
+	  ,[UserID] = @UserId 
+	  ,[HoursFlowed] = @HoursFlowed
+	  ,[LinePressure] = @LinePressure
+	  ,[OutputPressurePsig] = @OutputPressurePsig
+	  ,[OutputPressurePsia] = @OutputPressurePsig
+	  ,[GasTemperature] = @GasTemperature
+	  ,[EstTemperature] = @GasTemperature
+	  ,[Datasourcecode] = 17
  WHERE [MerrickID] = @MerrickId and [RecordDate] = @RecordDate and [Datasourcecode] not in (2,22,29,33,39,40,42)</property>
                     <property
                       dataType="System.Int32"
@@ -3501,6 +3603,24 @@ UPDATE [dbo].[MeterDailyTb]
                           cachedName="HoursFlowed"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Add HoursFlowed Logic.Outputs[Derived Column Output].Columns[HoursFlowed]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].Columns[SupplyPressure]"
+                          cachedDataType="r4"
+                          cachedName="SupplyPressure"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[SupplyPressure]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].Columns[DownstreamPressure]"
+                          cachedDataType="r4"
+                          cachedName="DownstreamPressure"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[DownstreamPressure]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].Columns[LineTemperature]"
+                          cachedDataType="r4"
+                          cachedName="LineTemperature"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data.Outputs[OLE DB Source Output].Columns[LineTemperature]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3585,6 +3705,39 @@ UPDATE [dbo].[MeterDailyTb]
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           dataType="i4"
                           name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          dataType="r8"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          dataType="r8"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          dataType="r8"
+                          name="Param_10">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -7760,10 +7913,6 @@ where [refTable].[API_14] = ?</property>
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Covert RecordDate to Datetime"
           TopLeft="406,87" />
         <NodeLayout
-          Size="145,41"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1"
-          TopLeft="530.488100155097,786.103918604075" />
-        <NodeLayout
           Size="147,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count"
           TopLeft="332.000014880584,689.731369356835" />
@@ -7776,10 +7925,6 @@ where [refTable].[API_14] = ?</property>
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup CompletionTb MerrickId"
           TopLeft="194.416671006631,413.766665341656" />
         <NodeLayout
-          Size="121,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast"
-          TopLeft="423.333337629835,335.399998419285" />
-        <NodeLayout
           Size="227,43"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace Injection Data"
           TopLeft="376.916670723862,7.2901963353418" />
@@ -7788,9 +7933,9 @@ where [refTable].[API_14] = ?</property>
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Convert RecordDate to Date String"
           TopLeft="405.845239918527,252.811769431994" />
         <NodeLayout
-          Size="196,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily"
-          TopLeft="68.415358519997,647.147281021498" />
+          Size="145,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ 1"
+          TopLeft="530.488100155097,786.103918604075" />
         <NodeLayout
           Size="250,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookUp MerrickId for Meter Daily Tb"
@@ -7800,21 +7945,21 @@ where [refTable].[API_14] = ?</property>
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Error tag for CD tb"
           TopLeft="334.642871855219,614.290196335342" />
         <NodeLayout
-          Size="145,41"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ"
-          TopLeft="339.488115035681,787.394114939417" />
-        <NodeLayout
           Size="189,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Add HoursFlowed Logic"
           TopLeft="735,520" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily"
+          TopLeft="768,618" />
         <NodeLayout
           Size="147,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count 1"
           TopLeft="523,688.441173021493" />
         <NodeLayout
-          Size="169,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily"
-          TopLeft="768,618" />
+          Size="196,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Completion Daily"
+          TopLeft="68.415358519997,647.147281021498" />
         <NodeLayout
           Size="207,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get Available Filud Records"
@@ -7823,6 +7968,48 @@ where [refTable].[API_14] = ?</property>
           Size="199,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Add 1 Day to RecordDate"
           TopLeft="405.5,160.5" />
+        <NodeLayout
+          Size="121,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Multicast"
+          TopLeft="423.333337629835,335.399998419285" />
+        <NodeLayout
+          Size="145,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ"
+          TopLeft="339.488115035681,787.394114939417" />
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Data Conversion Output]"
+          TopLeft="527.345239918527,294.811769431994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-43.511902288692,40.588228987291"
+              Start="0,0"
+              End="-43.511902288692,33.088228987291">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.2941144936455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.2941144936455"
+                    Point2="0,20.2941144936455"
+                    Point3="-4,20.2941144936455" />
+                  <mssgle:LineSegment
+                    End="-39.511902288692,20.2941144936455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.511902288692,20.2941144936455"
+                    Point2="-43.511902288692,20.2941144936455"
+                    Point3="-43.511902288692,24.2941144936455" />
+                  <mssgle:LineSegment
+                    End="-43.511902288692,33.088228987291" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
           TopLeft="599.744050077549,729.441173021493">
@@ -8001,7 +8188,7 @@ where [refTable].[API_14] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-95.9027006451063,56.142844947465,111.6127734375,11.609375"
+              BoundingBox="-66.3123490826062,56.142844947465,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8037,7 +8224,7 @@ where [refTable].[API_14] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-44.9553045236226,69.0693542437621,111.6127734375,11.609375"
+              BoundingBox="-19.6099529611226,69.0693542437621,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8073,7 +8260,7 @@ where [refTable].[API_14] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-18.9424624657571,18.5879959808513,96.3827734375,11.609375"
+              BoundingBox="10.647889096743,18.5879959808513,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8109,7 +8296,7 @@ where [refTable].[API_14] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-133.285543578858,34.9017286811308,96.3827734375,11.609375"
+              BoundingBox="-100.965192016358,34.9017286811308,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8299,40 +8486,6 @@ where [refTable].[API_14] = ?</property>
                     Point3="-14,19.75" />
                   <mssgle:LineSegment
                     End="-14,24" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Data Conversion Output]"
-          TopLeft="527.345239918527,294.811769431994">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-43.511902288692,40.588228987291"
-              Start="0,0"
-              End="-43.511902288692,33.088228987291">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.2941144936455" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.2941144936455"
-                    Point2="0,20.2941144936455"
-                    Point3="-4,20.2941144936455" />
-                  <mssgle:LineSegment
-                    End="-39.511902288692,20.2941144936455" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39.511902288692,20.2941144936455"
-                    Point2="-43.511902288692,20.2941144936455"
-                    Point3="-43.511902288692,24.2941144936455" />
-                  <mssgle:LineSegment
-                    End="-43.511902288692,33.088228987291" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
