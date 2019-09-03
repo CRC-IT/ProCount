@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="CD_XSPOC_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="83"
-  DTS:VersionGUID="{F1BAC989-E18C-495D-8FF3-DC7A804A058B}">
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{09F3FAA3-FAAE-4957-939C-47077B478FB6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -329,14 +329,35 @@
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_d5c5a91504b64450a59c853eb2aca8e3")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_d5c5a91504b64450a59c853eb2aca8e3")]
+[assembly: AssemblyCopyright("Copyright @  2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -699,35 +720,14 @@ namespace ST_d5c5a91504b64450a59c853eb2aca8e3.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_d5c5a91504b64450a59c853eb2aca8e3")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_d5c5a91504b64450a59c853eb2aca8e3")]
-[assembly: AssemblyCopyright("Copyright @  2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -940,7 +940,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{15B3EBE4-27B6-45D0-8CFF-CED290B15BF9}"
+          SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStatementSource="DELETE FROM [dbo].[tbl_Integration_CompletionDaily]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
@@ -2361,7 +2361,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="172,42"
           Id="Package\Delete XSPOC Data"
-          TopLeft="294.583328943699,523.699991887212" />
+          TopLeft="293.583328943699,523.699991887212" />
         <NodeLayout
           Size="159,43"
           Id="Package\Generate GUID's"
@@ -2500,7 +2500,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,5.51197851578391,50.60890625,11.609375"
+              BoundingBox="-25.304453125,5.5119785157839,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2528,18 +2528,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="377.416662475715,490.733325321277">
+          TopLeft="376.999995809048,491.06665865461">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.9666665659349"
+              EndConnector="0,32.633333232602"
               Start="0,0"
-              End="0,25.4666665659349">
+              End="0,25.133333232602">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.4666665659349" />
+                    End="0,25.133333232602" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
