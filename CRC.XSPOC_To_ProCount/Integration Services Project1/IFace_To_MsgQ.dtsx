@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="IFace_To_MsgQ"
   DTS:PackageType="5"
-  DTS:VersionBuild="137"
-  DTS:VersionGUID="{1A2A18E7-037D-401F-8885-3DC8D5F11EAF}">
+  DTS:VersionBuild="142"
+  DTS:VersionGUID="{C54D6AAE-D569-4743-8978-7FBEF53E7018}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -424,7 +424,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="DELETE tbl_SubscriberLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -526,7 +526,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert tbl_Errorlog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -1127,7 +1127,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_IFace"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -1313,7 +1313,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
-          SQLTask:SqlStatementSource="SELECT SubID, SubscriberName, SubIFace, ConnType, SubConnID FROM [dbo].[tbl_SubscriberController]&#xA;WHERE  (  &#xA;&#x9;&#x9;&#x9;&#x9;( ( LastRunStatus = 0  OR LastRunStatus IS NULL ) AND LastRunTime IS NULL ) &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;&#x9;( ForceExecute = 1 )  &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;( LastRunStatus = 1 AND LastRunTime IS NOT NULL AND  PickupIntervalInMin &lt; datediff(minute, GETDATE(), LastRunTime) ) &#xA;&#x9;&#x9;)&#xA;AND IsEnabled = 1 AND SubID NOT IN (4) --AND SubID &lt;&gt; 32&#xA;ORDER BY SubscriberName, SubIFace, ConnType&#xA;"
+          SQLTask:SqlStatementSource="SELECT SubID, SubscriberName, SubIFace, ConnType, SubConnID FROM [dbo].[tbl_SubscriberController]&#xA;WHERE  (  &#xA;&#x9;&#x9;&#x9;&#x9;( ( LastRunStatus = 0  OR LastRunStatus IS NULL ) AND LastRunTime IS NULL ) &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;&#x9;( ForceExecute = 1 )  &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;( LastRunStatus = 1 AND LastRunTime IS NOT NULL AND  PickupIntervalInMin &lt; datediff(minute, GETDATE(), LastRunTime) ) &#xA;&#x9;&#x9;)&#xA;AND IsEnabled = 1 AND SubID NOT IN (4) AND SubscriberName = 'ProCount'--AND SubID &lt;&gt; 32 &#xA;ORDER BY SubscriberName, SubIFace, ConnType"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -1560,7 +1560,7 @@
     design-time-name="Package\Foreach Loop Container\Moving IFace Data to MsgQ">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="147,42"
           Id="Package\Foreach Loop Container\Moving IFace Data to MsgQ\tbl_MsgQueue"
@@ -1588,7 +1588,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
