@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MD_MsgQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="376"
-  DTS:VersionGUID="{F19209CC-0814-4966-843D-CF7205BFD945}">
+  DTS:VersionBuild="382"
+  DTS:VersionGUID="{BED427A6-860F-4C60-AB54-DBC78D112B90}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -656,35 +656,14 @@
               ReadOnlyVariables="User::ArchMsgLength,User::FailRecCount,User::FormattedMsg,User::IsArchiveMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1035,14 +1014,35 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1635,6 +1635,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           cachedLength="10"
                           cachedName="RecordDate"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[RecordDate]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[MeterPressureStaticPsig]"
+                          cachedDataType="r8"
+                          cachedName="MeterPressureStaticPsig"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStaticPsig]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Inputs[Data Conversion Input].Columns[MeterPressureStaticPsia]"
+                          cachedDataType="r8"
+                          cachedName="MeterPressureStaticPsia"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStaticPsia]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1662,6 +1672,46 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
                               name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[RecordDate]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[MeterPressureStaticPsig]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[MeterPressureStaticPsig]"
+                          name="MeterPressureStaticPsig"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStaticPsig]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[MeterPressureStaticPsia]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[MeterPressureStaticPsia]"
+                          name="MeterPressureStaticPsia"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStaticPsia]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1876,10 +1926,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           cachedName="MeterTemperature"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterTemperature]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input].Columns[MeterPressureStatic]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input].Columns[MeterPressureStaticPsia]"
                           cachedDataType="r8"
-                          cachedName="MeterPressureStatic"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStatic]" />
+                          cachedName="MeterPressureStaticPsia"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[MeterPressureStaticPsia]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Inputs[Derived Column Input].Columns[MeterPressureStaticPsig]"
+                          cachedDataType="r8"
+                          cachedName="MeterPressureStaticPsig"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[MeterPressureStaticPsig]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1927,13 +1982,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStatic]}</property>
+                              name="Expression">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[MeterPressureStaticPsig]}</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">MeterPressureStatic</property>
+                              name="FriendlyExpression">[Data Conversion].MeterPressureStaticPsig</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsia]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsia]"
+                          name="StaticPressurePsia"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[MeterPressureStaticPsia]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">[Data Conversion].MeterPressureStaticPsia</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -2705,7 +2782,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[UserID]" />
                         <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping.Inputs[OLE DB Destination Input].Columns[GasTemperature]"
-                          cachedDataType="r4"
+                          cachedDataType="r8"
                           cachedName="GasTemperature"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[GasTemperature]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[GasTemperature]" />
@@ -2742,17 +2819,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[BackgroundTaskFlag]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[BackgroundTaskFlag]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping.Inputs[OLE DB Destination Input].Columns[MeterPressureStatic]"
-                          cachedDataType="r8"
-                          cachedName="MeterPressureStatic"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[StaticPressurePsia]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStatic]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping.Inputs[OLE DB Destination Input].Columns[StaticPressurePsig]"
                           cachedDataType="r8"
                           cachedName="StaticPressurePsig"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[StaticPressurePsig]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsig]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping.Inputs[OLE DB Destination Input].Columns[StaticPressurePsia]"
+                          cachedDataType="r8"
+                          cachedName="StaticPressurePsia"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[StaticPressurePsia]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsia]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4163,15 +4240,6 @@ where [refTable].[ScadaID] = ?</property>
                           name="MeterVolumePreviousDay"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStatic]"
-                          dataType="r8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].ExternalColumns[MeterPressureStatic]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStatic]"
-                          name="MeterPressureStatic"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureDifferential]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
@@ -4264,6 +4332,24 @@ where [refTable].[ScadaID] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[ProductType]"
                           name="ProductType"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStaticPsia]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].ExternalColumns[MeterPressureStaticPsia]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStaticPsia]"
+                          name="MeterPressureStaticPsia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStaticPsig]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].ExternalColumns[MeterPressureStaticPsig]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStaticPsig]"
+                          name="MeterPressureStaticPsig"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4333,10 +4419,6 @@ where [refTable].[ScadaID] = ?</property>
                           dataType="r8"
                           name="MeterVolumePreviousDay" />
                         <externalMetadataColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].ExternalColumns[MeterPressureStatic]"
-                          dataType="r8"
-                          name="MeterPressureStatic" />
-                        <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].ExternalColumns[MeterPressureDifferential]"
                           dataType="r8"
                           name="MeterPressureDifferential" />
@@ -4379,6 +4461,14 @@ where [refTable].[ScadaID] = ?</property>
                           dataType="wstr"
                           length="50"
                           name="ProductType" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].ExternalColumns[MeterPressureStaticPsia]"
+                          dataType="r8"
+                          name="MeterPressureStaticPsia" />
+                        <externalMetadataColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].ExternalColumns[MeterPressureStaticPsig]"
+                          dataType="r8"
+                          name="MeterPressureStaticPsig" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -4472,10 +4562,15 @@ where [refTable].[ScadaID] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Error Output].Columns[MeterFlowhours]"
                           name="MeterFlowhours" />
                         <outputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Error Output].Columns[MeterPressureStatic]"
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Error Output].Columns[MeterPressureStaticPsia]"
                           dataType="r8"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Error Output].Columns[MeterPressureStatic]"
-                          name="MeterPressureStatic" />
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Error Output].Columns[MeterPressureStaticPsia]"
+                          name="MeterPressureStaticPsia" />
+                        <outputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Error Output].Columns[MeterPressureStaticPsig]"
+                          dataType="r8"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Error Output].Columns[MeterPressureStaticPsig]"
+                          name="MeterPressureStaticPsig" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Error Output].Columns[MeterPressureDifferential]"
                           dataType="r8"
@@ -4690,17 +4785,17 @@ where [refTable].[ScadaID] = ?</property>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Oil Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[EstOilVol]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterVolumePreviousDay]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Oil Destination Mapping.Inputs[OLE DB Destination Input].Columns[MeterPressureStatic]"
-                          cachedDataType="r8"
-                          cachedName="MeterPressureStatic"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Oil Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[StaticPressurePsia]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStatic]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Oil Destination Mapping.Inputs[OLE DB Destination Input].Columns[StaticPressurePsig]"
                           cachedDataType="r8"
                           cachedName="StaticPressurePsig"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Oil Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[StaticPressurePsig]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsig]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Oil Destination Mapping.Inputs[OLE DB Destination Input].Columns[StaticPressurePsia]"
+                          cachedDataType="r8"
+                          cachedName="StaticPressurePsia"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Oil Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[StaticPressurePsia]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsia]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5613,12 +5708,6 @@ where [refTable].[ScadaID] = ?</property>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Gas.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureDifferential]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Gas.Inputs[OLE DB Command Input].Columns[MeterPressureStatic]"
-                          cachedDataType="r8"
-                          cachedName="MeterPressureStatic"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Gas.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStatic]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Gas.Inputs[OLE DB Command Input].Columns[MeterFlowhours]"
                           cachedDataType="r8"
                           cachedName="MeterFlowhours"
@@ -5694,6 +5783,12 @@ where [refTable].[ScadaID] = ?</property>
                           cachedName="Copy of RecordDate"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Gas.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Gas.Inputs[OLE DB Command Input].Columns[StaticPressurePsia]"
+                          cachedDataType="r8"
+                          cachedName="StaticPressurePsia"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Gas.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsia]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5954,12 +6049,6 @@ where [refTable].[ScadaID] = ?</property>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Oil.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureDifferential]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Oil.Inputs[OLE DB Command Input].Columns[MeterPressureStatic]"
-                          cachedDataType="r8"
-                          cachedName="MeterPressureStatic"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Oil.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStatic]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Oil.Inputs[OLE DB Command Input].Columns[MeterFlowhours]"
                           cachedDataType="r8"
                           cachedName="MeterFlowhours"
@@ -6035,6 +6124,12 @@ where [refTable].[ScadaID] = ?</property>
                           cachedName="Copy of RecordDate"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Oil.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Oil.Inputs[OLE DB Command Input].Columns[StaticPressurePsia]"
+                          cachedDataType="r8"
+                          cachedName="StaticPressurePsia"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Oil.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsia]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -6295,12 +6390,6 @@ where [refTable].[ScadaID] = ?</property>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Water.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureDifferential]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Water.Inputs[OLE DB Command Input].Columns[MeterPressureStatic]"
-                          cachedDataType="r8"
-                          cachedName="MeterPressureStatic"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Water.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStatic]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Water.Inputs[OLE DB Command Input].Columns[MeterFlowhours]"
                           cachedDataType="r8"
                           cachedName="MeterFlowhours"
@@ -6376,6 +6465,12 @@ where [refTable].[ScadaID] = ?</property>
                           cachedName="Copy of RecordDate"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Water.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of RecordDate]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Water.Inputs[OLE DB Command Input].Columns[StaticPressurePsia]"
+                          cachedDataType="r8"
+                          cachedName="StaticPressurePsia"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Water.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsia]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -8140,17 +8235,17 @@ where [refTable].[ScadaID] = ?</property>
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Water Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[EstWaterVol]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterVolumePreviousDay]" />
                         <inputColumn
-                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Water Destination Mapping.Inputs[OLE DB Destination Input].Columns[MeterPressureStatic]"
-                          cachedDataType="r8"
-                          cachedName="MeterPressureStatic"
-                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Water Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[StaticPressurePsia]"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output].Columns[MeterPressureStatic]" />
-                        <inputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Water Destination Mapping.Inputs[OLE DB Destination Input].Columns[StaticPressurePsig]"
                           cachedDataType="r8"
                           cachedName="StaticPressurePsig"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Water Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[StaticPressurePsig]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsig]" />
+                        <inputColumn
+                          refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Water Destination Mapping.Inputs[OLE DB Destination Input].Columns[StaticPressurePsia]"
+                          cachedDataType="r8"
+                          cachedName="StaticPressurePsia"
+                          externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Water Destination Mapping.Inputs[OLE DB Destination Input].ExternalColumns[StaticPressurePsia]"
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output].Columns[StaticPressurePsia]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -9050,14 +9145,14 @@ where [refTable].[ScadaID] = ?</property>
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Error Columns.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output2]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count.Inputs[Row Count Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output4]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count Water.Inputs[Row Count Input 1]"
                   name="Derived Column Output"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Columns for Water.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output4]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count Oil.Inputs[Row Count Input 1]"
-                  name="Derived Column Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column Oil.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get Available Meterdata records.Inputs[Lookup Input]"
@@ -9065,9 +9160,9 @@ where [refTable].[ScadaID] = ?</property>
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output1]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count.Inputs[Row Count Input 1]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count Oil.Inputs[Row Count Input 1]"
                   name="Derived Column Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column.Outputs[Derived Column Output]" />
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column Oil.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup Error Output]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Error Columns.Inputs[Derived Column Input]"
@@ -9110,19 +9205,19 @@ where [refTable].[ScadaID] = ?</property>
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 12]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Oil.Inputs[OLE DB Command Input]"
-                  name="Row Count Output 1"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count Oil.Outputs[Row Count Output 1]" />
-                <path
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert tbl_ErrorQ.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount.Outputs[Row Count Output 1]" />
                 <path
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Gas.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Oil.Inputs[OLE DB Command Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count Oil.Outputs[Row Count Output 1]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 13]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Water.Inputs[OLE DB Command Input]"
@@ -9755,73 +9850,33 @@ where [refTable].[ScadaID] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1"
-          TopLeft="651.972216768811,285.33333046635" />
+          Size="185,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Oil"
+          TopLeft="1318.32539867103,507.954685565366" />
         <NodeLayout
-          Size="207,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Water Destination Mapping"
-          TopLeft="744.325398671028,487.150910623547" />
-        <NodeLayout
-          Size="190,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Gas"
-          TopLeft="1122.51853731393,510.528757465526" />
-        <NodeLayout
-          Size="191,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Oil Destination Mapping"
-          TopLeft="520,502" />
-        <NodeLayout
-          Size="206,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Columns for Water"
-          TopLeft="789.080696190252,565.145847909399" />
-        <NodeLayout
-          Size="229,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get Available Meterdata records"
-          TopLeft="620.175925818996,358.222221628163" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Water"
-          TopLeft="797.0740927867,722.564577561607" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Conditional Split 1"
-          TopLeft="491,412" />
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Oil"
-          TopLeft="534.748694115672,733.41366693806" />
-        <NodeLayout
-          Size="113,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup"
-          TopLeft="677.833334513009,93.3666667673985" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert tbl_ErrorQ"
-          TopLeft="1386,83" />
+          Size="165,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Gas"
+          TopLeft="296.0740927867,721.954685565366" />
         <NodeLayout
           Size="196,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping"
           TopLeft="289.325398671028,486.541018627306" />
         <NodeLayout
-          Size="149,46"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column"
-          TopLeft="290.080696190252,564.535955913158" />
+          Size="113,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup"
+          TopLeft="677.833334513009,93.3666667673985" />
         <NodeLayout
           Size="187,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Error Columns"
           TopLeft="938.888888309399,92.0093641884394" />
         <NodeLayout
-          Size="159,41"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount"
-          TopLeft="1177.85184888659,87.4742906626281" />
+          Size="207,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Water Destination Mapping"
+          TopLeft="744.325398671028,487.150910623547" />
         <NodeLayout
           Size="178,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count Water"
           TopLeft="789.817471824789,646.694426691291" />
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Oil"
-          TopLeft="1318.32539867103,507.954685565366" />
         <NodeLayout
           Size="170,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column Oil"
@@ -9831,29 +9886,69 @@ where [refTable].[ScadaID] = ?</property>
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count Oil"
           TopLeft="527.492073153761,657.543516067744" />
         <NodeLayout
-          Size="209,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data"
-          TopLeft="634.333337036626,16.1509106235467" />
+          Size="149,46"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column"
+          TopLeft="290.080696190252,564.535955913158" />
         <NodeLayout
-          Size="157,43"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion"
-          TopLeft="654.845241408643,207.811769664452" />
+          Size="164,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Conditional Split 1"
+          TopLeft="491,412" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Water"
+          TopLeft="797.0740927867,722.564577561607" />
         <NodeLayout
           Size="147,41"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Fail Rec Count"
           TopLeft="290.817471824789,646.08453469505" />
         <NodeLayout
-          Size="165,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Gas"
-          TopLeft="296.0740927867,721.954685565366" />
+          Size="159,41"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\LookupRecCount"
+          TopLeft="1177.85184888659,87.4742906626281" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Gas"
+          TopLeft="1122.51853731393,510.528757465526" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Water"
+          TopLeft="1528.32539867103,509.954685565366" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Oil"
+          TopLeft="534.748694115672,733.41366693806" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert tbl_ErrorQ"
+          TopLeft="1386,83" />
+        <NodeLayout
+          Size="209,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data"
+          TopLeft="634.333337036626,16.1509106235467" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Columns for Water"
+          TopLeft="789.080696190252,565.145847909399" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Oil Destination Mapping"
+          TopLeft="520,502" />
+        <NodeLayout
+          Size="164,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 1"
+          TopLeft="651.972216768811,285.33333046635" />
+        <NodeLayout
+          Size="157,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion"
+          TopLeft="654.845241408643,207.811769664452" />
         <NodeLayout
           Size="155,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Conditional Split"
           TopLeft="1319,363" />
         <NodeLayout
-          Size="201,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Update Meter Daily Water"
-          TopLeft="1528.32539867103,509.954685565366" />
+          Size="229,43"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Get Available Meterdata records"
+          TopLeft="620.175925818996,358.222221628163" />
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 13]"
           TopLeft="881.695782305745,688.694426691291">
@@ -9878,6 +9973,28 @@ where [refTable].[ScadaID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 12]"
+          TopLeft="1336.51851555326,106.070478664647">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.4814844467389,0"
+              Start="0,0"
+              End="41.9814844467389,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.9814844467389,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
           TopLeft="611.620383634717,699.543516067744">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9899,7 +10016,7 @@ where [refTable].[ScadaID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 11]"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
           TopLeft="364.317471824789,687.08453469505">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9924,28 +10041,6 @@ where [refTable].[ScadaID] = ?</property>
                     Point3="14.256620961911,21.435075435158" />
                   <mssgle:LineSegment
                     End="14.256620961911,27.3701508703159" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Row Count Output 1]"
-          TopLeft="1336.51851555326,106.070478664647">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="49.4814844467389,0"
-              Start="0,0"
-              End="41.9814844467389,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="41.9814844467389,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10176,50 +10271,6 @@ where [refTable].[ScadaID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output4]"
-          TopLeft="610.123685336492,617.994937285852">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.548578781892"
-              Start="0,0"
-              End="0,32.048578781892">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.048578781892" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output3]"
-          TopLeft="1125.55555497607,110.4084940922">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="52.2962939105284,0"
-              Start="0,0"
-              End="44.7962939105284,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="44.7962939105284,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output2]"
           TopLeft="892.080696190252,607.145847909399">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10253,7 +10304,29 @@ where [refTable].[ScadaID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output1]"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output3]"
+          TopLeft="1125.55555497607,110.4084940922">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.2962939105284,0"
+              Start="0,0"
+              End="44.7962939105284,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44.7962939105284,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output2]"
           TopLeft="364.44908400752,610.535955913158">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10266,6 +10339,28 @@ where [refTable].[ScadaID] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,28.048578781892" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Derived Column Output1]"
+          TopLeft="610.123685336492,617.994937285852">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.548578781892"
+              Start="0,0"
+              End="0,32.048578781892">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.048578781892" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10350,7 +10445,7 @@ where [refTable].[ScadaID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="82.4475430855139,41.168316590179,30.6803125,9.5732421875"
+              BoundingBox="82.447543085514,41.168316590179,30.6803125,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10458,7 +10553,7 @@ where [refTable].[ScadaID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8.24093347698606,56.477342782683,30.807265625,9.5732421875"
+              BoundingBox="-8.24093347698605,56.477342782683,30.807265625,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10538,6 +10633,42 @@ where [refTable].[ScadaID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Water Destination Mapping">
     <Properties>
       <Property>
@@ -10547,6 +10678,14 @@ where [refTable].[ScadaID] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -10581,50 +10720,6 @@ where [refTable].[ScadaID] = ?</property>
         <Value
           type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Gas Destination Mapping">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceMeter Data">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
