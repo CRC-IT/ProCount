@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/18/2018 7:38:00 AM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="TDT_MSGQ_To_ProCount"
   DTS:PackageType="5"
-  DTS:VersionBuild="428"
-  DTS:VersionGUID="{8DED87DE-08DF-4B86-8022-53C20ADA1611}">
+  DTS:VersionBuild="429"
+  DTS:VersionGUID="{B6E8A02D-734F-45D4-AB9F-942CEA649F1F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADQjbaVTHHHyC9Pe6AEcRGdAAAAAASAAACgAAAAEAAAANu6VuNFWklJy25DY/R9RgQgAAAAb5xfVfJ3rdRS2p2rGZlJycg38R81IP8huiebahqxQl8UAAAAJ2vmmM02GvSkoap17QFeLdNURyY</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAXIQpc/7debsWkhayShSYoAAAAAASAAACgAAAAEAAAAFWY5CG5L+zBtIoT0GLE8qUgAAAAKjmWLMgHG1EMklzIkcspSBLB0H6hP8flGQU1eL4dn5YUAAAA41RYBD/kiFk1Wwx+ED3mdLBRoZI</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -668,14 +668,35 @@
               ReadOnlyVariables="User::ArchFormattedMsg,User::FailRecCount,User::FormattedMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1026,35 +1047,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1624,8 +1624,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                   <connections>
                     <connection
                       refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily.Connections[OleDbConnection]"
-                      connectionManagerID="{EBA005CE-7304-4CB3-BFAA-D3260AD1F7C0}:invalid"
-                      connectionManagerRefId="{EBA005CE-7304-4CB3-BFAA-D3260AD1F7C0}:invalid"
+                      connectionManagerID="{EBA005CE-7304-4CB3-BFAA-D3260AD1F7C0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CKCWSQL1A.CRC_ProCount]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2300,7 +2300,7 @@ where [refTable].[MerrickID] = ? and [refTable].[RunTicketNumber] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[MerrickId]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[RunTicketNumber]};</property>
+                      name="ParameterMap">#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[MerrickId]};#{Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[RunTicketNumber]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2313,8 +2313,8 @@ where [refTable].[MerrickID] = ? and [refTable].[RunTicketNumber] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Connections[OleDbConnection]"
-                      connectionManagerID="{EBA005CE-7304-4CB3-BFAA-D3260AD1F7C0}:invalid"
-                      connectionManagerRefId="{EBA005CE-7304-4CB3-BFAA-D3260AD1F7C0}:invalid"
+                      connectionManagerID="{EBA005CE-7304-4CB3-BFAA-D3260AD1F7C0}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CKCWSQL1A.CRC_ProCount]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -2343,9 +2343,9 @@ where [refTable].[MerrickID] = ? and [refTable].[RunTicketNumber] = ?</property>
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup.Inputs[Lookup Input].Columns[RunTicketNumber]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="33"
+                          cachedLength="22"
                           cachedName="RunTicketNumber"
-                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Outputs[OLE DB Source Output].Columns[RunTicketNumber]">
+                          lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Data Conversion.Outputs[Data Conversion Output].Columns[RunTicketNumber]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -2453,8 +2453,8 @@ where [refTable].[MerrickID] = ? and [refTable].[RunTicketNumber] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data.Connections[OleDbConnection]"
-                      connectionManagerID="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}:invalid"
-                      connectionManagerRefId="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}:invalid"
+                      connectionManagerID="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CIDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3141,8 +3141,8 @@ where [refTable].[MerrickID] = ? and [refTable].[RunTicketNumber] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Inserts.Connections[OleDbConnection]"
-                      connectionManagerID="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}:invalid"
-                      connectionManagerRefId="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}:invalid"
+                      connectionManagerID="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CIDS]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4109,10 +4109,6 @@ where [refTable].[MerrickID] = ? and [refTable].[RunTicketNumber] = ?</property>
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column"
           TopLeft="352.210326607711,413.024835560546" />
         <NodeLayout
-          Size="215,42"
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data"
-          TopLeft="325.083330396563,11.1333331163724" />
-        <NodeLayout
           Size="180,43"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Upsert ErrorQ Inserts"
           TopLeft="343.277794088281,557.38431193886" />
@@ -4120,6 +4116,10 @@ where [refTable].[MerrickID] = ? and [refTable].[RunTicketNumber] = ?</property>
           Size="113,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup"
           TopLeft="365.138888588796,236.444444418616" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data"
+          TopLeft="325.083330396563,11.1333331163724" />
         <NodeLayout
           Size="201,42"
           Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load TankRunTicket Daily"
@@ -4272,20 +4272,12 @@ where [refTable].[MerrickID] = ? and [refTable].[RunTicketNumber] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4295,8 +4287,16 @@ where [refTable].[MerrickID] = ? and [refTable].[RunTicketNumber] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFaceRTTest Data">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
