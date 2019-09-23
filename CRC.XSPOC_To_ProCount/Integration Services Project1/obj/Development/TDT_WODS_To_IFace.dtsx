@@ -1,0 +1,2541 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/1/2018 9:08:23 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LLG60RG0N2"
+  DTS:CreatorName="CALNET\vudemr"
+  DTS:DTSID="{112430CB-DD95-42C8-A9B3-2A49F1A2E762}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="TDT_WODS_To_IFace"
+  DTS:PackageType="5"
+  DTS:VersionBuild="151"
+  DTS:VersionGUID="{C078092E-E2FE-4D41-A55D-98B76845B79D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{576CB84F-9C09-4F48-BFB2-61936D192DC9}"
+      DTS:ObjectName="ADO_NET_CIDS_DatabaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CIDS</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{211E195E-0449-4DE3-8B35-D06273BDE657}"
+      DTS:ObjectName="ADO_NET_CIDS_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CLGWSQL7</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{2ED0F4AB-19BB-41FD-91C9-14C4533C2190}"
+      DTS:ObjectName="ADO_NET_ProCount_DatabaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CRC_ProCount</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{8FAFEED5-7A57-4D86-9F71-CFBC30E6B6A7}"
+      DTS:ObjectName="ADO_NET_ProCount_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCWSQL5-S</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{DA4978CA-3052-4A90-82C9-EE49120F772F}"
+      DTS:ObjectName="ADO_NET_XSPOC_DatabaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">XSPOC_Integration</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{8CED7BF2-6F02-42AE-A097-5C0E6CF4B8A2}"
+      DTS:ObjectName="ADO_NET_XSPOC_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCWSQLB</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{2F35EC28-495C-4533-8483-74AC87E6259E}"
+      DTS:ObjectName="CIDS_DataseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CIDS</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{F2E65C60-54D3-48AF-B78E-B590910B2075}"
+      DTS:ObjectName="CIDS_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CLGWSQL7</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{190D53EE-35E5-4704-836A-B46D8A00B2F9}"
+      DTS:ObjectName="ProCount_DatabaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CRC_ProCount</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{19FFEC1D-D4EE-4793-B4FC-3D6325155C48}"
+      DTS:ObjectName="ProCount_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCWSQL5-S</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{DACAB941-55D2-4B03-B2CF-311316ED676E}"
+      DTS:ObjectName="XPOC_Integrations_DataBaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">XSPOC_Integration</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{AE4F1BF8-C99A-42FF-8060-65EDF3CDDABA}"
+      DTS:ObjectName="XPOC_Integrations_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCWSQLB</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6155B804-6F6E-4614-956E-A2238CB6B984}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ArchiveXMLPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\valugulk\Desktop\ProCount\ArchiveFiles</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{74FC2342-6CC2-40FC-819E-EEAF36F0869D}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; &quot; + @[User::XSPOCInputSQLQuery]  +  &quot; &#xA; FOR XML PATH ('&quot;+ @[User::MsgType]  +&quot;_Record'), ROOT('&quot;+ @[User::MsgType]  +&quot;_From_&quot; + @[User::PublisherName]  +&quot;')&#xA;&#xA;)) InputMsg&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ArchiveXMLSQLQuery">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT convert(nvarchar(MAX),
+(
+  
+ SELECT [bol]      ,[driver]      ,[driver_bol]      ,[start_Date]      ,[stop_time]      ,[customer_id]      ,[truck_num]      ,[gross_volume]      ,[fw_temp]      ,[totalizer_gov]      ,[fw_press]      ,[trailer1]      ,[trailer2]  FROM [WODS].[dbo].[tb_TD_XYTruckTickets] 
+ FOR XML PATH ('TDTruckTickets_Record'), ROOT('TDTruckTickets_From_WODS')
+
+)) InputMsg</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0B38A04F-C4FF-47CC-92F8-FAC8475C3EEF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ArchMsgLength">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AB7ED0F7-D94E-4FE9-8FF7-C587E4FA362E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConnType">
+      <DTS:VariableValue
+        DTS:DataType="8">Database</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D38FD207-54D6-4402-8220-27EE147F597C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorLogMsg">
+      <DTS:VariableValue
+        DTS:DataType="8">Error while sending data from WODS to IFace table</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8D8AAEB1-C2A9-4942-964C-E42BA971E309}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FormattedMsg">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F5698656-ED2E-4F5D-948D-69CA6BFE7CB8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="IFaceBatchID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{10577842-DDEA-4726-BD93-CEAF35C57497}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsArchive">
+      <DTS:VariableValue
+        DTS:DataType="8">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{31765D1B-71A6-4064-BFC3-1F3EA4BB2DE6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsDelSrcRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{74E3711D-4A2B-47B6-BE03-0C1B48A3442E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MsgType">
+      <DTS:VariableValue
+        DTS:DataType="8">TDTruckTickets</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{916D3DFC-4ECE-49B5-8B1F-69C8BFD63D2C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PkgName">
+      <DTS:VariableValue
+        DTS:DataType="8">TDT_WODS_To_IFace.dtsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{942715FC-BF7C-40BF-BE96-03C2D8F6DC23}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ProcessType">
+      <DTS:VariableValue
+        DTS:DataType="8">SSISPackage</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6E91E6B2-1478-421D-9C5B-CF09FB8F78A2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubConnID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{694867C9-94F0-41CC-AB62-ADD2DCA4062B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubEndMsg">
+      <DTS:VariableValue
+        DTS:DataType="8">Publishing gas loader trans data from WODS completed</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{12AA6CDD-4BD1-4A7A-8BCE-31A8821B1FA7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{70261EE2-06F6-4357-B9F1-D6BE5F309327}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PublisherName">
+      <DTS:VariableValue
+        DTS:DataType="8">WODS</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F05D00DF-1BE0-4676-B688-4388B580C036}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubStartMsg">
+      <DTS:VariableValue
+        DTS:DataType="8">Publishing gas loader trans data from Wods started</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1EBDC90B-614B-4D94-A77D-EF2862C1021F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubStatus">
+      <DTS:VariableValue
+        DTS:DataType="8">WODS published the Tidelands Tickets data successfully</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6823CF39-7F7D-49A1-8F6D-2FBA17A51283}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RecCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{29C967C7-4890-4C5F-AAE9-AB57CA587D66}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TrackID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BAD7A2EA-2485-46AA-8FB7-267C0FC35553}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT [bol]      ,[driver]      ,[driver_bol]      ,[start_Date]      ,[stop_time]      ,[customer_id]      ,[truck_num]      ,[gross_volume]      ,[fw_temp]      ,[totalizer_gov]      ,[fw_press]      ,[trailer1]      ,[trailer2]  FROM [WODS].[dbo].[tb_TD_XYTruckTickets]&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="XSPOCInputSQLQuery">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT [bol]      ,[driver]      ,[driver_bol]      ,[start_Date]      ,[stop_time]      ,[customer_id]      ,[truck_num]      ,[gross_volume]      ,[fw_temp]      ,[totalizer_gov]      ,[fw_press]      ,[trailer1]      ,[trailer2]  FROM [WODS].[dbo].[tb_TD_XYTruckTickets]</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ArchiveTransformedXML"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{46E36F9F-39A5-4B1B-B93B-19CAF7001C6A}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ArchiveTransformedXML"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_d5c5a91504b64450a59c853eb2aca8e3"
+          VSTAMajorVersion="14"
+          VSTAMinorVersion="0"
+          Language="CSharp"
+          ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
+          ReadWriteVariables="User::ArchiveXMLPath">
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="ST_d5c5a91504b64450a59c853eb2aca8e3.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{c93ca91a-35e9-4eaf-b93e-7badfec2fe4d}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_d5c5a91504b64450a59c853eb2aca8e3</RootNamespace>
+    <AssemblyName>ST_d5c5a91504b64450a59c853eb2aca8e3</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+         <Generator>ResXFileCodeGenerator</Generator>
+         <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+             <AutoGen>True</AutoGen>
+         <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+         <Generator>SettingsSingleFileGenerator</Generator>
+         <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+         <AutoGen>True</AutoGen>
+         <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+         <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask"
+                           HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}"
+                           ApplicationType="usd"
+                           Language="cs"
+                           TemplatesPath=""
+                           DebugInfoCommandLine=""
+                           DebugInfoWorkingDir=""
+                           IconImageList=""/>
+        <Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex="">
+        </Host>
+        <ProjectClient>
+            <HostIdentifier>SSIS_ST130</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+using System.IO;
+using System.Diagnostics;
+#endregion
+
+namespace ST_e170d566053f49adad87ad10db091500
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+    public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+    {
+        /// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+        public void Main()
+        {
+
+            try
+            {
+                if (Dts.Variables["User::IsArchive"].Value.ToString() == "1" && (Int32)Dts.Variables["User::ArchMsgLength"].Value > 2000000)
+                {
+                    string _outputFolder = Dts.Variables["User::ArchiveXMLPath"].Value.ToString();
+                    string _fileName = Dts.Variables["User::TrackID"].Value.ToString();
+                    string _outFilePath = System.IO.Path.Combine(_outputFolder, string.Format("{0}.{1}.xml", _fileName, DateTime.Now.ToString("yyyyMMddHHmmss")));
+                    Dts.Variables["User::ArchiveXMLPath"].Value = _outFilePath;
+                    System.Text.Encoding e = System.Text.Encoding.Default;
+                    if (Directory.Exists(_outputFolder))
+                    {
+                        using (System.IO.StreamWriter file = new System.IO.StreamWriter(System.IO.File.Open(_outFilePath, System.IO.FileMode.Create), e))
+                        {
+                            file.Write(Dts.Variables["User::FormattedMsg"].Value.ToString());
+                        }
+                    }
+                    else
+                    {
+                        //System.Diagnostics.EventLog.WriteEntry(Dts.Variables["User::PkgName"].Value.ToString(),  "Folder Path does not exists: " + Dts.Variables["User::ArchiveXMLPath"].Value.ToString(), System.Diagnostics.EventLogEntryType.Error, 100);
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //string source = "SSISPkgErrors";
+                //EventLog systemEventLog = new EventLog("System");
+                //if (!EventLog.SourceExists(source))
+                //{
+                //    EventLog.CreateEventSource(source, "System");
+                //}
+
+                //EventLog.WriteEntry(source, Dts.Variables["User::PkgName"].Value.ToString() + " : Error Message:: "+ ex.Message.ToString(), System.Diagnostics.EventLogEntryType.Error, 100);
+            }
+
+
+
+            Dts.TaskResult = (int)ScriptResults.Success;
+        }
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>ST_d5c5a91504b64450a59c853eb2aca8e3</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>ST_d5c5a91504b64450a59c853eb2aca8e3</msb:DisplayName>
+		<msb:ProjectId>{A22ED5B1-9229-4594-B995-A2FFADC9D45D}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_d5c5a91504b64450a59c853eb2aca8e3.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Settings.get_Default():ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Sett" +
+    "ings")]
+
+namespace ST_d5c5a91504b64450a59c853eb2aca8e3.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_d5c5a91504b64450a59c853eb2aca8e3")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_d5c5a91504b64450a59c853eb2aca8e3")]
+[assembly: AssemblyCopyright("Copyright @  2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_d5c5a91504b64450a59c853eb2aca8e3.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <BinaryItem
+            Name="ST_d5c5a91504b64450a59c853eb2aca8e3.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAKKAEVsAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAajEA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABgxAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAcBEAAAAgAAAAEgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABM
+MQAAAAAAAEgAAAACAAUAMCIAADAOAAABAAAAAAAAAGAwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBgA3AQAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKbxQAAApyIQAAcCgVAAAKOfcAAAACKBAAAApvEQAACnIlAABwbxIAAApvEwAACqUgAAABIICE
+HgA+zgAAAAIoEAAACm8RAAAKck0AAHBvEgAACm8TAAAKbxQAAAoCKBAAAApvEQAACnJ3AABwbxIA
+AApvEwAACm8UAAAKCiVykwAAcAYoFgAACg0SA3KrAABwKBcAAAooGAAACigZAAAKCwIoEAAACm8R
+AAAKck0AAHBvEgAACgdvGgAACigbAAAKDCgcAAAKLEMHGCgdAAAKCHMeAAAKEwQRBAIoEAAACm8R
+AAAKcskAAHBvEgAACm8TAAAKbxQAAApvHwAACt4MEQQsBxEEbyAAAArc3gMm3gACKBAAAAoWbyEA
+AAoqAEE0AAACAAAA8QAAACgAAAAZAQAADAAAAAAAAAAAAAAAAAAAACcBAAAnAQAAAwAAABIAAAEe
+AigiAAAKKh4CKCMAAAoqrn4BAAAELR5y7wAAcNADAAACKCQAAApvJQAACnMmAAAKgAEAAAR+AQAA
+BCoafgIAAAQqHgKAAgAABCoafgMAAAQqHgIoJwAACioucwgAAAaAAwAABCoAAEJTSkIBAAEAAAAA
+AAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAFgEAAAjfgAAxAQAAEwGAAAjU3RyaW5ncwAAAAAQCwAA
+ZAEAACNVUwB0DAAAEAAAACNHVUlEAAAAhAwAAKwBAAAjQmxvYgAAAAAAAAACAAABVx2iAQkDAAAA
++gEzABYAAAEAAAArAAAABQAAAAYAAAAJAAAAAQAAACcAAAACAAAAEAAAAAEAAAACAAAAAwAAAAQA
+AAABAAAABAAAAAEAAAABAAAAAAD6AwEAAAAAAAYAkgL8BAYAIQP8BAYA3gHpBA8AcAUAAAYACwKI
+BAYAdQKIBAYAVgKIBAYACAOIBAYAsgKIBAYAywKIBAYAIgKIBAYAPQJiAwoA5gKpAwoATwGpAwYA
+WQMTBgYA6QA2BAYAxARYAAYAmgQ2BAYAPQQ2BAYAwQHpBAYA8QU2BAYAtAQcBQYApARzBA4AiwHk
+Aw4A8gHkAw4AawFeBAYApgH8BAoA0gOpAxIAsgXyABIAqwDyAAYAfgM2BAYAJQA2BAYAhQNYAAYA
+NAZYAAYA5ABYAAYAIgRYAAYAogBYAAYAJgRYAAYA0QRYAAYAtAA2BAYAGgE2BAYAwAA2BAYAKwaI
+BAAAAABPAAAAAAABAAEAAQAQAFMEAQA5AAEAAQAAABAAIwV/BVUAAQADAAABEAC8BX8FaQADAAcA
+AwEAANUFAABNAAQACgARAEIEsAARAD8BtAARAJIAuAAGBoEAvABWgMUFvwBWgB8BvwBQIAAAAACG
+AFkEBgABAMghAAAAAIYY3AQGAAEA0CEAAAAAgxjcBAYAAQDYIQAAAACTCLAEwwABAAQiAAAAAJMI
+JwHIAAEACyIAAAAAkwgzAc0AAQATIgAAAACWCPgF0wACABoiAAAAAIYY3AQGAAIAIiIAAAAAkRji
+BNgAAgAAAAEAUwMJANwEAQARANwEBgAZANwECgApANwEEAAxANwEEAA5ANwEEABBANwEEABJANwE
+EABRANwEEABZANwEEABhANwEEABpANwEBgChANwEBgDJANwEFQDZANwEBgBxAM0FJgDhAK4FKwDp
+AC0EMADxAD8DNgCpAHwDOgD5AD4GPgCBAB8GRACBAHwDSQD5AOoFTgAJARIBVQDxAEkDWwB5APgF
+YAARAeMFZQAZAU4EagCJANwEdAA5AaABEABBAYMBBgDhAAQGAQBxANwEBgCpANwEBgBJAdIAfQBJ
+AScGhgCxANwEjADRANwEBgAIABQApgAIABgAqwApAHMAEwEuAAsA6wAuABMA9AAuABsAEwEuACMA
+HAEuACsARQEuADMARQEuADsARQEuAEMAHAEuAEsASwEuAFMARQEuAFsAYgFDAGMAqwBJAHMAEwFh
+AHsAqwBjAGsAqwAbAAMAAQAEAAMAAAC0BNwAAABHAeEAAAD8BeYAAgAEAAMAAgAFAAUAAQAGAAUA
+AgAHAAcABIAAAAEAAABGGtlIAAAAAAAAKwAAAAQAAAAAAAAAAAAAAJQAiQAAAAAADQAAAAAAAAAA
+AAAAnQCKAwAAAAAEAAAAAAAAAAAAAACUADYEAAAAAA0AAAAAAAAAAAAAAJ0AYgAAAAAAAAAAAAEA
+AAAtBQAABQACAAAAAFNUX2UxNzBkNTY2MDUzZjQ5YWRhZDg3YWQxMGRiMDkxNTAwAEludDMyAFNU
+X2Q1YzVhOTE1MDRiNjQ0NTBhNTljODUzZWIyYWNhOGUzADxNb2R1bGU+AFN5c3RlbS5JTwBNaWNy
+b3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBtc2NvcmxpYgBkZWZhdWx0SW5zdGFu
+Y2UARmlsZU1vZGUAVmFyaWFibGUASURpc3Bvc2FibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlw
+ZUZyb21IYW5kbGUARmlsZQBEYXRlVGltZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50aW1l
+AENvbWJpbmUAVHlwZQBGYWlsdXJlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3Vs
+dHVyZQBWU1RBUlRTY3JpcHRPYmplY3RNb2RlbEJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UA
+RGlzcG9zZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBXcml0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJp
+YnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRp
+dG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFk
+ZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJh
+dGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVs
+YXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJp
+Z2h0QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNv
+bXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAZ2V0X1ZhbHVlAHNl
+dF9WYWx1ZQB2YWx1ZQBFbmNvZGluZwBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5n
+AFBhdGgATWljcm9zb2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxTZXJ2ZXIu
+RHRzLlRhc2tzLlNjcmlwdFRhc2sAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBvbmVudE1v
+ZGVsAFNUX2Q1YzVhOTE1MDRiNjQ0NTBhNTljODUzZWIyYWNhOGUzLmRsbABGaWxlU3RyZWFtAGdl
+dF9JdGVtAFN5c3RlbQBFbnVtAHJlc291cmNlTWFuAE9wZW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29u
+ZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBFeGNlcHRp
+b24AQ3VsdHVyZUluZm8AZ2V0X1Jlc291cmNlTWFuYWdlcgBTdHJlYW1Xcml0ZXIAVGV4dFdyaXRl
+cgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVy
+U2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTVF9kNWM1YTkxNTA0YjY0NDUwYTU5Yzg1M2ViMmFj
+YThlMy5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU1RfZDVj
+NWE5MTUwNGI2NDQ1MGE1OWM4NTNlYjJhY2E4ZTMuUHJvcGVydGllcwBnZXRfVmFyaWFibGVzAFNl
+dHRpbmdzAFN1Y2Nlc3MAZ2V0X0R0cwBTY3JpcHRSZXN1bHRzAEV4aXN0cwBGb3JtYXQAT2JqZWN0
+AGdldF9EZWZhdWx0AHNldF9UYXNrUmVzdWx0AFN5c3RlbS5UZXh0AGdldF9Ob3cAZ2V0X0Fzc2Vt
+Ymx5AERpcmVjdG9yeQBvcF9FcXVhbGl0eQAAAAAfVQBzAGUAcgA6ADoASQBzAEEAcgBjAGgAaQB2
+AGUAAAMxAAAnVQBzAGUAcgA6ADoAQQByAGMAaABNAHMAZwBMAGUAbgBnAHQAaAAAKVUAcwBlAHIA
+OgA6AEEAcgBjAGgAaQB2AGUAWABNAEwAUABhAHQAaAAAG1UAcwBlAHIAOgA6AFQAcgBhAGMAawBJ
+AEQAABd7ADAAfQAuAHsAMQB9AC4AeABtAGwAAB15AHkAeQB5AE0ATQBkAGQASABIAG0AbQBzAHMA
+ACVVAHMAZQByADoAOgBGAG8AcgBtAGEAdAB0AGUAZABNAHMAZwAAcVMAVABfAGQANQBjADUAYQA5
+ADEANQAwADQAYgA2ADQANAA1ADAAYQA1ADkAYwA4ADUAMwBlAGIAMgBhAGMAYQA4AGUAMwAuAFAA
+cgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAAAANO8BeprjV0mb3nTRVBLH
+1wAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERYQoHBQ4OEj0RQRJFBCAAEnEEIAASdQUgARJ5HAMg
+ABwDIAAOBQACAg4OBAAAEUEEIAEODgYAAw4OHBwFAAIODg4EIAEBHAQAABI9BAABAg4JAAISgJEO
+EYCVCCACARKAmRI9CAABEoClEYCpBSAAEoCtByACAQ4SgK0It3pcVhk04IkIiYRdzYCAzJEEAAAA
+AAQBAAAAAwYSWQMGEl0DBhIQAgYIAwYRFAQAABJZBAAAEl0FAAEBEl0EAAASEAMAAAEECAASWQQI
+ABJdBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAA
+KAEAI1NUX2Q1YzVhOTE1MDRiNjQ0NTBhNTljODUzZWIyYWNhOGUzAAAFAQAAAAAWAQARQ29weXJp
+Z2h0IEAgIDIwMTgAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNQEAVA4URnJhbWV3b3Jr
+RGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC41tAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVz
+b3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJl
+PW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNl
+cy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAEAxAAAAAAAAAAAAAFox
+AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABMMQAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29y
+ZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
+AEgAAABYQAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
+AAAAAL0E7/4AAAEAAAABANlIRhoAAAEA2UhGGj8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
+bgAAAAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAw
+ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
+bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
+AAAAUwBUAF8AZAA1AGMANQBhADkAMQA1ADAANABiADYANAA0ADUAMABhADUAOQBjADgANQAzAGUA
+YgAyAGEAYwBhADgAZQAzAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
+ADYANwAyADYALgAxADgANgA0ADkAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
+UwBUAF8AZAA1AGMANQBhADkAMQA1ADAANABiADYANAA0ADUAMABhADUAOQBjADgANQAzAGUAYgAy
+AGEAYwBhADgAZQAzAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQA
+AABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAxADgAAAAqAAEAAQBMAGUAZwBhAGwAVABy
+AGEAZABlAG0AYQByAGsAcwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4A
+YQBtAGUAAABTAFQAXwBkADUAYwA1AGEAOQAxADUAMAA0AGIANgA0ADQANQAwAGEANQA5AGMAOAA1
+ADMAZQBiADIAYQBjAGEAOABlADMALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0A
+ZQAAAAAAUwBUAF8AZAA1AGMANQBhADkAMQA1ADAANABiADYANAA0ADUAMABhADUAOQBjADgANQAz
+AGUAYgAyAGEAYwBhADgAZQAzAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAA
+MQAuADAALgA2ADcAMgA2AC4AMQA4ADYANAA5AAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
+AGUAcgBzAGkAbwBuAAAAMQAuADAALgA2ADcAMgA2AC4AMQA4ADYANAA5AAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAGwxAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Generate GUID's"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4AAA5124-1D2F-40BD-AB57-6C5C61855967}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generate GUID's"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:SqlStatementSource="select convert(nvarchar(100), newid() ) IFaceBatchUID, convert(nvarchar(100), newid() ) TrackID"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="IFaceBatchUID"
+            SQLTask:DtsVariableName="User::IFaceBatchID" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="TrackID"
+            SQLTask:DtsVariableName="User::TrackID" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Getting ProCount xml"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{EA16AFF7-116E-41B5-A1A4-CFC4B20EE345}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Getting ProCount xml"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A1EEA084-00AD-419A-96DF-926F6E4E7CDB}"
+          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;SELECT &#xA; (SELECT ProductTypeDescription FROM ProductTypeTb WITH (NOLOCK) WHERE MerrickID = cmd.ProductType) AS ProductType&#xA;, cmd.DispositionCode&#xA;, (SELECT DispositionCodeDescription FROM DispositionCodeTb WITH (NOLOCK) WHERE ProductTypeID = cmd.ProductType AND MerrickID = cmd.DispositionCode) AS DispositionCodeDescription&#xA;, cmd.sourcetype&#xA;, cmd.MerrickID AS completionID&#xA;, cmd.GatheringSystemID&#xA;--, gs.GatheringSystemName&#xA;, a.AreaID&#xA;, a.AreaName&#xA;, (SELECT GatheringSystemName FROM GatheringSystemTb WITH (NOLOCK) WHERE GatheringSystemMerrickID = cmd.GatheringSystemID) AS GatheringSystemName &#xA;, cmd.RecordDate AS activity_date&#xA;, cmd.AllocActGravity AS gravity&#xA;, SUM(cmd.AllocActOilVol) AS BBL&#xA;, SUM(cmd.AllocActNGLVol) AS GAL&#xA;, SUM(cmd.AllocActGasVolMCF) AS MCF&#xA;, SUM(cmd.AllocActGasVolMMBTU) AS MMBTU&#xA;, cmd.AllocActBTUFactor AS BTU_content&#xA;, cmd.AllocActPressureBase AS BTU_pressure_base&#xA;, cmd.AllocActWetDryFlag AS BTU_wet_dry_ind&#xA;, ISNULL(arg.WellPlusCompletionName,(SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE cmd.merrickid = merrickid)) AS WellPlusCompletionName&#xA;, arg.BusinessEnitity AS processing_party&#xA;, LTRIM(RTRIM(arg.locationid)) AS rc_user_key&#xA;, arg.LocAccountNumber1 AS Arg_Det_Sequence&#xA;, arg.LocAccountNumber2 AS Agreement_ID&#xA;, arg.decktype&#xA;, 'O' AS trans_copy&#xA;--, cmd.AllocationDateStamp&#xA;, gs.AccountantPersonID&#xA;, cmd.AllocationDateStamp&#xA;, gsc.UserDateStamp as GatheringSystemLockDate&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gsc.UserID) AS GatheringSystemLockName&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gs.AccountantPersonID) AS GatheringSystemAccountantName&#xA;FROM CompletionMonthlyDispTb cmd WITH (NOLOCK) &#xA;INNER JOIN CompletionMonthlyTb cm WITH (NOLOCK) ON cmd.MerrickID = cm.merrickID AND cmd.RecordDate = cm.RecordDate &#xA;INNER JOIN (SELECT &#xA;&#x9;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;&#x9;, odi.activeflag&#xA;&#x9;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;&#x9;, odi.StartDate&#xA;&#x9;&#x9;&#x9;&#x9;, odi.EndDate&#xA;&#x9;&#x9;&#x9;&#x9;, odi.WellPlusCompletionName&#xA;&#x9;&#x9;&#x9;&#x9;,(SELECT [Description] FROM BusinessEntityTb WITH (NOLOCK) WHERE merrickid = be.MerrickID) BusinessEnitity&#xA;&#x9;&#x9;&#x9;&#x9;, be.locationid&#xA;&#x9;&#x9;&#x9;&#x9;, be.locaccountnumber1&#xA;&#x9;&#x9;&#x9;&#x9;, be.locaccountnumber2&#xA;&#x9;&#x9;&#x9;FROM BusinessEntityLocationTb be WITH (NOLOCK) &#xA;&#x9;&#x9;&#x9;INNER JOIN &#x9;(SELECT &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  odi.decktype&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, od.activeflag&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, MAX(od.StartDate) AS StartDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;, MAX(od.EndDate) AS EndDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;,(SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE odi.objectmerrickid = merrickid and odi.decktype = 15) WellPlusCompletionName&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;FROM OwnershipDeckTb od WITH (NOLOCK) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;INNER JOIN OwnershipDeckInterestTb odi WITH (NOLOCK) ON od.objectmerrickid = odi.objectmerrickid AND od.ObjectMerrickType = odi.ObjectMerrickType AND od.decktype = odi.decktype AND od.StartDate = odi.StartDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;WHERE odi.decktype = 15 and od.ActiveFlag = 1 and od.ObjectMerrickType = 1 and GETDATE() between od.StartDate and od.EndDate&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;GROUP BY odi.decktype, odi.objectmerrickid, odi.ObjectMerrickType, od.activeflag, odi.ownerbeidloc, odi.OwnerBEID) odi ON be.LocationNumber = odi.ownerbeidloc AND be.merrickid = odi.OwnerBEID) arg ON cmd.MerrickID = arg.objectmerrickid&#xA;LEFT OUTER JOIN AreaTb a WITH (NOLOCK) ON cm.AreaID = a.AreaMerrickID and cm.areaid &lt;&gt; 0&#xA;INNER JOIN GatheringSystemTb gs WITH (NOLOCK) ON cmd.GatheringSystemID = gs.GatheringSystemMerrickID&#xA;INNER JOIN GatheringSystemCloseTb gsc WITH (NOLOCK) ON cmd.GatheringSystemID = gsc.GatheringSystemID and cmd.RecordDate = gsc.RecordMonth&#xA;WHERE cmd.ProductType = 1 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID &gt; 0 &#xA;AND cmd.DispositionCode IN (SELECT MerrickID FROM DispositionCodeTb WHERE ProductTypeID = 1 AND DispositionGrouping = 1) AND gsc.AllocationLockedFlag = 1&#xA;--AND WellPlusCompletionName = 'CRC 8-1'&#xA;GROUP BY cmd.MerrickID, cmd.AllocationDateStamp, gs.GatheringSystemName, a.areaid, a.areaname, cmd.DispositionCode, cmd.GatheringSystemID, &#xA;cmd.AllocationDateStamp, gs.AccountantPersonID, gsc.UserDateStamp, gsc.UserID, cmd.ProductType, cmd.sourcetype, cmd.RecordDate, cmd.AllocActGravity, &#xA;cmd.AllocActBTUFactor, cmd.AllocActPressureBase, cmd.AllocActWetDryFlag, arg.WellPlusCompletionName, &#xA;arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, arg.decktype&#xA; FOR XML PATH ('GasLoaderTicket_Record'), ROOT('GasLoaderTicket_From_ProCount')&#xA;&#xA;))InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA;&#xA;&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::FormattedMsg" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::IsArchive"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert into tbl_PublisherLog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AF0E5DAA-DD18-46C6-B9EE-ADC72FA77EB2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert into tbl_PublisherLog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:SqlStatementSource="EXEC [dbo].[USP_UpsertPublisherLog] &#xA;   @Action = 1&#xA;  ,@TrackID = ?&#xA;  ,@PublisherName = ?&#xA;  ,@ProcessName = ?&#xA;  ,@MsgType = ?&#xA;  ,@ConnType = ?&#xA;  ,@PubStatus = NULL&#xA;  ,@StartMsg = ?&#xA;  ,@EndMsg = NULL&#xA;  ,@FormattedMessage = NULL&#xA;  ,@RecordCount = NULL&#xA;  ,@Description = NULL&#xA;  ,@IFaceBatchUID = NULL&#xA;  ,@PubID =? OUTPUT&#xA;  ,@PubConnID =? OUTPUT&#xA;  ,@IsArchive  = NULL&#xA;  ,@ArchMsgLength = NULL&#xA;  ,@ArchXMLPath = NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TrackID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::PkgName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PublisherName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::MsgType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::ConnType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::PubStartMsg"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::PubID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="7"
+            SQLTask:DtsVariableName="User::PubConnID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert tbl_Errorlog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{043CFA51-58C1-40F4-972F-2407A963BB00}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert tbl_Errorlog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="&#xA;EXEC [dbo].[USP_UpsertErrorLog]&#xA;@Action = 1 &#xA;@IFaceBatchUID = ?,&#xA;@PubID = ?,&#xA;@SubID = NULL,&#xA;@ProcessName = ?,&#xA;@ComponentName = NULL,&#xA;@ProcessType = ?,&#xA;@MsgType = ?,&#xA;@Title = 'Error in the DataFlow task',&#xA;@ErrorRecCount = NULL,&#xA;@ErrorType = NULL,&#xA;@ErrorNumber = NULL,&#xA;@ErrorSeverity = NULL,&#xA;@ErrorMsg = ?,&#xA;@IsReprocess = NULL,&#xA;@ErrorStatus = NULL,&#xA;@MachineName = HOST_NAME(),&#xA;@FormattedMsg = NULL,&#xA;@ErrorTime = GETDATE(),&#xA;@CreatedBy = CURRENT_USER,&#xA;@Description = NULL,&#xA;@SubConnID = NULL,&#xA;@PubConnID = ?,&#xA;@ConnType = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::PkgName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::ProcessType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::MsgType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::IFaceBatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PubID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::PubConnID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="7"
+            SQLTask:DtsVariableName="User::ConnType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::ErrorLogMsg"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ProCount DB to IFaceTable"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{83CA3DA4-8584-4FFE-BD2F-5797949F836B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ProCount DB to IFaceTable"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ProCount DB to IFaceTable\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ProCount DB to IFaceTable\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\ProCount DB to IFaceTable\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransDate]"
+                      name="TransDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubID]"
+                      name="PubID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::PubID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::PubID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransSeq]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransSeq]"
+                      name="TransSeq"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[BatchUID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[BatchUID]"
+                      name="BatchUID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_GUID)("{" + @[User::IFaceBatchID] + "}")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_GUID)("{" + @[User::IFaceBatchID] + "}")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TranStatus]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TranStatus]"
+                      name="TranStatus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubConnID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubConnID]"
+                      name="PubConnID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::PubConnID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::PubConnID]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\ProCount DB to IFaceTable\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="MsgQ Join IFaceCD Data"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::XSPOCInputSQLQuery</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Connections[OleDbConnection]"
+                  connectionManagerID="{DA3D3374-F406-49D5-8FBB-D3B0327695F8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CLGWSQL7.WODS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[bol]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[bol]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[bol]"
+                      name="bol"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[driver]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[driver]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[driver]"
+                      name="driver"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[driver_bol]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[driver_bol]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[driver_bol]"
+                      name="driver_bol"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[start_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[start_Date]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[start_Date]"
+                      name="start_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[stop_time]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[stop_time]"
+                      length="255"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[stop_time]"
+                      name="stop_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[truck_num]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[truck_num]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[truck_num]"
+                      name="truck_num"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[gross_volume]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[gross_volume]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[gross_volume]"
+                      name="gross_volume"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[fw_temp]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[fw_temp]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[fw_temp]"
+                      name="fw_temp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[totalizer_gov]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[totalizer_gov]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[totalizer_gov]"
+                      name="totalizer_gov"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[fw_press]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[fw_press]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[fw_press]"
+                      name="fw_press"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[trailer1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[trailer1]"
+                      length="255"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[trailer1]"
+                      name="trailer1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[trailer2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[trailer2]"
+                      length="255"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[trailer2]"
+                      name="trailer2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[bol]"
+                      dataType="r8"
+                      name="bol" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[driver]"
+                      dataType="r8"
+                      name="driver" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[driver_bol]"
+                      dataType="r8"
+                      name="driver_bol" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[start_Date]"
+                      dataType="dbDate"
+                      name="start_Date" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[stop_time]"
+                      dataType="wstr"
+                      length="255"
+                      name="stop_time" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      dataType="r8"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[truck_num]"
+                      dataType="r8"
+                      name="truck_num" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[gross_volume]"
+                      dataType="r8"
+                      name="gross_volume" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[fw_temp]"
+                      dataType="r8"
+                      name="fw_temp" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[totalizer_gov]"
+                      dataType="r8"
+                      name="totalizer_gov" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[fw_press]"
+                      dataType="r8"
+                      name="fw_press" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[trailer1]"
+                      dataType="wstr"
+                      length="255"
+                      name="trailer1" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].ExternalColumns[trailer2]"
+                      dataType="wstr"
+                      length="255"
+                      name="trailer2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[bol]"
+                      dataType="r8"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[bol]"
+                      name="bol" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[driver]"
+                      dataType="r8"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[driver]"
+                      name="driver" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[driver_bol]"
+                      dataType="r8"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[driver_bol]"
+                      name="driver_bol" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[start_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[start_Date]"
+                      name="start_Date" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[stop_time]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[stop_time]"
+                      name="stop_time" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      dataType="r8"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[truck_num]"
+                      dataType="r8"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[truck_num]"
+                      name="truck_num" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[gross_volume]"
+                      dataType="r8"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[gross_volume]"
+                      name="gross_volume" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[fw_temp]"
+                      dataType="r8"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[fw_temp]"
+                      name="fw_temp" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[totalizer_gov]"
+                      dataType="r8"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[totalizer_gov]"
+                      name="totalizer_gov" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[fw_press]"
+                      dataType="r8"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[fw_press]"
+                      name="fw_press" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[trailer1]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[trailer1]"
+                      name="trailer1" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[trailer2]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[trailer2]"
+                      name="trailer2" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ProCount DB to IFaceTable\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tbl_IFace_TDTruckTickets]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CIDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PubID]"
+                      cachedDataType="i4"
+                      cachedName="PubID"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubID]"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubID]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TransSeq]"
+                      cachedDataType="i4"
+                      cachedName="TransSeq"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransSeq]"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransSeq]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TranStatus]"
+                      cachedDataType="i4"
+                      cachedName="TranStatus"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranStatus]"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TranStatus]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PubConnID]"
+                      cachedDataType="i4"
+                      cachedName="PubConnID"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubConnID]"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubConnID]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedTime]"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BatchUID]"
+                      cachedDataType="guid"
+                      cachedName="BatchUID"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IFaceBatchUID]"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[BatchUID]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TransDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="TransDate"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranDate]"
+                      lineageId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransDate]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[bol]"
+                      cachedDataType="r8"
+                      cachedName="bol"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bol]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[bol]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[driver]"
+                      cachedDataType="r8"
+                      cachedName="driver"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Driver]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[driver]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[start_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="start_Date"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[start_Date]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[driver_bol]"
+                      cachedDataType="r8"
+                      cachedName="driver_bol"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DriverBol]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[driver_bol]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[stop_time]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="stop_time"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stoptime]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[stop_time]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_id]"
+                      cachedDataType="r8"
+                      cachedName="customer_id"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[truck_num]"
+                      cachedDataType="r8"
+                      cachedName="truck_num"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TruckNumber]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[truck_num]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gross_volume]"
+                      cachedDataType="r8"
+                      cachedName="gross_volume"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GrossVolume]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[gross_volume]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fw_temp]"
+                      cachedDataType="r8"
+                      cachedName="fw_temp"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FwTemp]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[fw_temp]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[totalizer_gov]"
+                      cachedDataType="r8"
+                      cachedName="totalizer_gov"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalizerGov]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[totalizer_gov]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fw_press]"
+                      cachedDataType="r8"
+                      cachedName="fw_press"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FwPress]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[fw_press]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[trailer1]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="trailer1"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trailer1]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[trailer1]" />
+                    <inputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[trailer2]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="trailer2"
+                      externalMetadataColumnId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trailer2]"
+                      lineageId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output].Columns[trailer2]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransID]"
+                      dataType="i4"
+                      name="TransID" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransSeq]"
+                      dataType="i4"
+                      name="TransSeq" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IFaceBatchUID]"
+                      dataType="guid"
+                      name="IFaceBatchUID" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranStatus]"
+                      dataType="i4"
+                      name="TranStatus" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranDate]"
+                      dataType="dbTimeStamp"
+                      name="TranDate" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranMsg]"
+                      dataType="nText"
+                      name="TranMsg" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubID]"
+                      dataType="i4"
+                      name="PubID" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubConnID]"
+                      dataType="i4"
+                      name="PubConnID" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedTime]"
+                      dataType="dbTimeStamp"
+                      name="CreatedTime" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
+                      dataType="wstr"
+                      length="100"
+                      name="CreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedTime]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedTime" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedBy]"
+                      dataType="wstr"
+                      length="200"
+                      name="LastModifiedBy" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bol]"
+                      dataType="r8"
+                      name="Bol" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Driver]"
+                      dataType="r8"
+                      name="Driver" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DriverBol]"
+                      dataType="r8"
+                      name="DriverBol" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      dataType="dbDate"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stoptime]"
+                      dataType="wstr"
+                      length="255"
+                      name="stoptime" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                      dataType="r8"
+                      name="CustomerId" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TruckNumber]"
+                      dataType="r8"
+                      name="TruckNumber" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GrossVolume]"
+                      dataType="r8"
+                      name="GrossVolume" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FwTemp]"
+                      dataType="r8"
+                      name="FwTemp" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalizerGov]"
+                      dataType="r8"
+                      name="TotalizerGov" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FwPress]"
+                      dataType="r8"
+                      name="FwPress" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trailer1]"
+                      dataType="wstr"
+                      length="255"
+                      name="Trailer1" />
+                    <externalMetadataColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trailer2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Trailer2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ProCount DB to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ProCount DB to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ProCount DB to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ProCount DB to IFaceTable\Row Count"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::RecCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ProCount DB to IFaceTable\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ProCount DB to IFaceTable\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\ProCount DB to IFaceTable\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ProCount DB to IFaceTable.Paths[Derived Column Output]"
+              endId="Package\ProCount DB to IFaceTable\Row Count.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\ProCount DB to IFaceTable\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\ProCount DB to IFaceTable.Paths[OLE DB Source Output]"
+              endId="Package\ProCount DB to IFaceTable\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\ProCount DB to IFaceTable.Paths[Row Count Output 1]"
+              endId="Package\ProCount DB to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\ProCount DB to IFaceTable\Row Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update tbl_PublisherLog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1B4EC430-DF48-4F2D-A933-C30086F9B10D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update tbl_PublisherLog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="&#xA;EXEC [dbo].[USP_UpsertPublisherLog] &#xA;   @Action = 2&#xA;  ,@TrackID = ?&#xA;  ,@PublisherName = NULL&#xA;  ,@ProcessName = NULL&#xA;  ,@MsgType = NULL&#xA;  ,@ConnType = NULL&#xA;  ,@PubStatus = ?&#xA;  ,@StartMsg = NULL&#xA;  ,@EndMsg =  ?&#xA;  ,@FormattedMessage = NULL&#xA;  ,@RecordCount = ?&#xA;  ,@Description = NULL&#xA;  ,@IFaceBatchUID = ?&#xA;  ,@PubID = NULL&#xA;  ,@PubConnID = NULL&#xA;  ,@IsArchive  = NULL&#xA;  ,@ArchMsgLength = NULL&#xA;  ,@ArchXMLPath = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TrackID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::RecCount"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="131"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::IFaceBatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::PubEndMsg"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PubStatus"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::ArchiveXMLPath"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update XSPOC XML tbl_PublisherLog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B0AD324B-C922-4235-B466-2016F726AD06}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update XSPOC XML tbl_PublisherLog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="&#xA;EXEC [dbo].[USP_UpsertPublisherLog] &#xA;   @Action = 2&#xA;  ,@TrackID = ?&#xA;  ,@PublisherName = NULL&#xA;  ,@ProcessName = NULL&#xA;  ,@MsgType = NULL&#xA;  ,@ConnType = NULL&#xA;  ,@PubStatus = NULL&#xA;  ,@StartMsg = NULL&#xA;  ,@EndMsg =  NULL&#xA;  ,@FormattedMessage = ?&#xA;  ,@RecordCount = NULL&#xA;  ,@Description = NULL&#xA;  ,@IFaceBatchUID = NULL&#xA;  ,@PubID = NULL&#xA;  ,@PubConnID = NULL&#xA;  ,@IsArchive  = ?&#xA;  ,@ArchMsgLength = ? OUTPUT&#xA;  ,@ArchXMLPath = NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TrackID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::FormattedMsg"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::IsArchive"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::ArchMsgLength"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{21ECFE2B-47BF-482F-B9B1-6C629C16DAB8}"
+      DTS:From="Package\Generate GUID's"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert into tbl_PublisherLog" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{799F51BE-DCDA-420A-B822-BE646B5D9E39}"
+      DTS:From="Package\Insert into tbl_PublisherLog"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Update XSPOC XML tbl_PublisherLog" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{BE6C5180-A691-4001-BD2F-FC6FADB60E26}"
+      DTS:From="Package\Update XSPOC XML tbl_PublisherLog"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\ArchiveTransformedXML"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{93A7BCEB-C842-42BD-A95C-CD6D531C8B10}"
+      DTS:From="Package\ArchiveTransformedXML"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\ProCount DB to IFaceTable"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{419A7D5B-F203-49E2-BEF5-6DC1FE32BE0C}"
+      DTS:From="Package\ProCount DB to IFaceTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Update tbl_PublisherLog" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{D733BEAF-8125-4031-9883-D72A208B8AA1}"
+      DTS:From="Package\ProCount DB to IFaceTable"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Insert tbl_Errorlog"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="193,43"
+          Id="Package\ArchiveTransformedXML"
+          TopLeft="278.749995846301,305.06666121165" />
+        <NodeLayout
+          Size="159,43"
+          Id="Package\Generate GUID's"
+          TopLeft="297.499995566905,13.1666663954656" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Getting ProCount xml"
+          TopLeft="601.083328980952,160.033330489596" />
+        <NodeLayout
+          Size="209,43"
+          Id="Package\Insert into tbl_PublisherLog"
+          TopLeft="271.666662618518,89.1333317216238" />
+        <NodeLayout
+          Size="168,43"
+          Id="Package\Insert tbl_Errorlog"
+          TopLeft="577.49999139458,375.399995862246" />
+        <NodeLayout
+          Size="207,43"
+          Id="Package\ProCount DB to IFaceTable"
+          TopLeft="279.333329185843,378.866659909884" />
+        <NodeLayout
+          Size="213,43"
+          Id="Package\Update tbl_PublisherLog"
+          TopLeft="267.916662674397,448.06665865461" />
+        <NodeLayout
+          Size="252,43"
+          Id="Package\Update XSPOC XML tbl_PublisherLog"
+          TopLeft="255.416662935168,190.566662490169" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="376.583329092711,56.1666663954656">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.9666653261582"
+              Start="0,0"
+              End="0,25.4666653261582">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.4666653261582" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="378.791662776843,132.133331721624">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.4333307685452"
+              Start="0,0"
+              End="0,50.9333307685452">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.9333307685452" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="378.333329390734,233.566662490169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71.499998721481"
+              Start="0,0"
+              End="0,63.999998721481">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.999998721481" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,26.1953118607405,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="379.041662516072,347.733327878317">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.1333320315673"
+              Start="0,0"
+              End="0,23.6333320315673">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6333320315673" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,6.01197851578365,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="382.666662519176,421.533326576551">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.08333317811264,26.5333320780593"
+              Start="0,0"
+              End="-8.08333317811264,19.0333320780593">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.26666603902967" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.26666603902967"
+                    Point2="0,13.2666660390297"
+                    Point3="-4,13.2666660390297" />
+                  <mssgle:LineSegment
+                    End="-4.08333317811264,13.2666660390297" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.08333317811264,13.2666660390297"
+                    Point2="-8.08333317811264,13.2666660390297"
+                    Point3="-8.08333317811264,17.2666660390297" />
+                  <mssgle:LineSegment
+                    End="-8.08333317811264,19.0333320780593" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="485.99999585251,398.466661219398">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.4999955420703,0"
+              Start="0,0"
+              End="83.9999955420703,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="83.9999955420703,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="26.7586501147852,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ProCount DB to IFaceTable">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="197,43"
+          Id="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data"
+          TopLeft="325.41666181758,53.7333323725064" />
+        <NodeLayout
+          Size="131,43"
+          Id="Package\ProCount DB to IFaceTable\Row Count"
+          TopLeft="337.916661631316,233.999995815754" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\ProCount DB to IFaceTable\Derived Column"
+          TopLeft="327.49999511987,138.666664187114" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\ProCount DB to IFaceTable\OLE DB Destination"
+          TopLeft="324,373" />
+        <EdgeLayout
+          Id="Package\ProCount DB to IFaceTable.Paths[Row Count Output 1]"
+          TopLeft="406.458330815658,276.999995815754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96.000004184246"
+              Start="0,0"
+              End="0,88.500004184246">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.500004184246" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ProCount DB to IFaceTable.Paths[OLE DB Source Output]"
+          TopLeft="423.91666181758,96.7333323725064">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.41666669771,41.9333318146076"
+              Start="0,0"
+              End="-19.41666669771,34.4333318146076">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9666659073038" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.9666659073038"
+                    Point2="0,20.9666659073038"
+                    Point3="-4,20.9666659073038" />
+                  <mssgle:LineSegment
+                    End="-15.41666669771,20.9666659073038" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.41666669771,20.9666659073038"
+                    Point2="-19.41666669771,20.9666659073038"
+                    Point3="-19.41666669771,24.9666659073038" />
+                  <mssgle:LineSegment
+                    End="-19.41666669771,34.4333318146076" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ProCount DB to IFaceTable.Paths[Derived Column Output]"
+          TopLeft="403.958328375593,180.666664187114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.33333162864"
+              Start="0,0"
+              End="0,45.83333162864">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.83333162864" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ProCount DB to IFaceTable\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ProCount DB to IFaceTable\MsgQ Join IFaceCD Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
