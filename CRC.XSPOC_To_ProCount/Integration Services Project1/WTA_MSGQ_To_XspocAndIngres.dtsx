@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DLG55XPW52"
   DTS:CreatorName="CALNET\pydimarb"
-  DTS:DTSID="{19B67092-8194-488F-93DA-F014F3E430BC}"
+  DTS:DTSID="{34CBFD8F-B901-4128-9FDA-ED8EDF1EE049}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="13.0.2165.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="WTA_MSGQ_To_XspocAndIngres"
   DTS:PackageType="5"
-  DTS:VersionBuild="454"
-  DTS:VersionGUID="{D9FA5461-2678-4F36-B4ED-E045F162A220}">
+  DTS:VersionBuild="455"
+  DTS:VersionGUID="{E2F50B9F-761D-46BD-B51D-EF17CB3505BF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ONECALP.xxcrc_procount_intf]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{506D6F1C-10F2-4C80-B5B9-B91FC6BF36C5}"
+      DTS:DTSID="{93D7A439-C811-4BB4-A1E8-FE3DDD3AF0B0}"
       DTS:ObjectName="ONECALP.xxcrc_procount_intf">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">"Data Source=ONECALP;User ID=xxcrc_procount_intf;Password=PROCOUNT2019CRC;Provider=OraOLEDB.Oracle.1;Persist Security Info=True"</DTS:PropertyExpression>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADYcoY20BmDejEu/3GD5ePBAAAAAASAAACgAAAAEAAAADSc5jI3KdVH0EKHVO485jYgAAAAHl124NsrfUPnYjrSGVr3hQs9F5kWRVugv1zRjYLNz5UUAAAAzMp8V0/6S5Iin+F4urUpPvHPByw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAcvAH6ezX8UeFXQ47B828YAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADM9ndj4plLvSYtDMao9bTTAAAAAASAAACgAAAAEAAAABeuKDk45YhQg3cIbDr49AggAAAASvTy73a1CjxB9oRoVfepp9s2xtLzn75bkjbOGuHnr1YUAAAAQXftGq5iIDWzNlPUG7pj+1OxLCs</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -38,7 +38,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{DADB2E1C-3B4A-4AF1-B2A7-E62DBAB396B2}"
+      DTS:DTSID="{F2098FEA-0836-454B-AFC1-4C089E7055F7}"
       DTS:ObjectName="ADO_NET_CIDS_DatabaseName">
       <DTS:Property
         DTS:DataType="8"
@@ -47,7 +47,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{C1B2E572-AE94-46B3-BA2A-8F2C548E8DB4}"
+      DTS:DTSID="{1F672625-7B9A-4EC2-8DC5-48303B702C03}"
       DTS:ObjectName="ADO_NET_CIDS_ServerName">
       <DTS:Property
         DTS:DataType="8"
@@ -56,7 +56,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{4D256BC9-7728-490C-8053-26BD1965B0A1}"
+      DTS:DTSID="{09EF06B2-65AF-42A2-ABA1-67AB886788B1}"
       DTS:ObjectName="ADO_NET_XSPOC_DatabaseName">
       <DTS:Property
         DTS:DataType="8"
@@ -65,7 +65,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{19E98AC4-119C-4300-8E79-BE68794CC291}"
+      DTS:DTSID="{1BC738F7-AAEC-4A31-BECE-7D9E5D171520}"
       DTS:ObjectName="ADO_NET_XSPOC_ServerName">
       <DTS:Property
         DTS:DataType="8"
@@ -74,7 +74,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{9A5D2958-1F36-4D3A-AFCB-6322455F3C41}"
+      DTS:DTSID="{A1A34460-BF79-43D1-9208-05DEB134A9F1}"
       DTS:ObjectName="CIDS_DataseName">
       <DTS:Property
         DTS:DataType="8"
@@ -83,7 +83,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{4265B9E7-549E-46FF-81F9-2DF1BA9476A5}"
+      DTS:DTSID="{163E984C-3C3E-44C2-A953-546EFB4DFE55}"
       DTS:ObjectName="CIDS_ServerName">
       <DTS:Property
         DTS:DataType="8"
@@ -92,7 +92,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{9CAB99ED-D12A-493F-A8AB-A56CBFA0C265}"
+      DTS:DTSID="{C80BE5D9-6982-418C-B028-71E3F3D7A464}"
       DTS:ObjectName="ProCount_DatabaseName">
       <DTS:Property
         DTS:DataType="8"
@@ -101,7 +101,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{6B22CDFE-50DE-4CFF-B21B-D332AA56B82E}"
+      DTS:DTSID="{32D8D73C-8D2E-4D76-90E8-217C4BB0880D}"
       DTS:ObjectName="ProCount_ServerName">
       <DTS:Property
         DTS:DataType="8"
@@ -110,7 +110,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{2DCA3322-5828-400B-A694-4399D03ABD62}"
+      DTS:DTSID="{613A1946-316E-4A34-AC36-10B7392059F7}"
       DTS:ObjectName="XPOC_Integrations_DataBaseName">
       <DTS:Property
         DTS:DataType="8"
@@ -119,7 +119,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{AC5F7B82-B950-4502-A946-C7E6B74653F3}"
+      DTS:DTSID="{CD3706FF-1F0B-484F-A42B-DF025269A0DC}"
       DTS:ObjectName="XPOC_Integrations_ServerName">
       <DTS:Property
         DTS:DataType="8"
@@ -129,7 +129,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8D9782D6-67F4-4418-BB4B-9935A81E8866}"
+      DTS:DTSID="{39A82A3A-8755-4302-B944-B1AD0B91BBEC}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ArchFormattedMsg">
@@ -139,7 +139,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{126C42D0-AA7C-4839-B9D7-B5CD4FF0D232}"
+      DTS:DTSID="{C557CD8F-6144-419C-A37B-917A58528F8C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ArchiveXMLPath">
@@ -148,7 +148,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C4922B83-CB07-4D4A-9785-01CF0C065B80}"
+      DTS:DTSID="{922385DA-1EE0-47C5-9B55-50B2B7F86C34}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ArchMsgLength">
@@ -157,7 +157,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1A176766-E03A-4801-9B34-7693E5B186E2}"
+      DTS:DTSID="{E4303249-FDBB-4646-93A1-4F37759F8B18}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="BatchIDsToProcess">
@@ -175,7 +175,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{83DDA0E7-F87C-47ED-8401-919A4F47BE80}"
+      DTS:DTSID="{AAAE33B2-A786-43E0-9C0E-89140BD6AD82}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="CurrentIfaceBatchID">
@@ -185,7 +185,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C342EC61-F3D1-49F4-9E38-326EB722DFB0}"
+      DTS:DTSID="{44A6477E-F904-4090-8C29-360F33E0D87C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="EndMsg">
@@ -194,7 +194,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{17132D73-4003-4892-A1BA-03964E724906}"
+      DTS:DTSID="{1E49CB49-31B0-47A9-B7B5-9E450E4FBAE6}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ErrorLogID">
@@ -203,7 +203,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0165A1C9-786A-4172-86BE-5F13AD0D612F}"
+      DTS:DTSID="{FDA799F5-2220-464A-AED3-8ED9F96B8921}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ErrorMsg">
@@ -212,7 +212,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0D1996D2-897A-4791-8023-04026A8A314D}"
+      DTS:DTSID="{AC230AFF-467B-4BB0-A277-A88FC81ED4D1}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="FailRecCount">
@@ -221,7 +221,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0F109C12-A855-493B-8872-05013F5FF446}"
+      DTS:DTSID="{7F29DC33-546D-4C2C-8F54-17E95BD7559A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="FailUpdateRecCount">
@@ -230,7 +230,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3AF3BAA8-9DFA-4874-9A70-253F836C818A}"
+      DTS:DTSID="{2A7DFE0C-0473-4C4D-BA63-4E81120B99AA}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FormattedMsg">
@@ -240,7 +240,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{E8B8B363-4BBF-4A67-AFB8-2A13034BCE6A}"
+      DTS:DTSID="{7B83D741-AF94-46AD-B3D6-3A292AC285C1}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="IFaceBatchIDXml">
@@ -250,7 +250,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7669D860-6065-4B2E-96BE-6401CBCA2157}"
+      DTS:DTSID="{35E06D60-C6B3-4F20-9D3D-62DAF23E5572}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="IFaceTblName">
@@ -259,7 +259,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{1A1A23DF-89B2-44A6-98BD-803703ED13C0}"
+      DTS:DTSID="{0E91548D-FC93-43E7-9CDF-B794C68DCE14}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="IsArchiveMsg">
@@ -268,7 +268,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EB232A50-89FE-44E4-917E-1E4847BA96DC}"
+      DTS:DTSID="{E7BF3388-DC17-4D58-8373-EF2EA73B99B4}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="IsBRValid">
@@ -277,7 +277,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DD48628F-8F5D-4F82-8ADB-F553EEB79F18}"
+      DTS:DTSID="{6B9290ED-1B21-4AD2-9245-02684DEFD4F1}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LookupRecCount">
@@ -286,7 +286,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{03D4739E-7BCB-4F66-AFAE-B7D1E75A03EE}"
+      DTS:DTSID="{16CAD544-7090-4AF7-9973-A2E7E12A96A8}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="MsgType">
@@ -295,7 +295,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DFACBF76-5B89-4A4D-8A75-E4D8F97F967B}"
+      DTS:DTSID="{FD35E57D-0CB8-4B33-BA28-1B7174F775DB}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PkgName">
@@ -304,7 +304,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{999F5656-A505-416B-9A32-1D6A8DC97277}"
+      DTS:DTSID="{987F896F-F39A-4444-AF96-2D9CE0D7148B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ProcessType">
@@ -313,7 +313,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{11B9E135-F73B-4731-AE28-E7D4CE9A73B5}"
+      DTS:DTSID="{AD71AB72-6C4C-4CF1-A7B7-5F68C3BCBDA2}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PubID">
@@ -322,7 +322,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2CEC2436-5DFC-4F78-8B4C-2A1408015472}"
+      DTS:DTSID="{C3522B85-0D44-4D14-988F-A278C8D08F56}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="StartMsg">
@@ -331,7 +331,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5AAE7DDD-1123-4A52-95D1-DD2CF0B7DB2F}"
+      DTS:DTSID="{2AB93844-C1DD-4092-B6EA-C9082168EDF4}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="SubID">
@@ -340,7 +340,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D21B221C-6EA4-4ADC-9267-C51134ADE10C}"
+      DTS:DTSID="{BC854775-4D60-4085-933A-3801A71CC0F8}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Subscriber">
@@ -349,7 +349,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{73CA855D-27FF-4004-ACB1-E59982CF523C}"
+      DTS:DTSID="{269DB119-D623-4F2E-98B3-94807BEE12E8}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="TotalRecCount">
@@ -358,7 +358,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B378F130-32FA-4DD7-BE50-B4B2959FCAF7}"
+      DTS:DTSID="{17DDCF11-F649-4579-95CC-AB27CCD0C6A3}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="TrackID">
@@ -368,7 +368,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{ECF0D648-2B3D-4ADC-B1D3-3E3B4203CA13}"
+      DTS:DTSID="{4F87626C-A38E-41F9-92F1-4EEAFDF826BD}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;DECLARE @xmlDocument xml = ?&#x9;&#x9;&#xA;&#x9;DECLARE @PubID INT &#x9;= ?&#xA;&#x9;DECLARE @SubID INT  = ?&#xA;&#x9;DECLARE @SubIFace nvarchar(100) =?&#xA;&#x9;&#xA;&#xA;&#xA;&#x9;&#x9;UPDATE MSGQ&#xA;&#x9;&#x9;   SET [SubStatus] = 'Success'&#xA;&#x9;&#x9;&#x9;  ,[SubDate] = GETDATE()&#xA;&#x9;&#x9;&#x9;  ,LastModifiedTime = GETDATE()&#xA;&#x9;&#x9;      ,LastModifiedBy = CURRENT_USER&#xA;&#x9;&#x9;FROM [dbo].[tbl_MsgQueue] MSGQ&#xA;&#x9;&#x9;INNER JOIN [dbo].[&quot; + @[User::IFaceTblName]  + &quot;] IFACEWT&#xA;&#x9;&#x9;&#x9;ON MSGQ.IFaceBatchUID = IFACEWT.IFaceBatchUID&#xA;&#x9;&#x9;&#x9;AND MSGQ.TransID = IFACEWT.TransID&#xA;&#x9;&#x9;&#x9;AND MSGQ.TransSeq = IFACEWT.TransSeq&#xA;&#x9;&#x9;&#x9;AND MSGQ.PubID = IFACEWT.PubID&#xA;&#x9;&#x9; WHERE MSGQ.IFaceBatchUID IN&#xA;&#x9;&#x9; (&#xA;&#x9;&#x9;&#x9;select IFaceBatchUID from &#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;select N1.Value.value('.', 'uniqueidentifier') as IFaceBatchUID&#xA;&#x9;&#x9;&#x9;&#x9;from @xmlDocument.nodes('//IFaceBatchUIDS/IFaceBatchUID')  N1(Value)&#xA;&#x9;&#x9;&#x9;)A&#xA;&#xA;&#x9;&#x9; )&#xA;&#x9;&#x9; AND MSGQ.PubID = @PubID&#xA;&#x9;&#x9; AND MSGQ.SubIFace = @SubIFace&#x9;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;UPDATE MSGQ&#xA;&#x9;&#x9;   SET [SubStatus] = 'Failed'&#xA;&#x9;&#x9;&#x9;  ,[SubMsg] = 'Check tbl_ErrorQueue table for more details'&#xA;&#x9;&#x9;&#x9;  ,[SubDate] = GETDATE()&#xA;&#x9;&#x9;,LastModifiedTime = GETDATE()&#xA;&#x9;&#x9;,LastModifiedBy = CURRENT_USER&#xA;&#x9;&#x9;FROM [dbo].[tbl_MsgQueue] MSGQ&#xA;&#x9;&#x9;INNER JOIN [dbo].[tbl_ErrorQueue] ERRQ&#xA;&#x9;&#x9;&#x9;ON MSGQ.IFaceBatchUID = ERRQ.IFaceBatchUID&#xA;&#x9;&#x9;&#x9;AND MSGQ.TransID = ERRQ.TransID&#xA;&#x9;&#x9;&#x9;AND MSGQ.TransSeq = ERRQ.TransSeq&#xA;&#x9;&#x9;&#x9;AND MSGQ.SubID = ERRQ.SubID&#xA;&#x9;&#x9;&#x9;AND MSGQ.PubID = ERRQ.PubID&#xA;&#x9;&#x9;&#x9;AND MSGQ.SubConnID = ERRQ.SubConnID&#xA;&#x9;&#x9;&#x9;AND MSGQ.PubConnID = ERRQ.PubConnID&#xA;&#x9;&#x9; WHERE MSGQ.IFaceBatchUID IN&#xA;&#x9;&#x9; (&#xA;&#x9;&#x9;&#x9;select IFaceBatchUID from &#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;select N1.Value.value('.', 'uniqueidentifier') as IFaceBatchUID&#xA;&#x9;&#x9;&#x9;&#x9;from @xmlDocument.nodes('//IFaceBatchUIDS/IFaceBatchUID')  N1(Value)&#xA;&#x9;&#x9;&#x9;)A&#xA;&#xA;&#x9;&#x9; )&#xA;&#x9;&#x9; AND MSGQ.PubID = @PubID&#xA;&#x9;&#x9; AND MSGQ.SubID = @SubID&#xA;&#x9;&#x9; AND MSGQ.SubIFace = @SubIFace&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -441,7 +441,7 @@
       DTS:refId="Package\Execute_WTA_BusinessRules"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{A7E82F31-2F21-462C-B691-DE46995249D5}"
+      DTS:DTSID="{5ADD232D-948D-452B-978A-CAB58123E807}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute_WTA_BusinessRules"
@@ -476,7 +476,7 @@
       DTS:refId="Package\Generate TrackID"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{48BEBAB1-3C58-43B0-A840-D64EA5ADB7E1}"
+      DTS:DTSID="{AFCFEFE9-35B6-4FC2-BEEA-E64CCE35619A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Generate TrackID"
@@ -498,7 +498,7 @@
       DTS:refId="Package\Get BatchID's to Process"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{38D734A4-0BD5-4766-8333-795E92484FF2}"
+      DTS:DTSID="{6E12C5D5-622B-4E63-B742-325695CCCB03}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get BatchID's to Process"
@@ -527,7 +527,7 @@
       DTS:refId="Package\Insert into tbl_TransactionLog"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6A3AAFD1-7256-4E86-A447-690B30999E28}"
+      DTS:DTSID="{94C3540D-6B3C-4D0F-9B89-0D228519EE43}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert into tbl_TransactionLog"
@@ -577,7 +577,7 @@
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:Disabled="True"
-      DTS:DTSID="{81575E7C-DB1D-43A7-B222-FB2576B06D5D}"
+      DTS:DTSID="{E3402CFA-67A4-49FE-9CF4-BA136CBB6659}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog for BR Failure"
@@ -632,14 +632,14 @@
       DTS:refId="Package\Process All IfactBatchUIDS"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{0A6CE0FF-5784-4D2D-8159-9DA67680067B}"
+      DTS:DTSID="{B72DB247-1179-4A24-AD0B-A4AE3CB5E2A3}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Process All IfactBatchUIDS">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{0525198F-A264-4F7D-8383-D24EF8D037FD}"
-        DTS:ObjectName="{0525198F-A264-4F7D-8383-D24EF8D037FD}">
+        DTS:DTSID="{02B41DA9-AB75-467A-AC7E-04F64849B2B7}"
+        DTS:ObjectName="{02B41DA9-AB75-467A-AC7E-04F64849B2B7}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -652,7 +652,7 @@
           DTS:refId="Package\Process All IfactBatchUIDS\ArchiveTransformedXML"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{15E53F2A-47D7-4B1A-9688-4B6CC7E41726}"
+          DTS:DTSID="{8897BCCB-809D-4D4C-9DA9-B740474AE280}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ArchiveTransformedXML"
@@ -667,35 +667,14 @@
               ReadOnlyVariables="User::ArchFormattedMsg,User::FailRecCount,User::FormattedMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1046,14 +1025,35 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1256,7 +1256,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{FBB7F900-51AA-4979-8516-26B1BE45AB29}"
+          DTS:DTSID="{9576186F-16C2-46EE-845F-5D928C853402}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="MsgQ_To_ProCount"
@@ -1789,6 +1789,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="TBG_TEMP"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Ingres Table.Inputs[OLE DB Destination Input].ExternalColumns[TBG_TEMP]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[TBG_TEMP]" />
                         <inputColumn
@@ -1828,6 +1829,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="SEP_PRESS"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Ingres Table.Inputs[OLE DB Destination Input].ExternalColumns[SEP_PRESS]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[SEP_PRESS]" />
                         <inputColumn
@@ -1835,6 +1837,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="FLOWLINE_PRESS"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Ingres Table.Inputs[OLE DB Destination Input].ExternalColumns[FLOWLINE_PRESS]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[FLOWLINE_PRESS]" />
                         <inputColumn
@@ -1850,6 +1853,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="JOINT_COUNT"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Ingres Table.Inputs[OLE DB Destination Input].ExternalColumns[JOINT_COUNT]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[JOINT_COUNT]" />
                         <inputColumn
@@ -1865,6 +1869,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="CSG_PRESS"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Ingres Table.Inputs[OLE DB Destination Input].ExternalColumns[CASING_PRESS]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[CSG_PRESS]" />
                         <inputColumn
@@ -1872,6 +1877,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="TBG_PRESS"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load Ingres Table.Inputs[OLE DB Destination Input].ExternalColumns[TUBING_PRESS]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[TBG_PRESS]" />
                         <inputColumn
@@ -2186,6 +2192,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="TBG_TEMP"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load XSPOC Table.Inputs[OLE DB Destination Input].ExternalColumns[TBG_TEMP]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[TBG_TEMP]" />
                         <inputColumn
@@ -2225,6 +2232,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="SEP_PRESS"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load XSPOC Table.Inputs[OLE DB Destination Input].ExternalColumns[SEP_PRESS]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[SEP_PRESS]" />
                         <inputColumn
@@ -2232,6 +2240,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="FLOWLINE_PRESS"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load XSPOC Table.Inputs[OLE DB Destination Input].ExternalColumns[FLOWLINE_PRESS]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[FLOWLINE_PRESS]" />
                         <inputColumn
@@ -2247,6 +2256,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="JOINT_COUNT"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load XSPOC Table.Inputs[OLE DB Destination Input].ExternalColumns[JOINT_COUNT]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[JOINT_COUNT]" />
                         <inputColumn
@@ -2262,6 +2272,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="CSG_PRESS"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load XSPOC Table.Inputs[OLE DB Destination Input].ExternalColumns[CASING_PRESS]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[CSG_PRESS]" />
                         <inputColumn
@@ -2269,6 +2280,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                           cachedDataType="numeric"
                           cachedName="TBG_PRESS"
                           cachedPrecision="18"
+                          cachedScale="2"
                           externalMetadataColumnId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Load XSPOC Table.Inputs[OLE DB Destination Input].ExternalColumns[TUBING_PRESS]"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[TBG_PRESS]" />
                         <inputColumn
@@ -2793,7 +2805,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC USP_RT_MapIFaceDataToIngres_WTA ? output,  ? output, ? output, ? output, ?, ? output,?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC USP_WTA_MapIFaceDataToIngres_WTA ? output,  ? output, ? output, ? output, ?, ? output,?</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -2814,7 +2826,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"@IFaceBatchUIDXml:Output",{E8B8B363-4BBF-4A67-AFB8-2A13034BCE6A};"@FormattedMsg:Output",{3AF3BAA8-9DFA-4874-9A70-253F836C818A};"@PubID:Output",{11B9E135-F73B-4731-AE28-E7D4CE9A73B5};"@SubID:Output",{5AAE7DDD-1123-4A52-95D1-DD2CF0B7DB2F};"@ArchformattedMsg:Input",{17132D73-4003-4892-A1BA-03964E724906};"@TotalRecCount:Output",{73CA855D-27FF-4004-ACB1-E59982CF523C};"@IFaceBatchID:Input",{83DDA0E7-F87C-47ED-8401-919A4F47BE80};</property>
+                      name="ParameterMapping">"@IFaceBatchUIDXml:Output",{7B83D741-AF94-46AD-B3D6-3A292AC285C1};"@FormattedMsg:Output",{2A7DFE0C-0473-4C4D-BA63-4E81120B99AA};"@PubID:Output",{AD71AB72-6C4C-4CF1-A7B7-5F68C3BCBDA2};"@SubID:Output",{2AB93844-C1DD-4092-B6EA-C9082168EDF4};"@ArchformattedMsg:Input",{1E49CB49-31B0-47A9-B7B5-9E450E4FBAE6};"@TotalRecCount:Output",{269DB119-D623-4F2E-98B3-94807BEE12E8};"@IFaceBatchID:Input",{AAAE33B2-A786-43E0-9C0E-89140BD6AD82};</property>
                   </properties>
                   <connections>
                     <connection
@@ -2973,6 +2985,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[CSG_PRESS]"
                           name="CSG_PRESS"
                           precision="18"
+                          scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[TBG_PRESS]"
@@ -2983,6 +2996,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[TBG_PRESS]"
                           name="TBG_PRESS"
                           precision="18"
+                          scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[MCFD]"
@@ -3037,6 +3051,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[TBG_TEMP]"
                           name="TBG_TEMP"
                           precision="18"
+                          scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[SPM_COUNT]"
@@ -3091,6 +3106,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[SEP_PRESS]"
                           name="SEP_PRESS"
                           precision="18"
+                          scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[FLOWLINE_PRESS]"
@@ -3101,6 +3117,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[FLOWLINE_PRESS]"
                           name="FLOWLINE_PRESS"
                           precision="18"
+                          scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[OIL_API_GRAVITY]"
@@ -3122,6 +3139,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[JOINT_COUNT]"
                           name="JOINT_COUNT"
                           precision="18"
+                          scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].Columns[COMMENT]"
@@ -3206,12 +3224,14 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].ExternalColumns[CSG_PRESS]"
                           dataType="numeric"
                           name="CSG_PRESS"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].ExternalColumns[TBG_PRESS]"
                           dataType="numeric"
                           name="TBG_PRESS"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].ExternalColumns[MCFD]"
                           dataType="numeric"
@@ -3240,7 +3260,8 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].ExternalColumns[TBG_TEMP]"
                           dataType="numeric"
                           name="TBG_TEMP"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].ExternalColumns[SPM_COUNT]"
                           dataType="numeric"
@@ -3269,12 +3290,14 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].ExternalColumns[SEP_PRESS]"
                           dataType="numeric"
                           name="SEP_PRESS"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].ExternalColumns[FLOWLINE_PRESS]"
                           dataType="numeric"
                           name="FLOWLINE_PRESS"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].ExternalColumns[OIL_API_GRAVITY]"
                           dataType="numeric"
@@ -3285,7 +3308,8 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].ExternalColumns[JOINT_COUNT]"
                           dataType="numeric"
                           name="JOINT_COUNT"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <externalMetadataColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Output].ExternalColumns[COMMENT]"
                           codePage="1252"
@@ -3378,13 +3402,15 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           dataType="numeric"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[CSG_PRESS]"
                           name="CSG_PRESS"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[TBG_PRESS]"
                           dataType="numeric"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[TBG_PRESS]"
                           name="TBG_PRESS"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[MCFD]"
                           dataType="numeric"
@@ -3418,7 +3444,8 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           dataType="numeric"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[TBG_TEMP]"
                           name="TBG_TEMP"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[SPM_COUNT]"
                           dataType="numeric"
@@ -3452,13 +3479,15 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           dataType="numeric"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[SEP_PRESS]"
                           name="SEP_PRESS"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[FLOWLINE_PRESS]"
                           dataType="numeric"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[FLOWLINE_PRESS]"
                           name="FLOWLINE_PRESS"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[OIL_API_GRAVITY]"
                           dataType="numeric"
@@ -3471,7 +3500,8 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
                           dataType="numeric"
                           lineageId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[JOINT_COUNT]"
                           name="JOINT_COUNT"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <outputColumn
                           refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\MsgQ Join IFace_WTA Data.Outputs[OLE DB Source Error Output].Columns[COMMENT]"
                           codePage="1252"
@@ -4310,7 +4340,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
           DTS:refId="Package\Process All IfactBatchUIDS\Update tbl_Errorlog"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{DC328930-A038-4841-954E-645903A02EEE}"
+          DTS:DTSID="{5E58502C-7CB0-4610-905D-DBC4EC8E104B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_Errorlog"
@@ -4371,7 +4401,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
           DTS:refId="Package\Process All IfactBatchUIDS\Update tbl_MsgQ"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6D280D6A-CD2E-4501-B1CD-6EE8807DE678}"
+          DTS:DTSID="{88752629-9444-43BF-A3B5-926DAB197C08}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_MsgQ"
@@ -4415,7 +4445,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
           DTS:refId="Package\Process All IfactBatchUIDS\Update tbl_TransactionLog"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{08483DAA-57B7-4737-B336-EF92A9FABAB6}"
+          DTS:DTSID="{6672335A-3E0E-41D2-A56C-A77485DC5BB4}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_TransactionLog"
@@ -4476,7 +4506,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
           DTS:refId="Package\Process All IfactBatchUIDS\Update Transformed Msg in tbl_TransactionLog"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{2BDADC9E-5B59-413D-A2FE-C6B7E2F0334B}"
+          DTS:DTSID="{9D143807-6FE6-426E-9EA6-3DDD4B066CF0}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Transformed Msg in tbl_TransactionLog"
@@ -4550,7 +4580,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Process All IfactBatchUIDS.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{28552604-98F2-4F7C-AACD-1F090391D891}"
+          DTS:DTSID="{F2E8321B-0142-48B6-B739-389CA32FC095}"
           DTS:From="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -4558,7 +4588,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Process All IfactBatchUIDS.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{ED316D2D-BD8F-4902-AE91-811EC3D9FEC4}"
+          DTS:DTSID="{A7EF2BA2-1559-4B74-B092-14B23CA6AE83}"
           DTS:From="Package\Process All IfactBatchUIDS\Update tbl_TransactionLog"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -4566,7 +4596,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Process All IfactBatchUIDS.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{915933C6-2395-4CF2-B728-FE78949B6B46}"
+          DTS:DTSID="{C35464E9-8E0A-4AED-8200-45A9950DC8A2}"
           DTS:From="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
@@ -4575,7 +4605,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Process All IfactBatchUIDS.PrecedenceConstraints[Constraint 6]"
           DTS:CreationName=""
-          DTS:DTSID="{E544EB54-18AF-4194-8FB6-05E3858A8855}"
+          DTS:DTSID="{00C68D51-E949-4804-A8C4-C3E36A44B027}"
           DTS:From="Package\Process All IfactBatchUIDS\ArchiveTransformedXML"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 6"
@@ -4583,7 +4613,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Process All IfactBatchUIDS.PrecedenceConstraints[Constraint 7]"
           DTS:CreationName=""
-          DTS:DTSID="{7FDD0261-A21E-4EA8-84C1-45D4811DB35D}"
+          DTS:DTSID="{DF8C1D5A-711C-43CA-B787-AE06CF8321DB}"
           DTS:From="Package\Process All IfactBatchUIDS\Update Transformed Msg in tbl_TransactionLog"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 7"
@@ -4593,8 +4623,8 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{C3997209-B622-44F2-A1C2-709E6DB7F3A2}"
-          DTS:ObjectName="{C3997209-B622-44F2-A1C2-709E6DB7F3A2}"
+          DTS:DTSID="{39DD0F74-4F8A-465E-BB4E-0943D417EF8B}"
+          DTS:ObjectName="{39DD0F74-4F8A-465E-BB4E-0943D417EF8B}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::CurrentIfaceBatchID" />
       </DTS:ForEachVariableMappings>
@@ -4604,7 +4634,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{35F705B6-A2DB-44A5-9504-F15DDD9E9B72}"
+      DTS:DTSID="{110427C2-8931-4EDD-B808-37A43340BCEB}"
       DTS:From="Package\Insert into tbl_TransactionLog"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -4612,7 +4642,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{4A952004-C8E1-4AC7-8E4D-6803F23EACA8}"
+      DTS:DTSID="{DB699B84-7448-4DD6-A614-854A34CDF230}"
       DTS:From="Package\Generate TrackID"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -4620,7 +4650,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{F6116D0B-D779-49EE-8811-F9968A25BA9F}"
+      DTS:DTSID="{C021A050-3AD6-4234-AD7C-E57EC812558A}"
       DTS:From="Package\Execute_WTA_BusinessRules"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -4628,7 +4658,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{C2993225-5740-41B5-9F08-C5D70D95B907}"
+      DTS:DTSID="{FE152257-AB49-4C37-A64F-98ACA5D82A70}"
       DTS:From="Package\Get BatchID's to Process"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -4636,7 +4666,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{36ED1C5F-8A5F-45F2-A5E6-CC1E0E464CEC}"
+      DTS:DTSID="{E63AEE78-3757-4895-B4A5-043974085447}"
       DTS:From="Package\Execute_WTA_BusinessRules"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
@@ -5315,7 +5345,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5325,7 +5355,7 @@ where [refTable].[WELL_TEST_DATE] = ? and [refTable].[WELL_NAME] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
