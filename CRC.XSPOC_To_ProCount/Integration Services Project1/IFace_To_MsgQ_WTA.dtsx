@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="IFace_To_MsgQ_WTA"
   DTS:PackageType="5"
-  DTS:VersionBuild="144"
-  DTS:VersionGUID="{2AF23962-E459-42BD-B14C-ACFE74385AD6}">
+  DTS:VersionBuild="145"
+  DTS:VersionGUID="{F664CF4D-D548-4B66-87E0-0495838BE650}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -424,7 +424,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="DELETE tbl_SubscriberLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -526,7 +526,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert tbl_Errorlog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -1127,7 +1127,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_IFace"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -1313,7 +1313,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
-          SQLTask:SqlStatementSource="SELECT SubID, SubscriberName, SubIFace, ConnType, SubConnID FROM [dbo].[tbl_SubscriberController]&#xA;WHERE  (  &#xA;&#x9;&#x9;&#x9;&#x9;( ( LastRunStatus = 0  OR LastRunStatus IS NULL ) AND LastRunTime IS NULL ) &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;&#x9;( ForceExecute = 1 )  &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;( LastRunStatus = 1 AND LastRunTime IS NOT NULL AND  PickupIntervalInMin &lt; datediff(minute, GETDATE(), LastRunTime) ) &#xA;&#x9;&#x9;)&#xA;AND IsEnabled = 1 AND SubscriberName = 'INGRES'--AND SubID &lt;&gt; 32&#xA;ORDER BY SubscriberName, SubIFace, ConnType"
+          SQLTask:SqlStatementSource="SELECT SubID, SubscriberName, SubIFace, ConnType, SubConnID FROM [dbo].[tbl_SubscriberController]&#xA;WHERE  (  &#xA;&#x9;&#x9;&#x9;&#x9;( ( LastRunStatus = 0  OR LastRunStatus IS NULL ) AND LastRunTime IS NULL ) &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;&#x9;( ForceExecute = 1 )  &#xA;&#x9;&#x9;&#x9;&#x9;OR &#xA;&#x9;&#x9;&#x9;( LastRunStatus = 1 AND LastRunTime IS NOT NULL AND  PickupIntervalInMin &lt; datediff(minute, GETDATE(), LastRunTime) ) &#xA;&#x9;&#x9;)&#xA;AND IsEnabled = 0 AND SubscriberName = 'INGRES'--AND SubID &lt;&gt; 32&#xA;ORDER BY SubscriberName, SubIFace, ConnType"
           SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
