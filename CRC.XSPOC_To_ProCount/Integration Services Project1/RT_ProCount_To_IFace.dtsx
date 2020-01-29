@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="RT_ProCount_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="148"
-  DTS:VersionGUID="{839B7589-1242-4EB4-9709-DE5A4D49B07B}">
+  DTS:VersionBuild="149"
+  DTS:VersionGUID="{45E14C1F-A72D-42E1-929C-EBF7723F9F9C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -175,7 +175,7 @@ LEFT OUTER JOIN AreaTb a WITH (NOLOCK) ON cm.AreaID = a.AreaMerrickID AND cm.are
 INNER JOIN GatheringSystemTb gs WITH (NOLOCK) ON cmd.GatheringSystemID = gs.GatheringSystemMerrickID
 INNER JOIN GatheringSystemCloseTb gsc WITH (NOLOCK) ON cmd.GatheringSystemID = gsc.GatheringSystemID AND cmd.RecordDate = gsc.RecordMonth
 WHERE cmd.ProductType = 2 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID &gt; 0 AND cmd.DispositionCode IN (SELECT MerrickID FROM DispositionCodeTb WHERE ProductTypeID = 2 AND DispositionGrouping = 6) AND gsc.AllocationLockedFlag = 1
-AND (arg.LocAccountNumber1 IS NOT NULL OR arg.LocAccountNumber1 &lt;&gt; '') AND cmd.RecordDate &gt;= DATEADD(MONTH, -2, GETDATE()) and gsc.UserDateStamp &gt;= DATEADD(DAY, -7, GETDATE())
+AND (arg.LocAccountNumber1 IS NOT NULL OR arg.LocAccountNumber1 &lt;&gt; '') AND cmd.RecordDate &gt;= DATEADD(MONTH, -2, GETDATE()) and gsc.UserDateStamp &gt;= DATEADD(MONTH, -2, GETDATE())
 GROUP BY cmd.ProductType, cmd.sourcetype, cmd.MerrickID, cmd.runticketnumber, cmd.DispositionCode, cmd.GatheringSystemID, gs.GatheringSystemName, a.areaid, a.areaname, cmd.RecordDate, 
 cmd.RunTicketDate, cmd.AllocActGravity, arg.WellPlusCompletionName, arg.decktype, arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, cmd.AllocationDateStamp, 
 gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID 
@@ -352,7 +352,7 @@ gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID
       DTS:CreationName=""
       DTS:DTSID="{FDABD9D9-B6A2-4026-8AE3-2C568AFD4CDB}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;(SELECT ProductTypeDescription FROM ProductTypeTb WITH (NOLOCK) WHERE MerrickID = cmd.ProductType) AS ProductType&#xA;, cmd.DispositionCode&#xA;, (SELECT DispositionCodeDescription FROM DispositionCodeTb WITH (NOLOCK) WHERE ProductTypeID = cmd.ProductType AND MerrickID = cmd.DispositionCode) AS DispositionCodeDescription&#xA;,cmd.sourcetype&#xA;, cmd.MerrickID AS completionID&#xA;, cmd.runticketnumber&#xA;, cmd.GatheringSystemID&#xA;, gs.GatheringSystemName&#xA;, a.AreaID, a.AreaName&#xA;, cmd.RecordDate&#xA;, cmd.RunTicketDate&#xA;, cmd.AllocActGravity&#xA;, SUM(cmd.AllocActOilVol) AS vol&#xA;, arg.BusinessEnitity&#xA;, LTRIM(RTRIM(arg.locationid)) AS locationid&#xA;, arg.LocAccountNumber1&#xA;, arg.LocAccountNumber2&#xA;, ISNULL(arg.WellPlusCompletionName&#xA;,(SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE cmd.merrickid = merrickid)) AS WellPlusCompletionName&#xA;, arg.decktype&#xA;, gs.AccountantPersonID&#xA;, cmd.AllocationDateStamp&#xA;, gsc.UserDateStamp AS GatheringSystemLockDate&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gsc.UserID) AS GatheringSystemLockName&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gs.AccountantPersonID) AS GatheringSystemAccountantName&#xA;FROM CompletionMonthlyDispTb cmd WITH (NOLOCK) &#xA;INNER JOIN CompletionMonthlyTb cm WITH (NOLOCK) ON cmd.MerrickID = cm.merrickID AND cmd.RecordDate = cm.RecordDate &#xA;INNER JOIN&#xA;&#x9;&#x9;(SELECT &#xA;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;, odi.activeflag&#xA;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;, odi.StartDate&#xA;&#x9;&#x9;&#x9;, odi.EndDate&#xA;&#x9;&#x9;&#x9;, odi.WellPlusCompletionName&#xA;&#x9;&#x9;&#x9;,(SELECT Description FROM BusinessEntityTb WITH (NOLOCK) WHERE merrickid = be.MerrickID) BusinessEnitity&#xA;&#x9;&#x9;&#x9;, be.locationid&#xA;&#x9;&#x9;&#x9;, be.locaccountnumber1&#xA;&#x9;&#x9;&#x9;, be.locaccountnumber2&#xA;&#x9;FROM BusinessEntityLocationTb be WITH (NOLOCK) &#xA;&#x9;INNER JOIN&#xA;&#x9;&#x9;(SELECT &#xA;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;, od.activeflag&#xA;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;, MAX(od.StartDate) AS StartDate&#xA;&#x9;&#x9;&#x9;, MAX(od.EndDate) AS EndDate&#xA;&#x9;&#x9;&#x9;, (SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE odi.objectmerrickid = merrickid AND odi.decktype = 14) WellPlusCompletionName&#xA;&#x9;&#x9;FROM OwnershipDeckTb od WITH (NOLOCK) &#xA;&#x9;&#x9;INNER JOIN OwnershipDeckInterestTb odi WITH (NOLOCK) ON od.objectmerrickid = odi.objectmerrickid AND od.ObjectMerrickType = odi.ObjectMerrickType AND od.decktype = odi.decktype AND od.StartDate = odi.StartDate&#xA;&#x9;&#x9;WHERE odi.decktype = 14 AND od.ActiveFlag = 1 AND od.ObjectMerrickType = 1 AND GETDATE() BETWEEN od.StartDate AND od.EndDate&#xA;&#x9;&#x9;GROUP BY odi.decktype, odi.objectmerrickid, odi.ObjectMerrickType, od.activeflag, odi.ownerbeidloc, odi.OwnerBEID) odi ON be.LocationNumber = odi.ownerbeidloc AND be.merrickid = odi.OwnerBEID) arg &#xA;ON cmd.MerrickID = arg.objectmerrickid&#xA;LEFT OUTER JOIN AreaTb a WITH (NOLOCK) ON cm.AreaID = a.AreaMerrickID AND cm.areaid &lt;&gt; 0&#xA;INNER JOIN GatheringSystemTb gs WITH (NOLOCK) ON cmd.GatheringSystemID = gs.GatheringSystemMerrickID&#xA;INNER JOIN GatheringSystemCloseTb gsc WITH (NOLOCK) ON cmd.GatheringSystemID = gsc.GatheringSystemID AND cmd.RecordDate = gsc.RecordMonth&#xA;WHERE cmd.ProductType = 2 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID &gt; 0 AND cmd.DispositionCode IN (SELECT MerrickID FROM DispositionCodeTb WHERE ProductTypeID = 2 AND DispositionGrouping = 6) AND gsc.AllocationLockedFlag = 1&#xA;AND (arg.LocAccountNumber1 IS NOT NULL OR arg.LocAccountNumber1 &lt;&gt; '') AND cmd.RecordDate &gt;= DATEADD(MONTH, -2, GETDATE()) and gsc.UserDateStamp &gt;= DATEADD(DAY, -7, GETDATE())&#xA;GROUP BY cmd.ProductType, cmd.sourcetype, cmd.MerrickID, cmd.runticketnumber, cmd.DispositionCode, cmd.GatheringSystemID, gs.GatheringSystemName, a.areaid, a.areaname, cmd.RecordDate, &#xA;cmd.RunTicketDate, cmd.AllocActGravity, arg.WellPlusCompletionName, arg.decktype, arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, cmd.AllocationDateStamp, &#xA;gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID&quot;"
+      DTS:Expression="&quot;SELECT &#xA;(SELECT ProductTypeDescription FROM ProductTypeTb WITH (NOLOCK) WHERE MerrickID = cmd.ProductType) AS ProductType&#xA;, cmd.DispositionCode&#xA;, (SELECT DispositionCodeDescription FROM DispositionCodeTb WITH (NOLOCK) WHERE ProductTypeID = cmd.ProductType AND MerrickID = cmd.DispositionCode) AS DispositionCodeDescription&#xA;,cmd.sourcetype&#xA;, cmd.MerrickID AS completionID&#xA;, cmd.runticketnumber&#xA;, cmd.GatheringSystemID&#xA;, gs.GatheringSystemName&#xA;, a.AreaID, a.AreaName&#xA;, cmd.RecordDate&#xA;, cmd.RunTicketDate&#xA;, cmd.AllocActGravity&#xA;, SUM(cmd.AllocActOilVol) AS vol&#xA;, arg.BusinessEnitity&#xA;, LTRIM(RTRIM(arg.locationid)) AS locationid&#xA;, arg.LocAccountNumber1&#xA;, arg.LocAccountNumber2&#xA;, ISNULL(arg.WellPlusCompletionName&#xA;,(SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE cmd.merrickid = merrickid)) AS WellPlusCompletionName&#xA;, arg.decktype&#xA;, gs.AccountantPersonID&#xA;, cmd.AllocationDateStamp&#xA;, gsc.UserDateStamp AS GatheringSystemLockDate&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gsc.UserID) AS GatheringSystemLockName&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gs.AccountantPersonID) AS GatheringSystemAccountantName&#xA;FROM CompletionMonthlyDispTb cmd WITH (NOLOCK) &#xA;INNER JOIN CompletionMonthlyTb cm WITH (NOLOCK) ON cmd.MerrickID = cm.merrickID AND cmd.RecordDate = cm.RecordDate &#xA;INNER JOIN&#xA;&#x9;&#x9;(SELECT &#xA;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;, odi.activeflag&#xA;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;, odi.StartDate&#xA;&#x9;&#x9;&#x9;, odi.EndDate&#xA;&#x9;&#x9;&#x9;, odi.WellPlusCompletionName&#xA;&#x9;&#x9;&#x9;,(SELECT Description FROM BusinessEntityTb WITH (NOLOCK) WHERE merrickid = be.MerrickID) BusinessEnitity&#xA;&#x9;&#x9;&#x9;, be.locationid&#xA;&#x9;&#x9;&#x9;, be.locaccountnumber1&#xA;&#x9;&#x9;&#x9;, be.locaccountnumber2&#xA;&#x9;FROM BusinessEntityLocationTb be WITH (NOLOCK) &#xA;&#x9;INNER JOIN&#xA;&#x9;&#x9;(SELECT &#xA;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;, od.activeflag&#xA;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;, MAX(od.StartDate) AS StartDate&#xA;&#x9;&#x9;&#x9;, MAX(od.EndDate) AS EndDate&#xA;&#x9;&#x9;&#x9;, (SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE odi.objectmerrickid = merrickid AND odi.decktype = 14) WellPlusCompletionName&#xA;&#x9;&#x9;FROM OwnershipDeckTb od WITH (NOLOCK) &#xA;&#x9;&#x9;INNER JOIN OwnershipDeckInterestTb odi WITH (NOLOCK) ON od.objectmerrickid = odi.objectmerrickid AND od.ObjectMerrickType = odi.ObjectMerrickType AND od.decktype = odi.decktype AND od.StartDate = odi.StartDate&#xA;&#x9;&#x9;WHERE odi.decktype = 14 AND od.ActiveFlag = 1 AND od.ObjectMerrickType = 1 AND GETDATE() BETWEEN od.StartDate AND od.EndDate&#xA;&#x9;&#x9;GROUP BY odi.decktype, odi.objectmerrickid, odi.ObjectMerrickType, od.activeflag, odi.ownerbeidloc, odi.OwnerBEID) odi ON be.LocationNumber = odi.ownerbeidloc AND be.merrickid = odi.OwnerBEID) arg &#xA;ON cmd.MerrickID = arg.objectmerrickid&#xA;LEFT OUTER JOIN AreaTb a WITH (NOLOCK) ON cm.AreaID = a.AreaMerrickID AND cm.areaid &lt;&gt; 0&#xA;INNER JOIN GatheringSystemTb gs WITH (NOLOCK) ON cmd.GatheringSystemID = gs.GatheringSystemMerrickID&#xA;INNER JOIN GatheringSystemCloseTb gsc WITH (NOLOCK) ON cmd.GatheringSystemID = gsc.GatheringSystemID AND cmd.RecordDate = gsc.RecordMonth&#xA;WHERE cmd.ProductType = 2 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID &gt; 0 AND cmd.DispositionCode IN (SELECT MerrickID FROM DispositionCodeTb WHERE ProductTypeID = 2 AND DispositionGrouping = 6) AND gsc.AllocationLockedFlag = 1&#xA;AND (arg.LocAccountNumber1 IS NOT NULL OR arg.LocAccountNumber1 &lt;&gt; '') AND cmd.RecordDate &gt;= DATEADD(MONTH, -2, GETDATE()) and gsc.UserDateStamp &gt;= DATEADD(MONTH, -2, GETDATE())&#xA;GROUP BY cmd.ProductType, cmd.sourcetype, cmd.MerrickID, cmd.runticketnumber, cmd.DispositionCode, cmd.GatheringSystemID, gs.GatheringSystemName, a.areaid, a.areaname, cmd.RecordDate, &#xA;cmd.RunTicketDate, cmd.AllocActGravity, arg.WellPlusCompletionName, arg.decktype, arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, cmd.AllocationDateStamp, &#xA;gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQuery">
@@ -421,7 +421,7 @@ LEFT OUTER JOIN AreaTb a WITH (NOLOCK) ON cm.AreaID = a.AreaMerrickID AND cm.are
 INNER JOIN GatheringSystemTb gs WITH (NOLOCK) ON cmd.GatheringSystemID = gs.GatheringSystemMerrickID
 INNER JOIN GatheringSystemCloseTb gsc WITH (NOLOCK) ON cmd.GatheringSystemID = gsc.GatheringSystemID AND cmd.RecordDate = gsc.RecordMonth
 WHERE cmd.ProductType = 2 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID &gt; 0 AND cmd.DispositionCode IN (SELECT MerrickID FROM DispositionCodeTb WHERE ProductTypeID = 2 AND DispositionGrouping = 6) AND gsc.AllocationLockedFlag = 1
-AND (arg.LocAccountNumber1 IS NOT NULL OR arg.LocAccountNumber1 &lt;&gt; '') AND cmd.RecordDate &gt;= DATEADD(MONTH, -2, GETDATE()) and gsc.UserDateStamp &gt;= DATEADD(DAY, -7, GETDATE())
+AND (arg.LocAccountNumber1 IS NOT NULL OR arg.LocAccountNumber1 &lt;&gt; '') AND cmd.RecordDate &gt;= DATEADD(MONTH, -2, GETDATE()) and gsc.UserDateStamp &gt;= DATEADD(MONTH, -2, GETDATE())
 GROUP BY cmd.ProductType, cmd.sourcetype, cmd.MerrickID, cmd.runticketnumber, cmd.DispositionCode, cmd.GatheringSystemID, gs.GatheringSystemName, a.areaid, a.areaname, cmd.RecordDate, 
 cmd.RunTicketDate, cmd.AllocActGravity, arg.WellPlusCompletionName, arg.decktype, arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, cmd.AllocationDateStamp, 
 gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID</DTS:VariableValue>
@@ -446,6 +446,15 @@ gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID</DTS:Variable
           Language="CSharp"
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -565,35 +574,6 @@ gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID</DTS:Variable
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Settings.get_Default():ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Sett" +
-    "ings")]
-
-namespace ST_d5c5a91504b64450a59c853eb2aca8e3.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
           <ProjectItem
             Name="ST_d5c5a91504b64450a59c853eb2aca8e3.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -808,6 +788,35 @@ namespace ST_e170d566053f49adad87ad10db091500
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Settings.get_Default():ST_d5c5a91504b64450a59c853eb2aca8e3.Properties.Sett" +
+    "ings")]
+
+namespace ST_d5c5a91504b64450a59c853eb2aca8e3.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
             Name="Properties\AssemblyInfo.cs"
             Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -837,15 +846,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
