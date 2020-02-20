@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MD_XSPOC_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="332"
-  DTS:VersionGUID="{33F08351-F366-4D8D-8D4C-85E75256CD05}">
+  DTS:VersionBuild="362"
+  DTS:VersionGUID="{A9F638C7-FC0D-493E-9CDB-215BC1BD6DF5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -129,7 +129,7 @@
         DTS:DataType="8">SELECT convert(nvarchar(MAX),
 (
   
- SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RecordDate &gt;= DATEADD(DAY,-3,GETDATE()) 
+ SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RowEffectiveDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-02-20 13:47:45.000' 
  FOR XML PATH ('MeterData_Record'), ROOT('MeterData_From_XSPOC')
 
 )) InputMsg</DTS:VariableValue>
@@ -151,6 +151,17 @@
       DTS:ObjectName="ConnType">
       <DTS:VariableValue
         DTS:DataType="8">Database</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E23FE767-168E-4B50-85F5-95EF2DD1375A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="DATEADD( &quot;Minute&quot;, -1, GETDATE() )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentUpdatedTime">
+      <DTS:VariableValue
+        DTS:DataType="7">2/20/2020 1:47:45 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -197,6 +208,15 @@
       DTS:ObjectName="IsDelSrcRecords">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BD16A7E7-5C53-4F62-BE87-C295B52EF049}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LastUpdatedTime">
+      <DTS:VariableValue
+        DTS:DataType="7">2/18/2020 9:23:00 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -301,29 +321,35 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{59FBAEE0-0EB0-4E61-95C7-19194D3E6891}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RowEffectiveDate BETWEEN &quot; + &quot;'&quot;+&#xA;(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::LastUpdatedTime]+ &quot;'&quot;+ &quot; AND &quot;  +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::CurrentUpdatedTime]+ &quot;'&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQuery">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RecordDate &gt;= DATEADD(DAY,-3,GETDATE())</DTS:VariableValue>
+        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RowEffectiveDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-02-20 13:47:45.000'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{C6441980-7308-4D00-9324-565F67568688}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_OilMeterData] WHERE RowEffectiveDate BETWEEN &quot; + &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::LastUpdatedTime]+ &quot;'&quot;+ &quot; AND &quot;  +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::CurrentUpdatedTime]+ &quot;'&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQueryOil">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_OilMeterData] WHERE RecordDate &gt;= DATEADD(DAY,-3,GETDATE())</DTS:VariableValue>
+        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_OilMeterData] WHERE RowEffectiveDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-02-20 13:47:45.000'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{CC79674B-3054-4EC2-8509-26E2E21DF252}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WaterMeterData] WHERE RowEffectiveDate BETWEEN &quot; +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::LastUpdatedTime]+ &quot;'&quot;+ &quot; AND &quot;  +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::CurrentUpdatedTime]+ &quot;'&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQueryWater">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WaterMeterData] WHERE RecordDate &gt;= DATEADD(DAY,-3,GETDATE())</DTS:VariableValue>
+        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WaterMeterData] WHERE RowEffectiveDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-02-20 13:47:45.000'</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -345,15 +371,6 @@
           Language="CSharp"
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
-          <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -474,6 +491,35 @@
   </resheader>
 </root>]]></ProjectItem>
           <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_e170d566053f49adad87ad10db091500.Properties.Settings.get_Default():ST_e170d566053f49adad87ad10db091500.Properties.Sett" +
+    "ings")]
+
+namespace ST_e170d566053f49adad87ad10db091500.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
             Name="ScriptMain.cs"
             Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -591,35 +637,6 @@ namespace ST_e170d566053f49adad87ad10db091500
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_e170d566053f49adad87ad10db091500.Properties.Settings.get_Default():ST_e170d566053f49adad87ad10db091500.Properties.Sett" +
-    "ings")]
-
-namespace ST_e170d566053f49adad87ad10db091500.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
-          <ProjectItem
             Name="Properties\AssemblyInfo.cs"
             Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -649,6 +666,15 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -857,14 +883,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete XSPOC Data"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="DELETE FROM  [tbl_Integration_MeterData]"
+          SQLTask:TypeConversionMode="None" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{eedec509-26af-4825-817c-fbb198344aa8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D63BB67A-E86F-4B6D-9644-8579ECC00598}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DELETE FROM  [tbl_Integration_MeterData]"
-          SQLTask:TypeConversionMode="None" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:SqlStatementSource="SELECT        DaySchedule&#xA;FROM            [dbo].[tbl_IntegrationDateTimePullConfig]&#xA;WHERE        (IntegrationName = 'MeterData')"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DaySchedule"
+            SQLTask:DtsVariableName="User::LastUpdatedTime" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -924,7 +972,7 @@ END
         <SQLTask:SqlTaskData
           SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RecordDate &gt;= DATEADD(DAY,-3,GETDATE()) &#xA; FOR XML PATH ('MeterData_Record'), ROOT('MeterData_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
+          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RowEffectiveDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-02-20 13:47:45.000' &#xA; FOR XML PATH ('MeterData_Record'), ROOT('MeterData_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -1014,7 +1062,7 @@ END
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1081,7 +1129,7 @@ END
       DTS:LocaleID="-1"
       DTS:ObjectName="Update tbl_PublisherLog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1123,6 +1171,31 @@ END
             SQLTask:DtsVariableName="User::ArchiveXMLPath"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update the DateTime for MeterData"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3163fdd8-1832-4b3d-bb08-ad9afc12aa4b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update the DateTime for MeterData"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="UPDATE [dbo].[tbl_IntegrationDateTimePullConfig]&#xA;SET [DaySchedule] = ? &#xA;WHERE IntegrationName = 'MeterData'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::CurrentUpdatedTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -3640,11 +3713,11 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{15CF15C7-6AE9-4F99-A7EC-E75E599D8CED}"
+      DTS:DTSID="{184A02F1-9E52-49CD-B5C8-265F1A2D3826}"
       DTS:From="Package\Update tbl_PublisherLog"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Delete XSPOC Data" />
+      DTS:To="Package\Update the DateTime for MeterData" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
@@ -3666,8 +3739,8 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{965BA0B9-F480-445F-BC2D-3C0CF6C025C2}"
-      DTS:From="Package\Insert into tbl_PublisherLog"
+      DTS:DTSID="{89D5664F-174A-48B3-AA39-5FE5C650D2AC}"
+      DTS:From="Package\Execute SQL Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Getting XSPOC xml" />
@@ -3705,6 +3778,22 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
       DTS:To="Package\Update XSPOC XML tbl_PublisherLog" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{28DE2FEE-7780-4CE1-BD11-7FF06DB70531}"
+      DTS:From="Package\Insert into tbl_PublisherLog"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Execute SQL Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{E2D6B6AE-E7AE-465E-AD51-1342A20ADB2A}"
+      DTS:From="Package\Update the DateTime for MeterData"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Delete XSPOC Data" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3721,19 +3810,19 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
         <NodeLayout
           Size="195,41"
           Id="Package\ArchiveTransformedXML"
-          TopLeft="242.285718411816,403.764711545" />
+          TopLeft="248.285718411816,514.764711545" />
         <NodeLayout
           Size="171,41"
           Id="Package\Delete XSPOC Data"
-          TopLeft="254.54762335593,610.711492092964" />
+          TopLeft="254.54762335593,807.711492092964" />
         <NodeLayout
           Size="159,41"
           Id="Package\Generate GUID's"
           TopLeft="248.272113071586,116.924744870452" />
         <NodeLayout
-          Size="169,43"
+          Size="168,42"
           Id="Package\Getting XSPOC xml"
-          TopLeft="242.058961038339,264.746967740923" />
+          TopLeft="248.058961038339,375.746967740923" />
         <NodeLayout
           Size="209,41"
           Id="Package\Insert into tbl_PublisherLog"
@@ -3741,41 +3830,19 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
         <NodeLayout
           Size="167,41"
           Id="Package\Insert tbl_Errorlog"
-          TopLeft="534.285723384546,464.176477098135" />
+          TopLeft="540.285723384546,575.176477098135" />
         <NodeLayout
           Size="195,41"
           Id="Package\Update tbl_PublisherLog"
-          TopLeft="249.387192442351,541.883946953519" />
+          TopLeft="244.387192442351,651.883946953519" />
         <NodeLayout
           Size="252,43"
           Id="Package\Update XSPOC XML tbl_PublisherLog"
-          TopLeft="205.659867447945,331.050610127389" />
+          TopLeft="211.659867447945,442.050610127389" />
         <NodeLayout
           Size="196,41"
           Id="Package\XSPOC DB to IFaceTable"
-          TopLeft="240.589573258215,470.689828321816" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="343.300741232474,583.217280286852">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.4942118061119"
-              Start="0,0"
-              End="0,19.9942118061119">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.9942118061119" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="246.589573258215,581.689828321816" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="327.129255704907,158.524744870452">
@@ -3800,7 +3867,7 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="335.639459596547,373.717276794056">
+          TopLeft="341.639459596547,484.717276794056">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3823,53 +3890,19 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="326.689346354951,228.882915795578">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.8640519453447"
-              Start="0,0"
-              End="0,28.3640519453447">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.3640519453447" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="338.589573258215,512.023161655149">
+          TopLeft="343.238382850283,622.689828321816">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.13095251746921,29.8607852983694"
+              EndConnector="0,29.194118631703"
               Start="0,0"
-              End="8.13095251746921,22.3607852983694">
+              End="0,21.694118631703">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.9303926491847" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.9303926491847"
-                    Point2="0,14.9303926491847"
-                    Point3="4,14.9303926491847" />
-                  <mssgle:LineSegment
-                    End="4.13095251746921,14.9303926491847" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.13095251746921,14.9303926491847"
-                    Point2="8.13095251746921,14.9303926491847"
-                    Point3="8.13095251746921,18.9303926491847" />
-                  <mssgle:LineSegment
-                    End="8.13095251746921,22.3607852983694" />
+                    End="0,21.694118631703" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3880,7 +3913,7 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="339.037645835015,445.364711545">
+          TopLeft="345.037645835015,556.364711545">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3898,13 +3931,13 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,3.10787088840765,50.60890625,11.609375"
+              BoundingBox="-25.304453125,3.10787088840766,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="436.589573258215,488.233152709976">
+          TopLeft="442.589573258215,599.233152709976">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3928,18 +3961,18 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="329.192747576475,307.41363440759">
+          TopLeft="334.859414243142,417.746967740923">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.6369757197993"
+              EndConnector="0,24.303642386466"
               Start="0,0"
-              End="0,16.1369757197993">
+              End="0,16.803642386466">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.1369757197993" />
+                    End="0,16.803642386466" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3955,6 +3988,102 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
           Size="156,40"
           Id="06455250-aa65-4993-8bf9-12d8c43de8c3"
           TopLeft="249.872112730988,70.0907572855175" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="245.659867447945,282.711492092964" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="329.609414243142,324.711492092964">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.035475647959"
+              Start="0,0"
+              End="0,43.535475647959">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.535475647959" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="326.823132893087,228.549582462245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.161909630719"
+              Start="0,0"
+              End="0,46.661909630719">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.661909630719" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Update the DateTime for MeterData"
+          TopLeft="217.659867447945,727.711492092964" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="341.773529945148,692.883946953519">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.8275451394451"
+              Start="0,0"
+              End="0,27.3275451394451">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.3275451394451" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="340.853745401937,769.711492092964">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3965,138 +4094,74 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="131,41"
-          Id="Package\XSPOC DB to IFaceTable\Row Count"
-          TopLeft="87.412715074968,234.894122091379" />
-        <NodeLayout
-          Size="148,42"
-          Id="Package\XSPOC DB to IFaceTable\Source for Gas"
-          TopLeft="75.412706696257,74.7058828677273" />
-        <NodeLayout
-          Size="196,42"
-          Id="Package\XSPOC DB to IFaceTable\Derived Columns for Gas"
-          TopLeft="74.612706696257,163.505882867727" />
-        <NodeLayout
-          Size="149,42"
-          Id="Package\XSPOC DB to IFaceTable\MeterData Gas"
-          TopLeft="69.28572270335,316.305887097553" />
-        <EdgeLayout
-          Id="Package\XSPOC DB to IFaceTable.Paths[Row Count Output 1]"
-          TopLeft="152.912715074968,275.894122091379">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.12699237161797,40.411765006174"
-              Start="0,0"
-              End="-9.12699237161797,32.911765006174">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.205882503087" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.205882503087"
-                    Point2="0,20.205882503087"
-                    Point3="-4,20.205882503087" />
-                  <mssgle:LineSegment
-                    End="-5.12699237161797,20.205882503087" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.12699237161797,20.205882503087"
-                    Point2="-9.12699237161797,20.205882503087"
-                    Point3="-9.12699237161797,24.205882503087" />
-                  <mssgle:LineSegment
-                    End="-9.12699237161797,32.911765006174" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\XSPOC DB to IFaceTable.Paths[OLE DB Source Output]"
-          TopLeft="149.412706696257,116.705882867727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="23.2,46.7999999999997"
-              Start="0,0"
-              End="23.2,39.2999999999997">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.3999999999998" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.3999999999998"
-                    Point2="0,23.3999999999998"
-                    Point3="4,23.3999999999998" />
-                  <mssgle:LineSegment
-                    End="19.2,23.3999999999998" />
-                  <mssgle:CubicBezierSegment
-                    Point1="19.2,23.3999999999998"
-                    Point2="23.2,23.3999999999998"
-                    Point3="23.2,27.3999999999998" />
-                  <mssgle:LineSegment
-                    End="23.2,39.2999999999997" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\XSPOC DB to IFaceTable.Paths[Derived Column Output]"
-          TopLeft="172.612706696257,205.505882867727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-19.699991621289,29.388239223652"
-              Start="0,0"
-              End="-19.699991621289,21.888239223652">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.694119611826" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.694119611826"
-                    Point2="0,14.694119611826"
-                    Point3="-4,14.694119611826" />
-                  <mssgle:LineSegment
-                    End="-15.699991621289,14.694119611826" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-15.699991621289,14.694119611826"
-                    Point2="-19.699991621289,14.694119611826"
-                    Point3="-19.699991621289,18.694119611826" />
-                  <mssgle:LineSegment
-                    End="-19.699991621289,21.888239223652" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="131,41"
           Id="Package\XSPOC DB to IFaceTable\Row Count 1"
           TopLeft="319.412715074968,234.894122091379" />
         <NodeLayout
-          Size="143,42"
-          Id="Package\XSPOC DB to IFaceTable\Source for Oil"
-          TopLeft="307.412706696257,74.7058828677273" />
+          Size="144,42"
+          Id="Package\XSPOC DB to IFaceTable\MeterData Oil"
+          TopLeft="301.28572270335,316.305887097553" />
         <NodeLayout
           Size="191,42"
           Id="Package\XSPOC DB to IFaceTable\Derived Columns for Oil"
           TopLeft="306.612706696257,163.505882867727" />
         <NodeLayout
-          Size="144,42"
-          Id="Package\XSPOC DB to IFaceTable\MeterData Oil"
-          TopLeft="301.28572270335,316.305887097553" />
+          Size="206,42"
+          Id="Package\XSPOC DB to IFaceTable\Derived Columns for Water"
+          TopLeft="538.612706696257,163.505882867727" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\XSPOC DB to IFaceTable\MeterData Gas"
+          TopLeft="69.28572270335,316.305887097553" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\XSPOC DB to IFaceTable\Source for Water"
+          TopLeft="539.412706696257,74.7058828677273" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\XSPOC DB to IFaceTable\MeterData Water"
+          TopLeft="533.28572270335,316.305887097553" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\XSPOC DB to IFaceTable\Source for Oil"
+          TopLeft="307.412706696257,74.7058828677273" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\XSPOC DB to IFaceTable\Source for Gas"
+          TopLeft="77.412706696257,75.7058828677273" />
+        <NodeLayout
+          Size="131,41"
+          Id="Package\XSPOC DB to IFaceTable\Row Count"
+          TopLeft="87.412715074968,234.894122091379" />
+        <NodeLayout
+          Size="131,41"
+          Id="Package\XSPOC DB to IFaceTable\Row Count 2"
+          TopLeft="551.412715074968,234.894122091379" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\XSPOC DB to IFaceTable\Derived Columns for Gas"
+          TopLeft="74.612706696257,163.505882867727" />
+        <EdgeLayout
+          Id="Package\XSPOC DB to IFaceTable.Paths[Row Count Output 12]"
+          TopLeft="614.849218889159,275.894122091379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.411765006174"
+              Start="0,0"
+              End="0,32.911765006174">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.911765006174" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\XSPOC DB to IFaceTable.Paths[Row Count Output 11]"
           TopLeft="384.912715074968,275.894122091379">
@@ -4132,103 +4197,31 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\XSPOC DB to IFaceTable.Paths[OLE DB Source Output1]"
-          TopLeft="378.912706696257,116.705882867727">
+          Id="Package\XSPOC DB to IFaceTable.Paths[Row Count Output 1]"
+          TopLeft="152.912715074968,275.894122091379">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23.2,46.7999999999997"
+              EndConnector="-9.12699237161797,40.411765006174"
               Start="0,0"
-              End="23.2,39.2999999999997">
+              End="-9.12699237161797,32.911765006174">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.3999999999998" />
+                    End="0,16.205882503087" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.3999999999998"
-                    Point2="0,23.3999999999998"
-                    Point3="4,23.3999999999998" />
+                    Point1="0,16.205882503087"
+                    Point2="0,20.205882503087"
+                    Point3="-4,20.205882503087" />
                   <mssgle:LineSegment
-                    End="19.2,23.3999999999998" />
+                    End="-5.12699237161797,20.205882503087" />
                   <mssgle:CubicBezierSegment
-                    Point1="19.2,23.3999999999998"
-                    Point2="23.2,23.3999999999998"
-                    Point3="23.2,27.3999999999998" />
+                    Point1="-5.12699237161797,20.205882503087"
+                    Point2="-9.12699237161797,20.205882503087"
+                    Point3="-9.12699237161797,24.205882503087" />
                   <mssgle:LineSegment
-                    End="23.2,39.2999999999997" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\XSPOC DB to IFaceTable.Paths[Derived Column Output1]"
-          TopLeft="402.112706696257,205.505882867727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17.199991621289,29.3882392236523"
-              Start="0,0"
-              End="-17.199991621289,21.8882392236523">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.6941196118262" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.6941196118262"
-                    Point2="0,14.6941196118262"
-                    Point3="-4,14.6941196118262" />
-                  <mssgle:LineSegment
-                    End="-13.199991621289,14.6941196118262" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.199991621289,14.6941196118262"
-                    Point2="-17.199991621289,14.6941196118262"
-                    Point3="-17.199991621289,18.6941196118262" />
-                  <mssgle:LineSegment
-                    End="-17.199991621289,21.8882392236523" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="131,41"
-          Id="Package\XSPOC DB to IFaceTable\Row Count 2"
-          TopLeft="551.412715074968,234.894122091379" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\XSPOC DB to IFaceTable\Source for Water"
-          TopLeft="539.412706696257,74.7058828677273" />
-        <NodeLayout
-          Size="206,42"
-          Id="Package\XSPOC DB to IFaceTable\Derived Columns for Water"
-          TopLeft="538.612706696257,163.505882867727" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\XSPOC DB to IFaceTable\MeterData Water"
-          TopLeft="533.28572270335,316.305887097553" />
-        <EdgeLayout
-          Id="Package\XSPOC DB to IFaceTable.Paths[Row Count Output 12]"
-          TopLeft="614.849218889159,275.894122091379">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.411765006174"
-              Start="0,0"
-              End="0,32.911765006174">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.911765006174" />
+                    End="-9.12699237161797,32.911765006174" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4272,6 +4265,74 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\XSPOC DB to IFaceTable.Paths[OLE DB Source Output1]"
+          TopLeft="378.912706696257,116.705882867727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.2,46.7999999999997"
+              Start="0,0"
+              End="23.2,39.2999999999997">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3999999999998" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3999999999998"
+                    Point2="0,23.3999999999998"
+                    Point3="4,23.3999999999998" />
+                  <mssgle:LineSegment
+                    End="19.2,23.3999999999998" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.2,23.3999999999998"
+                    Point2="23.2,23.3999999999998"
+                    Point3="23.2,27.3999999999998" />
+                  <mssgle:LineSegment
+                    End="23.2,39.2999999999997" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\XSPOC DB to IFaceTable.Paths[OLE DB Source Output]"
+          TopLeft="151.412706696257,117.705882867727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.2,45.7999999999997"
+              Start="0,0"
+              End="21.2,38.2999999999997">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.8999999999998" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.8999999999998"
+                    Point2="0,22.8999999999998"
+                    Point3="4,22.8999999999998" />
+                  <mssgle:LineSegment
+                    End="17.2,22.8999999999998" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.2,22.8999999999998"
+                    Point2="21.2,22.8999999999998"
+                    Point3="21.2,26.8999999999998" />
+                  <mssgle:LineSegment
+                    End="21.2,38.2999999999997" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\XSPOC DB to IFaceTable.Paths[Derived Column Output2]"
           TopLeft="641.612706696257,205.505882867727">
           <EdgeLayout.Curve>
@@ -4297,6 +4358,74 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
                     Point3="-24.699991621289,18.6941196118262" />
                   <mssgle:LineSegment
                     End="-24.699991621289,21.8882392236523" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\XSPOC DB to IFaceTable.Paths[Derived Column Output1]"
+          TopLeft="402.112706696257,205.505882867727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.199991621289,29.3882392236523"
+              Start="0,0"
+              End="-17.199991621289,21.8882392236523">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.6941196118262" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.6941196118262"
+                    Point2="0,14.6941196118262"
+                    Point3="-4,14.6941196118262" />
+                  <mssgle:LineSegment
+                    End="-13.199991621289,14.6941196118262" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.199991621289,14.6941196118262"
+                    Point2="-17.199991621289,14.6941196118262"
+                    Point3="-17.199991621289,18.6941196118262" />
+                  <mssgle:LineSegment
+                    End="-17.199991621289,21.8882392236523" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\XSPOC DB to IFaceTable.Paths[Derived Column Output]"
+          TopLeft="172.612706696257,205.505882867727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.699991621289,29.388239223652"
+              Start="0,0"
+              End="-19.699991621289,21.888239223652">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.694119611826" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.694119611826"
+                    Point2="0,14.694119611826"
+                    Point3="-4,14.694119611826" />
+                  <mssgle:LineSegment
+                    End="-15.699991621289,14.694119611826" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.699991621289,14.694119611826"
+                    Point2="-19.699991621289,14.694119611826"
+                    Point3="-19.699991621289,18.694119611826" />
+                  <mssgle:LineSegment
+                    End="-19.699991621289,21.888239223652" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
