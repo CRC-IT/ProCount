@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MD_XSPOC_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="362"
-  DTS:VersionGUID="{A9F638C7-FC0D-493E-9CDB-215BC1BD6DF5}">
+  DTS:VersionBuild="363"
+  DTS:VersionGUID="{83EA8531-5CBB-4261-9EF8-85DCC58B3C0A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -129,7 +129,7 @@
         DTS:DataType="8">SELECT convert(nvarchar(MAX),
 (
   
- SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RowEffectiveDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-02-20 13:47:45.000' 
+ SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE IntegrationDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-04-02 09:14:08.000' 
  FOR XML PATH ('MeterData_Record'), ROOT('MeterData_From_XSPOC')
 
 )) InputMsg</DTS:VariableValue>
@@ -161,7 +161,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="CurrentUpdatedTime">
       <DTS:VariableValue
-        DTS:DataType="7">2/20/2020 1:47:45 PM</DTS:VariableValue>
+        DTS:DataType="7">4/2/2020 9:14:08 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -322,34 +322,34 @@
       DTS:CreationName=""
       DTS:DTSID="{59FBAEE0-0EB0-4E61-95C7-19194D3E6891}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RowEffectiveDate BETWEEN &quot; + &quot;'&quot;+&#xA;(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::LastUpdatedTime]+ &quot;'&quot;+ &quot; AND &quot;  +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::CurrentUpdatedTime]+ &quot;'&quot;"
+      DTS:Expression="&quot;SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE IntegrationDate BETWEEN &quot; + &quot;'&quot;+&#xA;(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::LastUpdatedTime]+ &quot;'&quot;+ &quot; AND &quot;  +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::CurrentUpdatedTime]+ &quot;'&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQuery">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RowEffectiveDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-02-20 13:47:45.000'</DTS:VariableValue>
+        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE IntegrationDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-04-02 09:14:08.000'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{C6441980-7308-4D00-9324-565F67568688}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_OilMeterData] WHERE RowEffectiveDate BETWEEN &quot; + &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::LastUpdatedTime]+ &quot;'&quot;+ &quot; AND &quot;  +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::CurrentUpdatedTime]+ &quot;'&quot;"
+      DTS:Expression="&quot;SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_OilMeterData] WHERE IntegrationDate BETWEEN &quot; + &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::LastUpdatedTime]+ &quot;'&quot;+ &quot; AND &quot;  +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::CurrentUpdatedTime]+ &quot;'&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQueryOil">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_OilMeterData] WHERE RowEffectiveDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-02-20 13:47:45.000'</DTS:VariableValue>
+        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_OilMeterData] WHERE IntegrationDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-04-02 09:14:08.000'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{CC79674B-3054-4EC2-8509-26E2E21DF252}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WaterMeterData] WHERE RowEffectiveDate BETWEEN &quot; +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::LastUpdatedTime]+ &quot;'&quot;+ &quot; AND &quot;  +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::CurrentUpdatedTime]+ &quot;'&quot;"
+      DTS:Expression="&quot;SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WaterMeterData] WHERE IntegrationDate BETWEEN &quot; +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::LastUpdatedTime]+ &quot;'&quot;+ &quot; AND &quot;  +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::CurrentUpdatedTime]+ &quot;'&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQueryWater">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WaterMeterData] WHERE RowEffectiveDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-02-20 13:47:45.000'</DTS:VariableValue>
+        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WaterMeterData] WHERE IntegrationDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-04-02 09:14:08.000'</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -371,6 +371,15 @@
           Language="CSharp"
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -491,35 +500,6 @@
   </resheader>
 </root>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_e170d566053f49adad87ad10db091500.Properties.Settings.get_Default():ST_e170d566053f49adad87ad10db091500.Properties.Sett" +
-    "ings")]
-
-namespace ST_e170d566053f49adad87ad10db091500.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
-          <ProjectItem
             Name="ScriptMain.cs"
             Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
 /* The Script Task allows you to perform virtually any operation that can be accomplished in
@@ -637,6 +617,35 @@ namespace ST_e170d566053f49adad87ad10db091500
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_e170d566053f49adad87ad10db091500.Properties.Settings.get_Default():ST_e170d566053f49adad87ad10db091500.Properties.Sett" +
+    "ings")]
+
+namespace ST_e170d566053f49adad87ad10db091500.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
             Name="Properties\AssemblyInfo.cs"
             Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -666,15 +675,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -883,7 +883,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Delete XSPOC Data"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -972,7 +972,7 @@ END
         <SQLTask:SqlTaskData
           SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE RowEffectiveDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-02-20 13:47:45.000' &#xA; FOR XML PATH ('MeterData_Record'), ROOT('MeterData_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
+          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_MeterData] WHERE IntegrationDate BETWEEN '2020-02-18 09:23:00.000' AND '2020-04-02 09:14:08.000' &#xA; FOR XML PATH ('MeterData_Record'), ROOT('MeterData_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -1062,7 +1062,7 @@ END
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1129,7 +1129,7 @@ END
       DTS:LocaleID="-1"
       DTS:ObjectName="Update tbl_PublisherLog"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1184,7 +1184,7 @@ END
       DTS:LocaleID="-1"
       DTS:ObjectName="Update the DateTime for MeterData"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3808,15 +3808,19 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="195,41"
+          Size="194.666666666667,41.3333333333334"
           Id="Package\ArchiveTransformedXML"
           TopLeft="248.285718411816,514.764711545" />
         <NodeLayout
-          Size="171,41"
+          Size="170.666666666667,41.3333333333334"
           Id="Package\Delete XSPOC Data"
           TopLeft="254.54762335593,807.711492092964" />
         <NodeLayout
-          Size="159,41"
+          Size="162.666666666667,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="245.659867447945,282.711492092964" />
+        <NodeLayout
+          Size="158.666666666667,41.3333333333334"
           Id="Package\Generate GUID's"
           TopLeft="248.272113071586,116.924744870452" />
         <NodeLayout
@@ -3824,25 +3828,51 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
           Id="Package\Getting XSPOC xml"
           TopLeft="248.058961038339,375.746967740923" />
         <NodeLayout
-          Size="209,41"
+          Size="209.333333333334,41.3333333333334"
           Id="Package\Insert into tbl_PublisherLog"
           TopLeft="221.986398338229,187.549582462245" />
         <NodeLayout
-          Size="167,41"
+          Size="166.666666666667,41.3333333333334"
           Id="Package\Insert tbl_Errorlog"
           TopLeft="540.285723384546,575.176477098135" />
         <NodeLayout
-          Size="195,41"
+          Size="194.666666666667,41.3333333333334"
           Id="Package\Update tbl_PublisherLog"
           TopLeft="244.387192442351,651.883946953519" />
         <NodeLayout
-          Size="252,43"
+          Size="248,42"
+          Id="Package\Update the DateTime for MeterData"
+          TopLeft="217.659867447945,727.711492092964" />
+        <NodeLayout
+          Size="252,42.6666666666667"
           Id="Package\Update XSPOC XML tbl_PublisherLog"
           TopLeft="211.659867447945,442.050610127389" />
         <NodeLayout
-          Size="196,41"
+          Size="196,41.3333333333334"
           Id="Package\XSPOC DB to IFaceTable"
           TopLeft="246.589573258215,581.689828321816" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="341.773529945148,692.883946953519">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.8275451394451"
+              Start="0,0"
+              End="0,27.3275451394451">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.3275451394451" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="327.129255704907,158.524744870452">
@@ -3887,6 +3917,28 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
             <mssgm:EdgeLabel
               BoundingBox="-25.304453125,5.46902987547216,50.60890625,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="329.609414243142,324.711492092964">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.035475647959"
+              Start="0,0"
+              End="0,43.535475647959">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.535475647959" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3981,39 +4033,6 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="Database to IFaceTable "
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="156,40"
-          Id="06455250-aa65-4993-8bf9-12d8c43de8c3"
-          TopLeft="249.872112730988,70.0907572855175" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="245.659867447945,282.711492092964" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="329.609414243142,324.711492092964">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.035475647959"
-              Start="0,0"
-              End="0,43.535475647959">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.535475647959" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
           TopLeft="326.823132893087,228.549582462245">
@@ -4028,32 +4047,6 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,46.661909630719" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="248,42"
-          Id="Package\Update the DateTime for MeterData"
-          TopLeft="217.659867447945,727.711492092964" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="341.773529945148,692.883946953519">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.8275451394451"
-              Start="0,0"
-              End="0,27.3275451394451">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.3275451394451" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4084,6 +4077,13 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Database to IFaceTable "
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="156,40"
+          Id="06455250-aa65-4993-8bf9-12d8c43de8c3"
+          TopLeft="249.872112730988,70.0907572855175" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
