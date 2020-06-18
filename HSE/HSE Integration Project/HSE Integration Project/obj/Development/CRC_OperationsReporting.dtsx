@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="CRC_OperationsReporting"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{D4C0A6A2-8F9B-40CF-B0E5-5AA2E942B957}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{08022B89-A05F-4CF3-BE86-48C3BD925BE3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20200618 083409.csv">
+          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20200618 091144.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -586,6 +586,67 @@
                           cachedName="FileName"
                           externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].ExternalColumns[FileName]"
                           lineageId="Package\Foreach Loop Container\Load the Data into the Table\Derived Column.Outputs[Derived Column Output].Columns[FileName]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].Columns[ContractorName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="ContractorName"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].ExternalColumns[ContractorName]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCOperationsReporting CSV.Outputs[Flat File Source Output].Columns[ContractorName]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].Columns[MetricName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="MetricName"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].ExternalColumns[MetricName]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCOperationsReporting CSV.Outputs[Flat File Source Output].Columns[MetricName]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].Columns[MetricValue]"
+                          cachedDataType="numeric"
+                          cachedName="MetricValue"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].ExternalColumns[MetricValue]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCOperationsReporting CSV.Outputs[Flat File Source Output].Columns[MetricValue]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].Columns[PeriodId]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="PeriodId"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].ExternalColumns[PeriodId]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCOperationsReporting CSV.Outputs[Flat File Source Output].Columns[PeriodId]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].Columns[SubmittedStatus]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SubmittedStatus"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].ExternalColumns[SubmittedStatus]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCOperationsReporting CSV.Outputs[Flat File Source Output].Columns[SubmittedStatus]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].Columns[SubmittedDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SubmittedDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].ExternalColumns[SubmittedDate]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCOperationsReporting CSV.Outputs[Flat File Source Output].Columns[SubmittedDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].Columns[PeriodStartDate]"
+                          cachedDataType="date"
+                          cachedName="PeriodStartDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].ExternalColumns[PeriodStartDate]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCOperationsReporting CSV.Outputs[Flat File Source Output].Columns[PeriodStartDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].Columns[PeriodEndDate]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PeriodEndDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCOperationsReporting.Inputs[Destination Input].ExternalColumns[PeriodEndDate]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCOperationsReporting CSV.Outputs[Flat File Source Output].Columns[PeriodEndDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
