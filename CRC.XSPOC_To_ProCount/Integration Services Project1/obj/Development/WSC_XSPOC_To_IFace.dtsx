@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="WSC_XSPOC_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="334"
-  DTS:VersionGUID="{022166DF-606F-4466-9D6D-01A5647E1B0B}">
+  DTS:VersionBuild="343"
+  DTS:VersionGUID="{DFA932B9-A497-41A4-9B62-E27F3B2E95E1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -129,7 +129,7 @@
         DTS:DataType="8">SELECT convert(nvarchar(MAX),
 (
   
- SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellStatusChanges] WHERE RecordDate &gt;= DATEADD(DAY,-3,GETDATE()) --OR RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE()) 
+ SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellStatusChanges] WHERE IntegrationDate BETWEEN '2020-05-19 08:03:52.000' AND '2020-08-11 11:26:23.000' 
  FOR XML PATH ('WellStatusChanges_Record'), ROOT('WellStatusChanges_From_XSPOC')
 
 )) InputMsg</DTS:VariableValue>
@@ -151,6 +151,17 @@
       DTS:ObjectName="ConnType">
       <DTS:VariableValue
         DTS:DataType="8">Database</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{953FFAA6-F2B2-4DDF-A633-444A99591081}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="DATEADD( &quot;Minute&quot;, -1, GETDATE() )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CurrentUpdatedTime">
+      <DTS:VariableValue
+        DTS:DataType="7">8/11/2020 11:26:23 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -197,6 +208,15 @@
       DTS:ObjectName="IsDelSrcRecords">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{53607F7F-4F1C-4058-9B09-885BB8E3F945}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LastUpdatedTime">
+      <DTS:VariableValue
+        DTS:DataType="7">5/19/2020 8:03:52 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -301,11 +321,13 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{24A55D56-BE6E-4F36-A839-20AD2210737E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellStatusChanges] WHERE IntegrationDate BETWEEN &quot; + &quot;'&quot;+ (DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::LastUpdatedTime]+ &quot;'&quot;+ &quot; AND &quot;  +  &quot;'&quot;+(DT_WSTR,50)(DT_DBTIMESTAMP2,3)@[User::CurrentUpdatedTime]+  &quot;'&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQuery">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellStatusChanges] WHERE RecordDate &gt;= DATEADD(DAY,-3,GETDATE()) --OR RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE())</DTS:VariableValue>
+        DTS:DataType="8">SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellStatusChanges] WHERE IntegrationDate BETWEEN '2020-05-19 08:03:52.000' AND '2020-08-11 11:26:23.000'</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -328,14 +350,35 @@
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -602,35 +645,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -850,6 +872,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{698e60b1-9c4c-4f93-b164-314112813ec8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:SqlStatementSource="SELECT        DaySchedule&#xA;FROM            [dbo].[tbl_IntegrationDateTimePullConfig]&#xA;WHERE        (IntegrationName = 'WellStatusChanges')"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DaySchedule"
+            SQLTask:DtsVariableName="User::LastUpdatedTime" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Generate GUID's"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -906,7 +950,7 @@ END
         <SQLTask:SqlTaskData
           SQLTask:Connection="{6F16156A-255B-4876-8549-DE4C768CC15E}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellStatusChanges] WHERE RecordDate &gt;= DATEADD(DAY,-3,GETDATE()) --OR RowEffectiveDate &gt;= DATEADD(DAY,-3,GETDATE()) &#xA; FOR XML PATH ('WellStatusChanges_Record'), ROOT('WellStatusChanges_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
+          SQLTask:SqlStatementSource="DECLARE @IsArchive  VARCHAR(1)&#xA;SET @IsArchive  ='0'&#xA;&#xA;If @IsArchive  = '1'&#xA;BEGIN&#xA;&#xA;SELECT convert(nvarchar(MAX),&#xA;(&#xA;  &#xA; SELECT * FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellStatusChanges] WHERE IntegrationDate BETWEEN '2020-05-19 08:03:52.000' AND '2020-08-11 11:26:23.000' &#xA; FOR XML PATH ('WellStatusChanges_Record'), ROOT('WellStatusChanges_From_XSPOC')&#xA;&#xA;)) InputMsg&#xA;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#xA;SELECT 'NoData' InputMsg&#xA;&#xA;END&#xA; "
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="0"
@@ -1105,6 +1149,31 @@ END
             SQLTask:DtsVariableName="User::ArchiveXMLPath"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update the DateTime for WellStatusChanges"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c2bc3406-fbf6-4da8-8c6c-12c635d5250d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update the DateTime for WellStatusChanges"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="UPDATE [dbo].[tbl_IntegrationDateTimePullConfig]&#xA;SET [DaySchedule] = ? &#xA;WHERE IntegrationName = 'WellStatusChanges'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::CurrentUpdatedTime"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -2034,11 +2103,11 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{6D55FA3D-09D9-4494-8D65-0B140B669067}"
+      DTS:DTSID="{0CB88CB1-3741-456D-8239-30A2C70D8B0C}"
       DTS:From="Package\Update tbl_PublisherLog"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Delete XSPOC Data" />
+      DTS:To="Package\Update the DateTime for WellStatusChanges" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
@@ -2060,11 +2129,11 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{A3692969-43D8-47CD-80F9-3E9321D4730E}"
+      DTS:DTSID="{25809F3E-269A-447B-B2C5-B69E0C2D33B0}"
       DTS:From="Package\Insert into tbl_PublisherLog"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Getting XSPOC xml" />
+      DTS:To="Package\Execute SQL Task" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
@@ -2099,6 +2168,22 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
       DTS:To="Package\Update XSPOC XML tbl_PublisherLog" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{326B2CC4-7B12-40EB-BE86-FC46DB0C450A}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Getting XSPOC xml" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{5331AF2D-98C4-402F-A01D-FCAB497CE5DF}"
+      DTS:From="Package\Update the DateTime for WellStatusChanges"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Delete XSPOC Data" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2113,77 +2198,55 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="195,41"
+          Size="194.666666666667,41.3333333333334"
           Id="Package\ArchiveTransformedXML"
-          TopLeft="242.285718411816,403.764711545" />
+          TopLeft="241.4523850909,538.131376762678" />
         <NodeLayout
-          Size="171,41"
+          Size="170.666666666667,41.3333333333334"
           Id="Package\Delete XSPOC Data"
-          TopLeft="253.714290035014,610.711492092964" />
+          TopLeft="253.714290035014,822.211489264724" />
         <NodeLayout
-          Size="159,41"
+          Size="158.666666666667,41.3333333333334"
           Id="Package\Generate GUID's"
           TopLeft="248.272113071586,116.924744870452" />
         <NodeLayout
-          Size="169,43"
+          Size="169.333333333334,42.6666666666667"
           Id="Package\Getting XSPOC xml"
-          TopLeft="567.058956195462,250.446967996627" />
+          TopLeft="254.975627512533,353.146966160208" />
         <NodeLayout
-          Size="209,41"
+          Size="209.333333333334,41.3333333333334"
           Id="Package\Insert into tbl_PublisherLog"
-          TopLeft="221.986398338229,187.549582462245" />
+          TopLeft="222.819731659145,187.11624913666" />
         <NodeLayout
-          Size="167,41"
+          Size="166.666666666667,41.3333333333334"
           Id="Package\Insert tbl_Errorlog"
-          TopLeft="534.285723384546,464.176477098135" />
+          TopLeft="533.45239006363,598.543142315813" />
         <NodeLayout
-          Size="195,41"
+          Size="194.666666666667,41.3333333333334"
           Id="Package\Update tbl_PublisherLog"
-          TopLeft="248.970525781893,541.450613627934" />
+          TopLeft="241.470525893652,679.283945450289" />
         <NodeLayout
-          Size="253,41"
+          Size="253.333333333334,41.3333333333334"
           Id="Package\Update XSPOC XML tbl_PublisherLog"
-          TopLeft="205.659867447945,331.050610127389" />
+          TopLeft="214.40986731756,464.550608693897" />
         <NodeLayout
-          Size="196,41"
+          Size="196,41.3333333333334"
           Id="Package\XSPOC DB to IFaceTable"
-          TopLeft="240.589573258215,470.689828321816" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="342.542407908454,583.050613627934">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.6608784650294"
-              Start="0,0"
-              End="0,20.1608784650294">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.1608784650294" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="239.756239937299,605.056493539494" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="327.129255704907,158.524744870452">
+          TopLeft="327.545922365365,158.258078203785">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.024837591793"
+              EndConnector="0,28.8581709328749"
               Start="0,0"
-              End="0,21.524837591793">
+              End="0,21.3581709328749">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.524837591793" />
+                    End="0,21.3581709328749" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2194,76 +2257,42 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="335.77279292988,372.650610127389">
+          TopLeft="339.93112620423,505.883942027231">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.1141014176115"
+              EndConnector="0,32.2474347354473"
               Start="0,0"
-              End="0,23.6141014176115">
+              End="0,24.7474347354473">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.6141014176115" />
+                    End="0,24.7474347354473" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,6.00236320880575,50.60890625,11.609375"
+              BoundingBox="-25.304453125,6.56902986772366,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="431.319731671562,208.216249128912">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="135.7392245239,63.5640522010486"
-              Start="0,0"
-              End="128.2392245239,63.5640522010486">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="63.8696122619498,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="63.8696122619498,0"
-                    Point2="67.8696122619498,0"
-                    Point3="67.8696122619498,4" />
-                  <mssgle:LineSegment
-                    End="67.8696122619498,59.5640522010486" />
-                  <mssgle:CubicBezierSegment
-                    Point1="67.8696122619498,59.5640522010486"
-                    Point2="67.8696122619498,63.5640522010486"
-                    Point3="71.8696122619498,63.5640522010486" />
-                  <mssgle:LineSegment
-                    End="128.2392245239,63.5640522010486" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="342.380049520054,512.289828321816">
+          TopLeft="338.280049582142,646.389826872827">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.160785306119"
+              EndConnector="0,32.8941185774622"
               Start="0,0"
-              End="0,21.660785306119">
+              End="0,25.3941185774622">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.660785306119" />
+                    End="0,25.3941185774622" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2274,7 +2303,7 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="339.037645835015,445.364711545">
+          TopLeft="338.204312514099,579.731376762678">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2292,13 +2321,13 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,3.10787088840765,50.60890625,11.609375"
+              BoundingBox="-25.304453125,3.10787088840766,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="436.589573258215,488.233152709976">
+          TopLeft="435.756239937299,622.599817927654">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2322,30 +2351,18 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="651.725622862129,293.113634663294">
+          TopLeft="340.359414081713,395.813632826875">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-319.399088747517,37.9369754640954"
+              EndConnector="0,68.7369758670228"
               Start="0,0"
-              End="-319.399088747517,30.4369754640954">
+              End="0,61.2369758670228">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.9684877320477" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.9684877320477"
-                    Point2="0,18.9684877320477"
-                    Point3="-4,18.9684877320477" />
-                  <mssgle:LineSegment
-                    End="-315.399088747517,18.9684877320477" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-315.399088747517,18.9684877320477"
-                    Point2="-319.399088747517,18.9684877320477"
-                    Point3="-319.399088747517,22.9684877320477" />
-                  <mssgle:LineSegment
-                    End="-319.399088747517,30.4369754640954" />
+                    End="0,61.2369758670228" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2361,6 +2378,102 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
           Size="156,40"
           Id="06455250-aa65-4993-8bf9-12d8c43de8c3"
           TopLeft="249.872112730988,70.0907572855175" />
+        <NodeLayout
+          Size="162.666666666667,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="251.909866758766,259.64483351584" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="330.364799208956,228.449582469994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.195251045846"
+              Start="0,0"
+              End="0,23.695251045846">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.695251045846" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="336.442747135649,301.64483351584">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.5021326443683"
+              Start="0,0"
+              End="0,44.0021326443683">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.0021326443683" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="289.333333333334,42.6666666666667"
+          Id="Package\Update the DateTime for WellStatusChanges"
+          TopLeft="198.576534220162,745.444825782733" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="341.023530056907,720.617278783623">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.8275469991103"
+              Start="0,0"
+              End="0,17.3275469991103">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3275469991103" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="341.145412127588,788.1114924494">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.0999968153241"
+              Start="0,0"
+              End="0,26.5999968153241">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5999968153241" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2370,23 +2483,23 @@ FROM [XSPOC_Integration].[dbo].[tbl_Integration_WellTests]</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="155,41"
+          Size="154.666666666667,41.3333333333334"
           Id="Package\XSPOC DB to IFaceTable\Derived Column"
           TopLeft="499.612706696257,185.939216193312" />
         <NodeLayout
-          Size="131,41"
+          Size="130.666666666667,41.3333333333334"
           Id="Package\XSPOC DB to IFaceTable\Row Count"
           TopLeft="512.412715074968,256.894122091379" />
         <NodeLayout
-          Size="172,41"
+          Size="172,41.3333333333334"
           Id="Package\XSPOC DB to IFaceTable\OLE DB Destination"
           TopLeft="494.28572270335,341.976475384326" />
         <NodeLayout
-          Size="151,41"
+          Size="150.666666666667,41.3333333333334"
           Id="Package\XSPOC DB to IFaceTable\OLE DB Source"
           TopLeft="500.412706696257,96.7058828677273" />
         <NodeLayout
-          Size="157,43"
+          Size="157.333333333334,42.6666666666667"
           Id="Package\XSPOC DB to IFaceTable\Data Conversion"
           TopLeft="708.749989438802,181.999996745586" />
         <EdgeLayout

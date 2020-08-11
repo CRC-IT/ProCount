@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DLG55XPW52</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeBgfv/kj7Uqse2/TLewAngAAAAACAAAAAAADZgAAwAAAABAAAAArFxB5Smmur8nl29bQKsnPAAAAAASAAACgAAAAEAAAAF1qJHC6ZtcWj7E6h4iDzIqIAAAAYihgz7kAiQqExpzBsFgOlNEz/Pc0w16xtWPWdiMk34ugQdoytaysG08xaKDbOmtNtxZkul9zDGDNaXZ8FGMaiJcWUTd/Vt1795jCwXbfDBIjbM5vfRL15EO4ucCZfmSEpRDnwcgyV5s6XbzjBIQKX5G4jVeuOcWBiwQ1ekO6p6cY5451Ke46lhQAAADD3LJWN2NyxlILH156WHj7UPeuUw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7nL4s5EkLkuN7bkBFKVkMgAAAAACAAAAAAADZgAAwAAAABAAAADWBos0Co5QLUV1s/GvTm82AAAAAASAAACgAAAAEAAAAF3AIeU8kn9kKFAcTImO9cOIAAAAm2wbOZNTmZzw5GW2LvIfIwGchU4ZvYP0FBo9fKwM2QR0oJqd8mQ05IaiL6LqtEMcOOIzQieQhu0/b5IrOZ2yJLsgJ8fNDxMVwcwH2MGBdLMeE0oe59RD/HUPiavzV+GFCoJAHYgg+DKVsBSSKg1PmwdRPS4Qi8rGV8WQjxlqtlUlvcMVyFYIRxQAAAAaoDOs65dbSN2pOGFrj6kV3igfWw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -660,10 +660,10 @@
                 <SSIS:Property SSIS:Name="Name">WT_XSPOC_To_IFace</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">319</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">326</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3EEC0E71-0DAE-4A7F-ADC0-0A79821CD492}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F674302C-504E-40E0-B604-089775BEF407}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1766,10 +1766,10 @@
                 <SSIS:Property SSIS:Name="Name">WSC_XSPOC_To_IFace</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">328</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">343</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DA48C44F-B160-4CBD-BE92-48D2C6C0056D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DFA932B9-A497-41A4-9B62-E27F3B2E95E1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
