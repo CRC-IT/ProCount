@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AllItems"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{46BCBF23-4A2D-482B-9C11-DD298A4AF105}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{D317D566-34A5-400C-8FD9-BD9D182AE72F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -747,6 +747,15 @@
                       name="IncrementalGas"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalWater]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalWater]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalWater]"
+                      name="IncrementalWater"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalBOE]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
@@ -810,6 +819,15 @@
                       name="BusinessUnit"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[JobRequestID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[JobRequestID]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[JobRequestID]"
+                      name="JobRequestID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ContentTypeID]"
                       dataType="nText"
                       errorOrTruncationOperation="Conversion"
@@ -862,15 +880,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[NewEMWRSubmission]"
                       lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[NewEMWRSubmission]"
                       name="NewEMWRSubmission"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[JobRequestID]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[JobRequestID]"
-                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[JobRequestID]"
-                      name="JobRequestID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Id]"
@@ -1010,6 +1019,10 @@
                       dataType="r8"
                       name="IncrementalGas" />
                     <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalWater]"
+                      dataType="r8"
+                      name="IncrementalWater" />
+                    <externalMetadataColumn
                       refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalBOE]"
                       dataType="r8"
                       name="IncrementalBOE" />
@@ -1038,6 +1051,10 @@
                       dataType="nText"
                       name="BusinessUnit" />
                     <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[JobRequestID]"
+                      dataType="r8"
+                      name="JobRequestID" />
+                    <externalMetadataColumn
                       refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[ContentTypeID]"
                       dataType="nText"
                       name="ContentTypeID" />
@@ -1061,10 +1078,6 @@
                       refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[NewEMWRSubmission]"
                       dataType="i4"
                       name="NewEMWRSubmission" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[JobRequestID]"
-                      dataType="r8"
-                      name="JobRequestID" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Id]"
                       dataType="i4"
@@ -1209,6 +1222,11 @@
                       lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalGas]"
                       name="IncrementalGas" />
                     <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalWater]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalWater]"
+                      name="IncrementalWater" />
+                    <outputColumn
                       refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalBOE]"
                       dataType="r8"
                       lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalBOE]"
@@ -1244,6 +1262,11 @@
                       lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[BusinessUnit]"
                       name="BusinessUnit" />
                     <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[JobRequestID]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[JobRequestID]"
+                      name="JobRequestID" />
+                    <outputColumn
                       refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ContentTypeID]"
                       dataType="nText"
                       lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ContentTypeID]"
@@ -1273,11 +1296,6 @@
                       dataType="i4"
                       lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[NewEMWRSubmission]"
                       name="NewEMWRSubmission" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[JobRequestID]"
-                      dataType="r8"
-                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[JobRequestID]"
-                      name="JobRequestID" />
                     <outputColumn
                       refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Id]"
                       dataType="i4"
