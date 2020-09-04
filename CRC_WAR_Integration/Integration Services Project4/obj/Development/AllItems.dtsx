@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="AllItems"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{D317D566-34A5-400C-8FD9-BD9D182AE72F}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{5CDB3197-A974-4D5D-BD7E-69AA206A459B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1594,6 +1594,12 @@
                       cachedName="Copy of MOPValue"
                       externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[MOP]"
                       lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of MOPValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[IncrementalWater]"
+                      cachedDataType="r8"
+                      cachedName="IncrementalWater"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[INCREMENTAL_WATER]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalWater]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1733,6 +1739,10 @@
                       dataType="wstr"
                       length="255"
                       name="VERSION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[INCREMENTAL_WATER]"
+                      dataType="r8"
+                      name="INCREMENTAL_WATER" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2420,7 +2430,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{4D37B57F-BFFE-467B-8BCA-FE55B749680D}"
-          SQLTask:SqlStatementSource="DELETE FROM [CRC_North_Report].[dbo].[EXPENSEMWR_ALLITEMS]&#xA;&#xA;INSERT INTO [dbo].[EXPENSEMWR_ALLITEMS]&#xA;SELECT [ID]&#xA;      ,[HIGHFAILUREWELL]&#xA;      ,[MANAGINGGROUP]&#xA;      ,(SELECT [NAME] FROM [dbo].[UserInformationList_Staging] WHERE ID = [ENGINEER]) AS [Engineer]&#xA;      ,[PRIMARYREASON]&#xA;      ,[SECONDARYREASON]&#xA;      ,[MOP]&#xA;      ,[COSTESTIMATE]&#xA;      ,[RANK]&#xA;      ,[PAYOUT]&#xA;      ,[INCREMENTAL_OIL]&#xA;      ,[INCREMENTAL_GAS]&#xA;      ,[INCREMENTAL_BOE]&#xA;      ,[WELLNAME]&#xA;      ,[MODIFIED]&#xA;      ,(SELECT [NAME] FROM [dbo].[UserInformationList_Staging] WHERE ID = [CREATEDBY]) AS [CREATEDBY]&#xA;      ,[API14]&#xA;      ,[PERMITSTATUS]&#xA;      ,[CURRENT_OIL]&#xA;      ,[CURRENT_GAS]&#xA;      ,[CURRENT_BOE]&#xA;      ,[NOTES]&#xA;      ,[STATUS]&#xA;      ,[RCFAAPPROVALDATE]&#xA;      ,[ENGINEERAPPROVALDATE]&#xA;      ,[FINALAPPROVALDATE]&#xA;      ,[CREATED]&#xA;      ,[CONTENTTYPE]&#xA;      ,(SELECT [NAME] FROM [dbo].[UserInformationList_Staging] WHERE ID = [MODIFIEDBY]) AS [MODIFIEDBY]&#xA;      ,[VERSION]&#xA;&#x9;  ,GETDATE() AS RecordInsertedDate&#xA;  FROM [CRC_North_Report].[dbo].[EXPENSEMWR_ALLITEMS_Staging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE FROM [CRC_North_Report].[dbo].[EXPENSEMWR_ALLITEMS]&#xA;&#xA;INSERT INTO [dbo].[EXPENSEMWR_ALLITEMS]&#xA;SELECT [ID]&#xA;      ,[HIGHFAILUREWELL]&#xA;      ,[MANAGINGGROUP]&#xA;      ,(SELECT [NAME] FROM [dbo].[UserInformationList_Staging] WHERE ID = [ENGINEER]) AS [Engineer]&#xA;      ,[PRIMARYREASON]&#xA;      ,[SECONDARYREASON]&#xA;      ,[MOP]&#xA;      ,[COSTESTIMATE]&#xA;      ,[RANK]&#xA;      ,[PAYOUT]&#xA;      ,[INCREMENTAL_OIL]&#xA;      ,[INCREMENTAL_GAS]&#xA;      ,[INCREMENTAL_BOE]&#xA;&#x9;  ,[WELLNAME]&#xA;      ,[MODIFIED]&#xA;      ,(SELECT [NAME] FROM [dbo].[UserInformationList_Staging] WHERE ID = [CREATEDBY]) AS [CREATEDBY]&#xA;      ,[API14]&#xA;      ,[PERMITSTATUS]&#xA;      ,[CURRENT_OIL]&#xA;      ,[CURRENT_GAS]&#xA;      ,[CURRENT_BOE]&#xA;      ,[NOTES]&#xA;      ,[STATUS]&#xA;      ,[RCFAAPPROVALDATE]&#xA;      ,[ENGINEERAPPROVALDATE]&#xA;      ,[FINALAPPROVALDATE]&#xA;      ,[CREATED]&#xA;      ,[CONTENTTYPE]&#xA;      ,(SELECT [NAME] FROM [dbo].[UserInformationList_Staging] WHERE ID = [MODIFIEDBY]) AS [MODIFIEDBY]&#xA;      ,[VERSION]&#xA;&#x9;  ,GETDATE() AS RecordInsertedDate&#xA;&#x9;  ,[INCREMENTAL_WATER]&#xA;  FROM [CRC_North_Report].[dbo].[EXPENSEMWR_ALLITEMS_Staging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -2461,25 +2471,25 @@
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Execute SQL Task"
-          TopLeft="142.083331216127,39.4333326282104" />
+          TopLeft="143.749997857958,38.9999993026257" />
         <NodeLayout
           Size="196.666666666667,42.6666666666667"
           Id="Package\Load Data into the Table"
-          TopLeft="122.499998174608,221.433329373797" />
+          TopLeft="124.166664816439,220.999996048212" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="222.3333311975,82.0999992948771">
+          TopLeft="223.166664518416,81.6666659692924">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.4333315434058"
+              EndConnector="0,57.8666648689907"
               Start="0,0"
-              End="0,49.9333315434058">
+              End="0,50.3666648689907">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.9333315434058" />
+                    End="0,50.3666648689907" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2490,18 +2500,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="220.708331343407,182.19999750495">
+          TopLeft="221.541664664323,182.19999750495">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.2333318688473"
+              EndConnector="0,38.7999985432626"
               Start="0,0"
-              End="0,31.7333318688473">
+              End="0,31.2999985432626">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.7333318688473" />
+                    End="0,31.2999985432626" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2535,57 +2545,13 @@
           Id="Package\Data Flow Task\ExpenseMWR"
           TopLeft="82.2222209970157,30.3333327909311" />
         <NodeLayout
-          Size="182.666666666667,42.6666666666667"
-          Id="Package\Data Flow Task\Data Field Conversion"
-          TopLeft="68.9814804535774,127.111108838187" />
-        <NodeLayout
           Size="241.333333333334,42.6666666666667"
           Id="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging"
           TopLeft="53.5648140166369,245.459254870106" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Output1]"
-          TopLeft="441.398142817534,76.6259271545106">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48.7666650317112"
-              Start="0,0"
-              End="0,41.2666650317112">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.2666650317112" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Output]"
-          TopLeft="156.93518405863,72.9999994575978">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54.1111093805892"
-              Start="0,0"
-              End="0,46.6111093805892">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.6111093805892" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Data Field Conversion"
+          TopLeft="68.9814804535774,127.111108838187" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
           TopLeft="440.731476126032,168.059258852888">
@@ -2646,6 +2612,50 @@
                     Point3="13.9166668963928,41.8407396826262" />
                   <mssgle:LineSegment
                     End="13.9166668963928,68.1814793652523" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Output1]"
+          TopLeft="441.398142817534,76.6259271545106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.7666650317112"
+              Start="0,0"
+              End="0,41.2666650317112">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.2666650317112" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Output]"
+          TopLeft="156.93518405863,72.9999994575978">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.1111093805892"
+              Start="0,0"
+              End="0,46.6111093805892">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.6111093805892" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
