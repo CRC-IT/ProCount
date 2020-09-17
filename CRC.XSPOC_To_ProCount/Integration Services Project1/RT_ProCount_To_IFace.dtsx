@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="RT_ProCount_To_IFace"
   DTS:PackageType="5"
-  DTS:VersionBuild="150"
-  DTS:VersionGUID="{E301C28F-09E1-4AC9-A109-85C3D86A39B8}">
+  DTS:VersionBuild="157"
+  DTS:VersionGUID="{A0CB2F90-AC76-4D5B-98D3-B7C04E5B6E87}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -134,7 +134,7 @@
 , arg.decktype
 , gs.AccountantPersonID
 , cmd.AllocationDateStamp
-, gsc.UserDateStamp AS GatheringSystemLockDate
+, (gsc.UserDateStamp) + (gsc.UserTimeStamp) AS GatheringSystemLockDate
 ,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gsc.UserID) AS GatheringSystemLockName
 ,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gs.AccountantPersonID) AS GatheringSystemAccountantName
 FROM CompletionMonthlyDispTb cmd WITH (NOLOCK) 
@@ -178,7 +178,7 @@ WHERE cmd.ProductType = 2 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID 
 AND (arg.LocAccountNumber1 IS NOT NULL OR arg.LocAccountNumber1 &lt;&gt; '') AND cmd.RecordDate &gt;= DATEADD(MONTH, -4, GETDATE()) and gsc.UserDateStamp &gt;= DATEADD(MONTH, -4, GETDATE())
 GROUP BY cmd.ProductType, cmd.sourcetype, cmd.MerrickID, cmd.runticketnumber, cmd.DispositionCode, cmd.GatheringSystemID, gs.GatheringSystemName, a.areaid, a.areaname, cmd.RecordDate, 
 cmd.RunTicketDate, cmd.AllocActGravity, arg.WellPlusCompletionName, arg.decktype, arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, cmd.AllocationDateStamp, 
-gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID 
+gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID, gsc.UserTimeStamp 
  FOR XML PATH ('TankRunTicket_Record'), ROOT('TankRunTicket_From_ProCount')
 
 )) InputMsg</DTS:VariableValue>
@@ -352,7 +352,7 @@ gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID
       DTS:CreationName=""
       DTS:DTSID="{FDABD9D9-B6A2-4026-8AE3-2C568AFD4CDB}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT &#xA;(SELECT ProductTypeDescription FROM ProductTypeTb WITH (NOLOCK) WHERE MerrickID = cmd.ProductType) AS ProductType&#xA;, cmd.DispositionCode&#xA;, (SELECT DispositionCodeDescription FROM DispositionCodeTb WITH (NOLOCK) WHERE ProductTypeID = cmd.ProductType AND MerrickID = cmd.DispositionCode) AS DispositionCodeDescription&#xA;,cmd.sourcetype&#xA;, cmd.MerrickID AS completionID&#xA;, cmd.runticketnumber&#xA;, cmd.GatheringSystemID&#xA;, gs.GatheringSystemName&#xA;, a.AreaID, a.AreaName&#xA;, cmd.RecordDate&#xA;, cmd.RunTicketDate&#xA;, cmd.AllocActGravity&#xA;, SUM(cmd.AllocActOilVol) AS vol&#xA;, arg.BusinessEnitity&#xA;, LTRIM(RTRIM(arg.locationid)) AS locationid&#xA;, arg.LocAccountNumber1&#xA;, arg.LocAccountNumber2&#xA;, ISNULL(arg.WellPlusCompletionName&#xA;,(SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE cmd.merrickid = merrickid)) AS WellPlusCompletionName&#xA;, arg.decktype&#xA;, gs.AccountantPersonID&#xA;, cmd.AllocationDateStamp&#xA;, gsc.UserDateStamp AS GatheringSystemLockDate&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gsc.UserID) AS GatheringSystemLockName&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gs.AccountantPersonID) AS GatheringSystemAccountantName&#xA;FROM CompletionMonthlyDispTb cmd WITH (NOLOCK) &#xA;INNER JOIN CompletionMonthlyTb cm WITH (NOLOCK) ON cmd.MerrickID = cm.merrickID AND cmd.RecordDate = cm.RecordDate &#xA;INNER JOIN&#xA;&#x9;&#x9;(SELECT &#xA;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;, odi.activeflag&#xA;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;, odi.StartDate&#xA;&#x9;&#x9;&#x9;, odi.EndDate&#xA;&#x9;&#x9;&#x9;, odi.WellPlusCompletionName&#xA;&#x9;&#x9;&#x9;,(SELECT Description FROM BusinessEntityTb WITH (NOLOCK) WHERE merrickid = be.MerrickID) BusinessEnitity&#xA;&#x9;&#x9;&#x9;, be.locationid&#xA;&#x9;&#x9;&#x9;, be.locaccountnumber1&#xA;&#x9;&#x9;&#x9;, be.locaccountnumber2&#xA;&#x9;FROM BusinessEntityLocationTb be WITH (NOLOCK) &#xA;&#x9;INNER JOIN&#xA;&#x9;&#x9;(SELECT &#xA;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;, od.activeflag&#xA;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;, MAX(od.StartDate) AS StartDate&#xA;&#x9;&#x9;&#x9;, MAX(od.EndDate) AS EndDate&#xA;&#x9;&#x9;&#x9;, (SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE odi.objectmerrickid = merrickid AND odi.decktype = 14) WellPlusCompletionName&#xA;&#x9;&#x9;FROM OwnershipDeckTb od WITH (NOLOCK) &#xA;&#x9;&#x9;INNER JOIN OwnershipDeckInterestTb odi WITH (NOLOCK) ON od.objectmerrickid = odi.objectmerrickid AND od.ObjectMerrickType = odi.ObjectMerrickType AND od.decktype = odi.decktype AND od.StartDate = odi.StartDate&#xA;&#x9;&#x9;WHERE odi.decktype = 14 AND od.ActiveFlag = 1 AND od.ObjectMerrickType = 1 AND GETDATE() BETWEEN od.StartDate AND od.EndDate&#xA;&#x9;&#x9;GROUP BY odi.decktype, odi.objectmerrickid, odi.ObjectMerrickType, od.activeflag, odi.ownerbeidloc, odi.OwnerBEID) odi ON be.LocationNumber = odi.ownerbeidloc AND be.merrickid = odi.OwnerBEID) arg &#xA;ON cmd.MerrickID = arg.objectmerrickid&#xA;LEFT OUTER JOIN AreaTb a WITH (NOLOCK) ON cm.AreaID = a.AreaMerrickID AND cm.areaid &lt;&gt; 0&#xA;INNER JOIN GatheringSystemTb gs WITH (NOLOCK) ON cmd.GatheringSystemID = gs.GatheringSystemMerrickID&#xA;INNER JOIN GatheringSystemCloseTb gsc WITH (NOLOCK) ON cmd.GatheringSystemID = gsc.GatheringSystemID AND cmd.RecordDate = gsc.RecordMonth&#xA;WHERE cmd.ProductType = 2 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID &gt; 0 AND cmd.DispositionCode IN (SELECT MerrickID FROM DispositionCodeTb WHERE ProductTypeID = 2 AND DispositionGrouping = 6) AND gsc.AllocationLockedFlag = 1&#xA;AND (arg.LocAccountNumber1 IS NOT NULL OR arg.LocAccountNumber1 &lt;&gt; '') AND cmd.RecordDate &gt;= DATEADD(MONTH, -4, GETDATE()) and gsc.UserDateStamp &gt;= DATEADD(MONTH, -4, GETDATE())&#xA;GROUP BY cmd.ProductType, cmd.sourcetype, cmd.MerrickID, cmd.runticketnumber, cmd.DispositionCode, cmd.GatheringSystemID, gs.GatheringSystemName, a.areaid, a.areaname, cmd.RecordDate, &#xA;cmd.RunTicketDate, cmd.AllocActGravity, arg.WellPlusCompletionName, arg.decktype, arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, cmd.AllocationDateStamp, &#xA;gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID&quot;"
+      DTS:Expression="&quot;SELECT &#xA;(SELECT ProductTypeDescription FROM ProductTypeTb WITH (NOLOCK) WHERE MerrickID = cmd.ProductType) AS ProductType&#xA;, cmd.DispositionCode&#xA;, (SELECT DispositionCodeDescription FROM DispositionCodeTb WITH (NOLOCK) WHERE ProductTypeID = cmd.ProductType AND MerrickID = cmd.DispositionCode) AS DispositionCodeDescription&#xA;,cmd.sourcetype&#xA;, cmd.MerrickID AS completionID&#xA;, cmd.runticketnumber&#xA;, cmd.GatheringSystemID&#xA;, gs.GatheringSystemName&#xA;, a.AreaID, a.AreaName&#xA;, cmd.RecordDate&#xA;, cmd.RunTicketDate&#xA;, cmd.AllocActGravity&#xA;, SUM(cmd.AllocActOilVol) AS vol&#xA;, arg.BusinessEnitity&#xA;, LTRIM(RTRIM(arg.locationid)) AS locationid&#xA;, arg.LocAccountNumber1&#xA;, arg.LocAccountNumber2&#xA;, ISNULL(arg.WellPlusCompletionName&#xA;,(SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE cmd.merrickid = merrickid)) AS WellPlusCompletionName&#xA;, arg.decktype&#xA;, gs.AccountantPersonID&#xA;, cmd.AllocationDateStamp&#xA;, (gsc.UserDateStamp) + (gsc.UserTimeStamp) AS GatheringSystemLockDate&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gsc.UserID) AS GatheringSystemLockName&#xA;,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gs.AccountantPersonID) AS GatheringSystemAccountantName&#xA;FROM CompletionMonthlyDispTb cmd WITH (NOLOCK) &#xA;INNER JOIN CompletionMonthlyTb cm WITH (NOLOCK) ON cmd.MerrickID = cm.merrickID AND cmd.RecordDate = cm.RecordDate &#xA;INNER JOIN&#xA;&#x9;&#x9;(SELECT &#xA;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;, odi.activeflag&#xA;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;, odi.StartDate&#xA;&#x9;&#x9;&#x9;, odi.EndDate&#xA;&#x9;&#x9;&#x9;, odi.WellPlusCompletionName&#xA;&#x9;&#x9;&#x9;,(SELECT Description FROM BusinessEntityTb WITH (NOLOCK) WHERE merrickid = be.MerrickID) BusinessEnitity&#xA;&#x9;&#x9;&#x9;, be.locationid&#xA;&#x9;&#x9;&#x9;, be.locaccountnumber1&#xA;&#x9;&#x9;&#x9;, be.locaccountnumber2&#xA;&#x9;FROM BusinessEntityLocationTb be WITH (NOLOCK) &#xA;&#x9;INNER JOIN&#xA;&#x9;&#x9;(SELECT &#xA;&#x9;&#x9;&#x9;odi.decktype&#xA;&#x9;&#x9;&#x9;, odi.objectmerrickid&#xA;&#x9;&#x9;&#x9;, odi.ObjectMerrickType&#xA;&#x9;&#x9;&#x9;, od.activeflag&#xA;&#x9;&#x9;&#x9;, odi.ownerbeidloc&#xA;&#x9;&#x9;&#x9;, odi.OwnerBEID&#xA;&#x9;&#x9;&#x9;, MAX(od.StartDate) AS StartDate&#xA;&#x9;&#x9;&#x9;, MAX(od.EndDate) AS EndDate&#xA;&#x9;&#x9;&#x9;, (SELECT WellPlusCompletionName FROM completiontb WITH (NOLOCK) WHERE odi.objectmerrickid = merrickid AND odi.decktype = 14) WellPlusCompletionName&#xA;&#x9;&#x9;FROM OwnershipDeckTb od WITH (NOLOCK) &#xA;&#x9;&#x9;INNER JOIN OwnershipDeckInterestTb odi WITH (NOLOCK) ON od.objectmerrickid = odi.objectmerrickid AND od.ObjectMerrickType = odi.ObjectMerrickType AND od.decktype = odi.decktype AND od.StartDate = odi.StartDate&#xA;&#x9;&#x9;WHERE odi.decktype = 14 AND od.ActiveFlag = 1 AND od.ObjectMerrickType = 1 AND GETDATE() BETWEEN od.StartDate AND od.EndDate&#xA;&#x9;&#x9;GROUP BY odi.decktype, odi.objectmerrickid, odi.ObjectMerrickType, od.activeflag, odi.ownerbeidloc, odi.OwnerBEID) odi ON be.LocationNumber = odi.ownerbeidloc AND be.merrickid = odi.OwnerBEID) arg &#xA;ON cmd.MerrickID = arg.objectmerrickid&#xA;LEFT OUTER JOIN AreaTb a WITH (NOLOCK) ON cm.AreaID = a.AreaMerrickID AND cm.areaid &lt;&gt; 0&#xA;INNER JOIN GatheringSystemTb gs WITH (NOLOCK) ON cmd.GatheringSystemID = gs.GatheringSystemMerrickID&#xA;INNER JOIN GatheringSystemCloseTb gsc WITH (NOLOCK) ON cmd.GatheringSystemID = gsc.GatheringSystemID AND cmd.RecordDate = gsc.RecordMonth&#xA;WHERE cmd.ProductType = 2 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID &gt; 0 AND cmd.DispositionCode IN (SELECT MerrickID FROM DispositionCodeTb WHERE ProductTypeID = 2 AND DispositionGrouping = 6) AND gsc.AllocationLockedFlag = 1&#xA;AND (arg.LocAccountNumber1 IS NOT NULL OR arg.LocAccountNumber1 &lt;&gt; '') AND cmd.RecordDate &gt;= DATEADD(MONTH, -4, GETDATE()) and gsc.UserDateStamp &gt;= DATEADD(MONTH, -4, GETDATE())&#xA;GROUP BY cmd.ProductType, cmd.sourcetype, cmd.MerrickID, cmd.runticketnumber, cmd.DispositionCode, cmd.GatheringSystemID, gs.GatheringSystemName, a.areaid, a.areaname, cmd.RecordDate, &#xA;cmd.RunTicketDate, cmd.AllocActGravity, arg.WellPlusCompletionName, arg.decktype, arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, cmd.AllocationDateStamp, &#xA;gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID, gsc.UserTimeStamp&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="XSPOCInputSQLQuery">
@@ -380,7 +380,7 @@ gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID
 , arg.decktype
 , gs.AccountantPersonID
 , cmd.AllocationDateStamp
-, gsc.UserDateStamp AS GatheringSystemLockDate
+, (gsc.UserDateStamp) + (gsc.UserTimeStamp) AS GatheringSystemLockDate
 ,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gsc.UserID) AS GatheringSystemLockName
 ,(SELECT (SurName + ', ' + GivenName + ' ' + MiddleInitial) + '(' + UserName + ')' FROM UserTb WITH (NOLOCK) WHERE MerrickID = gs.AccountantPersonID) AS GatheringSystemAccountantName
 FROM CompletionMonthlyDispTb cmd WITH (NOLOCK) 
@@ -424,7 +424,7 @@ WHERE cmd.ProductType = 2 AND cmd.SourceType IN (2,3) AND cmd.GatheringSystemID 
 AND (arg.LocAccountNumber1 IS NOT NULL OR arg.LocAccountNumber1 &lt;&gt; '') AND cmd.RecordDate &gt;= DATEADD(MONTH, -4, GETDATE()) and gsc.UserDateStamp &gt;= DATEADD(MONTH, -4, GETDATE())
 GROUP BY cmd.ProductType, cmd.sourcetype, cmd.MerrickID, cmd.runticketnumber, cmd.DispositionCode, cmd.GatheringSystemID, gs.GatheringSystemName, a.areaid, a.areaname, cmd.RecordDate, 
 cmd.RunTicketDate, cmd.AllocActGravity, arg.WellPlusCompletionName, arg.decktype, arg.BusinessEnitity, arg.locationid, arg.LocAccountNumber1, arg.LocAccountNumber2, cmd.AllocationDateStamp, 
-gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID</DTS:VariableValue>
+gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID, gsc.UserTimeStamp</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -447,35 +447,14 @@ gsc.UserDateStamp, gsc.UserID, arg.decktype, gs.AccountantPersonID</DTS:Variable
           ReadOnlyVariables="User::ArchMsgLength,User::FormattedMsg,User::IsArchive,User::PkgName,User::TrackID"
           ReadWriteVariables="User::ArchiveXMLPath">
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_d5c5a91504b64450a59c853eb2aca8e3")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_d5c5a91504b64450a59c853eb2aca8e3")]
-[assembly: AssemblyCopyright("Copyright @  2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -838,14 +817,35 @@ namespace ST_d5c5a91504b64450a59c853eb2aca8e3.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_d5c5a91504b64450a59c853eb2aca8e3")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_d5c5a91504b64450a59c853eb2aca8e3")]
+[assembly: AssemblyCopyright("Copyright @  2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2032,8 +2032,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
               <connections>
                 <connection
                   refId="Package\ProCount DB to IFaceTable\MsgQ Join IFaceRT Data.Connections[OleDbConnection]"
-                  connectionManagerID="{EBA005CE-7304-4CB3-BFAA-D3260AD1F7C0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[CKCWSQL1A.CRC_ProCount]"
+                  connectionManagerID="{5de7753f-7a55-4192-a18b-da1db847106d}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CKCWSQL1A CRC_P2EU]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2811,11 +2811,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="193,43"
+          Size="193.333333333334,42.6666666666667"
           Id="Package\ArchiveTransformedXML"
           TopLeft="278.749995846301,305.06666121165" />
         <NodeLayout
-          Size="159,43"
+          Size="158.666666666667,42.6666666666667"
           Id="Package\Generate GUID's"
           TopLeft="297.499995566905,15.1666663954656" />
         <NodeLayout
@@ -2823,23 +2823,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           Id="Package\Getting ProCount xml"
           TopLeft="292.083328980952,159.033330489596" />
         <NodeLayout
-          Size="209,43"
+          Size="209.333333333334,42.6666666666667"
           Id="Package\Insert into tbl_PublisherLog"
           TopLeft="271.666662618518,90.1333317216238" />
         <NodeLayout
-          Size="165,43"
+          Size="165.333333333334,42.6666666666667"
           Id="Package\Insert tbl_Errorlog"
           TopLeft="577.49999139458,375.399995862246" />
         <NodeLayout
-          Size="207,42"
+          Size="206.666666666667,42"
           Id="Package\ProCount DB to IFaceTable"
           TopLeft="279.333329185843,378.866659909884" />
         <NodeLayout
-          Size="213,43"
+          Size="213.333333333334,42.6666666666667"
           Id="Package\Update tbl_PublisherLog"
           TopLeft="267.916662674397,448.06665865461" />
         <NodeLayout
-          Size="252,43"
+          Size="252,42.6666666666667"
           Id="Package\Update XSPOC XML tbl_PublisherLog"
           TopLeft="250.416662935168,233.566662490169" />
         <EdgeLayout
@@ -2999,11 +2999,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="195,42"
+          Size="194.666666666667,42"
           Id="Package\ProCount DB to IFaceTable\MsgQ Join IFaceRT Data"
           TopLeft="309.99999538064,53.7333323725064" />
         <NodeLayout
-          Size="155,43"
+          Size="154.666666666667,42.6666666666667"
           Id="Package\ProCount DB to IFaceTable\Derived Column"
           TopLeft="327.49999511987,138.666664187114" />
         <NodeLayout
@@ -3011,7 +3011,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           Id="Package\ProCount DB to IFaceTable\Load Iface Runtime ticket"
           TopLeft="310.416662041098,318.066660979192" />
         <NodeLayout
-          Size="131,43"
+          Size="130.666666666667,42.6666666666667"
           Id="Package\ProCount DB to IFaceTable\Row Count"
           TopLeft="337.916661631316,233.999995815754" />
         <EdgeLayout

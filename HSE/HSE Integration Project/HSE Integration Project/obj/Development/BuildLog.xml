@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>HSE Integration Project</Name>
-    <LastWriteTime>2020-06-18T15:33:41.4601552Z</LastWriteTime>
+    <LastWriteTime>2020-09-14T14:18:21.5646192Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,7 +13,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CRC_ContractStatus.dtsx</Name>
-      <LastWriteTime>2020-06-18T15:20:12.566365Z</LastWriteTime>
+      <LastWriteTime>2020-07-01T15:57:53.4291082Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
