@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="RT_ProCount_To_OneCal"
   DTS:PackageType="5"
-  DTS:VersionBuild="571"
-  DTS:VersionGUID="{02AA168C-EC52-49C6-ADE2-9A274F3C2074}">
+  DTS:VersionBuild="572"
+  DTS:VersionGUID="{A0E679FF-CE04-48C7-9961-E02747073C4F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22,14 +22,14 @@
       DTS:DTSID="{07B369AE-514E-492E-AF28-96299D486D79}"
       DTS:ObjectName="ONECALP.xxcrc_procount_intf">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Data Source=ONECALT;User ID=xxcrc_procount;Password=xxcrc_procount;Provider=OraOLEDB.Oracle.1;Persist Security Info=True"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">"Data Source=ONECALP;User ID=XXCRC_PROCOUNT_INTF;Password=PROCOUNT2019CRC;Provider=OraOLEDB.Oracle.1;Persist Security Info=True"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=ONECALT;User ID=xxcrc_procount;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
+          DTS:ConnectionString="Data Source=ONECALP;User ID=XXCRC_PROCOUNT_INTF;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7nL4s5EkLkuN7bkBFKVkMgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACg9imxVAWcqA0yLhM6sNyTAAAAAASAAACgAAAAEAAAALkQ3+3oF5iPR5UpkWHg+QsgAAAAsiNjuhMh1MQlnpojkXQd7ONsK0BFCwFBTXvYqNN6iBoUAAAA947fDGSPXNsCiEupNvUrJ/Ae2Fo</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7nL4s5EkLkuN7bkBFKVkMgAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACKZ4cptANe8DuJofjdIn/xAAAAAASAAACgAAAAEAAAALlJW6i7gj7kF0S5nQmZ+zIgAAAAeccgqSJzu+dZqQPVYWQt42E0qUc6iQMZsdpeIitY//EUAAAASLA1HSr+tzmtipR4V3UAsgsRX4M</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -590,7 +590,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Insert tbl_Errorlog for BR Failure"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -664,7 +664,7 @@
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ArchiveTransformedXML"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -675,14 +675,35 @@
               ReadOnlyVariables="User::ArchFormattedMsg,User::FailRecCount,User::FormattedMsg,User::LookupRecCount,User::PkgName,User::TrackID"
               ReadWriteVariables="User::ArchiveXMLPath,User::TotalRecCount">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("CRC")]
+[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
+[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1033,35 +1054,14 @@ namespace ST_e170d566053f49adad87ad10db091500.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("CRC")]
-[assembly: AssemblyProduct("ST_e170d566053f49adad87ad10db091500")]
-[assembly: AssemblyCopyright("Copyright @ CRC 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -6977,14 +6977,14 @@ AND nvl(STATUS, '.') NOT IN ('X')</property>
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Primary Lookup.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output1]"
-                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Split Processed records.Inputs[Conditional Split Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\GatheringSystemLockDate Lookup.Outputs[Lookup No Match Output]" />
-                <path
-                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Union All.Inputs[Union All Input 1]"
                   name="Lookup No Match Output"
                   startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Primary Lookup.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
+                  endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Split Processed records.Inputs[Conditional Split Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\GatheringSystemLockDate Lookup.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[OLE DB Command Error Output]"
                   endId="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount\Derived Column 2 1.Inputs[Derived Column Input]"
@@ -8023,7 +8023,7 @@ AND nvl(STATUS, '.') NOT IN ('X', 'Z')</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_Errorlog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8084,7 +8084,7 @@ AND nvl(STATUS, '.') NOT IN ('X', 'Z')</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_MsgQ"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8128,7 +8128,7 @@ AND nvl(STATUS, '.') NOT IN ('X', 'Z')</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8189,7 +8189,7 @@ AND nvl(STATUS, '.') NOT IN ('X', 'Z')</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Transformed Msg in tbl_TransactionLog"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -8811,7 +8811,7 @@ AND nvl(STATUS, '.') NOT IN ('X', 'Z')</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output1]"
           TopLeft="543.569436160847,486.184320555308">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8835,7 +8835,7 @@ AND nvl(STATUS, '.') NOT IN ('X', 'Z')</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output1]"
+          Id="Package\Process All IfactBatchUIDS\MsgQ_To_ProCount.Paths[Lookup No Match Output]"
           TopLeft="1012.22551563149,492.490473964413">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9358,7 +9358,7 @@ AND nvl(STATUS, '.') NOT IN ('X', 'Z')</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -9368,7 +9368,7 @@ AND nvl(STATUS, '.') NOT IN ('X', 'Z')</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

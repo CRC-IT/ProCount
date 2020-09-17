@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CRC.XSPOC_To_ProCount</Name>
-    <LastWriteTime>2020-09-16T23:49:27.2840311Z</LastWriteTime>
+    <LastWriteTime>2020-09-17T01:18:17.5924424Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -93,7 +93,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>RT_ProCount_To_OneCal.dtsx</Name>
-      <LastWriteTime>2020-09-17T01:06:19.2489387Z</LastWriteTime>
+      <LastWriteTime>2020-09-17T01:19:26.5579647Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
