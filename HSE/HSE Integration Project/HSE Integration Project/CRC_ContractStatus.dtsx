@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="CRC_ContractStatus"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{54286CA8-A643-48AE-AF03-5F68A2ED518E}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{BBD2C16B-1C44-4FD6-92E3-F3F583D06B19}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20200618 081852.csv">
+          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20201215 090817.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -877,126 +877,6 @@
                       name="Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[CompanyID]"
-                          cachedDataType="numeric"
-                          cachedName="CompanyID"
-                          cachedPrecision="18"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;CompanyID&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[CompanyID]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Company Name]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="500"
-                          cachedName="Company Name"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Company Name&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Company Name]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[City]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="250"
-                          cachedName="City"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;City&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[City]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[State]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="10"
-                          cachedName="State"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;State&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[State]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[SSQ Admin Name]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="250"
-                          cachedName="SSQ Admin Name"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;SSQ Admin Name&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[SSQ Admin Name]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[SSQ Admin Email]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="250"
-                          cachedName="SSQ Admin Email"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;SSQ Admin Email&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[SSQ Admin Email]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Primary Contact Name]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="250"
-                          cachedName="Primary Contact Name"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Primary Contact Name&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Primary Contact Name]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Primary Contact Email]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="250"
-                          cachedName="Primary Contact Email"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Primary Contact Email&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Primary Contact Email]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Overall Dashboard Status]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Overall Dashboard Status"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Overall Dashboard Status&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Overall Dashboard Status]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[SSQ Score Module]"
-                          cachedDataType="numeric"
-                          cachedName="SSQ Score Module"
-                          cachedPrecision="18"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;SSQ Score Module&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[SSQ Score Module]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[MSA Module Status]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="MSA Module Status"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;MSA Module Status&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[MSA Module Status]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[TRIR 4 Quarter rolling avg]"
-                          cachedDataType="decimal"
-                          cachedName="TRIR 4 Quarter rolling avg"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;TRIR 4 Quarter rolling avg&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[TRIR 4 Quarter rolling avg]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[TRIR 3yr]"
-                          cachedDataType="decimal"
-                          cachedName="TRIR 3yr"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;TRIR 3yr&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[TRIR 3yr]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[OSHA Verification Module Status]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="OSHA Verification Module Status"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;OSHA Verification Module Status&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[OSHA Verification Module Status]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Insurance Verification Module Status]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Insurance Verification Module Status"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Insurance Verification Module Status&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Insurance Verification Module Status]" />
-                        <inputColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Release Status]"
-                          cachedDataType="date"
-                          cachedName="Release Status"
-                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Release Status&quot;]"
-                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Release Status]" />
-                        <inputColumn
                           refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[CreatedDate]"
                           cachedDataType="dbTimeStamp"
                           cachedName="CreatedDate"
@@ -1014,96 +894,6 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;CompanyID&quot;]"
-                          dataType="numeric"
-                          name="&quot;CompanyID&quot;"
-                          precision="18" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Company Name&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="500"
-                          name="&quot;Company Name&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;City&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="250"
-                          name="&quot;City&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;State&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="10"
-                          name="&quot;State&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;SSQ Admin Name&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="250"
-                          name="&quot;SSQ Admin Name&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;SSQ Admin Email&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="250"
-                          name="&quot;SSQ Admin Email&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Primary Contact Name&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="250"
-                          name="&quot;Primary Contact Name&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Primary Contact Email&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="250"
-                          name="&quot;Primary Contact Email&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Overall Dashboard Status&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="&quot;Overall Dashboard Status&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;SSQ Score Module&quot;]"
-                          dataType="numeric"
-                          name="&quot;SSQ Score Module&quot;"
-                          precision="18" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;MSA Module Status&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="&quot;MSA Module Status&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;TRIR 4 Quarter rolling avg&quot;]"
-                          dataType="numeric"
-                          name="&quot;TRIR 4 Quarter rolling avg&quot;"
-                          precision="28" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;TRIR 3yr&quot;]"
-                          dataType="numeric"
-                          name="&quot;TRIR 3yr&quot;"
-                          precision="28" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;OSHA Verification Module Status&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="&quot;OSHA Verification Module Status&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Insurance Verification Module Status&quot;]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="&quot;Insurance Verification Module Status&quot;" />
-                        <externalMetadataColumn
-                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[&quot;Release Status&quot;]"
-                          dataType="dbTimeStamp"
-                          name="&quot;Release Status&quot;" />
-                        <externalMetadataColumn
                           refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[CreatedDate]"
                           dataType="dbTimeStamp"
                           name="CreatedDate" />
@@ -1113,6 +903,96 @@
                           dataType="str"
                           length="50"
                           name="FileName" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[CompanyID]"
+                          dataType="numeric"
+                          name="CompanyID"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Company Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="Company Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[City]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[State]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[SSQ Admin Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="SSQ Admin Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[SSQ Admin Email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="SSQ Admin Email" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Primary Contact Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Primary Contact Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Primary Contact Email]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Primary Contact Email" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Overall Dashboard Status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Overall Dashboard Status" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[SSQ Score Module]"
+                          dataType="numeric"
+                          name="SSQ Score Module"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[MSA Module Status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="MSA Module Status" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[TRIR 4 Quarter rolling avg]"
+                          dataType="numeric"
+                          name="TRIR 4 Quarter rolling avg"
+                          precision="28" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[TRIR 3yr]"
+                          dataType="numeric"
+                          name="TRIR 3yr"
+                          precision="28" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[OSHA Verification Module Status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="OSHA Verification Module Status" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Insurance Verification Module Status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Insurance Verification Module Status" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Release Status]"
+                          dataType="dbTimeStamp"
+                          name="Release Status" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1744,6 +1624,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\Foreach Loop Container\Delete the Table Data"
+          TopLeft="190.888885378838,6.33333062132206" />
+        <NodeLayout
           Size="214.666666666667,42.6666666666667"
           Id="Package\Foreach Loop Container\Load the Data into the Table"
           TopLeft="177.583325802038,85.0333317681155" />
@@ -1799,10 +1683,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="182.666666666667,42.6666666666667"
-          Id="Package\Foreach Loop Container\Delete the Table Data"
-          TopLeft="190.888885378838,6.33333062132206" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
           TopLeft="283.569438923771,48.9999972879887">
@@ -1845,13 +1725,13 @@
           Id="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV"
           TopLeft="8.41666662320495,5.06666667441531" />
         <NodeLayout
-          Size="232,42.6666666666667"
-          Id="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus"
-          TopLeft="9.50000029802322,170.533334053954" />
-        <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Foreach Loop Container\Load the Data into the Table\Derived Column"
           TopLeft="50.9166659899056,82.5333374633399" />
+        <NodeLayout
+          Size="232,42.6666666666667"
+          Id="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus"
+          TopLeft="9.50000029802322,170.533334053954" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Load the Data into the Table.Paths[Flat File Source Output]"
           TopLeft="126.666666306555,47.733333341082">
