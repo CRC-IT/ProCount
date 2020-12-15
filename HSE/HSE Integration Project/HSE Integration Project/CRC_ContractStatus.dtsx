@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="CRC_ContractStatus"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{BBD2C16B-1C44-4FD6-92E3-F3F583D06B19}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{2236A85B-2235-4F90-B685-128A6D89543A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20201215 090817.csv">
+          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20201215 092552.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -453,7 +453,7 @@
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
-          DTS:TextQualifier="_x0022_"
+          DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
           DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\">
           <DTS:FlatFileColumns>
@@ -464,7 +464,7 @@
               DTS:DataPrecision="18"
               DTS:TextQualified="True"
               DTS:ObjectName="CompanyID"
-              DTS:DTSID="{8F90CFD3-EA2E-49F4-9D05-7645A31D8473}"
+              DTS:DTSID="{A1633608-6C0E-4356-89BE-B60F4D390320}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -473,7 +473,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Company Name"
-              DTS:DTSID="{CF8B6918-73A6-4BBE-9C15-7A58405BC8C0}"
+              DTS:DTSID="{60EAD19E-EC6A-4F04-883D-D9103160CD35}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -482,7 +482,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="City"
-              DTS:DTSID="{F686A0AE-16C6-4D64-A2CC-016E9A7F39C4}"
+              DTS:DTSID="{3683E124-7126-4622-9125-E6BAA5559E00}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -491,7 +491,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="State"
-              DTS:DTSID="{DBDF56B0-9F98-4EE3-8A25-D774B999C3A3}"
+              DTS:DTSID="{AEA8F441-02A1-4C09-A615-1C70AB6EB8F5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -500,7 +500,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SSQ Admin Name"
-              DTS:DTSID="{36C4EC0E-C2DF-470A-A177-A7FB5B938DDA}"
+              DTS:DTSID="{F8E06B35-7D2E-4E6F-AD25-9BCDD8B5BCE7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -509,7 +509,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SSQ Admin Email"
-              DTS:DTSID="{DB11516D-DA5D-41C4-B8A1-FECCCC553018}"
+              DTS:DTSID="{882FE1D2-3050-421F-9B1A-AD2288450991}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -518,7 +518,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Primary Contact Name"
-              DTS:DTSID="{1EAF39DD-9837-40A9-BDD7-892A03EC717B}"
+              DTS:DTSID="{579A6125-E05F-4D78-9744-A8A4D5339891}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -527,7 +527,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Primary Contact Email"
-              DTS:DTSID="{D082E198-8782-40CE-9D25-EC19CF96A288}"
+              DTS:DTSID="{E4CB6488-FB87-4AD4-BA14-F9785A11CA34}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -536,7 +536,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Overall Dashboard Status"
-              DTS:DTSID="{8710EB24-D143-49D4-AF70-C7CE428B0AEA}"
+              DTS:DTSID="{1BFBEFB0-5AC5-48AD-8AD3-BA83B46DEC2A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -545,7 +545,7 @@
               DTS:DataPrecision="18"
               DTS:TextQualified="True"
               DTS:ObjectName="SSQ Score Module"
-              DTS:DTSID="{C27E4DB1-3DD3-48C0-A813-B95D40CE6A4E}"
+              DTS:DTSID="{8CF5ABA1-D3BB-42B5-9A12-2E348CE97A2B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -554,7 +554,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="MSA Module Status"
-              DTS:DTSID="{0C8040D0-F8B7-47EB-9DC2-62AD9F2F1DF9}"
+              DTS:DTSID="{F67B04A6-7426-4881-B9BC-F87D3EC50070}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -562,7 +562,7 @@
               DTS:DataType="14"
               DTS:TextQualified="True"
               DTS:ObjectName="TRIR 4 Quarter rolling avg"
-              DTS:DTSID="{D10BEE00-2811-4806-AEE8-F739A82A77DA}"
+              DTS:DTSID="{7509C2BA-1A49-4CEB-8FE5-8C6D8B261071}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -570,7 +570,7 @@
               DTS:DataType="14"
               DTS:TextQualified="True"
               DTS:ObjectName="TRIR 3yr"
-              DTS:DTSID="{C7F20023-58FC-441F-9E85-8DA7AECE4919}"
+              DTS:DTSID="{F6965EFB-68F5-4EBA-AF1D-5738F1525A03}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -579,7 +579,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OSHA Verification Module Status"
-              DTS:DTSID="{6D640A62-FD3A-4917-84E9-A3BC11BD64C5}"
+              DTS:DTSID="{C446C7A0-9EB0-4AD8-9D0B-37E60D7E302F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -588,7 +588,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Insurance Verification Module Status"
-              DTS:DTSID="{CE7412EE-C491-4384-84C8-B456C163468B}"
+              DTS:DTSID="{F8B1BEFB-0D19-4765-92A6-6F91A291D44B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -596,7 +596,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="Release Status"
-              DTS:DTSID="{4FFB8169-E5D8-4FCB-AD37-927A94CF7CFD}"
+              DTS:DTSID="{A0CF47A4-017B-4A8D-A66C-B0F83453B581}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
