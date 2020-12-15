@@ -13,7 +13,7 @@
   DTS:MaxErrorCount="0"
   DTS:ObjectName="CRC_RegionMetric"
   DTS:VersionBuild="30"
-  DTS:VersionGUID="{A88928EB-9DD5-4E1F-82FA-87C854E182FE}">
+  DTS:VersionGUID="{CF07C87A-CD4F-4254-AFD4-8835B53D7B55}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20200618 083457.csv">
+          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20201215 104325.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"

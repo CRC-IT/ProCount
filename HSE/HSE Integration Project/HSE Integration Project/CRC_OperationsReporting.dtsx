@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/15/2020 12:28:05 PM"
@@ -12,8 +12,9 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="CRC_OperationsReporting"
+  DTS:ProtectionLevel="1"
   DTS:VersionBuild="40"
-  DTS:VersionGUID="{08022B89-A05F-4CF3-BE86-48C3BD925BE3}">
+  DTS:VersionGUID="{1EDFCEB8-8067-4A2D-9C6B-368BC8DC7B58}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +34,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20200618 091121.csv">
+          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20200707 124102.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"

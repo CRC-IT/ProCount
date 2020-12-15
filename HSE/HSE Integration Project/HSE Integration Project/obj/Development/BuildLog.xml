@@ -2,23 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>HSE Integration Project</Name>
-    <LastWriteTime>2020-12-15T17:26:57.8150405Z</LastWriteTime>
+    <LastWriteTime>2020-12-15T18:28:22.31481Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>CRC_RegionMetric.dtsx</Name>
-      <LastWriteTime>2020-06-18T15:34:39.906759Z</LastWriteTime>
+      <LastWriteTime>2020-12-15T18:43:23.7276047Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CRC_ContractStatus.dtsx</Name>
-      <LastWriteTime>2020-12-15T17:26:57.0240967Z</LastWriteTime>
+      <LastWriteTime>2020-12-15T18:28:20.8834469Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CRC_OperationsReporting.dtsx</Name>
-      <LastWriteTime>2020-06-18T16:11:21.9112489Z</LastWriteTime>
+      <LastWriteTime>2020-12-15T18:21:28.4820588Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

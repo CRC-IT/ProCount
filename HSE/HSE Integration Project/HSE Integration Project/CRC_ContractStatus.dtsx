@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/15/2020 12:28:05 PM"
@@ -12,8 +12,9 @@
   DTS:LocaleID="1033"
   DTS:MaxErrorCount="0"
   DTS:ObjectName="CRC_ContractStatus"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{2236A85B-2235-4F90-B685-128A6D89543A}">
+  DTS:ProtectionLevel="1"
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{8F1B9891-9CD1-4622-A55B-AA7DCD3ADA0C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +34,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20201215 092552.csv">
+          DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\Archive\_20200707 124102.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -453,7 +454,7 @@
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
           DTS:ConnectionString="\\ckcwhet01\HSE_PEC_AutomationFiles\">
           <DTS:FlatFileColumns>
@@ -464,7 +465,7 @@
               DTS:DataPrecision="18"
               DTS:TextQualified="True"
               DTS:ObjectName="CompanyID"
-              DTS:DTSID="{A1633608-6C0E-4356-89BE-B60F4D390320}"
+              DTS:DTSID="{8F90CFD3-EA2E-49F4-9D05-7645A31D8473}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -473,7 +474,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Company Name"
-              DTS:DTSID="{60EAD19E-EC6A-4F04-883D-D9103160CD35}"
+              DTS:DTSID="{CF8B6918-73A6-4BBE-9C15-7A58405BC8C0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -482,7 +483,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="City"
-              DTS:DTSID="{3683E124-7126-4622-9125-E6BAA5559E00}"
+              DTS:DTSID="{F686A0AE-16C6-4D64-A2CC-016E9A7F39C4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -491,7 +492,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="State"
-              DTS:DTSID="{AEA8F441-02A1-4C09-A615-1C70AB6EB8F5}"
+              DTS:DTSID="{DBDF56B0-9F98-4EE3-8A25-D774B999C3A3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -500,7 +501,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SSQ Admin Name"
-              DTS:DTSID="{F8E06B35-7D2E-4E6F-AD25-9BCDD8B5BCE7}"
+              DTS:DTSID="{36C4EC0E-C2DF-470A-A177-A7FB5B938DDA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -509,7 +510,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SSQ Admin Email"
-              DTS:DTSID="{882FE1D2-3050-421F-9B1A-AD2288450991}"
+              DTS:DTSID="{DB11516D-DA5D-41C4-B8A1-FECCCC553018}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -518,7 +519,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Primary Contact Name"
-              DTS:DTSID="{579A6125-E05F-4D78-9744-A8A4D5339891}"
+              DTS:DTSID="{1EAF39DD-9837-40A9-BDD7-892A03EC717B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -527,7 +528,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Primary Contact Email"
-              DTS:DTSID="{E4CB6488-FB87-4AD4-BA14-F9785A11CA34}"
+              DTS:DTSID="{D082E198-8782-40CE-9D25-EC19CF96A288}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -536,7 +537,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Overall Dashboard Status"
-              DTS:DTSID="{1BFBEFB0-5AC5-48AD-8AD3-BA83B46DEC2A}"
+              DTS:DTSID="{8710EB24-D143-49D4-AF70-C7CE428B0AEA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -545,7 +546,7 @@
               DTS:DataPrecision="18"
               DTS:TextQualified="True"
               DTS:ObjectName="SSQ Score Module"
-              DTS:DTSID="{8CF5ABA1-D3BB-42B5-9A12-2E348CE97A2B}"
+              DTS:DTSID="{C27E4DB1-3DD3-48C0-A813-B95D40CE6A4E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -554,7 +555,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="MSA Module Status"
-              DTS:DTSID="{F67B04A6-7426-4881-B9BC-F87D3EC50070}"
+              DTS:DTSID="{0C8040D0-F8B7-47EB-9DC2-62AD9F2F1DF9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -562,7 +563,7 @@
               DTS:DataType="14"
               DTS:TextQualified="True"
               DTS:ObjectName="TRIR 4 Quarter rolling avg"
-              DTS:DTSID="{7509C2BA-1A49-4CEB-8FE5-8C6D8B261071}"
+              DTS:DTSID="{D10BEE00-2811-4806-AEE8-F739A82A77DA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -570,7 +571,7 @@
               DTS:DataType="14"
               DTS:TextQualified="True"
               DTS:ObjectName="TRIR 3yr"
-              DTS:DTSID="{F6965EFB-68F5-4EBA-AF1D-5738F1525A03}"
+              DTS:DTSID="{C7F20023-58FC-441F-9E85-8DA7AECE4919}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -579,7 +580,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OSHA Verification Module Status"
-              DTS:DTSID="{C446C7A0-9EB0-4AD8-9D0B-37E60D7E302F}"
+              DTS:DTSID="{6D640A62-FD3A-4917-84E9-A3BC11BD64C5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -588,7 +589,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Insurance Verification Module Status"
-              DTS:DTSID="{F8B1BEFB-0D19-4765-92A6-6F91A291D44B}"
+              DTS:DTSID="{CE7412EE-C491-4384-84C8-B456C163468B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -596,7 +597,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="Release Status"
-              DTS:DTSID="{A0CF47A4-017B-4A8D-A66C-B0F83453B581}"
+              DTS:DTSID="{4FFB8169-E5D8-4FCB-AD37-927A94CF7CFD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -890,6 +891,126 @@
                           cachedName="FileName"
                           externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[FileName]"
                           lineageId="Package\Foreach Loop Container\Load the Data into the Table\Derived Column.Outputs[Derived Column Output].Columns[FileName]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[CompanyID]"
+                          cachedDataType="numeric"
+                          cachedName="CompanyID"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[CompanyID]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[CompanyID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Company Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="Company Name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Company Name]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Company Name]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[City]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="City"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[City]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[City]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[State]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="State"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[State]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[State]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[SSQ Admin Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="SSQ Admin Name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[SSQ Admin Name]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[SSQ Admin Name]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[SSQ Admin Email]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="SSQ Admin Email"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[SSQ Admin Email]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[SSQ Admin Email]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Primary Contact Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Primary Contact Name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Primary Contact Name]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Primary Contact Name]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Primary Contact Email]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="Primary Contact Email"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Primary Contact Email]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Primary Contact Email]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Overall Dashboard Status]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Overall Dashboard Status"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Overall Dashboard Status]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Overall Dashboard Status]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[SSQ Score Module]"
+                          cachedDataType="numeric"
+                          cachedName="SSQ Score Module"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[SSQ Score Module]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[SSQ Score Module]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[MSA Module Status]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="MSA Module Status"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[MSA Module Status]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[MSA Module Status]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[TRIR 4 Quarter rolling avg]"
+                          cachedDataType="decimal"
+                          cachedName="TRIR 4 Quarter rolling avg"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[TRIR 4 Quarter rolling avg]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[TRIR 4 Quarter rolling avg]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[TRIR 3yr]"
+                          cachedDataType="decimal"
+                          cachedName="TRIR 3yr"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[TRIR 3yr]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[TRIR 3yr]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[OSHA Verification Module Status]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="OSHA Verification Module Status"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[OSHA Verification Module Status]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[OSHA Verification Module Status]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Insurance Verification Module Status]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Insurance Verification Module Status"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Insurance Verification Module Status]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Insurance Verification Module Status]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].Columns[Release Status]"
+                          cachedDataType="date"
+                          cachedName="Release Status"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load the Data into the Table\Destination - CRCContractStatus.Inputs[Destination Input].ExternalColumns[Release Status]"
+                          lineageId="Package\Foreach Loop Container\Load the Data into the Table\Source - CRCContractStatus CSV.Outputs[Flat File Source Output].Columns[Release Status]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
