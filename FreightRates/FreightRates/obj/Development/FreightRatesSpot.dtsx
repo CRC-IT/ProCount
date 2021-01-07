@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FreightRatesSpot"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{9DCF0E38-F998-423C-BE09-7B3B58FF1C35}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{86FFD17C-0CFB-4BD3-9353-ACCF31F132D1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAGrfYIZDFppF4+8HhwX3YRAAAAAASAAACgAAAAEAAAAGRfz5vU7rFxulgOP/SD0YAgAAAAH6jIWkaQ01nVQqJKLcp3SZoblY7WSqmeRK2XoYJdvlUUAAAAoHDQG8Z+dCXtRFjklT5Uw3Tq+3g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAxKMAzAi21lllY0r3NU02DAAAAAASAAACgAAAAEAAAAESftTkIg1vcRdizxvGLMuEgAAAAu05GmgTZqmOHY6xEwIYABgW/ptP4jKEcgj3Agtf1UOEUAAAAcgCWXMU0/3U1Hx0TxlSEWAwckWE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -41,7 +41,7 @@
           ConnectionString="Url=https://atlis.mcquilling.com:5302/API/rates;CredentialType=Token;UserName=;Timeout=100000;SoapWssPasswordType=Notset;JwtCustomClaims=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;AuthScheme=Bearer;TokenAuthHeader=;TokenUrl=08265218-27F5-4947-A04E-BAA3FFDE2448;TokenRequestData={&#xA;    &quot;entity&quot;: &quot;Spot Rate&quot;,&#xA;    &quot;types&quot;: [&quot;DEMRGE&quot;],&#xA;    &quot;periods&quot;: [&quot;Actual&quot;],&#xA;    &quot;cases&quot;: [&quot;ALL&quot;]&#xA;};TokenRequestHeaders=;TokenRequestMethod=POST;TokenRequestContentType=ApplicationJson;TokenResponseContentFilter=;TokenResponseValueExtractMode=Body;TokenResponseCookie=;TokenResponseHeader=;TokenResponseContentType=None;TokenExpirationTimeInSeconds=3600">
           <Password
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAtyWbbEq0M1ODT934k1p76AAAAAASAAACgAAAAEAAAAAkGmAV9JCB3+pRtvFcXbPxQAAAAEjbYwIZJewp6Exo3qg6if6Pk9n1SdHbFfmb4unPf5UhQZCNRv4Rd+XjkK2lBGBNC+05rA7iDEkSGcJc9eHQQ4YnqNQF7sZaxKJfoTfQqIhoUAAAAvgsoCz03sP0cwlWFXQ19NJY0y7E</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADZ42mkc2qEtNadEqiZQhL7AAAAAASAAACgAAAAEAAAAIbpxFaepkK3anxUVvAcYH1QAAAAn87Cg4YYpl/Nwib7ppwM+LzL3OA/3t6WB3z9KVXUz6XAx7vTUA0UgHccVZ3mn+bFpaw73sGABTb8j3V+zSmaRlmVn5jIkk+yrSVRvz/qu18UAAAAB5nQAq5pufu02cQ6a/6V3/XaPGc</Password>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -62,6 +62,79 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[CreatedTimeStamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[CreatedTimeStamp]"
+                      name="CreatedTimeStamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Data Flow Task\Json Source DEMERGE"
               componentClassID="Microsoft.ManagedComponentHost"
@@ -1816,6 +1889,12 @@
                       cachedName="SpotRates_Period"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Period]"
                       lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Period]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedTimeStamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedTimeStamp"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[loadtimestamp]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[CreatedTimeStamp]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1895,6 +1974,10 @@
                       name="Rate"
                       precision="18"
                       scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[loadtimestamp]"
+                      dataType="dbTimeStamp"
+                      name="loadtimestamp" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2465,6 +2548,11 @@
           </components>
           <paths>
             <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Data Flow Task.Paths[JsonSourceOutput]"
               endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
               name="JsonSourceOutput"
@@ -2476,41 +2564,14 @@
               startId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput]" />
             <path
               refId="Package\Data Flow Task.Paths[Union All Output 1]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
               name="Union All Output 1"
               startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{724C48C1-5328-4DAD-9AD1-DB8C3EE51D70}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server vNext CTP2.0; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{0E37965D-8347-439A-B2E0-A53B4FC98505}"
-          SQLTask:SqlStatementSource="DELETE  FROM [CRCMPrices].[dbo].[FreightPrice]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{C9566069-8979-4BCF-B99A-6CFC1039DC10}"
-      DTS:From="Package\Execute SQL Task"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\Data Flow Task" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -2522,37 +2583,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="130,136" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="119,30" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="203,72">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64"
-              Start="0,0"
-              End="0,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2560,7 +2595,7 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160,42"
           Id="Package\Data Flow Task\Json Source Spot"
@@ -2568,7 +2603,7 @@
         <NodeLayout
           Size="171,42"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="255,282" />
+          TopLeft="254,334" />
         <NodeLayout
           Size="186,42"
           Id="Package\Data Flow Task\Json Source DEMERGE"
@@ -2577,40 +2612,6 @@
           Size="121,42"
           Id="Package\Data Flow Task\Union All"
           TopLeft="276,184" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[JsonSourceOutput]"
-          TopLeft="206,103">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="111.666666666667,81"
-              Start="0,0"
-              End="111.666666666667,73.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.9657422512235" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.9657422512235"
-                    Point2="0,47.9657422512235"
-                    Point3="4,47.9657422512235" />
-                  <mssgle:LineSegment
-                    End="107.666666666667,47.9657422512235" />
-                  <mssgle:CubicBezierSegment
-                    Point1="107.666666666667,47.9657422512235"
-                    Point2="111.666666666667,47.9657422512235"
-                    Point3="111.666666666667,51.9657422512235" />
-                  <mssgle:LineSegment
-                    End="111.666666666667,73.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[JsonSourceOutput1]"
           TopLeft="464,105">
@@ -2646,19 +2647,79 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="338.5,226">
+          Id="Package\Data Flow Task.Paths[JsonSourceOutput]"
+          TopLeft="206,103">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56"
+              EndConnector="111.666666666667,81"
               Start="0,0"
-              End="0,48.5">
+              End="111.666666666667,73.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,43.9657422512235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.9657422512235"
+                    Point2="0,47.9657422512235"
+                    Point3="4,47.9657422512235" />
+                  <mssgle:LineSegment
+                    End="107.666666666667,47.9657422512235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="107.666666666667,47.9657422512235"
+                    Point2="111.666666666667,47.9657422512235"
+                    Point3="111.666666666667,51.9657422512235" />
+                  <mssgle:LineSegment
+                    End="111.666666666667,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="263,261" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="338.25,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="339.75,303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

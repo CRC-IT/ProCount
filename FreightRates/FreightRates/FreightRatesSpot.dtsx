@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FreightRatesSpot"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{9DCF0E38-F998-423C-BE09-7B3B58FF1C35}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{5278DDAF-3AC1-414D-8423-FCA71A1D2E8B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADyXWLbM8fZ+U0LrVzoN4lEAAAAAASAAACgAAAAEAAAABDgAS9+ftWnop+iSlr+pqUgAAAAnLFV3MxaRi9yKEUL9ceduQQORy7WhHFtyk51+blsyogUAAAAWaqtddcdCZwN4dMyRoAsZJz0wfU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA+HYn2/VFHcxygHvK+laGmAAAAAASAAACgAAAAEAAAAJa3uAU63QpDxLSInurEqJwgAAAA2E+9cO/AwYCVvBW66tlTkC91KLZqwXuRA6UCjUJp6/AUAAAADVAa7B6ltHiM0WE08WA8VGa3w5E</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -41,7 +41,7 @@
           ConnectionString="Url=https://atlis.mcquilling.com:5302/API/rates;CredentialType=Token;UserName=;Timeout=100000;SoapWssPasswordType=Notset;JwtCustomClaims=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;AuthScheme=Bearer;TokenAuthHeader=;TokenUrl=08265218-27F5-4947-A04E-BAA3FFDE2448;TokenRequestData={&#xA;    &quot;entity&quot;: &quot;Spot Rate&quot;,&#xA;    &quot;types&quot;: [&quot;DEMRGE&quot;],&#xA;    &quot;periods&quot;: [&quot;Actual&quot;],&#xA;    &quot;cases&quot;: [&quot;ALL&quot;]&#xA;};TokenRequestHeaders=;TokenRequestMethod=POST;TokenRequestContentType=ApplicationJson;TokenResponseContentFilter=;TokenResponseValueExtractMode=Body;TokenResponseCookie=;TokenResponseHeader=;TokenResponseContentType=None;TokenExpirationTimeInSeconds=3600">
           <Password
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADpLYr1JrnCWDD85q7psmTdAAAAAASAAACgAAAAEAAAAB198hONItdj4RGaiGLT4uNQAAAABBi/bX9ihuwTjACIJi3rPnqmuIpKKwqkgqMKu1dDpJk7ky9Nzl7B8lsMXGyxUHSLmH28m5sfqC9oeyeqNlxBqtjw5FRD/7gm5ohQyGFx9jgUAAAAvfOrkDobj5sCUruv1GuGAAugEMc</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADSNUmYHj0ozUtodpMm0GaMAAAAAASAAACgAAAAEAAAAD//JMmbKYiI7pJKRfdCnfJQAAAAwrUXpWy1VzUzxXOlWz4mKPCQBbXhJO/7z+4eEDqEaecX88bnb79OBqJ4yEOLq6ynXewPFvWRJh5QQ5igNqvEvIhSeqdb443g6FwlCq48v4IUAAAAcO1LQ/DV63dBFTIm29VOfnScB9E</Password>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -62,6 +62,362 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Data Flow Task\CKCWSQL1H Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="CKCWSQL1H Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FreightPrice]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\CKCWSQL1H Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CKCWSQL1H.CRCMPrices.CRCMPrices]"
+                  connectionManagerRefId="Package.ConnectionManagers[CKCWSQL1H.CRCMPrices.CRCMPrices]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[Rate]"
+                      cachedDataType="r8"
+                      cachedName="Rate"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rate]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Rate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SpotRates_Type"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_Case]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="SpotRates_Case"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Case]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Case]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_DataSeriesUnit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="SpotRates_DataSeriesUnit"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataSeriesUnit]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DataSeriesUnit]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_RateType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SpotRates_RateType"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[RateType]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_RateType]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_CargoQuantity]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_CargoQuantity"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[CargoQuantity]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_CargoQuantity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_DefaultCargoDensity]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_DefaultCargoDensity"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultCargoDensity]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DefaultCargoDensity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_LastEntered]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SpotRates_LastEntered"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEntered]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_LastEntered]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_PrevEntered]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SpotRates_PrevEntered"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevEntered]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevEntered]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_PrevValue]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_PrevValue"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevValue]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_YTDAverage]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_YTDAverage"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[YTDAverage]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_YTDAverage]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_ResultCode]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_ResultCode"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[ResultCode]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_ResultCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_Period]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="SpotRates_Period"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Period]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Period]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[CreatedTimeStamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedTimeStamp"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[loadtimestamp]"
+                      lineageId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Output].Columns[CreatedTimeStamp]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Case]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="Case" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataSeriesUnit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="DataSeriesUnit" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[RateType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="RateType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[CargoQuantity]"
+                      dataType="numeric"
+                      name="CargoQuantity"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultCargoDensity]"
+                      dataType="numeric"
+                      name="DefaultCargoDensity"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEntered]"
+                      dataType="dbTimeStamp"
+                      name="LastEntered" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevEntered]"
+                      dataType="dbTimeStamp"
+                      name="PrevEntered" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevValue]"
+                      dataType="numeric"
+                      name="PrevValue"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[YTDAverage]"
+                      dataType="numeric"
+                      name="YTDAverage"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[ResultCode]"
+                      dataType="i4"
+                      name="ResultCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Period]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="Period" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rate]"
+                      dataType="numeric"
+                      name="Rate"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[loadtimestamp]"
+                      dataType="dbTimeStamp"
+                      name="loadtimestamp" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\CKCWSQL1H Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CKCWSQL1H Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CKCWSQL1H Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\CreatedDateTime Column Addition"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CreatedDateTime Column Addition"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\CreatedDateTime Column Addition.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\CreatedDateTime Column Addition.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Output].Columns[CreatedTimeStamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Output].Columns[CreatedTimeStamp]"
+                      name="CreatedTimeStamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\CreatedDateTime Column Addition.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Data Flow Task\Json Source DEMERGE"
               componentClassID="Microsoft.ManagedComponentHost"
@@ -1651,279 +2007,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[FreightPrice]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[CKCWSQL1H.CRCMPrices.CRCMPrices]"
-                  connectionManagerRefId="Package.ConnectionManagers[CKCWSQL1H.CRCMPrices.CRCMPrices]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Date]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rate]"
-                      cachedDataType="r8"
-                      cachedName="Rate"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rate]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Rate]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_Type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="SpotRates_Type"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Type]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_Case]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="250"
-                      cachedName="SpotRates_Case"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Case]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Case]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_DataSeriesUnit]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="25"
-                      cachedName="SpotRates_DataSeriesUnit"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataSeriesUnit]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DataSeriesUnit]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_RateType]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="SpotRates_RateType"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RateType]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_RateType]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_CargoQuantity]"
-                      cachedDataType="r8"
-                      cachedName="SpotRates_CargoQuantity"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CargoQuantity]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_CargoQuantity]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_DefaultCargoDensity]"
-                      cachedDataType="r8"
-                      cachedName="SpotRates_DefaultCargoDensity"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultCargoDensity]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DefaultCargoDensity]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_LastEntered]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="SpotRates_LastEntered"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEntered]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_LastEntered]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_PrevEntered]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="SpotRates_PrevEntered"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevEntered]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevEntered]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_PrevValue]"
-                      cachedDataType="r8"
-                      cachedName="SpotRates_PrevValue"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevValue]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevValue]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_YTDAverage]"
-                      cachedDataType="r8"
-                      cachedName="SpotRates_YTDAverage"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YTDAverage]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_YTDAverage]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_ResultCode]"
-                      cachedDataType="r8"
-                      cachedName="SpotRates_ResultCode"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ResultCode]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_ResultCode]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_Period]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="25"
-                      cachedName="SpotRates_Period"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Period]"
-                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Period]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="Type" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Case]"
-                      codePage="1252"
-                      dataType="str"
-                      length="250"
-                      name="Case" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataSeriesUnit]"
-                      codePage="1252"
-                      dataType="str"
-                      length="25"
-                      name="DataSeriesUnit" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RateType]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="RateType" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CargoQuantity]"
-                      dataType="numeric"
-                      name="CargoQuantity"
-                      precision="18"
-                      scale="6" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultCargoDensity]"
-                      dataType="numeric"
-                      name="DefaultCargoDensity"
-                      precision="18"
-                      scale="6" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEntered]"
-                      dataType="dbTimeStamp"
-                      name="LastEntered" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevEntered]"
-                      dataType="dbTimeStamp"
-                      name="PrevEntered" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevValue]"
-                      dataType="numeric"
-                      name="PrevValue"
-                      precision="18"
-                      scale="6" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YTDAverage]"
-                      dataType="numeric"
-                      name="YTDAverage"
-                      precision="18"
-                      scale="6" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ResultCode]"
-                      dataType="i4"
-                      name="ResultCode" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Period]"
-                      codePage="1252"
-                      dataType="str"
-                      length="25"
-                      name="Period" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      dataType="dbTimeStamp"
-                      name="Date" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rate]"
-                      dataType="numeric"
-                      name="Rate"
-                      precision="18"
-                      scale="6" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Data Flow Task\Union All"
               componentClassID="Microsoft.UnionAll"
               contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -2465,6 +2548,11 @@
           </components>
           <paths>
             <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Data Flow Task.Paths[JsonSourceOutput]"
               endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
               name="JsonSourceOutput"
@@ -2476,41 +2564,14 @@
               startId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput]" />
             <path
               refId="Package\Data Flow Task.Paths[Union All Output 1]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow Task\CreatedDateTime Column Addition.Inputs[Derived Column Input]"
               name="Union All Output 1"
               startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{724C48C1-5328-4DAD-9AD1-DB8C3EE51D70}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server vNext CTP2.0; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{0E37965D-8347-439A-B2E0-A53B4FC98505}"
-          SQLTask:SqlStatementSource="DELETE  FROM [CRCMPrices].[dbo].[FreightPrice]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{C9566069-8979-4BCF-B99A-6CFC1039DC10}"
-      DTS:From="Package\Execute SQL Task"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\Data Flow Task" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -2522,37 +2583,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="130,136" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="119,30" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="203,72">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64"
-              Start="0,0"
-              End="0,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2560,15 +2595,15 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160,42"
           Id="Package\Data Flow Task\Json Source Spot"
           TopLeft="384,63" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="255,282" />
+          Size="196,42"
+          Id="Package\Data Flow Task\CKCWSQL1H Destination"
+          TopLeft="231,350" />
         <NodeLayout
           Size="186,42"
           Id="Package\Data Flow Task\Json Source DEMERGE"
@@ -2577,40 +2612,6 @@
           Size="121,42"
           Id="Package\Data Flow Task\Union All"
           TopLeft="276,184" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[JsonSourceOutput]"
-          TopLeft="206,103">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="111.666666666667,81"
-              Start="0,0"
-              End="111.666666666667,73.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.9657422512235" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.9657422512235"
-                    Point2="0,47.9657422512235"
-                    Point3="4,47.9657422512235" />
-                  <mssgle:LineSegment
-                    End="107.666666666667,47.9657422512235" />
-                  <mssgle:CubicBezierSegment
-                    Point1="107.666666666667,47.9657422512235"
-                    Point2="111.666666666667,47.9657422512235"
-                    Point3="111.666666666667,51.9657422512235" />
-                  <mssgle:LineSegment
-                    End="111.666666666667,73.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[JsonSourceOutput1]"
           TopLeft="464,105">
@@ -2646,19 +2647,79 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="338.5,226">
+          Id="Package\Data Flow Task.Paths[JsonSourceOutput]"
+          TopLeft="206,103">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56"
+              EndConnector="111.666666666667,81"
               Start="0,0"
-              End="0,48.5">
+              End="111.666666666667,73.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,43.9657422512235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.9657422512235"
+                    Point2="0,47.9657422512235"
+                    Point3="4,47.9657422512235" />
+                  <mssgle:LineSegment
+                    End="107.666666666667,47.9657422512235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="107.666666666667,47.9657422512235"
+                    Point2="111.666666666667,47.9657422512235"
+                    Point3="111.666666666667,51.9657422512235" />
+                  <mssgle:LineSegment
+                    End="111.666666666667,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Data Flow Task\CreatedDateTime Column Addition"
+          TopLeft="216,265" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="336.5,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="332.75,307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2671,7 +2732,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Data Flow Task\CKCWSQL1H Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
