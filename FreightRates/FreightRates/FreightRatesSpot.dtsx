@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FreightRatesSpot"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{5278DDAF-3AC1-414D-8423-FCA71A1D2E8B}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{980F17B7-C794-4A9F-8BDF-1E954F76C146}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA+HYn2/VFHcxygHvK+laGmAAAAAASAAACgAAAAEAAAAJa3uAU63QpDxLSInurEqJwgAAAA2E+9cO/AwYCVvBW66tlTkC91KLZqwXuRA6UCjUJp6/AUAAAADVAa7B6ltHiM0WE08WA8VGa3w5E</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACJ+x13upZ/OG48sPpynsdbAAAAAASAAACgAAAAEAAAAByE/WQ3o551aIy4dZ+BQKAgAAAAqkkdzb/8RXzdV92QhkWu2OyYbQQ5YifLTXkPvWpK08IUAAAAaWOh65hRPBfD9QUiS9k7ciXFQRY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -41,7 +41,7 @@
           ConnectionString="Url=https://atlis.mcquilling.com:5302/API/rates;CredentialType=Token;UserName=;Timeout=100000;SoapWssPasswordType=Notset;JwtCustomClaims=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;AuthScheme=Bearer;TokenAuthHeader=;TokenUrl=08265218-27F5-4947-A04E-BAA3FFDE2448;TokenRequestData={&#xA;    &quot;entity&quot;: &quot;Spot Rate&quot;,&#xA;    &quot;types&quot;: [&quot;DEMRGE&quot;],&#xA;    &quot;periods&quot;: [&quot;Actual&quot;],&#xA;    &quot;cases&quot;: [&quot;ALL&quot;]&#xA;};TokenRequestHeaders=;TokenRequestMethod=POST;TokenRequestContentType=ApplicationJson;TokenResponseContentFilter=;TokenResponseValueExtractMode=Body;TokenResponseCookie=;TokenResponseHeader=;TokenResponseContentType=None;TokenExpirationTimeInSeconds=3600">
           <Password
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADSNUmYHj0ozUtodpMm0GaMAAAAAASAAACgAAAAEAAAAD//JMmbKYiI7pJKRfdCnfJQAAAAwrUXpWy1VzUzxXOlWz4mKPCQBbXhJO/7z+4eEDqEaecX88bnb79OBqJ4yEOLq6ynXewPFvWRJh5QQ5igNqvEvIhSeqdb443g6FwlCq48v4IUAAAAcO1LQ/DV63dBFTIm29VOfnScB9E</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAhfIS2dIUwg/g0B3RZZqJ3AAAAAASAAACgAAAAEAAAAC4kI8sUz2YVADWVcLeTJ3RQAAAA6xWGAJ7SS9zrxpc2Kf0LzwcrSkabOPH5rIWsCxTGfGMaf0f0PqO5JvbMK5ep5cQqJDBmOQcy25d98g1aX17nStqfGLNOSXOXQgQzZ8P88NIUAAAAps5DuiShlQrLVzFi1pBIGAMeKBI</Password>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2597,13 +2597,9 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="160,42"
-          Id="Package\Data Flow Task\Json Source Spot"
-          TopLeft="384,63" />
-        <NodeLayout
-          Size="196,42"
-          Id="Package\Data Flow Task\CKCWSQL1H Destination"
-          TopLeft="231,350" />
+          Size="241,42"
+          Id="Package\Data Flow Task\CreatedDateTime Column Addition"
+          TopLeft="216,265" />
         <NodeLayout
           Size="186,42"
           Id="Package\Data Flow Task\Json Source DEMERGE"
@@ -2612,6 +2608,58 @@
           Size="121,42"
           Id="Package\Data Flow Task\Union All"
           TopLeft="276,184" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Data Flow Task\CKCWSQL1H Destination"
+          TopLeft="231,350" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow Task\Json Source Spot"
+          TopLeft="384,63" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="332.75,307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="336.5,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[JsonSourceOutput1]"
           TopLeft="464,105">
@@ -2672,54 +2720,6 @@
                     Point3="111.666666666667,51.9657422512235" />
                   <mssgle:LineSegment
                     End="111.666666666667,73.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="241,42"
-          Id="Package\Data Flow Task\CreatedDateTime Column Addition"
-          TopLeft="216,265" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="336.5,226">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39"
-              Start="0,0"
-              End="0,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="332.75,307">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43"
-              Start="0,0"
-              End="0,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
