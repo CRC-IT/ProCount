@@ -1,0 +1,2755 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/9/2020 12:44:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LLG5J25JR2"
+  DTS:CreatorName="CALNET\vudemr"
+  DTS:DTSID="{45219F5C-59C0-47DE-B279-89342A3B76D0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="AllItems"
+  DTS:PackageType="5"
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{627B68F2-519C-4E02-8FD1-07C2CC3E5CE5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CKCWSQLB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4D37B57F-BFFE-467B-8BCA-FE55B749680D}"
+      DTS:ObjectName="CKCWSQLB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CKCWSQLB;Initial Catalog=CRC_North_Report;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OData Source]"
+      DTS:CreationName="ODATA"
+      DTS:DTSID="{285270C4-84AB-450E-A9A9-CB82ECFA887D}"
+      DTS:ObjectName="OData Source">
+      <DTS:ObjectData>
+        <ODataConnectionManager
+          UserName=""
+          Url="http://teamsites-elkhills.crc.com/site/gen/WellIntervention/_vti_bin/ListData.svc"
+          ConnectionString="Service Document Url=http://teamsites-elkhills.crc.com/site/gen/WellIntervention/_vti_bin/ListData.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=SSPI;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104"
+          MicrosoftOnlineServicesAuth="False" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{886B7A40-A843-4DA2-AD1D-CF736DD1547C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Data Field Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Field Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[Notes]"
+                      cachedDataType="nText"
+                      cachedName="Notes"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Notes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[WellName]"
+                      cachedDataType="nText"
+                      cachedName="WellName"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[WellName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[ManagingGroupValue]"
+                      cachedDataType="nText"
+                      cachedName="ManagingGroupValue"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ManagingGroupValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[PermitStatusValue]"
+                      cachedDataType="nText"
+                      cachedName="PermitStatusValue"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[PermitStatusValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[API14]"
+                      cachedDataType="nText"
+                      cachedName="API14"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[API14]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[RequestTypeValue]"
+                      cachedDataType="nText"
+                      cachedName="RequestTypeValue"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RequestTypeValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[PrimaryReasonValue]"
+                      cachedDataType="nText"
+                      cachedName="PrimaryReasonValue"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[PrimaryReasonValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[SecondaryReasonValue]"
+                      cachedDataType="nText"
+                      cachedName="SecondaryReasonValue"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[SecondaryReasonValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[RigTypeValue]"
+                      cachedDataType="nText"
+                      cachedName="RigTypeValue"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RigTypeValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[StatusValue]"
+                      cachedDataType="nText"
+                      cachedName="StatusValue"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[StatusValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[BusinessUnit]"
+                      cachedDataType="nText"
+                      cachedName="BusinessUnit"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[BusinessUnit]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[ContentType]"
+                      cachedDataType="nText"
+                      cachedName="ContentType"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ContentType]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[Version]"
+                      cachedDataType="nText"
+                      cachedName="Version"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Version]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[HighFailureWell]"
+                      cachedDataType="bool"
+                      cachedName="HighFailureWell"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[HighFailureWell]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[EngineerId]"
+                      cachedDataType="i4"
+                      cachedName="EngineerId"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[EngineerId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input].Columns[MOPValue]"
+                      cachedDataType="nText"
+                      cachedName="MOPValue"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[MOPValue]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of WellName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4000"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of WellName]"
+                      name="Copy of WellName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[WellName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of API14]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="14"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of API14]"
+                      name="Copy of API14"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[API14]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of HighFailureWell]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of HighFailureWell]"
+                      name="Copy of HighFailureWell"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[HighFailureWell]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of ManagingGroupValue]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of ManagingGroupValue]"
+                      name="Copy of ManagingGroupValue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ManagingGroupValue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of EngineerId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of EngineerId]"
+                      name="Copy of EngineerId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[EngineerId]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of PermitStatusValue]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of PermitStatusValue]"
+                      name="Copy of PermitStatusValue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[PermitStatusValue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of RequestTypeValue]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of RequestTypeValue]"
+                      name="Copy of RequestTypeValue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RequestTypeValue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of PrimaryReasonValue]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of PrimaryReasonValue]"
+                      name="Copy of PrimaryReasonValue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[PrimaryReasonValue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of SecondaryReasonValue]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of SecondaryReasonValue]"
+                      name="Copy of SecondaryReasonValue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[SecondaryReasonValue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of RigTypeValue]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of RigTypeValue]"
+                      name="Copy of RigTypeValue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RigTypeValue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of MOPValue]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of MOPValue]"
+                      name="Copy of MOPValue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[MOPValue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of Notes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4000"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of Notes]"
+                      name="Copy of Notes"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Notes]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of StatusValue]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of StatusValue]"
+                      name="Copy of StatusValue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[StatusValue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessUnit]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of BusinessUnit]"
+                      name="Copy of BusinessUnit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[BusinessUnit]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of ContentType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="4000"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of ContentType]"
+                      name="Copy of ContentType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ContentType]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of Version]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of Version]"
+                      name="Copy of Version"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Version]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\ExpenseMWR"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="OData Source Component;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Read data from OData services"
+              name="ExpenseMWR"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Name of the collection to be retrieved from the service."
+                  expressionType="Notify"
+                  name="CollectionName">ExpenseMaintenanceWorkRequest</property>
+                <property
+                  dataType="System.Int32"
+                  description="The default maximum length for a string that has no maxlength specified in the schema."
+                  name="DefaultStringLength">4000</property>
+                <property
+                  dataType="System.String"
+                  description="Query in the url. "
+                  expressionType="Notify"
+                  name="Query"></property>
+                <property
+                  dataType="System.String"
+                  description="Resource path of the collection to be retrieved from the service."
+                  expressionType="Notify"
+                  name="ResourcePath"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="When set to true, use the resource path as requested collection; otherwise, use the collection name."
+                  expressionType="Notify"
+                  name="UseResourcePath">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.OData</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ExpenseMWR.Connections[Connection]"
+                  connectionManagerID="Package.ConnectionManagers[OData Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[OData Source]"
+                  description="Connection to OData Service"
+                  name="Connection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output]"
+                  name="Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[WellName]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[WellName]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[WellName]"
+                      name="WellName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[API14]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[API14]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[API14]"
+                      name="API14"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[HighFailureWell]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[HighFailureWell]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[HighFailureWell]"
+                      name="HighFailureWell"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[JVWell]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[JVWell]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[JVWell]"
+                      name="JVWell"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ManagingGroupValue]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[ManagingGroupValue]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ManagingGroupValue]"
+                      name="ManagingGroupValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[EngineerId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[EngineerId]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[EngineerId]"
+                      name="EngineerId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[PermitStatusValue]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[PermitStatusValue]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[PermitStatusValue]"
+                      name="PermitStatusValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RequestTypeValue]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[RequestTypeValue]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RequestTypeValue]"
+                      name="RequestTypeValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[PrimaryReasonValue]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[PrimaryReasonValue]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[PrimaryReasonValue]"
+                      name="PrimaryReasonValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[SecondaryReasonValue]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[SecondaryReasonValue]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[SecondaryReasonValue]"
+                      name="SecondaryReasonValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RigTypeValue]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[RigTypeValue]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RigTypeValue]"
+                      name="RigTypeValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[MOPValue]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[MOPValue]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[MOPValue]"
+                      name="MOPValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Notes]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Notes]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Notes]"
+                      name="Notes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CostEstimate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CostEstimate]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CostEstimate]"
+                      name="CostEstimate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Rank]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Rank]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Rank]"
+                      name="Rank"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Payout]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Payout]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Payout]"
+                      name="Payout"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CurrentOil]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CurrentOil]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CurrentOil]"
+                      name="CurrentOil"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CurrentGas]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CurrentGas]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CurrentGas]"
+                      name="CurrentGas"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CurrentBOE]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CurrentBOE]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CurrentBOE]"
+                      name="CurrentBOE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalOil]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalOil]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalOil]"
+                      name="IncrementalOil"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalGas]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalGas]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalGas]"
+                      name="IncrementalGas"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalWater]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalWater]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalWater]"
+                      name="IncrementalWater"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalBOE]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalBOE]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalBOE]"
+                      name="IncrementalBOE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[DueDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[DueDate]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[DueDate]"
+                      name="DueDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[StatusValue]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[StatusValue]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[StatusValue]"
+                      name="StatusValue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RCFAApprovalDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[RCFAApprovalDate]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RCFAApprovalDate]"
+                      name="RCFAApprovalDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[EngineerApprovalDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[EngineerApprovalDate]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[EngineerApprovalDate]"
+                      name="EngineerApprovalDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[FinalApprovalDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[FinalApprovalDate]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[FinalApprovalDate]"
+                      name="FinalApprovalDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CompletedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CompletedDate]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CompletedDate]"
+                      name="CompletedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[BusinessUnit]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[BusinessUnit]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[BusinessUnit]"
+                      name="BusinessUnit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[JobRequestID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[JobRequestID]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[JobRequestID]"
+                      name="JobRequestID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ContentTypeID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[ContentTypeID]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ContentTypeID]"
+                      name="ContentTypeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Created]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Created]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Created]"
+                      name="Created"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Modified]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Modified]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Modified]"
+                      name="Modified"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[EMWRItemUpdated]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[EMWRItemUpdated]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[EMWRItemUpdated]"
+                      name="EMWRItemUpdated"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CreatedById]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CreatedById]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CreatedById]"
+                      name="CreatedById"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[NewEMWRSubmission]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[NewEMWRSubmission]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[NewEMWRSubmission]"
+                      name="NewEMWRSubmission"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Id]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ContentType]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[ContentType]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ContentType]"
+                      name="ContentType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ModifiedById]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[ModifiedById]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ModifiedById]"
+                      name="ModifiedById"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Owshiddenversion]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Owshiddenversion]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Owshiddenversion]"
+                      name="Owshiddenversion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Version]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Version]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Version]"
+                      name="Version"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Path]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Path]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Path]"
+                      name="Path"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[WellName]"
+                      dataType="nText"
+                      name="WellName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[API14]"
+                      dataType="nText"
+                      name="API14" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[HighFailureWell]"
+                      dataType="bool"
+                      name="HighFailureWell" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[JVWell]"
+                      dataType="bool"
+                      name="JVWell" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[ManagingGroupValue]"
+                      dataType="nText"
+                      name="ManagingGroupValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[EngineerId]"
+                      dataType="i4"
+                      name="EngineerId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[PermitStatusValue]"
+                      dataType="nText"
+                      name="PermitStatusValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[RequestTypeValue]"
+                      dataType="nText"
+                      name="RequestTypeValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[PrimaryReasonValue]"
+                      dataType="nText"
+                      name="PrimaryReasonValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[SecondaryReasonValue]"
+                      dataType="nText"
+                      name="SecondaryReasonValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[RigTypeValue]"
+                      dataType="nText"
+                      name="RigTypeValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[MOPValue]"
+                      dataType="nText"
+                      name="MOPValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Notes]"
+                      dataType="nText"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CostEstimate]"
+                      dataType="r8"
+                      name="CostEstimate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Rank]"
+                      dataType="r8"
+                      name="Rank" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Payout]"
+                      dataType="r8"
+                      name="Payout" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CurrentOil]"
+                      dataType="r8"
+                      name="CurrentOil" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CurrentGas]"
+                      dataType="r8"
+                      name="CurrentGas" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CurrentBOE]"
+                      dataType="r8"
+                      name="CurrentBOE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalOil]"
+                      dataType="r8"
+                      name="IncrementalOil" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalGas]"
+                      dataType="r8"
+                      name="IncrementalGas" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalWater]"
+                      dataType="r8"
+                      name="IncrementalWater" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[IncrementalBOE]"
+                      dataType="r8"
+                      name="IncrementalBOE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[DueDate]"
+                      dataType="dbTimeStamp"
+                      name="DueDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[StatusValue]"
+                      dataType="nText"
+                      name="StatusValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[RCFAApprovalDate]"
+                      dataType="dbTimeStamp"
+                      name="RCFAApprovalDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[EngineerApprovalDate]"
+                      dataType="dbTimeStamp"
+                      name="EngineerApprovalDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[FinalApprovalDate]"
+                      dataType="dbTimeStamp"
+                      name="FinalApprovalDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CompletedDate]"
+                      dataType="dbTimeStamp"
+                      name="CompletedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[BusinessUnit]"
+                      dataType="nText"
+                      name="BusinessUnit" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[JobRequestID]"
+                      dataType="r8"
+                      name="JobRequestID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[ContentTypeID]"
+                      dataType="nText"
+                      name="ContentTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Created]"
+                      dataType="dbTimeStamp"
+                      name="Created" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Modified]"
+                      dataType="dbTimeStamp"
+                      name="Modified" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[EMWRItemUpdated]"
+                      dataType="i4"
+                      name="EMWRItemUpdated" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[CreatedById]"
+                      dataType="i4"
+                      name="CreatedById" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[NewEMWRSubmission]"
+                      dataType="i4"
+                      name="NewEMWRSubmission" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[ContentType]"
+                      dataType="nText"
+                      name="ContentType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[ModifiedById]"
+                      dataType="i4"
+                      name="ModifiedById" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Owshiddenversion]"
+                      dataType="i4"
+                      name="Owshiddenversion" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Version]"
+                      dataType="nText"
+                      name="Version" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].ExternalColumns[Path]"
+                      dataType="nText"
+                      name="Path" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output]"
+                  isErrorOut="true"
+                  name="Error output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[WellName]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[WellName]"
+                      name="WellName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[API14]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[API14]"
+                      name="API14" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[HighFailureWell]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[HighFailureWell]"
+                      name="HighFailureWell" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[JVWell]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[JVWell]"
+                      name="JVWell" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ManagingGroupValue]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ManagingGroupValue]"
+                      name="ManagingGroupValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[EngineerId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[EngineerId]"
+                      name="EngineerId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[PermitStatusValue]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[PermitStatusValue]"
+                      name="PermitStatusValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[RequestTypeValue]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[RequestTypeValue]"
+                      name="RequestTypeValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[PrimaryReasonValue]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[PrimaryReasonValue]"
+                      name="PrimaryReasonValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[SecondaryReasonValue]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[SecondaryReasonValue]"
+                      name="SecondaryReasonValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[RigTypeValue]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[RigTypeValue]"
+                      name="RigTypeValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[MOPValue]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[MOPValue]"
+                      name="MOPValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Notes]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Notes]"
+                      name="Notes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CostEstimate]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CostEstimate]"
+                      name="CostEstimate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Rank]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Rank]"
+                      name="Rank" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Payout]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Payout]"
+                      name="Payout" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CurrentOil]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CurrentOil]"
+                      name="CurrentOil" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CurrentGas]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CurrentGas]"
+                      name="CurrentGas" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CurrentBOE]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CurrentBOE]"
+                      name="CurrentBOE" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalOil]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalOil]"
+                      name="IncrementalOil" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalGas]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalGas]"
+                      name="IncrementalGas" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalWater]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalWater]"
+                      name="IncrementalWater" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalBOE]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[IncrementalBOE]"
+                      name="IncrementalBOE" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[DueDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[DueDate]"
+                      name="DueDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[StatusValue]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[StatusValue]"
+                      name="StatusValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[RCFAApprovalDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[RCFAApprovalDate]"
+                      name="RCFAApprovalDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[EngineerApprovalDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[EngineerApprovalDate]"
+                      name="EngineerApprovalDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[FinalApprovalDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[FinalApprovalDate]"
+                      name="FinalApprovalDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CompletedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CompletedDate]"
+                      name="CompletedDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[BusinessUnit]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[BusinessUnit]"
+                      name="BusinessUnit" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[JobRequestID]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[JobRequestID]"
+                      name="JobRequestID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ContentTypeID]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ContentTypeID]"
+                      name="ContentTypeID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Created]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Created]"
+                      name="Created" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Modified]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Modified]"
+                      name="Modified" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[EMWRItemUpdated]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[EMWRItemUpdated]"
+                      name="EMWRItemUpdated" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CreatedById]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[CreatedById]"
+                      name="CreatedById" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[NewEMWRSubmission]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[NewEMWRSubmission]"
+                      name="NewEMWRSubmission" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ContentType]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ContentType]"
+                      name="ContentType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ModifiedById]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[ModifiedById]"
+                      name="ModifiedById" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Owshiddenversion]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Owshiddenversion]"
+                      name="Owshiddenversion" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Version]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Version]"
+                      name="Version" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Path]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Error output].Columns[Path]"
+                      name="Path" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="EXPENSEMWR_ALLITEMS_Staging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[EXPENSEMWR_ALLITEMS_Staging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CKCWSQLB]"
+                  connectionManagerRefId="Package.ConnectionManagers[CKCWSQLB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Rank]"
+                      cachedDataType="r8"
+                      cachedName="Rank"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[RANK]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Rank]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Payout]"
+                      cachedDataType="r8"
+                      cachedName="Payout"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[PAYOUT]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Payout]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[CostEstimate]"
+                      cachedDataType="r8"
+                      cachedName="CostEstimate"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[COSTESTIMATE]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CostEstimate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[RCFAApprovalDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RCFAApprovalDate"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[RCFAAPPROVALDATE]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[RCFAApprovalDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[EngineerApprovalDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EngineerApprovalDate"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[ENGINEERAPPROVALDATE]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[EngineerApprovalDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[FinalApprovalDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FinalApprovalDate"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[FINALAPPROVALDATE]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[FinalApprovalDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Created]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Created"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Created]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Modified]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Modified"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[Modified]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[IncrementalOil]"
+                      cachedDataType="r8"
+                      cachedName="IncrementalOil"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[INCREMENTAL_OIL]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalOil]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[IncrementalGas]"
+                      cachedDataType="r8"
+                      cachedName="IncrementalGas"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[INCREMENTAL_GAS]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalGas]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[IncrementalBOE]"
+                      cachedDataType="r8"
+                      cachedName="IncrementalBOE"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[INCREMENTAL_BOE]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalBOE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[CurrentOil]"
+                      cachedDataType="r8"
+                      cachedName="CurrentOil"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CURRENT_OIL]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CurrentOil]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[CurrentGas]"
+                      cachedDataType="r8"
+                      cachedName="CurrentGas"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CURRENT_GAS]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CurrentGas]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[CurrentBOE]"
+                      cachedDataType="r8"
+                      cachedName="CurrentBOE"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CURRENT_BOE]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CurrentBOE]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[ModifiedById]"
+                      cachedDataType="i4"
+                      cachedName="ModifiedById"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIEDBY]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[ModifiedById]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[CreatedById]"
+                      cachedDataType="i4"
+                      cachedName="CreatedById"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[CreatedById]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of Notes]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Copy of Notes"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[NOTES]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of Notes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of ManagingGroupValue]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of ManagingGroupValue"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[MANAGINGGROUP]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of ManagingGroupValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of PrimaryReasonValue]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of PrimaryReasonValue"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[PRIMARYREASON]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of PrimaryReasonValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of SecondaryReasonValue]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of SecondaryReasonValue"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[SECONDARYREASON]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of SecondaryReasonValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of WellName]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Copy of WellName"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[WELLNAME]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of WellName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of PermitStatusValue]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of PermitStatusValue"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[PERMITSTATUS]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of PermitStatusValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of API14]"
+                      cachedDataType="wstr"
+                      cachedLength="14"
+                      cachedName="Copy of API14"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[API14]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of API14]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of StatusValue]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of StatusValue"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of StatusValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of ContentType]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Copy of ContentType"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CONTENTTYPE]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of ContentType]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of Version]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Version"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[VERSION]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of Version]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of HighFailureWell]"
+                      cachedDataType="bool"
+                      cachedName="Copy of HighFailureWell"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[HIGHFAILUREWELL]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of HighFailureWell]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of EngineerId]"
+                      cachedDataType="i4"
+                      cachedName="Copy of EngineerId"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[ENGINEER]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of EngineerId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[Copy of MOPValue]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of MOPValue"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[MOP]"
+                      lineageId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output].Columns[Copy of MOPValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[IncrementalWater]"
+                      cachedDataType="r8"
+                      cachedName="IncrementalWater"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[INCREMENTAL_WATER]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[IncrementalWater]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[JVWell]"
+                      cachedDataType="bool"
+                      cachedName="JVWell"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[JV_WELL]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[JVWell]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].Columns[DueDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DueDate"
+                      externalMetadataColumnId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[DUE_DATE]"
+                      lineageId="Package\Data Flow Task\ExpenseMWR.Outputs[Output].Columns[DueDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[HIGHFAILUREWELL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HIGHFAILUREWELL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[MANAGINGGROUP]"
+                      dataType="wstr"
+                      length="255"
+                      name="MANAGINGGROUP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[ENGINEER]"
+                      dataType="wstr"
+                      length="100"
+                      name="ENGINEER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[PRIMARYREASON]"
+                      dataType="wstr"
+                      length="255"
+                      name="PRIMARYREASON" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[SECONDARYREASON]"
+                      dataType="wstr"
+                      length="255"
+                      name="SECONDARYREASON" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[MOP]"
+                      dataType="wstr"
+                      length="255"
+                      name="MOP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[COSTESTIMATE]"
+                      dataType="r8"
+                      name="COSTESTIMATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[RANK]"
+                      dataType="r8"
+                      name="RANK" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[PAYOUT]"
+                      dataType="r8"
+                      name="PAYOUT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[INCREMENTAL_OIL]"
+                      dataType="r8"
+                      name="INCREMENTAL_OIL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[INCREMENTAL_GAS]"
+                      dataType="r8"
+                      name="INCREMENTAL_GAS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[INCREMENTAL_BOE]"
+                      dataType="r8"
+                      name="INCREMENTAL_BOE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[WELLNAME]"
+                      dataType="wstr"
+                      length="4000"
+                      name="WELLNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
+                      dataType="dbTimeStamp"
+                      name="MODIFIED" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CREATEDBY]"
+                      dataType="wstr"
+                      length="100"
+                      name="CREATEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[API14]"
+                      dataType="wstr"
+                      length="14"
+                      name="API14" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[PERMITSTATUS]"
+                      dataType="wstr"
+                      length="255"
+                      name="PERMITSTATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CURRENT_OIL]"
+                      dataType="r8"
+                      name="CURRENT_OIL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CURRENT_GAS]"
+                      dataType="r8"
+                      name="CURRENT_GAS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CURRENT_BOE]"
+                      dataType="r8"
+                      name="CURRENT_BOE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[NOTES]"
+                      dataType="wstr"
+                      length="4000"
+                      name="NOTES" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[RCFAAPPROVALDATE]"
+                      dataType="dbTimeStamp"
+                      name="RCFAAPPROVALDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[ENGINEERAPPROVALDATE]"
+                      dataType="dbTimeStamp"
+                      name="ENGINEERAPPROVALDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[FINALAPPROVALDATE]"
+                      dataType="dbTimeStamp"
+                      name="FINALAPPROVALDATE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
+                      dataType="dbTimeStamp"
+                      name="CREATED" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[CONTENTTYPE]"
+                      dataType="wstr"
+                      length="4000"
+                      name="CONTENTTYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIEDBY]"
+                      dataType="wstr"
+                      length="100"
+                      name="MODIFIEDBY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[VERSION]"
+                      dataType="wstr"
+                      length="255"
+                      name="VERSION" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[INCREMENTAL_WATER]"
+                      dataType="r8"
+                      name="INCREMENTAL_WATER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[JV_WELL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="JV_WELL" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input].ExternalColumns[DUE_DATE]"
+                      dataType="dbTimeStamp"
+                      name="DUE_DATE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Name Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Name Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Name Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Name Conversion.Inputs[Data Conversion Input].Columns[Name]"
+                      cachedDataType="nText"
+                      cachedName="Name"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Name Conversion.Inputs[Data Conversion Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Output].Columns[Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Name Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Output].Columns[Copy of Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Output].Columns[Copy of Name]"
+                      name="Copy of Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\UserInformationList.Outputs[Output].Columns[Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Output].Columns[Copy of Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Output].Columns[Copy of Id]"
+                      name="Copy of Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\UserInformationList.Outputs[Output].Columns[Id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Name Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\User Information List Staging"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="User Information List Staging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[UserInformationList_Staging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\User Information List Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CKCWSQLB]"
+                  connectionManagerRefId="Package.ConnectionManagers[CKCWSQLB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\User Information List Staging.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="IgnoreFailure"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\User Information List Staging.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Data Flow Task\User Information List Staging.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\User Information List Staging.Inputs[OLE DB Destination Input].Columns[Copy of Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Name"
+                      externalMetadataColumnId="Package\Data Flow Task\User Information List Staging.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Output].Columns[Copy of Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\User Information List Staging.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\User Information List Staging.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\User Information List Staging.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\User Information List Staging.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\User Information List Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\User Information List Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\User Information List Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\User Information List Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\UserInformationList"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="OData Source Component;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Read data from OData services"
+              name="UserInformationList"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Name of the collection to be retrieved from the service."
+                  expressionType="Notify"
+                  name="CollectionName">UserInformationList</property>
+                <property
+                  dataType="System.Int32"
+                  description="The default maximum length for a string that has no maxlength specified in the schema."
+                  name="DefaultStringLength">4000</property>
+                <property
+                  dataType="System.String"
+                  description="Query in the url. "
+                  expressionType="Notify"
+                  name="Query"></property>
+                <property
+                  dataType="System.String"
+                  description="Resource path of the collection to be retrieved from the service."
+                  expressionType="Notify"
+                  name="ResourcePath"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="When set to true, use the resource path as requested collection; otherwise, use the collection name."
+                  expressionType="Notify"
+                  name="UseResourcePath">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.OData</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\UserInformationList.Connections[Connection]"
+                  connectionManagerID="Package.ConnectionManagers[OData Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[OData Source]"
+                  description="Connection to OData Service"
+                  name="Connection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\UserInformationList.Outputs[Output]"
+                  name="Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].Columns[Name]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Name]"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].Columns[Id]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Id]"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Output].Columns[Id]"
+                      name="Id" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[ContentTypeID]"
+                      dataType="nText"
+                      name="ContentTypeID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Name]"
+                      dataType="nText"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Account]"
+                      dataType="nText"
+                      name="Account" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[WorkEmail]"
+                      dataType="nText"
+                      name="WorkEmail" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[MobilePhone]"
+                      dataType="nText"
+                      name="MobilePhone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[AboutMe]"
+                      dataType="nText"
+                      name="AboutMe" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[SIPAddress]"
+                      dataType="nText"
+                      name="SIPAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[IsSiteAdmin]"
+                      dataType="bool"
+                      name="IsSiteAdmin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Deleted]"
+                      dataType="bool"
+                      name="Deleted" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Hidden]"
+                      dataType="bool"
+                      name="Hidden" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Picture]"
+                      dataType="nText"
+                      name="Picture" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Department]"
+                      dataType="nText"
+                      name="Department" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Title]"
+                      dataType="nText"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[FirstName]"
+                      dataType="nText"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[LastName]"
+                      dataType="nText"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[WorkPhone]"
+                      dataType="nText"
+                      name="WorkPhone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[UserName]"
+                      dataType="nText"
+                      name="UserName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[WebSite]"
+                      dataType="nText"
+                      name="WebSite" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[AskMeAbout]"
+                      dataType="nText"
+                      name="AskMeAbout" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Office]"
+                      dataType="nText"
+                      name="Office" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[PictureTimestamp]"
+                      dataType="nText"
+                      name="PictureTimestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[PicturePlaceholderState]"
+                      dataType="i4"
+                      name="PicturePlaceholderState" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[PictureExchangeSyncState]"
+                      dataType="i4"
+                      name="PictureExchangeSyncState" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[ContentType]"
+                      dataType="nText"
+                      name="ContentType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Modified]"
+                      dataType="dbTimeStamp"
+                      name="Modified" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Created]"
+                      dataType="dbTimeStamp"
+                      name="Created" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[CreatedById]"
+                      dataType="i4"
+                      name="CreatedById" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[ModifiedById]"
+                      dataType="i4"
+                      name="ModifiedById" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Owshiddenversion]"
+                      dataType="i4"
+                      name="Owshiddenversion" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Version]"
+                      dataType="nText"
+                      name="Version" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Output].ExternalColumns[Path]"
+                      dataType="nText"
+                      name="Path" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\UserInformationList.Outputs[Error output]"
+                  isErrorOut="true"
+                  name="Error output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[ContentTypeID]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[ContentTypeID]"
+                      name="ContentTypeID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Name]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Account]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Account]"
+                      name="Account" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[WorkEmail]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[WorkEmail]"
+                      name="WorkEmail" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[MobilePhone]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[MobilePhone]"
+                      name="MobilePhone" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[AboutMe]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[AboutMe]"
+                      name="AboutMe" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[SIPAddress]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[SIPAddress]"
+                      name="SIPAddress" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[IsSiteAdmin]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[IsSiteAdmin]"
+                      name="IsSiteAdmin" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Deleted]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Deleted]"
+                      name="Deleted" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Hidden]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Hidden]"
+                      name="Hidden" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Picture]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Picture]"
+                      name="Picture" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Department]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Department]"
+                      name="Department" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Title]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[FirstName]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[LastName]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[WorkPhone]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[WorkPhone]"
+                      name="WorkPhone" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[UserName]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[UserName]"
+                      name="UserName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[WebSite]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[WebSite]"
+                      name="WebSite" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[AskMeAbout]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[AskMeAbout]"
+                      name="AskMeAbout" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Office]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Office]"
+                      name="Office" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[PictureTimestamp]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[PictureTimestamp]"
+                      name="PictureTimestamp" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[PicturePlaceholderState]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[PicturePlaceholderState]"
+                      name="PicturePlaceholderState" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[PictureExchangeSyncState]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[PictureExchangeSyncState]"
+                      name="PictureExchangeSyncState" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[ContentType]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[ContentType]"
+                      name="ContentType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Modified]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Modified]"
+                      name="Modified" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Created]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Created]"
+                      name="Created" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[CreatedById]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[CreatedById]"
+                      name="CreatedById" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[ModifiedById]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[ModifiedById]"
+                      name="ModifiedById" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Owshiddenversion]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Owshiddenversion]"
+                      name="Owshiddenversion" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Version]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Version]"
+                      name="Version" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Path]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\UserInformationList.Outputs[Error output].Columns[Path]"
+                      name="Path" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Data Field Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output1]"
+              endId="Package\Data Flow Task\User Information List Staging.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Name Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Output]"
+              endId="Package\Data Flow Task\Data Field Conversion.Inputs[Data Conversion Input]"
+              name="Output"
+              startId="Package\Data Flow Task\ExpenseMWR.Outputs[Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Output1]"
+              endId="Package\Data Flow Task\Name Conversion.Inputs[Data Conversion Input]"
+              name="Output"
+              startId="Package\Data Flow Task\UserInformationList.Outputs[Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{EA284128-BA81-4943-BDC1-449B2B036939}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4D37B57F-BFFE-467B-8BCA-FE55B749680D}"
+          SQLTask:SqlStatementSource="DELETE FROM [CRC_North_Report].[dbo].[UserInformationList_Staging]&#xA;DELETE FROM [CRC_North_Report].[dbo].[EXPENSEMWR_ALLITEMS_Staging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Data into the Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3ba78d19-f938-496b-8067-f6e47c4fc619}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Data into the Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4D37B57F-BFFE-467B-8BCA-FE55B749680D}"
+          SQLTask:SqlStatementSource="DELETE FROM [CRC_NORTH_Report].[dbo].[EXPENSEMWR_ALLITEMS]&#xA;&#xA;INSERT INTO [dbo].[EXPENSEMWR_ALLITEMS]&#xA;SELECT [ID]&#xA;      ,[HIGHFAILUREWELL]&#xA;      ,[MANAGINGGROUP]&#xA;      ,(SELECT [NAME] FROM [dbo].[UserInformationList_Staging] WHERE ID = [ENGINEER]) AS [Engineer]&#xA;      ,[PRIMARYREASON]&#xA;      ,[SECONDARYREASON]&#xA;      ,[MOP]&#xA;      ,[COSTESTIMATE]&#xA;      ,[RANK]&#xA;      ,[PAYOUT]&#xA;      ,[INCREMENTAL_OIL]&#xA;      ,[INCREMENTAL_GAS]&#xA;      ,[INCREMENTAL_BOE]&#xA;      ,[WELLNAME]&#xA;      ,[MODIFIED]&#xA;      ,(SELECT [NAME] FROM [dbo].[UserInformationList_Staging] WHERE ID = [CREATEDBY]) AS [CREATEDBY]&#xA;      ,[API14]&#xA;      ,[PERMITSTATUS]&#xA;      ,[CURRENT_OIL]&#xA;      ,[CURRENT_GAS]&#xA;      ,[CURRENT_BOE]&#xA;      ,[NOTES]&#xA;      ,[STATUS]&#xA;      ,[RCFAAPPROVALDATE]&#xA;      ,[ENGINEERAPPROVALDATE]&#xA;      ,[FINALAPPROVALDATE]&#xA;      ,[CREATED]&#xA;      ,[CONTENTTYPE]&#xA;      ,(SELECT [NAME] FROM [dbo].[UserInformationList_Staging] WHERE ID = [MODIFIEDBY]) AS [MODIFIEDBY]&#xA;      ,[VERSION]&#xA;&#x9;  ,GETDATE() AS RecordInsertedDate&#xA;&#x9;  ,[INCREMENTAL_WATER]&#xA;      ,[JV_WELL]&#xA;      ,[DUE_DATE]&#xA;  FROM [CRC_NORTH_Report].[dbo].[EXPENSEMWR_ALLITEMS_Staging]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{40A3D142-443A-4015-82D1-D1EA983AA671}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8F477C93-75E9-4E6F-B213-E173F1727BD0}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Load Data into the Table" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Data Flow Task"
+          TopLeft="144.583331178874,139.533330838283" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Execute SQL Task"
+          TopLeft="143.749997857958,38.9999993026257" />
+        <NodeLayout
+          Size="196.666666666667,42.6666666666667"
+          Id="Package\Load Data into the Table"
+          TopLeft="124.166664816439,220.999996048212" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="223.166664518416,81.6666659692924">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.8666648689907"
+              Start="0,0"
+              End="0,50.3666648689907">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.3666648689907" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="221.541664664323,182.19999750495">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.7999985432626"
+              Start="0,0"
+              End="0,31.2999985432626">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.2999985432626" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Data Flow Task\UserInformationList"
+          TopLeft="356.064809509036,33.9592604878439" />
+        <NodeLayout
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Name Conversion"
+          TopLeft="359.398142792698,125.392592186222" />
+        <NodeLayout
+          Size="217.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\User Information List Staging"
+          TopLeft="348.981476281252,244.125923396438" />
+        <NodeLayout
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\ExpenseMWR"
+          TopLeft="82.2222209970157,30.3333327909311" />
+        <NodeLayout
+          Size="241.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging"
+          TopLeft="53.5648140166369,245.459254870106" />
+        <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Data Field Conversion"
+          TopLeft="68.9814804535774,127.111108838187" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Output1]"
+          TopLeft="441.398142817534,76.6259271545106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.7666650317112"
+              Start="0,0"
+              End="0,41.2666650317112">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.2666650317112" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Output]"
+          TopLeft="156.93518405863,72.9999994575978">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.1111093805892"
+              Start="0,0"
+              End="0,46.6111093805892">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.6111093805892" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output1]"
+          TopLeft="440.731476126032,168.059258852888">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.9166668218872,76.0666645435492"
+              Start="0,0"
+              End="16.9166668218872,68.5666645435492">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0333322717746" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.0333322717746"
+                    Point2="0,38.0333322717746"
+                    Point3="4,38.0333322717746" />
+                  <mssgle:LineSegment
+                    End="12.9166668218872,38.0333322717746" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.9166668218872,38.0333322717746"
+                    Point2="16.9166668218872,38.0333322717746"
+                    Point3="16.9166668218872,42.0333322717746" />
+                  <mssgle:LineSegment
+                    End="16.9166668218872,68.5666645435492" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="160.314813786911,169.777775504854">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.9166668963928,75.6814793652523"
+              Start="0,0"
+              End="13.9166668963928,68.1814793652523">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.8407396826262" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.8407396826262"
+                    Point2="0,37.8407396826262"
+                    Point3="4,37.8407396826262" />
+                  <mssgle:LineSegment
+                    End="9.91666689639283,37.8407396826262" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.91666689639283,37.8407396826262"
+                    Point2="13.9166668963928,37.8407396826262"
+                    Point3="13.9166668963928,41.8407396826262" />
+                  <mssgle:LineSegment
+                    End="13.9166668963928,68.1814793652523" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\User Information List Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\EXPENSEMWR_ALLITEMS_Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

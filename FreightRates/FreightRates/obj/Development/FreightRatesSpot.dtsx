@@ -1,0 +1,2748 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/8/2020 3:00:11 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CKCWN4J1-D"
+  DTS:CreatorName="CALNET\vudemr"
+  DTS:DTSID="{5B2E1A66-83AF-4910-A1E4-C5D6F7CAF3FC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0500.272"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="FreightRatesSpot"
+  DTS:PackageType="5"
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{0428A7F8-ABD8-4B87-9AEB-93BBE9BEE9BD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CKCWSQL1H.CRCMPrices.CRCMPrices]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0E37965D-8347-439A-B2E0-A53B4FC98505}"
+      DTS:ObjectName="CKCWSQL1H.CRCMPrices.CRCMPrices">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=CKCWSQL1H;User ID=CRCMPrices;Initial Catalog=CRCMPrices;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABKIdHZyhKyU9riYvj1ELqvAAAAAASAAACgAAAAEAAAANHmqyTsPNvhGryKQkaIuMEgAAAAhn9BbvAPI9v5+Zf0iDWctUdBW+hlLg0fZv+OW5nBgLsUAAAAcq3Gy1TUUAV+DWInOVPS+AUQxBc</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HTTP 1]"
+      DTS:CreationName="ZS-HTTP"
+      DTS:DTSID="{8104502E-0A8E-4986-B30D-639BC7FC73DC}"
+      DTS:ObjectName="HTTP 1">
+      <DTS:ObjectData>
+        <ConnectionManager
+          ConnectionString="Url=https://atlis.mcquilling.com:5302/API/rates;CredentialType=Token;UserName=;Timeout=100000;SoapWssPasswordType=Notset;JwtCustomClaims=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;AuthScheme=Bearer;TokenAuthHeader=;TokenUrl=08265218-27F5-4947-A04E-BAA3FFDE2448;TokenRequestData={&#xA;    &quot;entity&quot;: &quot;Spot Rate&quot;,&#xA;    &quot;types&quot;: [&quot;DEMRGE&quot;],&#xA;    &quot;periods&quot;: [&quot;Actual&quot;],&#xA;    &quot;cases&quot;: [&quot;ALL&quot;]&#xA;};TokenRequestHeaders=;TokenRequestMethod=POST;TokenRequestContentType=ApplicationJson;TokenResponseContentFilter=;TokenResponseValueExtractMode=Body;TokenResponseCookie=;TokenResponseHeader=;TokenResponseContentType=None;TokenExpirationTimeInSeconds=3600">
+          <Password
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAuQl40+iGRUGMUALKmhy2bQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACeVAmUGHhE12hz1G+1O7PHAAAAAASAAACgAAAAEAAAAHsDRPbK/KuQYcPluEV7BM1QAAAAOAOLJ0TkFWyvREN8uILPBSsFVh9qBllTujeDkxIVbxb/bFywJnqw+6IF7mSL0cM0VEHKqCrDDO0/XUKLXrxVuy9NL4XfckP0TEkYS/i4w70UAAAA/gVN4/OHYZNRzBRBErQKDB/Kq/M</Password>
+        </ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B3018B10-AF13-496E-87E1-FAD8D06812EA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\CKCWSQL1H Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="CKCWSQL1H Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FreightPrice]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\CKCWSQL1H Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CKCWSQL1H.CRCMPrices.CRCMPrices]"
+                  connectionManagerRefId="Package.ConnectionManagers[CKCWSQL1H.CRCMPrices.CRCMPrices]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[Rate]"
+                      cachedDataType="r8"
+                      cachedName="Rate"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rate]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Rate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SpotRates_Type"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_Case]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="SpotRates_Case"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Case]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Case]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_DataSeriesUnit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="SpotRates_DataSeriesUnit"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataSeriesUnit]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DataSeriesUnit]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_RateType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SpotRates_RateType"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[RateType]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_RateType]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_CargoQuantity]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_CargoQuantity"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[CargoQuantity]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_CargoQuantity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_DefaultCargoDensity]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_DefaultCargoDensity"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultCargoDensity]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DefaultCargoDensity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_LastEntered]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SpotRates_LastEntered"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEntered]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_LastEntered]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_PrevEntered]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SpotRates_PrevEntered"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevEntered]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevEntered]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_PrevValue]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_PrevValue"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevValue]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevValue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_YTDAverage]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_YTDAverage"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[YTDAverage]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_YTDAverage]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_ResultCode]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_ResultCode"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[ResultCode]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_ResultCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[SpotRates_Period]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="SpotRates_Period"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Period]"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Period]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].Columns[CreatedTimeStamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedTimeStamp"
+                      externalMetadataColumnId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[loadtimestamp]"
+                      lineageId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Output].Columns[CreatedTimeStamp]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Case]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="Case" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[DataSeriesUnit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="DataSeriesUnit" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[RateType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="RateType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[CargoQuantity]"
+                      dataType="numeric"
+                      name="CargoQuantity"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefaultCargoDensity]"
+                      dataType="numeric"
+                      name="DefaultCargoDensity"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEntered]"
+                      dataType="dbTimeStamp"
+                      name="LastEntered" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevEntered]"
+                      dataType="dbTimeStamp"
+                      name="PrevEntered" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrevValue]"
+                      dataType="numeric"
+                      name="PrevValue"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[YTDAverage]"
+                      dataType="numeric"
+                      name="YTDAverage"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[ResultCode]"
+                      dataType="i4"
+                      name="ResultCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Period]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="Period" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rate]"
+                      dataType="numeric"
+                      name="Rate"
+                      precision="18"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input].ExternalColumns[loadtimestamp]"
+                      dataType="dbTimeStamp"
+                      name="loadtimestamp" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\CKCWSQL1H Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CKCWSQL1H Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CKCWSQL1H Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CKCWSQL1H Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\CreatedDateTime Column Addition"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="CreatedDateTime Column Addition"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\CreatedDateTime Column Addition.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\CreatedDateTime Column Addition.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Output].Columns[CreatedTimeStamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Output].Columns[CreatedTimeStamp]"
+                      name="CreatedTimeStamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\CreatedDateTime Column Addition.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Json Source DEMERGE"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="JSON Source (REST API or File); ZappySys LLC (c) All Rights Reserved; SSIS PowerPack; http://www.zappysys.com/support"
+              description="The JSON source is used to read data from JSON files, RESTful Web Service or direct JSON String."
+              name="Json Source DEMERGE"
+              usesDispositions="true"
+              version="28">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="LoggingMode determines how much information is logged during Package Execution. Set Logging mode to Debugging for maximum log."
+                  expressionType="Notify"
+                  name="LoggingMode"
+                  typeConverter="ZappySys.PowerPack.Common.LoggingMode, ZappySys.PowerPack140, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When you enable this property it will prefix timestamp before Log messages."
+                  expressionType="Notify"
+                  name="PrefixTimestamp">false</property>
+                <property
+                  dataType="System.Null"
+                  expressionType="Notify"
+                  name="SelfRef"
+                  typeConverter="NOTBROWSABLE" />
+                <property
+                  dataType="System.Boolean"
+                  description="Treat empty string as NULL for any numeric data types"
+                  expressionType="Notify"
+                  name="TreatBlankNumberAsNull">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Treat empty string as NULL for bool data types"
+                  expressionType="Notify"
+                  name="TreatBlankBoolAsNull">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Treat empty string as NULL for any date/time data types"
+                  expressionType="Notify"
+                  name="TreatBlankDateAsNull">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Defines how to read the JSON file or direct string"
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="ZappySys.Common.Ssis.FileValueAccessMode, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">2</property>
+                <property
+                  dataType="System.String"
+                  description="Defines how to read the JSON file or direct string"
+                  expressionType="Notify"
+                  name="DirectValue"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable name which holds JSON string"
+                  expressionType="Notify"
+                  name="ValueVariable"
+                  typeConverter="ZappySys.PowerPack.Converters.VariableEditor,ZappySys.PowerPack140.UI,Version=1.0.0.0,Culture=neutral,PublicKeyToken=1903265a93eae502"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable name which holds data file path or url"
+                  expressionType="Notify"
+                  name="PathVariable"
+                  typeConverter="ZappySys.PowerPack.Converters.VariableEditor,ZappySys.PowerPack140.UI,Version=1.0.0.0,Culture=neutral,PublicKeyToken=1903265a93eae502"></property>
+                <property
+                  dataType="System.String"
+                  description="JSON file file path (e.g. c:\data\myfile.json) or pattern to process multiple files (e.g. c:\data\*.json)"
+                  expressionType="Notify"
+                  name="DirectPath"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">https://atlis.mcquilling.com:5302/API/rates</property>
+                <property
+                  dataType="System.String"
+                  description="Set this if you want to set custom Http headers. You may use variable anywhere in the header value using syntax {{User::YourVarName}}. Syntax of Header key value pair is : &amp;lt;request&amp;gt;&amp;lt;header&amp;gt;&amp;lt;name&amp;gt;x-myheader-1&amp;lt;/name&amp;gt;&amp;lt;value&amp;gt;AAA&amp;lt;/value&amp;gt;&amp;lt;/header&amp;gt; &amp;lt;header&amp;gt;&amp;lt;name&amp;gt;x-myheader-2&amp;lt;/name&amp;gt;&amp;lt;value&amp;gt;BBB&amp;lt;/value&amp;gt;&amp;lt;/header&amp;gt;&amp;lt;/request&amp;gt;"
+                  expressionType="Notify"
+                  name="HttpHeaders">&lt;request&gt;&lt;header&gt;&lt;name&gt;Accept&lt;/name&gt;&lt;value&gt;json&lt;/value&gt;&lt;/header&gt;&lt;header&gt;&lt;name&gt;Cache-Control&lt;/name&gt;&lt;value&gt;no-cache&lt;/value&gt;&lt;/header&gt;&lt;/request&gt;</property>
+                <property
+                  dataType="System.String"
+                  description="User defined data you wish to send along with your HTTP Request (e.g. Upload file data, Form POST data). Usually you have to set content-type of your data but if you select RequestMethod=POST then system will automatically set content-type=application/x-www-form-urlencoded."
+                  expressionType="Notify"
+                  name="HttpRequestData">{
+    "entity": "Spot Rate",
+    "types": ["DEMRGE"],
+    "periods": ["Actual"],
+    "cases": ["ALL"]
+}</property>
+                <property
+                  dataType="System.String"
+                  description="Http Web Request Method (e.g. POST, GET, PUT, LIST, DELETE...). Refer your API documentation if you are not sure which method you have to use."
+                  expressionType="Notify"
+                  name="HttpRequestMethod">POST</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies content type for data you wish to POST. If you select Default option then system default content type will be used (i.e. application/x-www-form-urlencoded). If you specify Content-Type header along with this option then header value takes precedence."
+                  expressionType="Notify"
+                  name="HttpRequestContentType"
+                  typeConverter="ZappySys.Common.Web.HttpRequestContentType, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Data format coming from HTTP Response. This is useful for example when you have OData service and you want to automatically consume all pages of data using odata.netUrl. Setting JsonFormat=Odata will automatically do it for you. This setting is only applicable if JSON is coming from HTTP WebRequest."
+                  expressionType="Notify"
+                  name="JsonFormat"
+                  typeConverter="ZappySys.Json.JsonFormat, ZappySys.Json, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enable custom proxy settings (If this is not set then system default proxy will be used. To disable proxy totally uncheck this option and check DoNotUseDefaultProxy option if available)"
+                  expressionType="Notify"
+                  name="UseProxy">false</property>
+                <property
+                  dataType="System.String"
+                  description="Web URL of Proxy server (including port  if necessary). [e.g. http://myproxyserver:8080/]"
+                  expressionType="Notify"
+                  name="ProxyUrl"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enable passing userid and password to proxy server"
+                  expressionType="Notify"
+                  name="UseProxyCreds">false</property>
+                <property
+                  dataType="System.String"
+                  description="Proxy username"
+                  expressionType="Notify"
+                  name="ProxyUserName"></property>
+                <property
+                  dataType="System.String"
+                  description="Proxy password"
+                  expressionType="Notify"
+                  name="ProxyPassword"></property>
+                <property
+                  dataType="System.String"
+                  description="If Service response support pagination using some sort of next url attribute then specify which attribute name in JSON Response string which holds next url. If no attribute found or its null then component will stop fetching next resultset. Example: $.pagingInfo.nextUrl"
+                  expressionType="Notify"
+                  name="NextUrlAttribute"></property>
+                <property
+                  dataType="System.String"
+                  description="If Service response support pagination using some sort of prev/next url attribute then specify which previous link attribute name from JSON Response string which holds previous url."
+                  expressionType="Notify"
+                  name="PrevUrlAttribute"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies value for NextUrlAttribute or StopIndicatorAttribute which indicates last page to stop pagination. If you have specified StopIndicatorAttribute then you can use Regular expression rather than static value to indicate last page. To use regular expression value of this property must start with regex= prefix. Example : regex=FALSE|N  (assuming you set StopIndicatorAttribute to something like $.hasMore)"
+                  expressionType="Notify"
+                  name="NextUrlStopIndicator"></property>
+                <property
+                  dataType="System.String"
+                  description="Attribute name or expression for attribute which can be used as stop indicator (e.g. hasmore --or-- $.pagination.hasmore). If this value is blank then NextUrlAttribute is used"
+                  expressionType="Notify"
+                  name="StopIndicatorAttribute"></property>
+                <property
+                  dataType="System.String"
+                  description="If you want to include certain text (or parameters) at the end of Next url then specify this attribute (e.g. &amp;format=json). Another common usecase of this property is to supply pagination token to next Page URL. You can also use &lt;%nextlink%&gt; or  &lt;%nextlink_encoded%&gt; placeholder (e.g. &amp;cursor=&lt;%nextlink_encoded%&gt; )"
+                  expressionType="Notify"
+                  name="NextUrlSuffix"></property>
+                <property
+                  dataType="System.Int32"
+                  description="This property indicates total number of milliseconds you want to wait before sending next request. This option allows you to adjust how many API calls can be made within certain timeframe. If your API Service has no limit then set this option to zero"
+                  expressionType="Notify"
+                  name="NextUrlWait">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If this option is true then component will continue without exception on 404 error (Url not found). This allows you to consume data gracefully."
+                  expressionType="Notify"
+                  name="ContinueOnUrlNotFoundError">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Continue when any type of exception occurs during http request"
+                  expressionType="Notify"
+                  name="ContineOnAnyError">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Continue on error when specified substring found in response"
+                  expressionType="Notify"
+                  name="ContineOnErrorForMessage">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Continue on error when specified status code returned from web server"
+                  expressionType="Notify"
+                  name="ContineOnErrorForStatusCode">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When error occurs no data is returned. Use this option to get content eventhough error occurs. When this option is checked you can't use [continue on error when specific string found in response] option"
+                  expressionType="Notify"
+                  name="ConsumeResponseOnError">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Status code to match when error occurs and ContineOnErrorForStatusCode option is true. If Response status code matches to this code then task continues to run"
+                  expressionType="Notify"
+                  name="ErrorStatusCodeToMatch">404</property>
+                <property
+                  dataType="System.String"
+                  description="Error substring to match when error occurs and ContineOnErrorForMessage option is true. If Response status code matches to this code then task continues to run"
+                  expressionType="Notify"
+                  name="ErrorSubstringToMatch"></property>
+                <property
+                  dataType="System.String"
+                  description="Cookie Container can be used to maintain state between multiple web requests. Example: You can login to site like wordpress and then extract any private page content by simply passing authentication cookies using this variable."
+                  expressionType="Notify"
+                  name="CookieContainerVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Http request Timeout in seconds. Set this to 0 if you want to use system default value (i.e. 100 seconds)"
+                  expressionType="Notify"
+                  name="RequestTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies which security protocol is supported for HTTPS communication. Using this option you can enable legacy protocol or enforce to use latest version of security protocol (Note: TLS 1.2 is only supported in SSIS 2014 or Higher)."
+                  expressionType="Notify"
+                  name="SecurityProtocol"
+                  typeConverter="ZappySys.PowerPack.Common.HttpsSecurityProtocolType, ZappySys.PowerPack140, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enable support for gzip or deflate compression. When you check this option compressed response automatically de-compressed saving bandwidth. This option is only valid if web server supports compressed response stream. Check your API documentation for more information."
+                  expressionType="Notify"
+                  name="EnableCompressionSupport">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Ignore SSL certificate related errors. Example: if you getting SSL/TLS errors because of certificate expired or certificate is not from trusted authority or certificate is self-signed. By checking this option you will not get SSL/TLS error."
+                  expressionType="Notify"
+                  name="IgnoreCertificateErrors">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Allow unsecure ciphers/suites and curves for SSLS/TLS communication. Use this option to communicate with web servers which needs legacy / unsecured ciphers support. This option is only trigged when you change default SSL/TLS Version on advanced settings tab."
+                  expressionType="Notify"
+                  name="AllowUnsecureSuite">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Use connection to pass credentials for authentication (e.g. Use UserID/Password or Use OAuth Protocol for token based approach)"
+                  expressionType="Notify"
+                  name="UseConnection">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specified how you want to loop through multiple pages returned by REST API."
+                  expressionType="Notify"
+                  name="PagingMode"
+                  typeConverter="ZappySys.Common.RestApiPagingMode, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If you wish to pass extracted pagination token or current page number in the body of next request then set this option to true. You can use [$pagetoken$] and [$pagetoken$] placeholders anywhere in the Body where you wish to insert extracted Page token. You must set encoded token you can use &lt;%nextlink_encoded%&gt; inside SuffixForNextUrl Property. If you dont use SuffixForNextUrl then raw nextLink or Token will be inserted inside the body. If you dont specify [$pagetoken$] placeholder in the body then NextPage Token will be appended at the end. NextPage Token is extracted by filter expression specified using property NextUrlAttribute"
+                  expressionType="Notify"
+                  name="EnablePageTokenForBody">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this to true if you wish to specify different URL, Header, Body or Filter for first page and next page (i.e. Paginated response). Some APIs like Amazon MWS, NetSuite, Zuora) you may need to set this to true."
+                  expressionType="Notify"
+                  name="HasDifferentNextPageInfo">false</property>
+                <property
+                  dataType="System.String"
+                  description="When HasDifferentNextPageInfo=true you can set this property to indicate first page and next page. You can specify different URL, Header, Body or Filter for first page and next page (i.e. Paginated response). Use [$tag$] as placeholder anywhere in the URL, Header, Body or Filter and at runtime system will replace it with correct value (first page or next page value). Syntax to specify placeholder for first page vs next page is like a connectionstring url=FirstPageValue|NextPageValue;header=FirstPageValue|NextPageValue;body=FirstPageValue|NextPageValue;filter=FirstPageValue|NextPageValue; You can use one or more key/value pairs to make things dynamic (e.g. url, header, body or filter)  .For example if you have pagination in your API and First URL is http://abc.com/api/items/get and to get more records you have to call http://abc.com/api/items/getNext then you can use [$tag$] as placeholder in the URL http://abc.com/api/items/[$tag$] and specify this property with first page tag and next page tag as url=get|getNext  (Tags are separated using vertical bar). "
+                  expressionType="Notify"
+                  name="PagePlaceholders"></property>
+                <property
+                  dataType="System.String"
+                  description="Use this property to set request body fragment for first page. HasDifferentNextPageInfo must be set to true to use this property."
+                  expressionType="Notify"
+                  name="FirstPageBodyPart"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Use this property to set request body fragment for any request after first request. HasDifferentNextPageInfo must be set to true to use this property."
+                  expressionType="Notify"
+                  name="NextPageBodyPart"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Expression to extract Maximum pages to loop through. Some APIs don't stop pagination and keep returning last page data when you try to read data after last page. Specify expression (e.g. $.page_count ) to read total pages to loop through using this property."
+                  expressionType="Notify"
+                  name="PagingMaxPagesExpr"></property>
+                <property
+                  dataType="System.String"
+                  description="e.g. Type page_num if URL looks like this =&gt; http://abc.com/?page_num=1&amp;sort=true  (page number via query string)&#xA;--or-- Type &lt;%page%&gt; if page number is inside URL path like this =&gt; http://abc.com/1/?sort=true  (e.g. replace page number in url with placeholder http://abc.com/&lt;%page%&gt;/?sort=true)&#xA;Page number will be incremented by one for next URL until last page is reached or [Max Page Number] is reached"
+                  expressionType="Notify"
+                  name="PageNumberAttributeNameInUrl"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum page number until which auto increment is allowed. Type zero for no limit. Next URL contains next page number (increment by one) until last page is detected or [Max Page Number] limit is reached."
+                  expressionType="Notify"
+                  name="MaxPageNumber">0</property>
+                <property
+                  dataType="System.String"
+                  description="Variable name which will hold starting page number. This is ignored if you useing parameter name from query string to indicate page number."
+                  expressionType="Notify"
+                  name="StartPageNumberVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Page counter increment. By default next page is incremented by one if this value is zero. You can also enter negative number if you want to decrease page counter."
+                  expressionType="Notify"
+                  name="PageNumberIncrement">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specified how you want detect last page."
+                  expressionType="Notify"
+                  name="PagingEndStrategy"
+                  typeConverter="ZappySys.Common.UrlPagingEndDetectionStrategy, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Condition result to compare to detect last page. Set this property to True if you want detect last page if condition is true else set this to False."
+                  expressionType="Notify"
+                  name="LastPageWhenConditionEqualsTo">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Minimum bytes expected from response."
+                  expressionType="Notify"
+                  name="ResponseMinBytes">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum bytes from response."
+                  expressionType="Notify"
+                  name="ResponseMaxBytes">3</property>
+                <property
+                  dataType="System.String"
+                  description="Expected error message sub string from response."
+                  expressionType="Notify"
+                  name="ResponseErrorString">not found</property>
+                <property
+                  dataType="System.Int32"
+                  description="Expected status code from response when page number you trying to access not found."
+                  expressionType="Notify"
+                  name="ResponseStatusCode">404</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum JSON records to fetch. Set this value to 0 for all records"
+                  expressionType="Notify"
+                  name="MaxRows">0</property>
+                <property
+                  dataType="System.String"
+                  description="Enter expression here to filter data.(Example:  $.Users[*].UserName ) This will fetch User names from users records"
+                  expressionType="Notify"
+                  name="Filter"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">$.SpotRates[*].Rates[*]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Use this option to include parent properties (Non array) in the output along with Filtered Rows"
+                  expressionType="Notify"
+                  name="IncludeParentColumns">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="By default child and parent information is not included in the output if children not found for specified expression. For example if you want to extract all orders from all customers nodes then you can type $.Customers[*].Orders[*]. This will fetch all orders from all customers. By default customers records without orders wont be included in the output. If you want to include those customers where orders not found then check this option (Output null information for order attributes). This behavior is similar to LEFT OUTER JOIN in SQL (Left side is parent, right side is child). This option is ***resource intensive*** so only check if you really care about this behavior."
+                  expressionType="Notify"
+                  name="IncludeParentColumnsWhenChildMissing">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to true if you want to output parent columns which are array. By default any parent column which is an array is not included in output. See also FilterForParentColumnsWithArrayType property if you set this property"
+                  expressionType="Notify"
+                  name="IncludeParentColumnsWithArrayType">false</property>
+                <property
+                  dataType="System.String"
+                  description="Filter expression to extract value form parent"
+                  expressionType="Notify"
+                  name="FilterForParentColumnsWithArrayType"></property>
+                <property
+                  dataType="System.String"
+                  description="Prefix for parent column name. This option is only valid if you have set IncludeParentColumns=True"
+                  expressionType="Notify"
+                  name="ParentColumnPrefix"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Throw error if property name specified in filter expression is missing. By default it will ignore any missing property errors."
+                  expressionType="Notify"
+                  name="ThrowErrorIfPropertyMissing">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="This property how many nested levels should be scanned to fetch various properties. 0=Scan all child levels."
+                  expressionType="Notify"
+                  name="MaxLevelsToScan">0</property>
+                <property
+                  dataType="System.String"
+                  description="List comma separated property names from JSON document which you want to exclude from output. Specify parent property name to exclude all child nodes."
+                  expressionType="Notify"
+                  name="ExcludedProperties"></property>
+                <property
+                  dataType="System.String"
+                  description="Property level separator used in generated property name (separator for outer properties - Above selected filter node). Use this if default separator is producing duplicate property name which is conflicting with existing name."
+                  expressionType="Notify"
+                  name="LevelSeparator">_</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enables deep array flattening for selected filtered hierarchy. When you turn on this property it will flatten each property of each array item and expose as column (e.g. If you have Filter set as $.customers[*] and for each customer you have an array of Addresses then you may see output columns like Addresses.1.City, Addresses.1.State, Addresses.2.City, Addresses.2.State .... Addresses.N.City, Addresses.N.State). You can control how many array items you want to flatten by setting MaxArrayItemsToFlatten property."
+                  expressionType="Notify"
+                  name="EnableArrayFlattening">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum number of array items to flatten. inner array flattening. Adjust this property to control how many columns being generated. This option is ignored if you set EnableArrayFlattening=false"
+                  expressionType="Notify"
+                  name="MaxArrayItemsToFlatten">10</property>
+                <property
+                  dataType="System.Int32"
+                  description="Compression format for source file (e.g. gzip, zip)"
+                  expressionType="Notify"
+                  name="FileCompressionType"
+                  typeConverter="ZappySys.Common.FileCompressionType, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Array Transformation you want to apply. Useful for case when you have 2-Dimensional arrays with rows/columns in separate arrays."
+                  expressionType="Notify"
+                  name="ArrayTransformationType"
+                  typeConverter="ZappySys.Json.ArrayTransformType, ZappySys.Json, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.String"
+                  description="Filter expression to use to extract column names for array transformation."
+                  expressionType="Notify"
+                  name="ArrayTransColumnNameFilter"></property>
+                <property
+                  dataType="System.String"
+                  description="Filter expression for row values (Not applicable for simple array transformation)."
+                  expressionType="Notify"
+                  name="ArrayTransRowValueFilter"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="When you have 2D array but don't have column list specified in a separate array then use this option (e.g. { arr: [[10,11],[21,22]] } )."
+                  expressionType="Notify"
+                  name="ArrayTransEnableCustomColumns">false</property>
+                <property
+                  dataType="System.String"
+                  description="When you have 2D array but don't have column list specified in a separate array then use specify column names here. Use comma separated list (e.g col1,col2,col3 ). Column name Order must match value order."
+                  expressionType="Notify"
+                  name="ArrayTransCustomColumns"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how custom date formatted strings are parsed when reading JSON."
+                  expressionType="Notify"
+                  name="DateFormatString"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how date formatted strings, e.g. Date(1198908717056) and 2012-03-21T05:40Z, are parsed when reading JSON."
+                  expressionType="Notify"
+                  name="DateParseHandling"
+                  typeConverter="ZappySys.Common.DateParseHandling, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Output as raw JSON document rather than parsing individual fields. This option is helpful if you have documents stored in a file and you want to pass them downstream as raw JSON string rather than parsing into columns."
+                  expressionType="Notify"
+                  name="OutputRawDocument">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indent JSON output so its easy to read."
+                  expressionType="Notify"
+                  name="IndentOutput">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to true if you want to output FilePath. This option is ignored when you consume DirectValue or data from Url rather than local files. Output column name will be __FilePath"
+                  expressionType="Notify"
+                  name="OutputFilePath">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to true if you want to output FileName. This option is ignored when you consume DirectValue or data from Url rather than local files. Output column name will be __FileName"
+                  expressionType="Notify"
+                  name="OutputFileName">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to true if you want to move processed file to archive folder."
+                  expressionType="Notify"
+                  name="EnableArchiveFile">false</property>
+                <property
+                  dataType="System.String"
+                  description="Folder path where you want to move processed file."
+                  expressionType="Notify"
+                  name="ArchiveFolderPath"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Folder path where you want to move processed file."
+                  expressionType="Notify"
+                  name="OverwriteFileInArchiveFolder">false</property>
+                <property
+                  dataType="System.String"
+                  description="File naming convention for archived file. By default it will same name as original source file processed. But you can control naming format using {%name%} and {%ext%} placeholders. e.g. {%name%}_processed{%ext%} or {%name%}{%ext%}.{{System::ContainerStartTime,yyyyMMdd_HHmmss_fff}}"
+                  expressionType="Notify"
+                  name="ArchiveFileNamingConvention"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="When this property is true then Column is converted to Row. Pivoted names will appear under  Pivot_Name column and values will appear under Pivot_Value field."
+                  expressionType="Notify"
+                  name="EnablePivot">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Metadata scan mode controls how data type and length is determined. By default few records scanned to determine datatype/length. Changing ScanMode affects length/datatype accuracy."
+                  expressionType="Notify"
+                  name="MetaDataScanMode"
+                  typeConverter="ZappySys.Common.Data.MetaDataScanMode, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">4</property>
+                <property
+                  dataType="System.Int32"
+                  description="Length for all string column. This option is only valid for MetaDataScanMode=Custom"
+                  expressionType="Notify"
+                  name="MetaDataCustomLength">1000</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">ZappySys.JsonSource</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Json Source DEMERGE.Connections[Connection]"
+                  connectionManagerID="Package.ConnectionManagers[HTTP 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[HTTP 1]"
+                  description="Connection manager for authentication (e.g. HTTP or OAuth Connection)"
+                  name="Connection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput]"
+                  errorOrTruncationOperation="Error"
+                  errorRowDisposition="FailComponent"
+                  name="JsonSourceOutput"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[Date]"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[Rate]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[Rate]"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[Rate]"
+                      name="Rate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Type]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_Type]"
+                      name="SpotRates_Type" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_Case]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Case]"
+                      length="250"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_Case]"
+                      name="SpotRates_Case" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_DataSeriesUnit]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_DataSeriesUnit]"
+                      length="25"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_DataSeriesUnit]"
+                      name="SpotRates_DataSeriesUnit" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_RateType]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_RateType]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_RateType]"
+                      name="SpotRates_RateType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_CargoQuantity]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_CargoQuantity]"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_CargoQuantity]"
+                      name="SpotRates_CargoQuantity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_LastEntered]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_LastEntered]"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_LastEntered]"
+                      name="SpotRates_LastEntered" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_PrevEntered]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_PrevEntered]"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_PrevEntered]"
+                      name="SpotRates_PrevEntered" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_PrevValue]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_PrevValue]"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_PrevValue]"
+                      name="SpotRates_PrevValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_YTDAverage]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_YTDAverage]"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_YTDAverage]"
+                      name="SpotRates_YTDAverage" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_ResultCode]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_ResultCode]"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_ResultCode]"
+                      name="SpotRates_ResultCode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_Period]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Period]"
+                      length="25"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_Period]"
+                      name="SpotRates_Period" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_DefaultCargoDensity]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_DefaultCargoDensity]"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_DefaultCargoDensity]"
+                      name="SpotRates_DefaultCargoDensity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[__FileName]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[__FileName]"
+                      length="600"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[__FileName]"
+                      name="__FileName" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Type]"
+                      dataType="wstr"
+                      length="24"
+                      name="SpotRates_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Case]"
+                      dataType="wstr"
+                      length="176"
+                      name="SpotRates_Case" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_DataSeriesUnit]"
+                      dataType="wstr"
+                      length="20"
+                      name="SpotRates_DataSeriesUnit" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_RateType]"
+                      dataType="i8"
+                      name="SpotRates_RateType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_CargoQuantity]"
+                      dataType="r8"
+                      name="SpotRates_CargoQuantity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_LastEntered]"
+                      dataType="dbTimeStamp"
+                      name="SpotRates_LastEntered" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_PrevEntered]"
+                      dataType="dbTimeStamp"
+                      name="SpotRates_PrevEntered" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_PrevValue]"
+                      dataType="r8"
+                      name="SpotRates_PrevValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_YTDAverage]"
+                      dataType="r8"
+                      name="SpotRates_YTDAverage" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_ResultCode]"
+                      dataType="i8"
+                      name="SpotRates_ResultCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Period]"
+                      dataType="wstr"
+                      length="24"
+                      name="SpotRates_Period" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[Rate]"
+                      dataType="r8"
+                      name="Rate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[__FileName]"
+                      dataType="wstr"
+                      length="600"
+                      name="__FileName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_DefaultCargoDensity]"
+                      dataType="r8"
+                      name="SpotRates_DefaultCargoDensity" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output]"
+                  isErrorOut="true"
+                  name="JsonSource Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[Rate]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[Rate]"
+                      name="Rate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_Type]"
+                      name="SpotRates_Type" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_Case]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_Case]"
+                      name="SpotRates_Case" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_DataSeriesUnit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_DataSeriesUnit]"
+                      name="SpotRates_DataSeriesUnit" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_RateType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_RateType]"
+                      name="SpotRates_RateType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_CargoQuantity]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_CargoQuantity]"
+                      name="SpotRates_CargoQuantity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_LastEntered]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_LastEntered]"
+                      name="SpotRates_LastEntered" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_PrevEntered]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_PrevEntered]"
+                      name="SpotRates_PrevEntered" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_PrevValue]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_PrevValue]"
+                      name="SpotRates_PrevValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_YTDAverage]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_YTDAverage]"
+                      name="SpotRates_YTDAverage" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_ResultCode]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_ResultCode]"
+                      name="SpotRates_ResultCode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_Period]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_Period]"
+                      name="SpotRates_Period" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_DefaultCargoDensity]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[SpotRates_DefaultCargoDensity]"
+                      name="SpotRates_DefaultCargoDensity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[__FileName]"
+                      dataType="wstr"
+                      length="600"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[__FileName]"
+                      name="__FileName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[ErrorColumnName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="128"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[ErrorColumnName]"
+                      name="ErrorColumnName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[ErrorMessage]"
+                      dataType="wstr"
+                      length="1024"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSource Error Output].Columns[ErrorMessage]"
+                      name="ErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Json Source Spot"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="JSON Source (REST API or File); ZappySys LLC (c) All Rights Reserved; SSIS PowerPack; http://www.zappysys.com/support"
+              description="The JSON source is used to read data from JSON files, RESTful Web Service or direct JSON String."
+              name="Json Source Spot"
+              usesDispositions="true"
+              version="28">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="LoggingMode determines how much information is logged during Package Execution. Set Logging mode to Debugging for maximum log."
+                  expressionType="Notify"
+                  name="LoggingMode"
+                  typeConverter="ZappySys.PowerPack.Common.LoggingMode, ZappySys.PowerPack140, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When you enable this property it will prefix timestamp before Log messages."
+                  expressionType="Notify"
+                  name="PrefixTimestamp">false</property>
+                <property
+                  dataType="System.Null"
+                  expressionType="Notify"
+                  name="SelfRef"
+                  typeConverter="NOTBROWSABLE" />
+                <property
+                  dataType="System.Boolean"
+                  description="Treat empty string as NULL for any numeric data types"
+                  expressionType="Notify"
+                  name="TreatBlankNumberAsNull">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Treat empty string as NULL for bool data types"
+                  expressionType="Notify"
+                  name="TreatBlankBoolAsNull">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Treat empty string as NULL for any date/time data types"
+                  expressionType="Notify"
+                  name="TreatBlankDateAsNull">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Defines how to read the JSON file or direct string"
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="ZappySys.Common.Ssis.FileValueAccessMode, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">2</property>
+                <property
+                  dataType="System.String"
+                  description="Defines how to read the JSON file or direct string"
+                  expressionType="Notify"
+                  name="DirectValue"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable name which holds JSON string"
+                  expressionType="Notify"
+                  name="ValueVariable"
+                  typeConverter="ZappySys.PowerPack.Converters.VariableEditor,ZappySys.PowerPack140.UI,Version=1.0.0.0,Culture=neutral,PublicKeyToken=1903265a93eae502"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable name which holds data file path or url"
+                  expressionType="Notify"
+                  name="PathVariable"
+                  typeConverter="ZappySys.PowerPack.Converters.VariableEditor,ZappySys.PowerPack140.UI,Version=1.0.0.0,Culture=neutral,PublicKeyToken=1903265a93eae502"></property>
+                <property
+                  dataType="System.String"
+                  description="JSON file file path (e.g. c:\data\myfile.json) or pattern to process multiple files (e.g. c:\data\*.json)"
+                  expressionType="Notify"
+                  name="DirectPath"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">https://atlis.mcquilling.com:5302/API/rates</property>
+                <property
+                  dataType="System.String"
+                  description="Set this if you want to set custom Http headers. You may use variable anywhere in the header value using syntax {{User::YourVarName}}. Syntax of Header key value pair is : &amp;lt;request&amp;gt;&amp;lt;header&amp;gt;&amp;lt;name&amp;gt;x-myheader-1&amp;lt;/name&amp;gt;&amp;lt;value&amp;gt;AAA&amp;lt;/value&amp;gt;&amp;lt;/header&amp;gt; &amp;lt;header&amp;gt;&amp;lt;name&amp;gt;x-myheader-2&amp;lt;/name&amp;gt;&amp;lt;value&amp;gt;BBB&amp;lt;/value&amp;gt;&amp;lt;/header&amp;gt;&amp;lt;/request&amp;gt;"
+                  expressionType="Notify"
+                  name="HttpHeaders">&lt;request&gt;&lt;header&gt;&lt;name&gt;Accept&lt;/name&gt;&lt;value&gt;json&lt;/value&gt;&lt;/header&gt;&lt;header&gt;&lt;name&gt;Cache-Control&lt;/name&gt;&lt;value&gt;no-cache&lt;/value&gt;&lt;/header&gt;&lt;/request&gt;</property>
+                <property
+                  dataType="System.String"
+                  description="User defined data you wish to send along with your HTTP Request (e.g. Upload file data, Form POST data). Usually you have to set content-type of your data but if you select RequestMethod=POST then system will automatically set content-type=application/x-www-form-urlencoded."
+                  expressionType="Notify"
+                  name="HttpRequestData">{
+  "entity": "Spot Rate",
+  "types": ["Spot"],
+  "periods": ["Actual"],
+  "cases": ["ALL"]
+}</property>
+                <property
+                  dataType="System.String"
+                  description="Http Web Request Method (e.g. POST, GET, PUT, LIST, DELETE...). Refer your API documentation if you are not sure which method you have to use."
+                  expressionType="Notify"
+                  name="HttpRequestMethod">POST</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies content type for data you wish to POST. If you select Default option then system default content type will be used (i.e. application/x-www-form-urlencoded). If you specify Content-Type header along with this option then header value takes precedence."
+                  expressionType="Notify"
+                  name="HttpRequestContentType"
+                  typeConverter="ZappySys.Common.Web.HttpRequestContentType, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Data format coming from HTTP Response. This is useful for example when you have OData service and you want to automatically consume all pages of data using odata.netUrl. Setting JsonFormat=Odata will automatically do it for you. This setting is only applicable if JSON is coming from HTTP WebRequest."
+                  expressionType="Notify"
+                  name="JsonFormat"
+                  typeConverter="ZappySys.Json.JsonFormat, ZappySys.Json, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enable custom proxy settings (If this is not set then system default proxy will be used. To disable proxy totally uncheck this option and check DoNotUseDefaultProxy option if available)"
+                  expressionType="Notify"
+                  name="UseProxy">false</property>
+                <property
+                  dataType="System.String"
+                  description="Web URL of Proxy server (including port  if necessary). [e.g. http://myproxyserver:8080/]"
+                  expressionType="Notify"
+                  name="ProxyUrl"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enable passing userid and password to proxy server"
+                  expressionType="Notify"
+                  name="UseProxyCreds">false</property>
+                <property
+                  dataType="System.String"
+                  description="Proxy username"
+                  expressionType="Notify"
+                  name="ProxyUserName"></property>
+                <property
+                  dataType="System.String"
+                  description="Proxy password"
+                  expressionType="Notify"
+                  name="ProxyPassword"></property>
+                <property
+                  dataType="System.String"
+                  description="If Service response support pagination using some sort of next url attribute then specify which attribute name in JSON Response string which holds next url. If no attribute found or its null then component will stop fetching next resultset. Example: $.pagingInfo.nextUrl"
+                  expressionType="Notify"
+                  name="NextUrlAttribute"></property>
+                <property
+                  dataType="System.String"
+                  description="If Service response support pagination using some sort of prev/next url attribute then specify which previous link attribute name from JSON Response string which holds previous url."
+                  expressionType="Notify"
+                  name="PrevUrlAttribute"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies value for NextUrlAttribute or StopIndicatorAttribute which indicates last page to stop pagination. If you have specified StopIndicatorAttribute then you can use Regular expression rather than static value to indicate last page. To use regular expression value of this property must start with regex= prefix. Example : regex=FALSE|N  (assuming you set StopIndicatorAttribute to something like $.hasMore)"
+                  expressionType="Notify"
+                  name="NextUrlStopIndicator"></property>
+                <property
+                  dataType="System.String"
+                  description="Attribute name or expression for attribute which can be used as stop indicator (e.g. hasmore --or-- $.pagination.hasmore). If this value is blank then NextUrlAttribute is used"
+                  expressionType="Notify"
+                  name="StopIndicatorAttribute"></property>
+                <property
+                  dataType="System.String"
+                  description="If you want to include certain text (or parameters) at the end of Next url then specify this attribute (e.g. &amp;format=json). Another common usecase of this property is to supply pagination token to next Page URL. You can also use &lt;%nextlink%&gt; or  &lt;%nextlink_encoded%&gt; placeholder (e.g. &amp;cursor=&lt;%nextlink_encoded%&gt; )"
+                  expressionType="Notify"
+                  name="NextUrlSuffix"></property>
+                <property
+                  dataType="System.Int32"
+                  description="This property indicates total number of milliseconds you want to wait before sending next request. This option allows you to adjust how many API calls can be made within certain timeframe. If your API Service has no limit then set this option to zero"
+                  expressionType="Notify"
+                  name="NextUrlWait">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If this option is true then component will continue without exception on 404 error (Url not found). This allows you to consume data gracefully."
+                  expressionType="Notify"
+                  name="ContinueOnUrlNotFoundError">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Continue when any type of exception occurs during http request"
+                  expressionType="Notify"
+                  name="ContineOnAnyError">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Continue on error when specified substring found in response"
+                  expressionType="Notify"
+                  name="ContineOnErrorForMessage">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Continue on error when specified status code returned from web server"
+                  expressionType="Notify"
+                  name="ContineOnErrorForStatusCode">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When error occurs no data is returned. Use this option to get content eventhough error occurs. When this option is checked you can't use [continue on error when specific string found in response] option"
+                  expressionType="Notify"
+                  name="ConsumeResponseOnError">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Status code to match when error occurs and ContineOnErrorForStatusCode option is true. If Response status code matches to this code then task continues to run"
+                  expressionType="Notify"
+                  name="ErrorStatusCodeToMatch">404</property>
+                <property
+                  dataType="System.String"
+                  description="Error substring to match when error occurs and ContineOnErrorForMessage option is true. If Response status code matches to this code then task continues to run"
+                  expressionType="Notify"
+                  name="ErrorSubstringToMatch"></property>
+                <property
+                  dataType="System.String"
+                  description="Cookie Container can be used to maintain state between multiple web requests. Example: You can login to site like wordpress and then extract any private page content by simply passing authentication cookies using this variable."
+                  expressionType="Notify"
+                  name="CookieContainerVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Http request Timeout in seconds. Set this to 0 if you want to use system default value (i.e. 100 seconds)"
+                  expressionType="Notify"
+                  name="RequestTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies which security protocol is supported for HTTPS communication. Using this option you can enable legacy protocol or enforce to use latest version of security protocol (Note: TLS 1.2 is only supported in SSIS 2014 or Higher)."
+                  expressionType="Notify"
+                  name="SecurityProtocol"
+                  typeConverter="ZappySys.PowerPack.Common.HttpsSecurityProtocolType, ZappySys.PowerPack140, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enable support for gzip or deflate compression. When you check this option compressed response automatically de-compressed saving bandwidth. This option is only valid if web server supports compressed response stream. Check your API documentation for more information."
+                  expressionType="Notify"
+                  name="EnableCompressionSupport">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Ignore SSL certificate related errors. Example: if you getting SSL/TLS errors because of certificate expired or certificate is not from trusted authority or certificate is self-signed. By checking this option you will not get SSL/TLS error."
+                  expressionType="Notify"
+                  name="IgnoreCertificateErrors">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Allow unsecure ciphers/suites and curves for SSLS/TLS communication. Use this option to communicate with web servers which needs legacy / unsecured ciphers support. This option is only trigged when you change default SSL/TLS Version on advanced settings tab."
+                  expressionType="Notify"
+                  name="AllowUnsecureSuite">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Use connection to pass credentials for authentication (e.g. Use UserID/Password or Use OAuth Protocol for token based approach)"
+                  expressionType="Notify"
+                  name="UseConnection">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specified how you want to loop through multiple pages returned by REST API."
+                  expressionType="Notify"
+                  name="PagingMode"
+                  typeConverter="ZappySys.Common.RestApiPagingMode, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If you wish to pass extracted pagination token or current page number in the body of next request then set this option to true. You can use [$pagetoken$] and [$pagetoken$] placeholders anywhere in the Body where you wish to insert extracted Page token. You must set encoded token you can use &lt;%nextlink_encoded%&gt; inside SuffixForNextUrl Property. If you dont use SuffixForNextUrl then raw nextLink or Token will be inserted inside the body. If you dont specify [$pagetoken$] placeholder in the body then NextPage Token will be appended at the end. NextPage Token is extracted by filter expression specified using property NextUrlAttribute"
+                  expressionType="Notify"
+                  name="EnablePageTokenForBody">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this to true if you wish to specify different URL, Header, Body or Filter for first page and next page (i.e. Paginated response). Some APIs like Amazon MWS, NetSuite, Zuora) you may need to set this to true."
+                  expressionType="Notify"
+                  name="HasDifferentNextPageInfo">false</property>
+                <property
+                  dataType="System.String"
+                  description="When HasDifferentNextPageInfo=true you can set this property to indicate first page and next page. You can specify different URL, Header, Body or Filter for first page and next page (i.e. Paginated response). Use [$tag$] as placeholder anywhere in the URL, Header, Body or Filter and at runtime system will replace it with correct value (first page or next page value). Syntax to specify placeholder for first page vs next page is like a connectionstring url=FirstPageValue|NextPageValue;header=FirstPageValue|NextPageValue;body=FirstPageValue|NextPageValue;filter=FirstPageValue|NextPageValue; You can use one or more key/value pairs to make things dynamic (e.g. url, header, body or filter)  .For example if you have pagination in your API and First URL is http://abc.com/api/items/get and to get more records you have to call http://abc.com/api/items/getNext then you can use [$tag$] as placeholder in the URL http://abc.com/api/items/[$tag$] and specify this property with first page tag and next page tag as url=get|getNext  (Tags are separated using vertical bar). "
+                  expressionType="Notify"
+                  name="PagePlaceholders"></property>
+                <property
+                  dataType="System.String"
+                  description="Use this property to set request body fragment for first page. HasDifferentNextPageInfo must be set to true to use this property."
+                  expressionType="Notify"
+                  name="FirstPageBodyPart"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Use this property to set request body fragment for any request after first request. HasDifferentNextPageInfo must be set to true to use this property."
+                  expressionType="Notify"
+                  name="NextPageBodyPart"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Expression to extract Maximum pages to loop through. Some APIs don't stop pagination and keep returning last page data when you try to read data after last page. Specify expression (e.g. $.page_count ) to read total pages to loop through using this property."
+                  expressionType="Notify"
+                  name="PagingMaxPagesExpr"></property>
+                <property
+                  dataType="System.String"
+                  description="e.g. Type page_num if URL looks like this =&gt; http://abc.com/?page_num=1&amp;sort=true  (page number via query string)&#xA;--or-- Type &lt;%page%&gt; if page number is inside URL path like this =&gt; http://abc.com/1/?sort=true  (e.g. replace page number in url with placeholder http://abc.com/&lt;%page%&gt;/?sort=true)&#xA;Page number will be incremented by one for next URL until last page is reached or [Max Page Number] is reached"
+                  expressionType="Notify"
+                  name="PageNumberAttributeNameInUrl"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum page number until which auto increment is allowed. Type zero for no limit. Next URL contains next page number (increment by one) until last page is detected or [Max Page Number] limit is reached."
+                  expressionType="Notify"
+                  name="MaxPageNumber">0</property>
+                <property
+                  dataType="System.String"
+                  description="Variable name which will hold starting page number. This is ignored if you useing parameter name from query string to indicate page number."
+                  expressionType="Notify"
+                  name="StartPageNumberVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Page counter increment. By default next page is incremented by one if this value is zero. You can also enter negative number if you want to decrease page counter."
+                  expressionType="Notify"
+                  name="PageNumberIncrement">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specified how you want detect last page."
+                  expressionType="Notify"
+                  name="PagingEndStrategy"
+                  typeConverter="ZappySys.Common.UrlPagingEndDetectionStrategy, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Condition result to compare to detect last page. Set this property to True if you want detect last page if condition is true else set this to False."
+                  expressionType="Notify"
+                  name="LastPageWhenConditionEqualsTo">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Minimum bytes expected from response."
+                  expressionType="Notify"
+                  name="ResponseMinBytes">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum bytes from response."
+                  expressionType="Notify"
+                  name="ResponseMaxBytes">3</property>
+                <property
+                  dataType="System.String"
+                  description="Expected error message sub string from response."
+                  expressionType="Notify"
+                  name="ResponseErrorString">not found</property>
+                <property
+                  dataType="System.Int32"
+                  description="Expected status code from response when page number you trying to access not found."
+                  expressionType="Notify"
+                  name="ResponseStatusCode">404</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum JSON records to fetch. Set this value to 0 for all records"
+                  expressionType="Notify"
+                  name="MaxRows">0</property>
+                <property
+                  dataType="System.String"
+                  description="Enter expression here to filter data.(Example:  $.Users[*].UserName ) This will fetch User names from users records"
+                  expressionType="Notify"
+                  name="Filter"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">$.SpotRates[*].Rates[*]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Use this option to include parent properties (Non array) in the output along with Filtered Rows"
+                  expressionType="Notify"
+                  name="IncludeParentColumns">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="By default child and parent information is not included in the output if children not found for specified expression. For example if you want to extract all orders from all customers nodes then you can type $.Customers[*].Orders[*]. This will fetch all orders from all customers. By default customers records without orders wont be included in the output. If you want to include those customers where orders not found then check this option (Output null information for order attributes). This behavior is similar to LEFT OUTER JOIN in SQL (Left side is parent, right side is child). This option is ***resource intensive*** so only check if you really care about this behavior."
+                  expressionType="Notify"
+                  name="IncludeParentColumnsWhenChildMissing">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to true if you want to output parent columns which are array. By default any parent column which is an array is not included in output. See also FilterForParentColumnsWithArrayType property if you set this property"
+                  expressionType="Notify"
+                  name="IncludeParentColumnsWithArrayType">false</property>
+                <property
+                  dataType="System.String"
+                  description="Filter expression to extract value form parent"
+                  expressionType="Notify"
+                  name="FilterForParentColumnsWithArrayType"></property>
+                <property
+                  dataType="System.String"
+                  description="Prefix for parent column name. This option is only valid if you have set IncludeParentColumns=True"
+                  expressionType="Notify"
+                  name="ParentColumnPrefix"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Throw error if property name specified in filter expression is missing. By default it will ignore any missing property errors."
+                  expressionType="Notify"
+                  name="ThrowErrorIfPropertyMissing">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="This property how many nested levels should be scanned to fetch various properties. 0=Scan all child levels."
+                  expressionType="Notify"
+                  name="MaxLevelsToScan">0</property>
+                <property
+                  dataType="System.String"
+                  description="List comma separated property names from JSON document which you want to exclude from output. Specify parent property name to exclude all child nodes."
+                  expressionType="Notify"
+                  name="ExcludedProperties"></property>
+                <property
+                  dataType="System.String"
+                  description="Property level separator used in generated property name (separator for outer properties - Above selected filter node). Use this if default separator is producing duplicate property name which is conflicting with existing name."
+                  expressionType="Notify"
+                  name="LevelSeparator">_</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Enables deep array flattening for selected filtered hierarchy. When you turn on this property it will flatten each property of each array item and expose as column (e.g. If you have Filter set as $.customers[*] and for each customer you have an array of Addresses then you may see output columns like Addresses.1.City, Addresses.1.State, Addresses.2.City, Addresses.2.State .... Addresses.N.City, Addresses.N.State). You can control how many array items you want to flatten by setting MaxArrayItemsToFlatten property."
+                  expressionType="Notify"
+                  name="EnableArrayFlattening">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum number of array items to flatten. inner array flattening. Adjust this property to control how many columns being generated. This option is ignored if you set EnableArrayFlattening=false"
+                  expressionType="Notify"
+                  name="MaxArrayItemsToFlatten">10</property>
+                <property
+                  dataType="System.Int32"
+                  description="Compression format for source file (e.g. gzip, zip)"
+                  expressionType="Notify"
+                  name="FileCompressionType"
+                  typeConverter="ZappySys.Common.FileCompressionType, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Array Transformation you want to apply. Useful for case when you have 2-Dimensional arrays with rows/columns in separate arrays."
+                  expressionType="Notify"
+                  name="ArrayTransformationType"
+                  typeConverter="ZappySys.Json.ArrayTransformType, ZappySys.Json, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">0</property>
+                <property
+                  dataType="System.String"
+                  description="Filter expression to use to extract column names for array transformation."
+                  expressionType="Notify"
+                  name="ArrayTransColumnNameFilter"></property>
+                <property
+                  dataType="System.String"
+                  description="Filter expression for row values (Not applicable for simple array transformation)."
+                  expressionType="Notify"
+                  name="ArrayTransRowValueFilter"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="When you have 2D array but don't have column list specified in a separate array then use this option (e.g. { arr: [[10,11],[21,22]] } )."
+                  expressionType="Notify"
+                  name="ArrayTransEnableCustomColumns">false</property>
+                <property
+                  dataType="System.String"
+                  description="When you have 2D array but don't have column list specified in a separate array then use specify column names here. Use comma separated list (e.g col1,col2,col3 ). Column name Order must match value order."
+                  expressionType="Notify"
+                  name="ArrayTransCustomColumns"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how custom date formatted strings are parsed when reading JSON."
+                  expressionType="Notify"
+                  name="DateFormatString"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how date formatted strings, e.g. Date(1198908717056) and 2012-03-21T05:40Z, are parsed when reading JSON."
+                  expressionType="Notify"
+                  name="DateParseHandling"
+                  typeConverter="ZappySys.Common.DateParseHandling, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Output as raw JSON document rather than parsing individual fields. This option is helpful if you have documents stored in a file and you want to pass them downstream as raw JSON string rather than parsing into columns."
+                  expressionType="Notify"
+                  name="OutputRawDocument">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indent JSON output so its easy to read."
+                  expressionType="Notify"
+                  name="IndentOutput">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to true if you want to output FilePath. This option is ignored when you consume DirectValue or data from Url rather than local files. Output column name will be __FilePath"
+                  expressionType="Notify"
+                  name="OutputFilePath">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to true if you want to output FileName. This option is ignored when you consume DirectValue or data from Url rather than local files. Output column name will be __FileName"
+                  expressionType="Notify"
+                  name="OutputFileName">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Set this option to true if you want to move processed file to archive folder."
+                  expressionType="Notify"
+                  name="EnableArchiveFile">false</property>
+                <property
+                  dataType="System.String"
+                  description="Folder path where you want to move processed file."
+                  expressionType="Notify"
+                  name="ArchiveFolderPath"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Folder path where you want to move processed file."
+                  expressionType="Notify"
+                  name="OverwriteFileInArchiveFolder">false</property>
+                <property
+                  dataType="System.String"
+                  description="File naming convention for archived file. By default it will same name as original source file processed. But you can control naming format using {%name%} and {%ext%} placeholders. e.g. {%name%}_processed{%ext%} or {%name%}{%ext%}.{{System::ContainerStartTime,yyyyMMdd_HHmmss_fff}}"
+                  expressionType="Notify"
+                  name="ArchiveFileNamingConvention"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="When this property is true then Column is converted to Row. Pivoted names will appear under  Pivot_Name column and values will appear under Pivot_Value field."
+                  expressionType="Notify"
+                  name="EnablePivot">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Metadata scan mode controls how data type and length is determined. By default few records scanned to determine datatype/length. Changing ScanMode affects length/datatype accuracy."
+                  expressionType="Notify"
+                  name="MetaDataScanMode"
+                  typeConverter="ZappySys.Common.Data.MetaDataScanMode, ZappySys.Common, Version=1.0.2018.10909, Culture=neutral, PublicKeyToken=1903265a93eae502">4</property>
+                <property
+                  dataType="System.Int32"
+                  description="Length for all string column. This option is only valid for MetaDataScanMode=Custom"
+                  expressionType="Notify"
+                  name="MetaDataCustomLength">1000</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">ZappySys.JsonSource</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Json Source Spot.Connections[Connection]"
+                  connectionManagerID="Package.ConnectionManagers[HTTP 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[HTTP 1]"
+                  description="Connection manager for authentication (e.g. HTTP or OAuth Connection)"
+                  name="Connection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput]"
+                  errorOrTruncationOperation="Error"
+                  errorRowDisposition="FailComponent"
+                  name="JsonSourceOutput"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[Date]"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[Rate]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[Rate]"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[Rate]"
+                      name="Rate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Type]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_Type]"
+                      name="SpotRates_Type" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_Case]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Case]"
+                      length="250"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_Case]"
+                      name="SpotRates_Case" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_DataSeriesUnit]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_DataSeriesUnit]"
+                      length="25"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_DataSeriesUnit]"
+                      name="SpotRates_DataSeriesUnit" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_RateType]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_RateType]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_RateType]"
+                      name="SpotRates_RateType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_CargoQuantity]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_CargoQuantity]"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_CargoQuantity]"
+                      name="SpotRates_CargoQuantity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_LastEntered]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_LastEntered]"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_LastEntered]"
+                      name="SpotRates_LastEntered" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_PrevEntered]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_PrevEntered]"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_PrevEntered]"
+                      name="SpotRates_PrevEntered" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_PrevValue]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_PrevValue]"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_PrevValue]"
+                      name="SpotRates_PrevValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_YTDAverage]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_YTDAverage]"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_YTDAverage]"
+                      name="SpotRates_YTDAverage" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_ResultCode]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_ResultCode]"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_ResultCode]"
+                      name="SpotRates_ResultCode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_Period]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Period]"
+                      length="25"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_Period]"
+                      name="SpotRates_Period" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_DefaultCargoDensity]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_DefaultCargoDensity]"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_DefaultCargoDensity]"
+                      name="SpotRates_DefaultCargoDensity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[__FileName]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[__FileName]"
+                      length="600"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[__FileName]"
+                      name="__FileName" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Type]"
+                      dataType="wstr"
+                      length="24"
+                      name="SpotRates_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Case]"
+                      dataType="wstr"
+                      length="176"
+                      name="SpotRates_Case" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_DataSeriesUnit]"
+                      dataType="wstr"
+                      length="20"
+                      name="SpotRates_DataSeriesUnit" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_RateType]"
+                      dataType="i8"
+                      name="SpotRates_RateType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_CargoQuantity]"
+                      dataType="r8"
+                      name="SpotRates_CargoQuantity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_LastEntered]"
+                      dataType="dbTimeStamp"
+                      name="SpotRates_LastEntered" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_PrevEntered]"
+                      dataType="dbTimeStamp"
+                      name="SpotRates_PrevEntered" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_PrevValue]"
+                      dataType="r8"
+                      name="SpotRates_PrevValue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_YTDAverage]"
+                      dataType="r8"
+                      name="SpotRates_YTDAverage" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_ResultCode]"
+                      dataType="i8"
+                      name="SpotRates_ResultCode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_Period]"
+                      dataType="wstr"
+                      length="24"
+                      name="SpotRates_Period" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[Rate]"
+                      dataType="r8"
+                      name="Rate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[__FileName]"
+                      dataType="wstr"
+                      length="600"
+                      name="__FileName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].ExternalColumns[SpotRates_DefaultCargoDensity]"
+                      dataType="r8"
+                      name="SpotRates_DefaultCargoDensity" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output]"
+                  isErrorOut="true"
+                  name="JsonSource Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[Rate]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[Rate]"
+                      name="Rate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_Type]"
+                      name="SpotRates_Type" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_Case]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_Case]"
+                      name="SpotRates_Case" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_DataSeriesUnit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_DataSeriesUnit]"
+                      name="SpotRates_DataSeriesUnit" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_RateType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_RateType]"
+                      name="SpotRates_RateType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_CargoQuantity]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_CargoQuantity]"
+                      name="SpotRates_CargoQuantity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_LastEntered]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_LastEntered]"
+                      name="SpotRates_LastEntered" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_PrevEntered]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_PrevEntered]"
+                      name="SpotRates_PrevEntered" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_PrevValue]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_PrevValue]"
+                      name="SpotRates_PrevValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_YTDAverage]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_YTDAverage]"
+                      name="SpotRates_YTDAverage" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_ResultCode]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_ResultCode]"
+                      name="SpotRates_ResultCode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_Period]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_Period]"
+                      name="SpotRates_Period" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_DefaultCargoDensity]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[SpotRates_DefaultCargoDensity]"
+                      name="SpotRates_DefaultCargoDensity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[__FileName]"
+                      dataType="wstr"
+                      length="600"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[__FileName]"
+                      name="__FileName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[ErrorColumnName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="128"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[ErrorColumnName]"
+                      name="ErrorColumnName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[ErrorMessage]"
+                      dataType="wstr"
+                      length="1024"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSource Error Output].Columns[ErrorMessage]"
+                      name="ErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[Rate]"
+                      cachedDataType="r8"
+                      cachedName="Rate"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[Rate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Rate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SpotRates_Type"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_Case]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="SpotRates_Case"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_Case]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Case]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_DataSeriesUnit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="SpotRates_DataSeriesUnit"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_DataSeriesUnit]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DataSeriesUnit]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_RateType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SpotRates_RateType"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_RateType]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_RateType]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_CargoQuantity]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_CargoQuantity"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_CargoQuantity]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_CargoQuantity]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_LastEntered]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SpotRates_LastEntered"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_LastEntered]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_LastEntered]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_PrevEntered]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SpotRates_PrevEntered"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_PrevEntered]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevEntered]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_PrevValue]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_PrevValue"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_PrevValue]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevValue]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_YTDAverage]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_YTDAverage"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_YTDAverage]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_YTDAverage]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_ResultCode]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_ResultCode"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_ResultCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_ResultCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_Period]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="SpotRates_Period"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_Period]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Period]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SpotRates_DefaultCargoDensity]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_DefaultCargoDensity"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[SpotRates_DefaultCargoDensity]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DefaultCargoDensity]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[__FileName]"
+                      cachedDataType="wstr"
+                      cachedLength="600"
+                      cachedName="__FileName"
+                      lineageId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput].Columns[__FileName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[__FileName]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Rate]"
+                      cachedDataType="r8"
+                      cachedName="Rate"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[Rate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Rate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SpotRates_Type"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_Case]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="SpotRates_Case"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_Case]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Case]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_DataSeriesUnit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="SpotRates_DataSeriesUnit"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_DataSeriesUnit]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DataSeriesUnit]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_RateType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SpotRates_RateType"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_RateType]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_RateType]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_CargoQuantity]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_CargoQuantity"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_CargoQuantity]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_CargoQuantity]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_LastEntered]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SpotRates_LastEntered"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_LastEntered]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_LastEntered]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_PrevEntered]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SpotRates_PrevEntered"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_PrevEntered]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevEntered]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_PrevValue]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_PrevValue"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_PrevValue]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevValue]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_YTDAverage]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_YTDAverage"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_YTDAverage]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_YTDAverage]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_ResultCode]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_ResultCode"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_ResultCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_ResultCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_Period]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="SpotRates_Period"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_Period]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Period]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SpotRates_DefaultCargoDensity]"
+                      cachedDataType="r8"
+                      cachedName="SpotRates_DefaultCargoDensity"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[SpotRates_DefaultCargoDensity]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DefaultCargoDensity]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[__FileName]"
+                      cachedDataType="wstr"
+                      cachedLength="600"
+                      cachedName="__FileName"
+                      lineageId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput].Columns[__FileName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[__FileName]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Rate]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Rate]"
+                      name="Rate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Type]"
+                      name="SpotRates_Type" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Case]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Case]"
+                      name="SpotRates_Case" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DataSeriesUnit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DataSeriesUnit]"
+                      name="SpotRates_DataSeriesUnit" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_RateType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_RateType]"
+                      name="SpotRates_RateType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_CargoQuantity]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_CargoQuantity]"
+                      name="SpotRates_CargoQuantity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_LastEntered]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_LastEntered]"
+                      name="SpotRates_LastEntered" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevEntered]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevEntered]"
+                      name="SpotRates_PrevEntered" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevValue]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_PrevValue]"
+                      name="SpotRates_PrevValue" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_YTDAverage]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_YTDAverage]"
+                      name="SpotRates_YTDAverage" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_ResultCode]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_ResultCode]"
+                      name="SpotRates_ResultCode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Period]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_Period]"
+                      name="SpotRates_Period" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DefaultCargoDensity]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SpotRates_DefaultCargoDensity]"
+                      name="SpotRates_DefaultCargoDensity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[__FileName]"
+                      dataType="wstr"
+                      length="600"
+                      lineageId="Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[__FileName]"
+                      name="__FileName" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\CKCWSQL1H Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\CreatedDateTime Column Addition.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[JsonSourceOutput]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 1]"
+              name="JsonSourceOutput"
+              startId="Package\Data Flow Task\Json Source DEMERGE.Outputs[JsonSourceOutput]" />
+            <path
+              refId="Package\Data Flow Task.Paths[JsonSourceOutput1]"
+              endId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+              name="JsonSourceOutput"
+              startId="Package\Data Flow Task\Json Source Spot.Outputs[JsonSourceOutput]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Union All Output 1]"
+              endId="Package\Data Flow Task\CreatedDateTime Column Addition.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="130,136" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Data Flow Task\CreatedDateTime Column Addition"
+          TopLeft="216,265" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Data Flow Task\Json Source DEMERGE"
+          TopLeft="114,61" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Data Flow Task\Union All"
+          TopLeft="276,184" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Data Flow Task\CKCWSQL1H Destination"
+          TopLeft="231,350" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow Task\Json Source Spot"
+          TopLeft="385,63" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="332.75,307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="336.5,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[JsonSourceOutput1]"
+          TopLeft="465,105">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-109.666666666667,79"
+              Start="0,0"
+              End="-109.666666666667,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7814029363785" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.7814029363785"
+                    Point2="0,46.7814029363785"
+                    Point3="-4,46.7814029363785" />
+                  <mssgle:LineSegment
+                    End="-105.666666666667,46.7814029363785" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-105.666666666667,46.7814029363785"
+                    Point2="-109.666666666667,46.7814029363785"
+                    Point3="-109.666666666667,50.7814029363785" />
+                  <mssgle:LineSegment
+                    End="-109.666666666667,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[JsonSourceOutput]"
+          TopLeft="207,103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110.666666666667,81"
+              Start="0,0"
+              End="110.666666666667,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.9657422512235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.9657422512235"
+                    Point2="0,47.9657422512235"
+                    Point3="4,47.9657422512235" />
+                  <mssgle:LineSegment
+                    End="106.666666666667,47.9657422512235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106.666666666667,47.9657422512235"
+                    Point2="110.666666666667,47.9657422512235"
+                    Point3="110.666666666667,51.9657422512235" />
+                  <mssgle:LineSegment
+                    End="110.666666666667,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\CKCWSQL1H Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
