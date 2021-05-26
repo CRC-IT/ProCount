@@ -1,0 +1,3311 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/14/2017 4:20:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DLG55XPW52"
+  DTS:CreatorName="CALNET\pydimarb"
+  DTS:DTSID="{2A79C883-5111-41BB-BD7A-DB527475BFF8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="WTA_ExcelSource_To_IFace"
+  DTS:PackageType="5"
+  DTS:VersionBuild="383"
+  DTS:VersionGUID="{F170EAF6-3392-4A03-BE56-4919EB043106}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV Archive Destination]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{993b5936-27b8-4009-8795-5640500f4d42}"
+      DTS:ObjectName="CSV Archive Destination">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::VendorExcelPathArchive]+ "\\"+  Replace(@[User::FileName], ".csv", "")+"_"+ replace(replace(Substring((DT_STR, 50,1252)GETDATE(),1,19),"-", ""),":", "")+ ".csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\ckcwhet01\WellTestAutomation_Files\Archive\_20190918 114534.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Test Date"
+              DTS:DTSID="{2D2F0FC6-6706-4DC6-9B02-F5C74922F359}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WELL_NAME"
+              DTS:DTSID="{AF8F2967-A329-45B5-B773-AA0A36210C02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LEASE"
+              DTS:DTSID="{943470A4-83B2-4117-83FC-DCEF4F5CC608}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BGPD"
+              DTS:DTSID="{546F4873-0414-4D83-8242-A244C520F9A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BOPD"
+              DTS:DTSID="{F6378164-7C1A-46BB-B2F1-636AA5EED493}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CSG_PRESS"
+              DTS:DTSID="{9FEEE083-ABE2-4899-BF0D-2FA60E2D28E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TBG_PRESS"
+              DTS:DTSID="{AD45DC3A-80B0-4283-A541-7572D1AF2F12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MCFD"
+              DTS:DTSID="{A1CDD881-5416-4385-A08E-E2A05F5F3CEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GOR"
+              DTS:DTSID="{8AFA9E79-B176-40D1-911F-BD7FF16DA25A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLTBG"
+              DTS:DTSID="{334C2C9C-E2BE-47C3-9268-E2DB2F966BEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FOP"
+              DTS:DTSID="{B7886DFC-FBCD-4650-AA42-8F6692F0BEC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TBG_TEMP"
+              DTS:DTSID="{1A981E82-1E97-415E-A1B8-8B4924CC9F44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SPM_COUNT"
+              DTS:DTSID="{750C0678-CAC6-44F3-95FD-5C150065DBE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STR_LEN"
+              DTS:DTSID="{FDDE1A13-FE03-4C7C-B8B7-7BB680DD6522}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FREQ_HZ"
+              DTS:DTSID="{151F916C-2D8F-442C-AABB-90AAF3621BEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ESP_AMP"
+              DTS:DTSID="{A9C938C8-5990-4186-AC5B-4101DB7EB4D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SEP_PRESS"
+              DTS:DTSID="{47E5027F-3F20-4438-A8FF-A86A97D521FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLOWLINE_PRESS"
+              DTS:DTSID="{759E68A2-00F9-4F09-B824-AD27C815C330}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OIL_API_GRAVITY"
+              DTS:DTSID="{34CE4F30-4CB7-4D09-A53A-32CA312D63C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="JOINT_COUNT"
+              DTS:DTSID="{6E69A801-58BC-4E9A-89FF-F8A96950C469}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMMENT"
+              DTS:DTSID="{1BE1B30F-7A6B-4FF1-A2BE-75E4C7813F8F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV Archive Source]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{e321badd-8271-4b9e-9638-082f4ffd67a0}"
+      DTS:ObjectName="CSV Archive Source">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::VendorExcelPathArchive]+ "\\"+  @[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\ckcwhet01\WellTestAutomation_Files\Archive\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Test Date"
+              DTS:DTSID="{2D2F0FC6-6706-4DC6-9B02-F5C74922F359}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WELL_NAME"
+              DTS:DTSID="{AF8F2967-A329-45B5-B773-AA0A36210C02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LEASE"
+              DTS:DTSID="{943470A4-83B2-4117-83FC-DCEF4F5CC608}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BGPD"
+              DTS:DTSID="{546F4873-0414-4D83-8242-A244C520F9A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BOPD"
+              DTS:DTSID="{F6378164-7C1A-46BB-B2F1-636AA5EED493}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CSG_PRESS"
+              DTS:DTSID="{9FEEE083-ABE2-4899-BF0D-2FA60E2D28E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TBG_PRESS"
+              DTS:DTSID="{AD45DC3A-80B0-4283-A541-7572D1AF2F12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MCFD"
+              DTS:DTSID="{A1CDD881-5416-4385-A08E-E2A05F5F3CEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GOR"
+              DTS:DTSID="{8AFA9E79-B176-40D1-911F-BD7FF16DA25A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLTBG"
+              DTS:DTSID="{334C2C9C-E2BE-47C3-9268-E2DB2F966BEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FOP"
+              DTS:DTSID="{B7886DFC-FBCD-4650-AA42-8F6692F0BEC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TBG_TEMP"
+              DTS:DTSID="{1A981E82-1E97-415E-A1B8-8B4924CC9F44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SPM_COUNT"
+              DTS:DTSID="{750C0678-CAC6-44F3-95FD-5C150065DBE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STR_LEN"
+              DTS:DTSID="{FDDE1A13-FE03-4C7C-B8B7-7BB680DD6522}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FREQ_HZ"
+              DTS:DTSID="{151F916C-2D8F-442C-AABB-90AAF3621BEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ESP_AMP"
+              DTS:DTSID="{A9C938C8-5990-4186-AC5B-4101DB7EB4D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SEP_PRESS"
+              DTS:DTSID="{47E5027F-3F20-4438-A8FF-A86A97D521FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLOWLINE_PRESS"
+              DTS:DTSID="{759E68A2-00F9-4F09-B824-AD27C815C330}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OIL_API_GRAVITY"
+              DTS:DTSID="{34CE4F30-4CB7-4D09-A53A-32CA312D63C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="JOINT_COUNT"
+              DTS:DTSID="{6E69A801-58BC-4E9A-89FF-F8A96950C469}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMMENT"
+              DTS:DTSID="{1BE1B30F-7A6B-4FF1-A2BE-75E4C7813F8F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CSV Pick Source]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6353E194-3CAB-41E5-AB14-0919DE3179C6}"
+      DTS:ObjectName="CSV Pick Source">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::VendorExcelPath]+ "\\"+@[User::FileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\ckcwhet01\WellTestAutomation_Files\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Test Date"
+              DTS:DTSID="{2D2F0FC6-6706-4DC6-9B02-F5C74922F359}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WELL_NAME"
+              DTS:DTSID="{AF8F2967-A329-45B5-B773-AA0A36210C02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LEASE"
+              DTS:DTSID="{943470A4-83B2-4117-83FC-DCEF4F5CC608}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BGPD"
+              DTS:DTSID="{546F4873-0414-4D83-8242-A244C520F9A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BOPD"
+              DTS:DTSID="{F6378164-7C1A-46BB-B2F1-636AA5EED493}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CSG_PRESS"
+              DTS:DTSID="{9FEEE083-ABE2-4899-BF0D-2FA60E2D28E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TBG_PRESS"
+              DTS:DTSID="{AD45DC3A-80B0-4283-A541-7572D1AF2F12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MCFD"
+              DTS:DTSID="{A1CDD881-5416-4385-A08E-E2A05F5F3CEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GOR"
+              DTS:DTSID="{8AFA9E79-B176-40D1-911F-BD7FF16DA25A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLTBG"
+              DTS:DTSID="{334C2C9C-E2BE-47C3-9268-E2DB2F966BEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FOP"
+              DTS:DTSID="{B7886DFC-FBCD-4650-AA42-8F6692F0BEC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TBG_TEMP"
+              DTS:DTSID="{1A981E82-1E97-415E-A1B8-8B4924CC9F44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SPM_COUNT"
+              DTS:DTSID="{750C0678-CAC6-44F3-95FD-5C150065DBE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STR_LEN"
+              DTS:DTSID="{FDDE1A13-FE03-4C7C-B8B7-7BB680DD6522}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FREQ_HZ"
+              DTS:DTSID="{151F916C-2D8F-442C-AABB-90AAF3621BEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ESP_AMP"
+              DTS:DTSID="{A9C938C8-5990-4186-AC5B-4101DB7EB4D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SEP_PRESS"
+              DTS:DTSID="{47E5027F-3F20-4438-A8FF-A86A97D521FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLOWLINE_PRESS"
+              DTS:DTSID="{759E68A2-00F9-4F09-B824-AD27C815C330}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OIL_API_GRAVITY"
+              DTS:DTSID="{34CE4F30-4CB7-4D09-A53A-32CA312D63C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="JOINT_COUNT"
+              DTS:DTSID="{6E69A801-58BC-4E9A-89FF-F8A96950C469}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMMENT"
+              DTS:DTSID="{1BE1B30F-7A6B-4FF1-A2BE-75E4C7813F8F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{6C99398E-CE26-4279-86E9-E89AE763FFD8}"
+      DTS:ObjectName="ADO_NET_CIDS_DatabaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CIDS</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{39D2E848-6667-41B9-AE6F-E039F14C3694}"
+      DTS:ObjectName="ADO_NET_CIDS_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CLGWSQL7</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{E378A77E-F420-4E7B-BC47-F65E4A96C635}"
+      DTS:ObjectName="ADO_NET_XSPOC_DatabaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">XSPOC_Integration</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{1A80EC13-CBA7-4874-A3D8-9F80EBF0B449}"
+      DTS:ObjectName="ADO_NET_XSPOC_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCWSQLB</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{325EF61E-7D88-4930-B030-8E8B04BDB739}"
+      DTS:ObjectName="CIDS_DataseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CIDS</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{CD86AC48-BD58-44C6-98BD-CAA13AA0E448}"
+      DTS:ObjectName="CIDS_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CLGWSQL7</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{30C766AB-6FEC-4809-9487-3668825E8C8A}"
+      DTS:ObjectName="ProCount_DatabaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CRC_ProCount</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{4969ECBE-F079-410D-8B22-1510D1C4EFBD}"
+      DTS:ObjectName="ProCount_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCWSQL5-S</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{F4A68AE6-5032-4AB8-814E-CFBCF60024AA}"
+      DTS:ObjectName="XPOC_Integrations_DataBaseName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">XSPOC_Integration</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{86CE6C86-4550-418A-B709-EBBDF8485E38}"
+      DTS:ObjectName="XPOC_Integrations_ServerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">CKCwSQLB</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B2C20E03-B74A-4173-BEB9-3AD0ACE5ED29}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ArchiveXMLPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Integration\Archive\PreProcess</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E8154ADD-C0B9-4342-B923-4F8E4ECDCB15}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ArchMsgLength">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C128E793-B363-44E3-A5F6-423292F91927}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ConnType">
+      <DTS:VariableValue
+        DTS:DataType="8">Excel</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E60C808F-E14A-432E-BA10-92305AB3C129}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorLogMsg">
+      <DTS:VariableValue
+        DTS:DataType="8">Error while sending data from XSPOC to IFace table</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9E917B67-1B04-4C57-8F2C-3F22F4CBA4F6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{38BFA09B-46FB-4643-9035-0164AFE025FC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FormattedMsg">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8735A349-7F6D-4925-9E3B-A351FF7D9939}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="IFaceBatchID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{31FAAE97-3C00-4887-A38D-C5A48721DA65}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsArchive">
+      <DTS:VariableValue
+        DTS:DataType="8">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{24E3BDD1-24CE-437D-9596-67D56B3BA607}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="IsDelSrcRecords">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{56C4A694-0C84-40F1-BA17-F7D6A0AAF4A6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MsgType">
+      <DTS:VariableValue
+        DTS:DataType="8">WellTestAutomationToIngres</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E891FA5B-C0E6-43E3-9883-F7B15897A763}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PkgName">
+      <DTS:VariableValue
+        DTS:DataType="8">WTA_ExcelSource_To_IFace.dtsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5F3AE97F-D111-491F-86CD-8D23C0E557EE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ProcessType">
+      <DTS:VariableValue
+        DTS:DataType="8">SSISPackage</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{21901D2A-2241-4B66-B2D6-A416167AC6F0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubConnID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D63126EB-EFD5-4CC8-929E-6D9418423613}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubEndMsg">
+      <DTS:VariableValue
+        DTS:DataType="8">Publishing WellTestAutomation data from Vendor Excel completed</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{711097B6-B591-4A88-82A6-E831BCE170F5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BF4A07D1-68F0-4194-9EC8-7725CCA272EB}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PublisherName">
+      <DTS:VariableValue
+        DTS:DataType="8">VendorExcel</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8FF7F06A-FBFA-4C69-9E0E-F9067311F246}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubStartMsg">
+      <DTS:VariableValue
+        DTS:DataType="8">Publishing WellTestAutomation data from Vendor Excel started</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9A675AE1-2957-4ACC-9A2F-69E9583A6EA8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PubStatus">
+      <DTS:VariableValue
+        DTS:DataType="8">Vendor Excel published the WellTestAutomation data successfully</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5621513F-ED51-4008-AEBB-1B19D9C4182B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RecCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{09847B34-104B-41AA-8E26-C23948419716}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TrackID">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{110484B9-985A-488C-8D07-76E0F8B19B1A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="VendorExcelPath">
+      <DTS:VariableValue
+        DTS:DataType="8">\\ckcwhet01\WellTestAutomation_Files</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A180E8DD-5DF7-4364-BEE8-BC15E052B08C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="VendorExcelPathArchive">
+      <DTS:VariableValue
+        DTS:DataType="8">\\ckcwhet01\WellTestAutomation_Files\Archive</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{A84EF272-6E7A-40A1-9209-3D0CDC6FD248}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{81EC7162-453C-4DCD-BF97-7C8789B2E7C8}"
+        DTS:ObjectName="{81EC7162-453C-4DCD-BF97-7C8789B2E7C8}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::VendorExcelPath]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="\\ckcwhet01\WellTestAutomation_Files" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Insert tbl_Errorlog"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2EA6ADE1-85DA-44D4-939C-EF23AFBBA5A8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert tbl_Errorlog"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="&#xA;EXEC [dbo].[USP_UpsertErrorLog]&#xA;@Action = 1 &#xA;@IFaceBatchUID = ?,&#xA;@PubID = ?,&#xA;@SubID = NULL,&#xA;@ProcessName = ?,&#xA;@ComponentName = NULL,&#xA;@ProcessType = ?,&#xA;@MsgType = ?,&#xA;@Title = 'Error in the DataFlow task',&#xA;@ErrorRecCount = NULL,&#xA;@ErrorType = NULL,&#xA;@ErrorNumber = NULL,&#xA;@ErrorSeverity = NULL,&#xA;@ErrorMsg = ?,&#xA;@IsReprocess = NULL,&#xA;@ErrorStatus = NULL,&#xA;@MachineName = HOST_NAME(),&#xA;@FormattedMsg = NULL,&#xA;@ErrorTime = GETDATE(),&#xA;@CreatedBy = CURRENT_USER,&#xA;@Description = NULL,&#xA;@SubConnID = NULL,&#xA;@PubConnID = ?,&#xA;@ConnType = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::PkgName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::ProcessType"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::MsgType"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::IFaceBatchID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::PubID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::PubConnID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::ConnType"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::ErrorLogMsg"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Move File to Archive Location"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="Move the file"
+          DTS:DTSID="{935A85AF-B37D-410E-907D-A30D55E14929}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:FailPackageOnFailure="True"
+          DTS:ForceExecutionResult="0"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move File to Archive Location"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="{6353E194-3CAB-41E5-AB14-0919DE3179C6}"
+              TaskDestinationPath="User::VendorExcelPathArchive"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Rename the file"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{5EF0754C-AE66-4CE9-A582-04ADB7D6A47D}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Rename the file"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="RenameFile"
+              TaskSourcePath="{e321badd-8271-4b9e-9638-082f4ffd67a0}"
+              TaskDestinationPath="{993b5936-27b8-4009-8795-5640500f4d42}" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Update tbl_PublisherLog"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5E7199CE-2433-47F5-9AE2-AFC34571BB83}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update tbl_PublisherLog"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="&#xA;EXEC [dbo].[USP_UpsertPublisherLog] &#xA;   @Action = 2&#xA;  ,@TrackID = ?&#xA;  ,@PublisherName = NULL&#xA;  ,@ProcessName = NULL&#xA;  ,@MsgType = NULL&#xA;  ,@ConnType = NULL&#xA;  ,@PubStatus = ?&#xA;  ,@StartMsg = NULL&#xA;  ,@EndMsg =  ?&#xA;  ,@FormattedMessage = NULL&#xA;  ,@RecordCount = ?&#xA;  ,@Description = NULL&#xA;  ,@IFaceBatchUID = ?&#xA;  ,@PubID = NULL&#xA;  ,@PubConnID = NULL&#xA;  ,@IsArchive  = NULL&#xA;  ,@ArchMsgLength = NULL&#xA;  ,@ArchXMLPath = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::TrackID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::RecCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::IFaceBatchID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::PubEndMsg"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::PubStatus"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::ArchiveXMLPath"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{582C831D-79B2-4364-B5FE-C0549686FD01}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Vendor Excel to IFaceTable"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input].Columns[WELL_NAME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="WELL_NAME"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[WELL_NAME]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[WELL_NAME]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">WELL_NAME</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input].Columns[LEASE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="LEASE"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[LEASE]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[LEASE]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LEASE</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input].Columns[COMMENT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="COMMENT"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[COMMENT]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">#{Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[COMMENT]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">COMMENT</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input].Columns[CSG_PRESS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CSG_PRESS"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[CSG_PRESS]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[LTRIM]([RTRIM](#{Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[CSG_PRESS]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LTRIM(RTRIM(CSG_PRESS))</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input].Columns[TBG_PRESS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="TBG_PRESS"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[TBG_PRESS]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[LTRIM]([RTRIM](#{Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[TBG_PRESS]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LTRIM(RTRIM(TBG_PRESS))</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input].Columns[SPM_COUNT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SPM_COUNT"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[SPM_COUNT]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[LTRIM]([RTRIM](#{Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[SPM_COUNT]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LTRIM(RTRIM(SPM_COUNT))</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input].Columns[STR_LEN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="STR_LEN"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[STR_LEN]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[LTRIM]([RTRIM](#{Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[STR_LEN]}))</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">LTRIM(RTRIM(STR_LEN))</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CrearedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CrearedDate]"
+                          name="CrearedDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransDate]"
+                          name="TransDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubID]"
+                          name="PubID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::PubID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::PubID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransSeq]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransSeq]"
+                          name="TransSeq"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">0</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">0</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[BatchUID]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[BatchUID]"
+                          name="BatchUID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_GUID)("{" + @[User::IFaceBatchID] + "}")</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_GUID)("{" + @[User::IFaceBatchID] + "}")</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TranStatus]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TranStatus]"
+                          name="TranStatus"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">1</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">1</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubConnID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubConnID]"
+                          name="PubConnID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::PubConnID]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::PubConnID]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="250"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,250,1252)(@[User::FileName])</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,250,1252)(@[User::FileName])</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[tbl_IFace_WellTestAutomationToIngres]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[CIDS]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SEP_PRESS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SEP_PRESS"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SEP_PRESS]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[SEP_PRESS]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PubID]"
+                          cachedDataType="i4"
+                          cachedName="PubID"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubID]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TransSeq]"
+                          cachedDataType="i4"
+                          cachedName="TransSeq"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransSeq]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransSeq]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CrearedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="CrearedDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedTime]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[CrearedDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TransDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="TransDate"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranDate]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TransDate]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BatchUID]"
+                          cachedDataType="guid"
+                          cachedName="BatchUID"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IFaceBatchUID]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[BatchUID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TranStatus]"
+                          cachedDataType="i4"
+                          cachedName="TranStatus"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranStatus]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[TranStatus]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PubConnID]"
+                          cachedDataType="i4"
+                          cachedName="PubConnID"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubConnID]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[PubConnID]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BGPD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BGPD"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BGPD]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[BGPD]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BOPD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="BOPD"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BOPD]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[BOPD]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CSG_PRESS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CSG_PRESS"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CSG_PRESS]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[CSG_PRESS]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TBG_PRESS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="TBG_PRESS"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBG_PRESS]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[TBG_PRESS]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MCFD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="MCFD"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MCFD]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[MCFD]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GOR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="GOR"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GOR]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[GOR]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FLTBG]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FLTBG"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FLTBG]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FLTBG]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FOP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FOP"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FOP]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FOP]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TBG_TEMP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="TBG_TEMP"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBG_TEMP]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[TBG_TEMP]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STR_LEN]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="STR_LEN"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STR_LEN]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[STR_LEN]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FREQ_HZ]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FREQ_HZ"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FREQ_HZ]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FREQ_HZ]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ESP_AMP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ESP_AMP"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ESP_AMP]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[ESP_AMP]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FLOWLINE_PRESS]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FLOWLINE_PRESS"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FLOWLINE_PRESS]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FLOWLINE_PRESS]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OIL_API_GRAVITY]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="OIL_API_GRAVITY"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OIL_API_GRAVITY]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[OIL_API_GRAVITY]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[JOINT_COUNT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="JOINT_COUNT"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[JOINT_COUNT]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[JOINT_COUNT]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[WELL_NAME]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="WELL_NAME"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WELL_NAME]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[WELL_NAME]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LEASE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="LEASE"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LEASE]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[LEASE]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[COMMENT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="COMMENT"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COMMENT]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[COMMENT]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SPM_COUNT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SPM_COUNT"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SPM_COUNT]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[SPM_COUNT]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="250"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output].Columns[FileName]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Test Date]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Test Date"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Test_Date]"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[Test Date]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransID]"
+                          dataType="i4"
+                          name="TransID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransSeq]"
+                          dataType="i4"
+                          name="TransSeq" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IFaceBatchUID]"
+                          dataType="guid"
+                          name="IFaceBatchUID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranStatus]"
+                          dataType="i4"
+                          name="TranStatus" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranDate]"
+                          dataType="dbTimeStamp"
+                          name="TranDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TranMsg]"
+                          dataType="nText"
+                          name="TranMsg" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubID]"
+                          dataType="i4"
+                          name="PubID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SEP_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SEP_PRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedTime]"
+                          dataType="dbTimeStamp"
+                          name="CreatedTime" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
+                          dataType="wstr"
+                          length="100"
+                          name="CreatedBy" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PubConnID]"
+                          dataType="i4"
+                          name="PubConnID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedTime]"
+                          dataType="dbTimeStamp"
+                          name="LastModifiedTime" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedBy]"
+                          dataType="wstr"
+                          length="200"
+                          name="LastModifiedBy" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WELL_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="WELL_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LEASE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="LEASE" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BGPD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BGPD" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BOPD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BOPD" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CSG_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CSG_PRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBG_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TBG_PRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MCFD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="MCFD" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GOR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GOR" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FLTBG]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FLTBG" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FOP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FOP" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TBG_TEMP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TBG_TEMP" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SPM_COUNT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SPM_COUNT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STR_LEN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="STR_LEN" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FREQ_HZ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FREQ_HZ" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ESP_AMP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ESP_AMP" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FLOWLINE_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FLOWLINE_PRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OIL_API_GRAVITY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="OIL_API_GRAVITY" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[JOINT_COUNT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="JOINT_COUNT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[COMMENT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="COMMENT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Filename]"
+                          codePage="1252"
+                          dataType="str"
+                          length="250"
+                          name="Filename" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Test_Date]"
+                          dataType="dbTimeStamp"
+                          name="Test_Date" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::RecCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="VendorExcel CSV"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[CSV Pick Source]"
+                      connectionManagerRefId="Package.ConnectionManagers[CSV Pick Source]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[Test Date]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[Test Date]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[Test Date]"
+                          name="Test Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[WELL_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[WELL_NAME]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[WELL_NAME]"
+                          name="WELL_NAME"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[LEASE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[LEASE]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[LEASE]"
+                          name="LEASE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[BGPD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[BGPD]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[BGPD]"
+                          name="BGPD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[BOPD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[BOPD]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[BOPD]"
+                          name="BOPD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[CSG_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[CSG_PRESS]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[CSG_PRESS]"
+                          name="CSG_PRESS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[TBG_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[TBG_PRESS]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[TBG_PRESS]"
+                          name="TBG_PRESS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[MCFD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[MCFD]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[MCFD]"
+                          name="MCFD"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[GOR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[GOR]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[GOR]"
+                          name="GOR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FLTBG]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[FLTBG]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FLTBG]"
+                          name="FLTBG"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FOP]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[FOP]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FOP]"
+                          name="FOP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[TBG_TEMP]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[TBG_TEMP]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[TBG_TEMP]"
+                          name="TBG_TEMP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[SPM_COUNT]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[SPM_COUNT]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[SPM_COUNT]"
+                          name="SPM_COUNT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[STR_LEN]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[STR_LEN]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[STR_LEN]"
+                          name="STR_LEN"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FREQ_HZ]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[FREQ_HZ]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FREQ_HZ]"
+                          name="FREQ_HZ"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[ESP_AMP]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[ESP_AMP]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[ESP_AMP]"
+                          name="ESP_AMP"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[SEP_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[SEP_PRESS]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[SEP_PRESS]"
+                          name="SEP_PRESS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FLOWLINE_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[FLOWLINE_PRESS]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[FLOWLINE_PRESS]"
+                          name="FLOWLINE_PRESS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[OIL_API_GRAVITY]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[OIL_API_GRAVITY]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[OIL_API_GRAVITY]"
+                          name="OIL_API_GRAVITY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[JOINT_COUNT]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[JOINT_COUNT]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[JOINT_COUNT]"
+                          name="JOINT_COUNT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[COMMENT]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[COMMENT]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].Columns[COMMENT]"
+                          name="COMMENT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[Test Date]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Test Date" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[WELL_NAME]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="WELL_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[LEASE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="LEASE" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[BGPD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BGPD" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[BOPD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="BOPD" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[CSG_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CSG_PRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[TBG_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TBG_PRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[MCFD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="MCFD" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[GOR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="GOR" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[FLTBG]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FLTBG" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[FOP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FOP" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[TBG_TEMP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TBG_TEMP" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[SPM_COUNT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SPM_COUNT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[STR_LEN]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="STR_LEN" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[FREQ_HZ]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FREQ_HZ" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[ESP_AMP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ESP_AMP" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[SEP_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SEP_PRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[FLOWLINE_PRESS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FLOWLINE_PRESS" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[OIL_API_GRAVITY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="OIL_API_GRAVITY" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[JOINT_COUNT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="JOINT_COUNT" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output].ExternalColumns[COMMENT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="COMMENT" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable.Paths[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Row Count.Inputs[Row Count Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Vendor Excel to IFaceTable.Paths[Row Count Output 1]"
+                  endId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{94661DCB-4098-453D-81A1-5325F057DA17}"
+          DTS:From="Package\Foreach Loop Container\Update tbl_PublisherLog"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Loop Container\Move File to Archive Location" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{CE591750-2D1F-4431-A9AE-3D09AA6BE985}"
+          DTS:From="Package\Foreach Loop Container\Move File to Archive Location"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Foreach Loop Container\Rename the file" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{E3454983-917F-40C0-8156-03672D1ABEFE}"
+          DTS:From="Package\Foreach Loop Container\Vendor Excel to IFaceTable"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Foreach Loop Container\Update tbl_PublisherLog" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{622B8C61-74EF-486B-B3F3-5A2132F0838E}"
+          DTS:From="Package\Foreach Loop Container\Vendor Excel to IFaceTable"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Foreach Loop Container\Insert tbl_Errorlog"
+          DTS:Value="1" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{D9AC72F0-19CD-4931-9C16-FA025455E17D}"
+          DTS:ObjectName="{D9AC72F0-19CD-4931-9C16-FA025455E17D}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Generate GUID's"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{194C5167-0CB7-4454-BA07-E8D1DB118B91}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generate GUID's"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:SqlStatementSource="select convert(nvarchar(100), newid() ) IFaceBatchUID, convert(nvarchar(100), newid() ) TrackID"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="IFaceBatchUID"
+            SQLTask:DtsVariableName="User::IFaceBatchID" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="TrackID"
+            SQLTask:DtsVariableName="User::TrackID" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert into tbl_PublisherLog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9AB7843F-6D63-4E8A-9A8D-09B9812526BB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert into tbl_PublisherLog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="EXEC [dbo].[USP_UpsertPublisherLog] &#xA;   @Action = 1&#xA;  ,@TrackID = ?&#xA;  ,@PublisherName = ?&#xA;  ,@ProcessName = ?&#xA;  ,@MsgType = ?&#xA;  ,@ConnType = ?&#xA;  ,@PubStatus = NULL&#xA;  ,@StartMsg = ?&#xA;  ,@EndMsg = NULL&#xA;  ,@FormattedMessage = NULL&#xA;  ,@RecordCount = NULL&#xA;  ,@Description = NULL&#xA;  ,@IFaceBatchUID = NULL&#xA;  ,@PubID =? OUTPUT&#xA;  ,@PubConnID =? OUTPUT&#xA;  ,@IsArchive  = NULL&#xA;  ,@ArchMsgLength = NULL&#xA;  ,@ArchXMLPath = NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TrackID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::PkgName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PublisherName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::MsgType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="4"
+            SQLTask:DtsVariableName="User::ConnType"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="5"
+            SQLTask:DtsVariableName="User::PubStartMsg"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="6"
+            SQLTask:DtsVariableName="User::PubID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="7"
+            SQLTask:DtsVariableName="User::PubConnID"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update XSPOC XML tbl_PublisherLog"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{45E1CD0B-969D-4F42-8808-C6053E285087}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update XSPOC XML tbl_PublisherLog"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E5E6B1-38F5-400F-9D86-5107FB649DCD}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="&#xA;EXEC [dbo].[USP_UpsertPublisherLog] &#xA;   @Action = 2&#xA;  ,@TrackID = ?&#xA;  ,@PublisherName = NULL&#xA;  ,@ProcessName = NULL&#xA;  ,@MsgType = NULL&#xA;  ,@ConnType = NULL&#xA;  ,@PubStatus = NULL&#xA;  ,@StartMsg = NULL&#xA;  ,@EndMsg =  NULL&#xA;  ,@FormattedMessage = ?&#xA;  ,@RecordCount = NULL&#xA;  ,@Description = NULL&#xA;  ,@IFaceBatchUID = NULL&#xA;  ,@PubID = NULL&#xA;  ,@PubConnID = NULL&#xA;  ,@IsArchive  = ?&#xA;  ,@ArchMsgLength = ? OUTPUT&#xA;  ,@ArchXMLPath = NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TrackID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::FormattedMsg"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::IsArchive"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::ArchMsgLength"
+            SQLTask:ParameterDirection="Output"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{176E79B8-91E1-4D01-8BE7-E12613CC3879}"
+      DTS:From="Package\Update XSPOC XML tbl_PublisherLog"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{89DC9B6F-C6F7-4C1F-954E-2DF20A481E1C}"
+      DTS:From="Package\Generate GUID's"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Insert into tbl_PublisherLog" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{80C80874-46E2-4123-91B4-C1EEB6871E85}"
+      DTS:From="Package\Insert into tbl_PublisherLog"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Update XSPOC XML tbl_PublisherLog" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="167,41"
+          Id="Package\Foreach Loop Container\Insert tbl_Errorlog"
+          TopLeft="322.869056724088,12.986648776319" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Foreach Loop Container\Move File to Archive Location"
+          TopLeft="281,101" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Foreach Loop Container\Rename the file"
+          TopLeft="316,215" />
+        <NodeLayout
+          Size="195,43"
+          Id="Package\Foreach Loop Container\Update tbl_PublisherLog"
+          TopLeft="19.970525781893,95.260785306118" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Foreach Loop Container\Vendor Excel to IFaceTable"
+          TopLeft="10.506239955926,5.5" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="214.970525781893,119.380392653059">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66.029474218107,0"
+              Start="0,0"
+              End="58.529474218107,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.529474218107,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="391,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72"
+              Start="0,0"
+              End="0,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="115.98838286891,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.760785306118"
+              Start="0,0"
+              End="0,40.260785306118">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.260785306118" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 6]"
+          TopLeft="218.506239955926,29.9933243881595">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104.362816768162,0"
+              Start="0,0"
+              End="96.862816768162,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="96.862816768162,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="33.190060727831,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="571,286"
+          Size="571,329"
+          Id="Package\Foreach Loop Container"
+          TopLeft="98,394" />
+        <NodeLayout
+          Size="159,41"
+          Id="Package\Generate GUID's"
+          TopLeft="261.986399019425,118.148274299376" />
+        <NodeLayout
+          Size="209,41"
+          Id="Package\Insert into tbl_PublisherLog"
+          TopLeft="234.450684304694,188.773111891169" />
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Update XSPOC XML tbl_PublisherLog"
+          TopLeft="214.659867447945,287.050610127389" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="340.659867447945,329.050610127389">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.840132552055,64.949389872611"
+              Start="0,0"
+              End="42.840132552055,57.449389872611">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4746949363055" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.4746949363055"
+                    Point2="0,32.4746949363055"
+                    Point3="4,32.4746949363055" />
+                  <mssgle:LineSegment
+                    End="38.840132552055,32.4746949363055" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.840132552055,32.4746949363055"
+                    Point2="42.840132552055,32.4746949363055"
+                    Point3="42.840132552055,36.4746949363055" />
+                  <mssgle:LineSegment
+                    End="42.840132552055,57.449389872611" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="340.21854166206,159.481607632709">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.2915042584597"
+              Start="0,0"
+              End="0,21.7915042584597">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7915042584597" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="339.805275876319,229.773111891169">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.27749823622"
+              Start="0,0"
+              End="0,49.77749823622">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.77749823622" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Vendor Excel to IFaceTable "
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="171,40"
+          Id="06455250-aa65-4993-8bf9-12d8c43de8c3"
+          TopLeft="263.586398678827,71.3142867144417" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Vendor Excel to IFaceTable">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Foreach Loop Container\Vendor Excel to IFaceTable\VendorExcel CSV"
+          TopLeft="491,91" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination"
+          TopLeft="491.746039098623,340.494117569841" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Derived Column"
+          TopLeft="498.612706696257,185.505882867727" />
+        <NodeLayout
+          Size="131,41"
+          Id="Package\Foreach Loop Container\Vendor Excel to IFaceTable\Row Count"
+          TopLeft="512.412715074968,256.894122091379" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Vendor Excel to IFaceTable.Paths[Derived Column Output]"
+          TopLeft="576.762710885612,227.505882867727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.388239223652"
+              Start="0,0"
+              End="0,21.888239223652">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.888239223652" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Vendor Excel to IFaceTable.Paths[Row Count Output 1]"
+          TopLeft="577.579377086795,297.894122091379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.599995478462"
+              Start="0,0"
+              End="0,35.099995478462">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.099995478462" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Vendor Excel to IFaceTable.Paths[Flat File Source Output]"
+          TopLeft="573.056353348128,133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.505882867727"
+              Start="0,0"
+              End="0,45.005882867727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.005882867727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Vendor Excel to IFaceTable\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

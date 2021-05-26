@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ADO.NET.CIDS"
+  DTS:DTSID="{498938F5-AF3B-403A-9A01-3A2AA416C8C3}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::ADO_NET_CIDS_DatabaseName]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::ADO_NET_CIDS_ServerName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=CKCWSQL7-S;Initial Catalog=CIDS;Integrated Security=True;TrustServerCertificate=True;Application Name=SSIS-FL_XSPOC_To_IFace-{498938F5-AF3B-403A-9A01-3A2AA416C8C3}CLGWSQL7.CIDS.cids_user1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ADO.NET.XSPOC"
+  DTS:DTSID="{FB9F0619-5137-4CA1-9347-512F7FD42D93}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=CKCwSQLB;User ID=IntegrationServices;Initial Catalog=XSPOC_Integration;Application Name=SSIS-XSPOC_To_IFace-{FB9F0619-5137-4CA1-9347-512F7FD42D93}CKCwSQLB.XSPOC_Integration.IntegrationServices1;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkyHCJNk84kigOulT1wuWPgAAAAACAAAAAAADZgAAwAAAABAAAADws2Ez021ro6AOF5rkJFyLAAAAAASAAACgAAAAEAAAADFVXoiqEd1kaBHnZXEeDTaAAAAAC4BgDh4ydIYmBb6NLxqISyNuVNVMiIIS4m2zYk7ufb0L3MS719zA1haj3vgkGqySXCHxKVZ2RyWMZkilZXkd7SrBy0pxaAJbhDxA4TzyN4XmauGICVOL5VcZL7WU4TN2tdYwetjmAhcYZhVcO64Yla3/oDuZHsyHSQoBasAfiBoUAAAAS3rGMHfvykkanSWNF1obkjEcyYw=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
