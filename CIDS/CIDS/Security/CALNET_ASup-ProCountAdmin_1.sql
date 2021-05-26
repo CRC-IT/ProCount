@@ -1,3 +1,0 @@
-﻿CREATE LOGIN [CALNET\ASup-ProCountAdmin]
-    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
-
