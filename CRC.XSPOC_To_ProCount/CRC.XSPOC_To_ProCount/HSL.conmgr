@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="HSL"
+  DTS:DTSID="{40956de5-f978-4ed8-a7e8-76c2845128c8}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=CLGWSQL5-D;User ID=crc_read;Initial Catalog=HSL;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAf4izoJXf5Eiqrg3L02XCowAAAAACAAAAAAADZgAAwAAAABAAAACFCpLw17GH71xZNQYybZUyAAAAAASAAACgAAAAEAAAAPJ33o/YhqGBu4yWSV6YsQd4AAAAgAQHOVu3MuZuFeYPKVed2flVs+RSBz5DMR++0nF2tWFE5tA50LB3oF2Q5F4ZswuTVgipGjfFzaGEOoyBYP1XvJjM0mJAZ48BTqY73Mk3TknMB0Pv4hCcy3tbBxzJDIvB9v7mSqFF5QVLFrxtkfGKKF3itPNaXn+mFAAAAPbaemrpwRC2rgIHftPKQGHzh0Bh</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
