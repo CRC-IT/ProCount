@@ -9,10 +9,10 @@
     DTS:Name="ServerName">@[$Project::XPOC_Integrations_ServerName]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=CKCWSQLB;User ID=IntegrationServices;Initial Catalog=XSPOC_Integration;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=CRCSQLServer02;User ID=IntegrationServices;Initial Catalog=XSPOC_Integration;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAf4izoJXf5Eiqrg3L02XCowAAAAACAAAAAAADZgAAwAAAABAAAACCYGbVzp0w8zfMHGOg0jcwAAAAAASAAACgAAAAEAAAACjOOmiYxlpbFzWDnil3yVSAAAAA5VVEZj60Hi6dEAmyw2K9IFD6nHObeB0nhZX7dDnGR0di8XNAdgmps3ikMy+u6iDjJ7LrNPxLnIbogH9ykc5mrQajZzWNYOIyUXVSEtOi0eqiqmmW6t9P4eQPHCx5Czvl9/0VEIlnikrFmUHht53PXoguOtixWhr+4kvz+/eYYq8UAAAAlPPMz49gnz95806ie2RAXzPUmcE=</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAf4izoJXf5Eiqrg3L02XCowAAAAACAAAAAAADZgAAwAAAABAAAAB5floBJqo7t8gKkQHfX3wxAAAAAASAAACgAAAAEAAAAI8zbd0tzj5JS+5VQDex+WGAAAAA8MPwvCkJjorQ9FMFEeI78hlH1loPpaZ9IS6jDbKtzOfYBtVERlMGBL/rrpAXmqhFzYi6OLuqmBEuzWxLrVIpCtDBf/MGYbzOauOjit8aW6ItaQh54s8VMI9o0PiC4GwAFlHMdo1k7VhsEMstL/nLGtDLmT6fB5mrMGyWLO/K9mQUAAAA4j29yWbjzO3T/0huB79bVzGsMrQ=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

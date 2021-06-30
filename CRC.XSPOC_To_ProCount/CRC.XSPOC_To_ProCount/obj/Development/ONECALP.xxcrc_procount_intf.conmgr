@@ -10,7 +10,7 @@
       DTS:ConnectionString="Data Source=ONECALP;User ID=xxcrc_procount_intf;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAf4izoJXf5Eiqrg3L02XCowAAAAACAAAAAAADZgAAwAAAABAAAABAHDPJD0qqfLDCaDAwHZm1AAAAAASAAACgAAAAEAAAAEEomFXYPxroZUMPXOg8g6qAAAAAvCfCpXYPsnuSYEno5wWEbmhQqrOSZUiVuOdLV61YLWFyg/rsmKl4jgC8hgd8Mo1umeXObyH/D3AyJzXgmBjOiViAacmGxqhvwgTwYQFUmDf3UKbhJlKuWAMFP0ggngi4u2t4pVaNYqxs7ItH7Ko27HacwGKrYG+uIzCvX1qXHNIUAAAAsK9GDJpkFIyIZ0pbUy7ZYXTAPZw=</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAf4izoJXf5Eiqrg3L02XCowAAAAACAAAAAAADZgAAwAAAABAAAABJ80p/T5I4eBMGuEntZzgaAAAAAASAAACgAAAAEAAAAAnq9dgevTNxif7QMjEr+vKAAAAABWcQ6uK3CgYKfEiXxZs/h8w6GsvA9YW6/kwIq/XI/viK9GylxYidXqHlZl42zdnsAtlcNnAPS9Oz2iopVlsJFBux0MFC7QnvFoyUNe3CdCd3aBuGLeZRpTJflGpueIvwZ96CUHUxGWkzr93zQTYlXwHKvWV5QQVL4+hMTRvphacUAAAA7Om5Y+GYhjPtZwi6EYzE+r9qmxU=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

@@ -4,6 +4,8 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
+        <ServerName>CKCWSQL11</ServerName>
+        <PathOnServer>/SSISDB/ProCount/CRC</PathOnServer>
         <Run64BitRuntime>true</Run64BitRuntime>
         <UserIDs />
         <UserPasswords />
